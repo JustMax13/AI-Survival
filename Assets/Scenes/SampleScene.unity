@@ -123,31 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &102290716 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8129429177127681556, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
-  m_PrefabInstance: {fileID: 8590950922478028512}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &723904913 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8590950920864976892, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
-  m_PrefabInstance: {fileID: 8590950922478028512}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &723904919
+--- !u!114 &723904919 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5597268198836318895, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
+  m_PrefabInstance: {fileID: 8590950922478028512}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723904913}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b38ca68e731013c49ba0e2a6e89328cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpawn: {fileID: 102290716}
-  _bulletPrefab: {fileID: 1630338132620539897, guid: 0362b506bbce7524da5a9c2317923138, type: 3}
-  _bulletVelocity: 30
 --- !u!1 &1726679207
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2053193440048537321, guid: dd9d56fb812697f46a723ec66650af02, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Howitzer, Assembly-CSharp
+      value: ShotGun, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2053193440048537321, guid: dd9d56fb812697f46a723ec66650af02, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -603,6 +589,14 @@ PrefabInstance:
     - target: {fileID: 2875507783195727746, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590950920864976833, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 6.6679144
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590950920864976833, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 1.662525
       objectReference: {fileID: 0}
     - target: {fileID: 8590950920864976893, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
       propertyPath: m_LocalPosition.x

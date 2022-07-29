@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{2715A461-BB86-2E4F-1DB2-B002A167286F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -53,16 +54,14 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Scripts\Shooting\IGunShot.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\IMover.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\BotsWheel.cs" />
-    <Compile Include="Assets\Scripts\Shooting\Howitzer.cs" />
+    <Compile Include="Assets\Scripts\Shooting\ShotGun.cs" />
     <Compile Include="Assets\Scripts\HP\IHaveHP.cs" />
     <Compile Include="Assets\Scripts\HP\HPofPart.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
+    <Compile Include="Assets\Scripts\Shooting\WeaponLostConected.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
