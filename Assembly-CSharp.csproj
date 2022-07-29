@@ -8,9 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
-    <ProjectGuid>{2715A461-BB86-2E4F-1DB2-B002A167286F}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{CC226E55-23EF-7EF5-801C-324BF30C79B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,8 +59,8 @@
     <Compile Include="Assets\Scripts\Shooting\ShotGun.cs" />
     <Compile Include="Assets\Scripts\HP\IHaveHP.cs" />
     <Compile Include="Assets\Scripts\HP\HPofPart.cs" />
-    <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
     <Compile Include="Assets\Scripts\Shooting\WeaponLostConected.cs" />
+    <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
