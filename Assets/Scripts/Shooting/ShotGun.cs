@@ -34,7 +34,7 @@ public class ShotGun : MonoBehaviour, IGunShot
     }
     [SerializeField]
     private float _bulletVelocity = 50f;
-    private const float _minBulletVelocity = 3f;
+    private const float _minBulletVelocity = 4f;
     public float BulletVelocity
     {
         get 

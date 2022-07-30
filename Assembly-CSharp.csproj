@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\HP\HPofPart.cs" />
     <Compile Include="Assets\Scripts\Shooting\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
+    <Compile Include="Assets\Scripts\Shooting\ProjectileRotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
