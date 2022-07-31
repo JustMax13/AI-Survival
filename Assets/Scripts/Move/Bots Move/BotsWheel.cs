@@ -20,9 +20,8 @@ public class BotsWheel : MonoBehaviour, IMover
         } 
     }
 
-    public void MoveLeft() => GetComponent<Rigidbody2D>().AddTorque(AddSpeed);
-
-    public void MoveRight() => GetComponent<Rigidbody2D>().AddTorque(-AddSpeed);
+    public void MoveLeft() => GetComponent<Rigidbody2D>().AddTorque(AddSpeed * Time.deltaTime);
+    public void MoveRight() => GetComponent<Rigidbody2D>().AddTorque(-AddSpeed * Time.deltaTime);
     private void FixedUpdate()
     {
         if (GetComponent<WheelJoint2D>().connectedBody == null)

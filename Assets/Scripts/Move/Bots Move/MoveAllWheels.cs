@@ -24,8 +24,6 @@ public class MoveAllWheels : MonoBehaviour
         inMoveRight = true;
     }
     public void MoveRightUp() => inMoveRight = false;
-
-    void Test() => Debug.Log(inMoveLeft);
     private void FixedUpdate()
     {
         if (inMoveLeft)

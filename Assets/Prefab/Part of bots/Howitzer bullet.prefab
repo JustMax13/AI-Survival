@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3608045280790725269}
   - component: {fileID: 2596947022616369056}
   - component: {fileID: 564469728456483756}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Howitzer bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.3
   m_LinearDrag: 0.05
-  m_AngularDrag: 0.02
+  m_AngularDrag: 0.4
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0

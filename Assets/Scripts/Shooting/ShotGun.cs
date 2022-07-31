@@ -32,9 +32,13 @@ public class ShotGun : MonoBehaviour, IGunShot
             _bulletPrefab = value;
         }
     }
+    
+    private const float _minBulletVelocity = 10f;
+    private const float _maxBulletVelocity = 500f;
     [SerializeField]
+    [Range(_minBulletVelocity, _maxBulletVelocity)]
     private float _bulletVelocity = 50f;
-    private const float _minBulletVelocity = 4f;
+    
     public float BulletVelocity
     {
         get 
@@ -45,6 +49,9 @@ public class ShotGun : MonoBehaviour, IGunShot
         {
             if (value < _minBulletVelocity)
                 value = _minBulletVelocity;
+            if (value > _maxBulletVelocity)
+                value = _maxBulletVelocity;
+
             _bulletVelocity = value;
         }
     }
