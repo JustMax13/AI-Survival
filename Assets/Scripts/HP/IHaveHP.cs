@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HP
+namespace CombatMechanics
 {
-    interface IHaveHP
+    namespace HP
     {
-        float HP { get; set; }
-        void MakeDamage(float damage);
+        public interface IHaveHP
+        {
+            float HP { get; set; }
+            public void TakeDamage(IHaveHP partOfBot, float damage) => partOfBot.HP -= damage;
+        }
     }
 }

@@ -65,6 +65,8 @@
     <Compile Include="Assets\Scripts\HP\HPofPart.cs" />
     <Compile Include="Assets\Scripts\Shooting\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
+    <Compile Include="Assets\Scripts\Shooting\ClassicBullet.cs" />
+    <Compile Include="Assets\Scripts\Shooting\AbstractBullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

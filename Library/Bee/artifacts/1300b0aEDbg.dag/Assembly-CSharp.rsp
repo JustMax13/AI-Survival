@@ -374,6 +374,8 @@
 "Assets/Scripts/Move/Bots Move/BotsWheel.cs"
 "Assets/Scripts/Move/Bots Move/IMover.cs"
 "Assets/Scripts/Move/Bots Move/MoveAllWheels.cs"
+"Assets/Scripts/Shooting/AbstractBullet.cs"
+"Assets/Scripts/Shooting/ClassicBullet.cs"
 "Assets/Scripts/Shooting/IGunShot.cs"
 "Assets/Scripts/Shooting/ProjectileRotation.cs"
 "Assets/Scripts/Shooting/ShotGun.cs"

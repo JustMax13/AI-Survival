@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponLostConected : MonoBehaviour
+namespace CombatMechanics
 {
-    private void FixedUpdate()
+    namespace Weapon
     {
-        if (GetComponent<FixedJoint2D>().connectedBody == null)
-            Destroy(GetComponent<ShotGun>());
+        public class WeaponLostConected : MonoBehaviour
+        {
+            private void FixedUpdate()
+            {
+                if (GetComponent<FixedJoint2D>().connectedBody == null)
+                    Destroy(GetComponent<ShotGun>());
+            }
+        }
     }
 }

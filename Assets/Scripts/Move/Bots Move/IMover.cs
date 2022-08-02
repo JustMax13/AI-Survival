@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Move
+namespace CombatMechanics
 {
-    public interface IMover
+    namespace Move
     {
-        float AddSpeed{ get; }
-        void MoveRight();
-        void MoveLeft();
-    }
-    public interface IMoverUP : IMover
-    {
-        void MoveUp();
+        public interface IMover
+        {
+            float AddSpeed { get; }
+            void MoveRight();
+            void MoveLeft();
+        }
+        public interface IMoverUP : IMover
+        {
+            void MoveUp();
+        }
     }
 }

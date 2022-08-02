@@ -2,42 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Move;
-
-public class MoveAllWheels : MonoBehaviour
+namespace CombatMechanics
 {
-    private bool inMoveLeft { get; set; }
-    private bool inMoveRight { get; set; }
-    public void MoveLeftDown()
+    using Move;
+    public class MoveAllWheels : MonoBehaviour
     {
-        GameObject[] Wheels = GameObject.FindGameObjectsWithTag("Wheel");
-        foreach (var item in Wheels)
-            item.GetComponent<BotsWheel>()?.MoveLeft();
-        inMoveLeft = true;
-    }
-    public void MoveLeftUp() => inMoveLeft = false;
-    public void MoveRightDown()
-    {
-        GameObject[] Wheels = GameObject.FindGameObjectsWithTag("Wheel");
-        foreach (var item in Wheels)
-            item.GetComponent<BotsWheel>()?.MoveRight();
-        inMoveRight = true;
-    }
-    public void MoveRightUp() => inMoveRight = false;
-    private void FixedUpdate()
-    {
-        if (inMoveLeft)
+        private bool inMoveLeft { get; set; }
+        private bool inMoveRight { get; set; }
+        public void MoveLeftDown()
         {
-            MoveLeftDown();
+            GameObject[] Wheels = GameObject.FindGameObjectsWithTag("Wheel");
+            foreach (var item in Wheels)
+                item.GetComponent<BotsWheel>()?.MoveLeft();
+            inMoveLeft = true;
         }
-        else if (inMoveRight)
+        public void MoveLeftUp() => inMoveLeft = false;
+        public void MoveRightDown()
         {
-            MoveRightDown();
+            GameObject[] Wheels = GameObject.FindGameObjectsWithTag("Wheel");
+            foreach (var item in Wheels)
+                item.GetComponent<BotsWheel>()?.MoveRight();
+            inMoveRight = true;
         }
-    }
-    private void Start()
-    {
-        inMoveLeft = false;
-        inMoveRight = false;
+        public void MoveRightUp() => inMoveRight = false;
+        private void FixedUpdate()
+        {
+            if (inMoveLeft)
+            {
+                MoveLeftDown();
+            }
+            else if (inMoveRight)
+            {
+                MoveRightDown();
+            }
+        }
+        private void Start()
+        {
+            inMoveLeft = false;
+            inMoveRight = false;
+        }
     }
 }

@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Weapon
+namespace CombatMechanics
 {
-    interface IGunShot
+    namespace Weapon
     {
-        Transform BulletSpawn { get; set; }
-        GameObject BulletPrefab { get; set; }
-        float BulletVelocity { get; set; }
-        void Shot();
+        interface IGunShot
+        {
+            Transform BulletSpawn { get; set; }
+            GameObject BulletPrefab { get; set; }
+            float BulletVelocity { get; set; }
+            void Shot();
+        }
     }
 }
