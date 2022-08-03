@@ -56,17 +56,18 @@
     <Analyzer Include="D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Shooting\IGunShot.cs" />
+    <Compile Include="Assets\Scripts\Shooting\General\GunShot.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\IMover.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\BotsWheel.cs" />
     <Compile Include="Assets\Scripts\Shooting\ProjectileRotation.cs" />
     <Compile Include="Assets\Scripts\Shooting\ShotGun.cs" />
+    <Compile Include="Assets\Scripts\Shooting\ClassicBullet.cs" />
     <Compile Include="Assets\Scripts\HP\IHaveHP.cs" />
     <Compile Include="Assets\Scripts\HP\HPofPart.cs" />
-    <Compile Include="Assets\Scripts\Shooting\WeaponLostConected.cs" />
+    <Compile Include="Assets\Scripts\Shooting\General\AbstractBullet.cs" />
+    <Compile Include="Assets\Scripts\Shooting\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
-    <Compile Include="Assets\Scripts\Shooting\ClassicBullet.cs" />
-    <Compile Include="Assets\Scripts\Shooting\AbstractBullet.cs" />
+    <Compile Include="Assets\Scripts\Shooting\General\IGunShot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

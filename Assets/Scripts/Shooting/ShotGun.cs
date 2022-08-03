@@ -5,30 +5,30 @@ using UnityEngine;
 namespace CombatMechanics
 {
     using Weapon;
-    public class ShotGun : MonoBehaviour, IGunShot
+    public class ShotGun : GunShot
     {
         [SerializeField]
         private Transform _bulletSpawn;
-        public Transform BulletSpawn
+        public override Transform BulletSpawn
         {
             get
             {
                 return _bulletSpawn;
             }
-            set
+            protected set
             {
                 _bulletSpawn = value;
             }
         }
         [SerializeField]
         private GameObject _bulletPrefab;
-        public GameObject BulletPrefab
+        public override GameObject BulletPrefab
         {
             get
             {
                 return _bulletPrefab;
             }
-            set
+            protected set
             {
                 _bulletPrefab = value;
             }
@@ -40,13 +40,13 @@ namespace CombatMechanics
         [Range(_minBulletVelocity, _maxBulletVelocity)]
         private float _bulletVelocity = 50f;
 
-        public float BulletVelocity
+        public override float BulletVelocity
         {
             get
             {
                 return _bulletVelocity;
             }
-            set
+            protected set
             {
                 if (value < _minBulletVelocity)
                     value = _minBulletVelocity;
@@ -57,7 +57,7 @@ namespace CombatMechanics
             }
         }
 
-        public void Shot()
+        protected override void Shot()
         {
             GameObject newBullet = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = BulletVelocity * BulletSpawn.right;

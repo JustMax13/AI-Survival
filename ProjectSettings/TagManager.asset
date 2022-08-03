@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wheel
   - Part of bot
+  - PlayerWheels
+  - EnemyWheels
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,7 @@ TagManager:
     locked: 0
   - name: Pat of bots
     uniqueID: 952692847
+    locked: 0
+  - name: UI
+    uniqueID: 2455428651
     locked: 0
