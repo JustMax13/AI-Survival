@@ -8,7 +8,7 @@ namespace CombatMechanics
     {
         public abstract class AbstractBullet : MonoBehaviour
         {
-            public abstract float Damage { get; protected set; }
+            public abstract float Damage { get; set; }
             protected abstract LayerMask[] IgnoreLayers { get; set; }
         }
     }

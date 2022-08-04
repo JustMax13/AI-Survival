@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Shooting\General\GunShot.cs" />
+    <Compile Include="Assets\Scripts\Shooting\General\IGunShot.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\IMover.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\BotsWheel.cs" />
     <Compile Include="Assets\Scripts\Shooting\ProjectileRotation.cs" />
@@ -67,7 +68,6 @@
     <Compile Include="Assets\Scripts\Shooting\General\AbstractBullet.cs" />
     <Compile Include="Assets\Scripts\Shooting\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
-    <Compile Include="Assets\Scripts\Shooting\General\IGunShot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

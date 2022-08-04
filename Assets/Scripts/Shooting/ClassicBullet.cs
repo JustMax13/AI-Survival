@@ -14,7 +14,7 @@ namespace CombatMechanics
         public override float Damage 
         { 
             get => _damage;
-            protected set 
+            set 
             {
                 if (value < 0)
                     value = 0;

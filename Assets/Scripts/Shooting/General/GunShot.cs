@@ -11,6 +11,7 @@ namespace CombatMechanics
             public abstract Transform BulletSpawn { get; protected set; }
             public abstract GameObject BulletPrefab { get; protected set; }
             public abstract float BulletVelocity { get; protected set; }
+            public abstract float BulletDamage { get; set; }
             [SerializeField]
             [Range(0.1f, 300)]
             private float _reloadTime;

@@ -56,11 +56,35 @@ namespace CombatMechanics
                 _bulletVelocity = value;
             }
         }
+        [SerializeField]
+        [Range(0,1000000)]
+        private float _bulletDamage;
+        public override float BulletDamage 
+        {
+            get => _bulletDamage;
+            set 
+            {
+                if (value < 0)
+                    value = 0;
+                _bulletDamage = value;
+            }
+        }
 
         protected override void Shot()
         {
             GameObject newBullet = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-            newBullet.GetComponent<Rigidbody2D>().velocity = BulletVelocity * BulletSpawn.right;
+
+            try
+            {
+                newBullet.GetComponent<Rigidbody2D>().velocity = BulletVelocity * BulletSpawn.right;
+                newBullet.GetComponent<ClassicBullet>().Damage = BulletDamage;
+            }
+            catch
+            {
+                Destroy(newBullet);
+                Debug.Log("The generated bullet does not have a Rigidbody 2d or ClassicBullet component");
+            }
+            
         }
     }
 }
