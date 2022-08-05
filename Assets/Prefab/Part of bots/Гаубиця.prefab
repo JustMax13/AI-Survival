@@ -193,10 +193,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ca68e731013c49ba0e2a6e89328cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reloadTime: 3
+  _reloadTime: 4
   _bulletSpawn: {fileID: 482871077999789854}
   _bulletPrefab: {fileID: 1630338132620539897, guid: 0362b506bbce7524da5a9c2317923138, type: 3}
   _bulletVelocity: 50
+  _bulletDamage: 1500
+  _projectilesInAClip: 1
+  _reloadBetweenProjectilesInAClip: 0.001
 --- !u!114 &6858155120468005405
 MonoBehaviour:
   m_ObjectHideFlags: 0
