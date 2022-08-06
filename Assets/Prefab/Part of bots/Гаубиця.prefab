@@ -178,7 +178,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -6.31, y: -2.4399998}
+  m_ConnectedAnchor: {x: -6.799, y: -1.5389999}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!114 &4309792738420870053
@@ -193,13 +193,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ca68e731013c49ba0e2a6e89328cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reloadTime: 4
   _bulletSpawn: {fileID: 482871077999789854}
   _bulletPrefab: {fileID: 1630338132620539897, guid: 0362b506bbce7524da5a9c2317923138, type: 3}
-  _bulletVelocity: 50
+  _bulletVelocity: 60
   _bulletDamage: 1500
   _projectilesInAClip: 1
   _reloadBetweenProjectilesInAClip: 0.001
+  _reloadTime: 4
 --- !u!114 &6858155120468005405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235289714639712256, guid: f776dff52669f414185ab22ff88e8ad2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 235289714639712256, guid: f776dff52669f414185ab22ff88e8ad2, type: 3}
       propertyPath: m_LocalPosition.y

@@ -8,10 +8,118 @@ namespace CombatMechanics
     {
         public abstract class GunShot : MonoBehaviour
         {
-            public abstract Transform BulletSpawn { get; protected set; }
-            public abstract GameObject BulletPrefab { get; protected set; }
-            public abstract float BulletVelocity { get; protected set; }
-            public abstract float BulletDamage { get; set; }
+            [SerializeField]
+            private Transform _bulletSpawn;
+            public Transform BulletSpawn
+            {
+                get
+                {
+                    return _bulletSpawn;
+                }
+                private set
+                {
+                    _bulletSpawn = value;
+                }
+            }
+            [SerializeField]
+            private GameObject _bulletPrefab;
+            public GameObject BulletPrefab
+            {
+                get
+                {
+                    return _bulletPrefab;
+                }
+                private set
+                {
+                    _bulletPrefab = value;
+                }
+            }
+
+            private const float _minBulletVelocity = 10f;
+            private const float _maxBulletVelocity = 150f;
+            [SerializeField]
+            [Range(_minBulletVelocity, _maxBulletVelocity)]
+            private float _bulletVelocity = 50f;
+
+            public float BulletVelocity
+            {
+                get
+                {
+                    return _bulletVelocity;
+                }
+                set
+                {
+                    if (value < _minBulletVelocity)
+                        value = _minBulletVelocity;
+                    if (value > _maxBulletVelocity)
+                        value = _maxBulletVelocity;
+
+                    _bulletVelocity = value;
+                }
+            }
+            [SerializeField]
+            [Range(0, 1000000)]
+            private float _bulletDamage;
+            public float BulletDamage
+            {
+                get => _bulletDamage;
+                set
+                {
+                    if (value < 0)
+                        value = 0;
+                    else if (value > 1000000)
+                        value = 1000000;
+
+                    _bulletDamage = value;
+                }
+            }
+            [SerializeField]
+            [Range(1, 10000)]
+            private uint _projectilesInAClip;
+            public uint ProjectilesInAClip
+            {
+                get => _projectilesInAClip;
+                private set
+                {
+                    if (value < 1)
+                        value = 1;
+                    else if (value > 10000)
+                        value = 10000;
+
+                    _projectilesInAClip = value;
+                }
+            }
+            private uint _currentProjectilesInAClip;
+            public uint CurrentProjectilesInAClip
+            {
+                get => _currentProjectilesInAClip;
+                protected set
+                {
+                    if (value < 0)
+                        value = 0;
+                    else if (value > 10000)
+                        value = 10000;
+
+                    _currentProjectilesInAClip = value;
+                }
+            }
+
+            [SerializeField]
+            [Range(0.001f, 300)]
+            private float _reloadBetweenProjectilesInAClip;
+            public float ReloadBetweenProjectilesInAClip
+            {
+                get => _reloadBetweenProjectilesInAClip;
+                set
+                {
+                    if (value > 0.001f)
+                        value = 0.001f;
+                    else if (value > 300)
+                        value = 300;
+
+                    _reloadBetweenProjectilesInAClip = 300;
+                }
+            }
             [SerializeField]
             [Range(0.1f, 300)]
             private float _reloadTime;
@@ -26,9 +134,6 @@ namespace CombatMechanics
             }
             private float _currentReloadTime;
             bool ReloadEnd;
-            public abstract uint ProjectilesInAClip { get; set; }
-            public abstract uint CurrentProjectilesInAClip { get; protected set; }
-            public abstract float ReloadBetweenProjectilesInAClip { get; set; }
             public void CheckReloadAndShot()
             {
                 if (ReloadEnd)
