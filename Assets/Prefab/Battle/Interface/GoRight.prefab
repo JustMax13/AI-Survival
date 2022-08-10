@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9126893111865813344}
   - component: {fileID: 2085614726119338787}
   - component: {fileID: 7302475611815967284}
-  - component: {fileID: 3271820019185352043}
+  - component: {fileID: 8931619782840892660}
   m_Layer: 5
   m_Name: GoRight
   m_TagString: Untagged
@@ -29,6 +29,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6578531, y: 1.6578531, z: 1.6578531}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3271820019185352043
+--- !u!114 &8931619782840892660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,39 +86,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6262650230267834071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 40647949d7d089e41b4a4a7f711f1fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 972973672178278835, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
-          m_TargetAssemblyTypeName: MoveAllWheels, Assembly-CSharp
-          m_MethodName: MoveRightDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 972973672178278835, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
-          m_TargetAssemblyTypeName: MoveAllWheels, Assembly-CSharp
-          m_MethodName: MoveRightUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2

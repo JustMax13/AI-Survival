@@ -374,6 +374,8 @@
 "Assets/Scripts/Battle/Move/Bots Move/BotsWheel.cs"
 "Assets/Scripts/Battle/Move/Bots Move/IMover.cs"
 "Assets/Scripts/Battle/Move/Bots Move/MoveAllWheels.cs"
+"Assets/Scripts/Battle/Move/ButtonEventTrigger/MoveLeft.cs"
+"Assets/Scripts/Battle/Move/ButtonEventTrigger/MoveRight.cs"
 "Assets/Scripts/Battle/Shooting/Bullet/ClassicBullet.cs"
 "Assets/Scripts/Battle/Shooting/Bullet/ProjectileRotation.cs"
 "Assets/Scripts/Battle/Shooting/General/AbstractBullet.cs"
@@ -381,7 +383,11 @@
 "Assets/Scripts/Battle/Shooting/General/IGunShot.cs"
 "Assets/Scripts/Battle/Shooting/General/WeaponLostConected.cs"
 "Assets/Scripts/Battle/Shooting/Gun/ShotGun.cs"
+"Assets/Scripts/Battle/Spawn/SpawnPlayer.cs"
+"Assets/Scripts/General/LoadFirstScene.cs"
 "Assets/Scripts/General/LoadScene.cs"
+"Assets/Scripts/General/SpawnPrefab.cs"
+"Assets/Scripts/Menu/SpawnPlayerInMenu.cs"
 -langversion:9.0
 
 /deterministic

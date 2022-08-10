@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+namespace General
 {
-    public GameObject LoadingScreen;
-    public void LoadNextScane(string sceneName)
+    public class LoadScene : MonoBehaviour
     {
-        LoadingScreen.SetActive(true);
-        SceneManager.LoadScene(sceneName);     
+        [SerializeField]
+        private GameObject _loadingScreen;
+        public GameObject LoadingScreen
+        {
+            get => _loadingScreen;
+            set
+            {
+                _loadingScreen = value;
+            }
+        }
+        public void LoadNextScane(string sceneName)
+        {
+            LoadingScreen.SetActive(true);
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
