@@ -56,18 +56,42 @@
     <Analyzer Include="D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Shooting\General\GunShot.cs" />
-    <Compile Include="Assets\Scripts\Shooting\General\IGunShot.cs" />
-    <Compile Include="Assets\Scripts\Move\Bots Move\IMover.cs" />
-    <Compile Include="Assets\Scripts\Move\Bots Move\BotsWheel.cs" />
-    <Compile Include="Assets\Scripts\Shooting\Bullet\ProjectileRotation.cs" />
-    <Compile Include="Assets\Scripts\Shooting\Gun\ShotGun.cs" />
-    <Compile Include="Assets\Scripts\Shooting\Bullet\ClassicBullet.cs" />
-    <Compile Include="Assets\Scripts\HP\IHaveHP.cs" />
-    <Compile Include="Assets\Scripts\HP\HPofPart.cs" />
-    <Compile Include="Assets\Scripts\Shooting\General\AbstractBullet.cs" />
-    <Compile Include="Assets\Scripts\Shooting\General\WeaponLostConected.cs" />
-    <Compile Include="Assets\Scripts\Move\Bots Move\MoveAllWheels.cs" />
+    <Compile Include="Assets\Scripts\Battle\Shooting\General\GunShot.cs" />
+    <Compile Include="Assets\Scripts\Battle\Shooting\General\IGunShot.cs" />
+    <Compile Include="Assets\Scripts\Battle\Move\Bots Move\IMover.cs" />
+    <Compile Include="Assets\Scripts\Battle\Move\Bots Move\BotsWheel.cs" />
+    <Compile Include="Assets\Scripts\Battle\Shooting\Bullet\ProjectileRotation.cs" />
+    <Compile Include="Assets\Scripts\Battle\Shooting\Gun\ShotGun.cs" />
+    <Compile Include="Assets\Scripts\Battle\Shooting\Bullet\ClassicBullet.cs" />
+    <Compile Include="Assets\Scripts\Battle\HP\IHaveHP.cs" />
+    <Compile Include="Assets\Scripts\Battle\HP\HPofPart.cs" />
+    <Compile Include="Assets\Scripts\Battle\Shooting\General\AbstractBullet.cs" />
+    <Compile Include="Assets\Scripts\Battle\Shooting\General\WeaponLostConected.cs" />
+    <Compile Include="Assets\Scripts\Battle\Move\Bots Move\MoveAllWheels.cs" />
+    <Compile Include="Assets\Scripts\General\LoadScene.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
