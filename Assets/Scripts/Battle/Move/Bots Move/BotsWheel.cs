@@ -21,14 +21,21 @@ namespace CombatMechanics
             }
         }
 
-        public void MoveLeft() => GetComponent<Rigidbody2D>().AddTorque(AddSpeed * Time.deltaTime);
-        public void MoveRight() => GetComponent<Rigidbody2D>().AddTorque(-AddSpeed * Time.deltaTime);
+        public void MoveLeft() => GetComponent<Rigidbody2D>()?.AddTorque(AddSpeed * Time.deltaTime);
+        public void MoveRight() => GetComponent<Rigidbody2D>()?.AddTorque(-AddSpeed * Time.deltaTime);
         private void FixedUpdate()
         {
-            if (GetComponent<WheelJoint2D>().connectedBody == null)
+            try 
             {
-                Destroy(GetComponent<WheelJoint2D>());
-                Destroy(GetComponent<BotsWheel>());
+                if (GetComponent<WheelJoint2D>().connectedBody == null)
+                {
+                    Destroy(GetComponent<WheelJoint2D>());
+                    Destroy(GetComponent<BotsWheel>());
+                }
+            }
+            catch
+            {
+                Debug.Log("Wheel without WheelJoint2D");
             }
         }
     }
