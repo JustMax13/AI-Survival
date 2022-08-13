@@ -1,0 +1,4 @@
+#Sat Aug 13 19:32:12 EEST 2022
+base.0=D\:\\Users\\Max\\Project Unity\\AI Survival\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
