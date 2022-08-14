@@ -19,6 +19,8 @@ namespace General
         }
         public void LoadNextScane(string sceneName)
         {
+            LoadingScreen = Instantiate(LoadingScreen);
+            LoadingScreen.transform.SetParent(gameObject.transform);
             LoadingScreen.SetActive(true);
             SceneManager.LoadScene(sceneName);
         }
