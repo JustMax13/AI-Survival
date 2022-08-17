@@ -7,22 +7,12 @@ namespace CombatMechanics
 {
     public class MoveLeft : EventTrigger
     {
-        private GameObject[] Player;
-        public override void OnPointerDown(PointerEventData data)
-        {
-            for (int i = 0; i < Player.Length; i++)
-                Player[i]?.GetComponent<MoveAllWheels>().MoveLeftDown();
-        }
+        private GameObject Player;
+        public override void OnPointerDown(PointerEventData data) => Player?.GetComponent<MoveAllWheels>().MoveLeftDown();
 
-        public override void OnPointerUp(PointerEventData data)
-        {
-            for (int i = 0; i < Player.Length; i++)
-                Player[i]?.GetComponent<MoveAllWheels>().MoveLeftUp();
-        }
+        public override void OnPointerUp(PointerEventData data) =>Player?.GetComponent<MoveAllWheels>().MoveLeftUp();
 
-        private void Awake()
-        {
-            Player = GameObject.FindGameObjectsWithTag("Player");
-        }
+        private void Awake() => Player = GameObject.FindGameObjectWithTag("Player");
+
     }
 }

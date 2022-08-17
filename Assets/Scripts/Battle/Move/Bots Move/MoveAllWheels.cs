@@ -7,23 +7,29 @@ namespace CombatMechanics
     using Move;
     public class MoveAllWheels : MonoBehaviour
     {
-        [SerializeField]
-        private string TagWhichWheels;
         private bool inMoveLeft { get; set; }
         private bool inMoveRight { get; set; }
         public void MoveLeftDown()
         {
-            GameObject[] Wheels = GameObject.FindGameObjectsWithTag(TagWhichWheels);
+            GameObject[] Wheels = GameObject.FindGameObjectsWithTag("Wheel");
             foreach (var item in Wheels)
-                item.GetComponent<BotsWheel>()?.MoveLeft();
+            {
+                if (gameObject.transform == item.transform.parent)
+                    item?.GetComponent<BotsWheel>().MoveLeft();
+            }
+            
             inMoveLeft = true;
         }
         public void MoveLeftUp() => inMoveLeft = false;
         public void MoveRightDown()
         {
-            GameObject[] Wheels = GameObject.FindGameObjectsWithTag(TagWhichWheels);
+            GameObject[] Wheels = GameObject.FindGameObjectsWithTag("Wheel");
             foreach (var item in Wheels)
-                item.GetComponent<BotsWheel>()?.MoveRight();
+            {
+                if (gameObject.transform == item.transform.parent)
+                    item?.GetComponent<BotsWheel>().MoveRight();
+            }
+                
             inMoveRight = true;
         }
         public void MoveRightUp() => inMoveRight = false;

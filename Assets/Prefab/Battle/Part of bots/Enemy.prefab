@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e5763a2a607624bbd7c770439ef1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TagWhichWheels: EnemyWheels
 --- !u!1001 &3939686469275775508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,6 +105,10 @@ PrefabInstance:
     - target: {fileID: 4165593982549694970, guid: 2a087c08364329b4cafc842d28545251, type: 3}
       propertyPath: m_Name
       value: Enemy wheels
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165593982549694970, guid: 2a087c08364329b4cafc842d28545251, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a087c08364329b4cafc842d28545251, type: 3}

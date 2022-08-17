@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1807919459627763964}
   m_Layer: 0
   m_Name: Enemy wheels
-  m_TagString: EnemyWheels
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

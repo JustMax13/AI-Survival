@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e5763a2a607624bbd7c770439ef1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TagWhichWheels: PlayerWheels
 --- !u!1001 &5067350444189022281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2869653343876002910, guid: 8a771ef164a8cec4fa5ab718eef041dc, type: 3}
       propertyPath: m_TagString
-      value: PlayerWheels
+      value: Wheel
       objectReference: {fileID: 0}
     - target: {fileID: 3080313224377220798, guid: 8a771ef164a8cec4fa5ab718eef041dc, type: 3}
       propertyPath: m_RootOrder
