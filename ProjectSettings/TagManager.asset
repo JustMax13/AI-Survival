@@ -7,6 +7,7 @@ TagManager:
   - Part of bot
   - PlayerWheels
   - EnemyWheels
+  - ShotButton
   layers:
   - Default
   - TransparentFX

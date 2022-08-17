@@ -380,6 +380,8 @@
 "Assets/Scripts/Battle/Shooting/Bullet/ClassicBullet.cs"
 "Assets/Scripts/Battle/Shooting/Bullet/ProjectileRotation.cs"
 "Assets/Scripts/Battle/Shooting/General/AbstractBullet.cs"
+"Assets/Scripts/Battle/Shooting/General/AssignFiringToThisWeapon.cs"
+"Assets/Scripts/Battle/Shooting/General/ButtonNotBusy.cs"
 "Assets/Scripts/Battle/Shooting/General/GunShot.cs"
 "Assets/Scripts/Battle/Shooting/General/WeaponLostConected.cs"
 "Assets/Scripts/Battle/Shooting/Gun/ShotGun.cs"

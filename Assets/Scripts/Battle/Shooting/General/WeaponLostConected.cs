@@ -11,7 +11,11 @@ namespace CombatMechanics
             private void FixedUpdate()
             {
                 if (GetComponent<FixedJoint2D>().connectedBody == null)
+                {
                     Destroy(GetComponent<ShotGun>());
+                    Destroy(GetComponent<FixedJoint2D>());
+                    Destroy(this);
+                }
             }
         }
     }

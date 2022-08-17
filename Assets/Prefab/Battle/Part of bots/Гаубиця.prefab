@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4309792738420870053}
   - component: {fileID: 6858155120468005405}
   - component: {fileID: 6885278493627810671}
+  - component: {fileID: 4544632434602168588}
   m_Layer: 6
   m_Name: "\u0413\u0430\u0443\u0431\u0438\u0446\u044F"
   m_TagString: Part of bot
@@ -178,7 +179,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -6.799, y: -1.5389999}
+  m_ConnectedAnchor: {x: 1.1220345, y: 0.19520783}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!114 &4309792738420870053
@@ -225,6 +226,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _HP: 2000
+--- !u!114 &4544632434602168588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97733616093640438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d95c491d3f2474c98e32035d82cfa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &427958582896228126
 PrefabInstance:
   m_ObjectHideFlags: 0
