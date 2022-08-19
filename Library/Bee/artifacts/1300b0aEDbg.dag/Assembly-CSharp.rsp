@@ -387,6 +387,7 @@
 "Assets/Scripts/Battle/Shooting/Gun/ShotGun.cs"
 "Assets/Scripts/Battle/Spawn/SpawnPlayer.cs"
 "Assets/Scripts/General/LoadScene.cs"
+"Assets/Scripts/General/MoveAndZoomCamera.cs"
 "Assets/Scripts/General/SpawnPrefab.cs"
 "Assets/Scripts/Menu/SpawnPlayerInMenu.cs"
 -langversion:9.0

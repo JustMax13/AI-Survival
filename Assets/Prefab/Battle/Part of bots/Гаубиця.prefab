@@ -179,7 +179,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.1220345, y: 0.19520783}
+  m_ConnectedAnchor: {x: -5.04, y: -1.65}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!114 &4309792738420870053
@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235289714639712256, guid: f776dff52669f414185ab22ff88e8ad2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.55
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 235289714639712256, guid: f776dff52669f414185ab22ff88e8ad2, type: 3}
       propertyPath: m_LocalPosition.y
