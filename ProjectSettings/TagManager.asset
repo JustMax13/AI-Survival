@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Part of bot
   - ShotButton
   - Wheel
+  - Frame
+  - Armor
+  - Weapon
+  - CPU
+  - Bullet
   layers:
   - Default
   - TransparentFX

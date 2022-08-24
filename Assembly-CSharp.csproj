@@ -71,6 +71,8 @@
     <Compile Include="Assets\Scripts\Battle\Shooting\General\ButtonNotBusy.cs" />
     <Compile Include="Assets\Scripts\Battle\HP\IHaveHP.cs" />
     <Compile Include="Assets\Scripts\Battle\HP\HPofPart.cs" />
+    <Compile Include="Assets\Scripts\EditorInGame\Canvas\PartOfBots.cs" />
+    <Compile Include="Assets\Scripts\EditorInGame\Canvas\Scroling.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\AbstractBullet.cs" />
     <Compile Include="Assets\Scripts\General\MoveAndZoomCamera.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\WeaponLostConected.cs" />

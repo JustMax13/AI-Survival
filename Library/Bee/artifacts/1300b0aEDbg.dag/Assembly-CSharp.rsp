@@ -386,6 +386,8 @@
 "Assets/Scripts/Battle/Shooting/General/WeaponLostConected.cs"
 "Assets/Scripts/Battle/Shooting/Gun/ShotGun.cs"
 "Assets/Scripts/Battle/Spawn/SpawnPlayer.cs"
+"Assets/Scripts/EditorInGame/Canvas/PartOfBots.cs"
+"Assets/Scripts/EditorInGame/Canvas/Scroling.cs"
 "Assets/Scripts/General/LoadScene.cs"
 "Assets/Scripts/General/MoveAndZoomCamera.cs"
 "Assets/Scripts/General/SpawnPrefab.cs"

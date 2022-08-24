@@ -8,7 +8,7 @@ namespace CombatMechanics
     public class BotsWheel : MonoBehaviour, IMover
     {
         [SerializeField]
-        [Range(0, 120)]
+        [Range(0, 1000)]
         private float _addSpeed = 50f;
         public float AddSpeed
         {

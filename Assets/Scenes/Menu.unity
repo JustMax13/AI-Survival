@@ -227,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1418058723318885576, guid: c262d3e086df76841b6075886710df1e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Hangar
+      value: Editor
       objectReference: {fileID: 0}
     - target: {fileID: 1418058723318885576, guid: c262d3e086df76841b6075886710df1e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
