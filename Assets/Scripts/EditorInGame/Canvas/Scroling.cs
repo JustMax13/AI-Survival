@@ -13,7 +13,7 @@ namespace Editor
         private GameObject[] prefabBoxes;
         private int panelCount;
 
-        public GameObject[] PrefabBoxes{ get => prefabBoxes; }
+        public PartOfBots[] PartOfBotsAll { get => partOfBots; }
         private void Start()
         {
             partOfBots ??= new PartOfBots[0];
