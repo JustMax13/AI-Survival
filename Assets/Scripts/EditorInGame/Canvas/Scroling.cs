@@ -2,40 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Editor;
 
-public class Scroling : MonoBehaviour
+namespace Editor
 {
-    [SerializeField] private GameObject boxForPrefab;
-    [SerializeField] private GameObject Image;
-    [SerializeField] private PartOfBots[] partOfBots;
-
-    private int panelCount;
-
-    private void Start()
+    public class Scroling : MonoBehaviour
     {
-        partOfBots ??= new PartOfBots[0];
-        panelCount = partOfBots.Length;
-        
+        [SerializeField] private GameObject boxForPrefab;
+        [SerializeField] private PartOfBots[] partOfBots;
+        [SerializeField] private uint space;
+        private GameObject[] prefabBoxes;
+        private int panelCount;
+
+        public GameObject[] PrefabBoxes{ get => prefabBoxes; }
+        private void Start()
         {
-            GameObject thisBox;
+            partOfBots ??= new PartOfBots[0];
+            panelCount = partOfBots.Length;
+            prefabBoxes = new GameObject[panelCount];
 
             for (int i = 0; i < panelCount; i++)
-            {
-                thisBox = Instantiate(boxForPrefab, transform, false);
-                
-                try
                 {
-                    //thisBox.transform.GetChild(0).GetComponent<RectTransform>().rect.size = partOfBots[i].prefab.transform.GetComponent<RectTransform>().rect.size;
-                    // сделать так, чтобы картинки не были квадратными
-                    thisBox.transform.GetChild(0).GetComponent<Image>().sprite = partOfBots[i].prefab.GetComponent<SpriteRenderer>().sprite;
-                }
-                catch
-                {
-                    Debug.Log("Does not exist child or Image on child");
-                }
-            }
-        }
-    }
+                    prefabBoxes[i] = Instantiate(boxForPrefab, transform, false);
 
+                    try
+                    {
+                        prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
+                        prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().sprite = partOfBots[i]
+                            .prefab.GetComponent<SpriteRenderer>().sprite;
+                    }
+                    catch
+                    {
+                        Debug.Log("Does not exist child or Image on child");
+                    }
+                    if (i == 0) continue;
+                    prefabBoxes[i].transform.localPosition = new Vector2(prefabBoxes[i - 1].transform.localPosition.x
+                        + boxForPrefab.transform.GetComponent<RectTransform>().sizeDelta.x + space, prefabBoxes[i].transform.localPosition.y);
+                }
+
+                {
+                    float newContentSizeX = panelCount * (boxForPrefab.transform.GetComponent<RectTransform>().sizeDelta.x + space) + space;
+                    transform.GetComponent<RectTransform>().offsetMax = new Vector2(newContentSizeX, transform.GetComponent<RectTransform>().offsetMax.y);
+                }
+        }
+
+    }
 }
