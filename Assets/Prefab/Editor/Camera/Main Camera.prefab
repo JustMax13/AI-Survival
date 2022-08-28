@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7410d13f0f6f044bf242bad7d2b0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _limitPoint1: {fileID: 0}
-  _limitPoint2: {fileID: 0}
-  _sensitivity: 13
+  limitPoint1: {fileID: 0}
+  limitPoint2: {fileID: 0}
+  sensitivity: 13
   _minCameraSize: 2
   _maxCameraSize: 5
-  _zoomSensivity: 0.05
+  zoomSensivity: 13

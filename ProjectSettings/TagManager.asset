@@ -11,6 +11,7 @@ TagManager:
   - Weapon
   - CPU
   - Bullet
+  - SelectedBox
   layers:
   - Default
   - TransparentFX
