@@ -9,14 +9,31 @@ namespace Editor
 {
     public class ButtonSelected : Button
     {
-        // | DONE |1) сделать так, чтобы деталь выбиралась только на клик 
-        // 2) Когда деталь выбрана на ней появится Event Trigger 
-        // 3) Кода выбраная деталь перестает быть выделенной - снимаем Event Trigger
+        public static GameObject SelectedButton;
+        public static EventTrigger EventTriggerForSpawn; // просто переделать сам класс ET на кастомный
+
         public override void OnPointerDown(PointerEventData eventData) { }
         public override void OnPointerClick(PointerEventData eventData)
         {
             base.OnPointerClick(eventData);
             Select();
+        }
+        public override void OnSelect(BaseEventData eventData)
+        {
+            base.OnSelect(eventData);
+            SelectedButton = gameObject;
+
+            EventTriggerForSpawn = gameObject.AddComponent<EventTrigger>();
+        }
+        public override void OnDeselect(BaseEventData eventData)
+        {
+            base.OnDeselect(eventData);
+
+            Destroy(EventTriggerForSpawn);
+        }
+        protected override void Start()
+        {
+            SelectedButton = null;
         }
     }
 }
