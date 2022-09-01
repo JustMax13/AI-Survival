@@ -1,4 +1,3 @@
-using Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +9,6 @@ namespace Editor
     public class ButtonSelected : Button
     {
         public static GameObject SelectedButton;
-        public static EventTrigger EventTriggerForSpawn; // просто переделать сам класс ET на кастомный
 
         public override void OnPointerDown(PointerEventData eventData) { }
         public override void OnPointerClick(PointerEventData eventData)
@@ -23,13 +21,13 @@ namespace Editor
             base.OnSelect(eventData);
             SelectedButton = gameObject;
 
-            EventTriggerForSpawn = gameObject.AddComponent<EventTrigger>();
+            gameObject.AddComponent<EventTriggerForSpawn>();
         }
         public override void OnDeselect(BaseEventData eventData)
         {
             base.OnDeselect(eventData);
 
-            Destroy(EventTriggerForSpawn);
+            Destroy(gameObject.GetComponent<EventTriggerForSpawn>());
         }
         protected override void Start()
         {

@@ -8,7 +8,6 @@ namespace Editor
     {
         private static bool _cameraMoveAndZoom;
         private static bool _contentMove;
-        private static bool _spawnPrefab;
 
         public static bool CameraMoveAndZoom
         {
@@ -26,19 +25,10 @@ namespace Editor
                 _contentMove = value;
             }
         }
-        public static bool SpawnPrefab
-        {
-            get => _spawnPrefab;
-            set
-            {
-                _spawnPrefab = value;
-            }
-        }
         public static void AnyoneFalse()
         {
             _cameraMoveAndZoom = false;
             _contentMove = false;
-            _spawnPrefab = false;
         }
         private void Start()
         {
