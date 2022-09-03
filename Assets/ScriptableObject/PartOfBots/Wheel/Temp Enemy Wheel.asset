@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458aab1ada022f74ebd32b6268e04435, type: 3}
   m_Name: Temp Enemy Wheel
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4165593982549694970, guid: 2a087c08364329b4cafc842d28545251, type: 3}
-  openingLevel: 0
+  Prefab: {fileID: 4165593982549694970, guid: 2a087c08364329b4cafc842d28545251, type: 3}
+  OpeningLevel: 0

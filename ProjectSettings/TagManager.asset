@@ -12,6 +12,7 @@ TagManager:
   - CPU
   - Bullet
   - SelectedBox
+  - CenterOfBot
   layers:
   - Default
   - TransparentFX

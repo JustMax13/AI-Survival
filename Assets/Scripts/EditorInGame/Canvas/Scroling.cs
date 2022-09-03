@@ -14,7 +14,7 @@ namespace Editor
         private int panelCount;
 
         public GameObject[] PrefabBoxes { get => prefabBoxes; }
-        public PartOfBots[] PartOfBotsAll { get => partOfBots; } // заняться спавном этих обектов
+        public PartOfBots[] PartOfBotsAll { get => partOfBots; }
         private void Start()
         {
             partOfBots ??= new PartOfBots[0];
@@ -29,7 +29,7 @@ namespace Editor
                 {
                     prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
                     prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().sprite = partOfBots[i]
-                        .prefab.GetComponent<SpriteRenderer>().sprite;
+                        .Prefab.GetComponent<SpriteRenderer>().sprite;
                 }
                 catch
                 {

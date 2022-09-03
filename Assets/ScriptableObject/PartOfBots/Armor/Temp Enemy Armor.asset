@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458aab1ada022f74ebd32b6268e04435, type: 3}
   m_Name: Temp Enemy Armor
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4888343706528463264, guid: a87d1e29f08c4b64583c1cdd76c37dec, type: 3}
-  openingLevel: 0
+  Prefab: {fileID: 4888343706528463264, guid: a87d1e29f08c4b64583c1cdd76c37dec, type: 3}
+  OpeningLevel: 0

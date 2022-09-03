@@ -14,21 +14,12 @@ namespace Editor
         {
             base.OnPointerDown(eventData);
             _isHold = true;
-            gameObject.AddComponent<PrefabSpawn>();
             
         }
         public override void OnPointerUp(PointerEventData eventData)
         {
             base.OnPointerUp(eventData);
             _isHold = false;
-            try
-            {
-                Destroy(gameObject.GetComponent<PrefabSpawn>());
-            }
-            catch
-            {
-                Debug.Log($"PrefabSpawn can't destroy if class PrefabSpawn dont found");
-            }
         }
         private void Start()
         {

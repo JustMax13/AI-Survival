@@ -7,7 +7,7 @@ namespace Editor
     [CreateAssetMenu(fileName = "New part", menuName = "PartOfBots/New part", order = 13)]
     public class PartOfBots : ScriptableObject
     {
-        public GameObject prefab;
-        public int openingLevel;
+        public GameObject Prefab;
+        public int OpeningLevel;
     }
 }

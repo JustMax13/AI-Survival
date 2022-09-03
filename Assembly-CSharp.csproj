@@ -64,7 +64,7 @@
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\BotsWheel.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ClickOnPrefabInventory.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\Bullet\ProjectileRotation.cs" />
-    <Compile Include="Assets\Scripts\EditorInGame\Canvas\PrefabSpawn.cs" />
+    <Compile Include="Assets\Scripts\EditorInGame\PrefabSpawn.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\Gun\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Battle\Spawn\SpawnPlayer.cs" />
     <Compile Include="Assets\Scripts\General\LoadScene.cs" />
@@ -79,7 +79,6 @@
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\Scroling.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\AbstractBullet.cs" />
     <Compile Include="Assets\Scripts\General\MoveAndZoomCamera.cs" />
-    <Compile Include="Assets\Scripts\EditorInGame\PartsSpawn.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonSelected.cs" />
