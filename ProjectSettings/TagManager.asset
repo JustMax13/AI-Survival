@@ -56,9 +56,18 @@ TagManager:
   - name: Map ( dynemic )
     uniqueID: 3971998703
     locked: 0
-  - name: Pat of bots
-    uniqueID: 952692847
-    locked: 0
   - name: UI
     uniqueID: 2455428651
+    locked: 0
+  - name: Frame
+    uniqueID: 2086620863
+    locked: 0
+  - name: Bolt
+    uniqueID: 544231981
+    locked: 0
+  - name: Wheel
+    uniqueID: 63353327
+    locked: 0
+  - name: WheelShadow
+    uniqueID: 4108363891
     locked: 0

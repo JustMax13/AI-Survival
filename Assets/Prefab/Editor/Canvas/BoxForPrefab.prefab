@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa0ae6b08e52a74381cb357dc9b393f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noSpawnZone: {fileID: 1131131243765490435, guid: dc7f1f4da92c270468ef9233c0d72d94, type: 3}
+  _limitPoint1: {fileID: 1564125205116243845, guid: 7eb1f8fae4f03e047a5957d423f8ee68, type: 3}
+  _limitPoint2: {fileID: 446147315797447568, guid: b20e48aafeb93f84b9166dad3e47e6e7, type: 3}
+  _movementSharpness: 22
 --- !u!1 &5231614980060599459
 GameObject:
   m_ObjectHideFlags: 0

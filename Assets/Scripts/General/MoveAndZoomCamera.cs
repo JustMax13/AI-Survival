@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace General
 {
     public class MoveAndZoomCamera : MonoBehaviour
     {
-        [SerializeField] private GameObject limitPoint1;
-        [SerializeField] private GameObject limitPoint2;
+        [SerializeField] private GameObject _limitPoint1;
+        [SerializeField] private GameObject _limitPoint2;
         private Vector3 touchPosition;
         private Vector3 targetPosition;
 
-        private float minX;
-        private float maxX;
-        private float minY;
-        private float maxY;
-        [SerializeField] private float sensitivity;
+        private float _minX;
+        private float _maxX;
+        private float _minY;
+        private float _maxY;
+        [SerializeField] private float _sensitivity;
 
         [SerializeField] private float _minCameraSize;
         [SerializeField] private float _maxCameraSize;
@@ -34,13 +32,13 @@ namespace General
                 Vector3 direction = touchPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 Vector3 CameraPosition = Camera.main.transform.position;
-                targetPosition = new Vector3(Mathf.Clamp(CameraPosition.x + direction.x, minX,
-                    maxX), Mathf.Clamp(CameraPosition.y + direction.y, minY, maxY),
-                    CameraPosition.z + direction.z);
+                targetPosition = new Vector3(Mathf.Clamp(CameraPosition.x + direction.x, _minX,
+                    _maxX), Mathf.Clamp(CameraPosition.y + direction.y, _minY, _maxY),
+                    CameraPosition.z);
             }
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetPosition.x,
-                sensitivity * Time.deltaTime), Mathf.Lerp(transform.position.y, targetPosition.y,
-                sensitivity * Time.deltaTime), transform.position.z);
+                _sensitivity * Time.deltaTime), Mathf.Lerp(transform.position.y, targetPosition.y,
+                _sensitivity * Time.deltaTime), transform.position.z);
         }
         private void Zoom()
         {
@@ -66,13 +64,13 @@ namespace General
         {
             executionCondition = Editor.ActionManager.CameraMoveAndZoom;
             zoomEnd = true;
-            Vector3 point1 = limitPoint1.transform.position;
-            Vector3 point2 = limitPoint2.transform.position;
-            if (point1.x > point2.x) { maxX = point1.x; minX = point2.x; }
-            else { maxX = point2.x; minX = point1.x; }
+            Vector3 point1 = _limitPoint1.transform.position;
+            Vector3 point2 = _limitPoint2.transform.position;
+            if (point1.x > point2.x) { _maxX = point1.x; _minX = point2.x; }
+            else { _maxX = point2.x; _minX = point1.x; }
 
-            if (point1.y > point2.y) { maxY = point1.y; minY = point2.y; }
-            else { maxY = point2.y; minY = point1.y; }
+            if (point1.y > point2.y) { _maxY = point1.y; _minY = point2.y; }
+            else { _maxY = point2.y; _minY = point1.y; }
         }
         private void Update()
         {

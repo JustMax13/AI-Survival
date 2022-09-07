@@ -8,6 +8,14 @@ namespace Editor
 {
     public class PrefabSpawn : MonoBehaviour
     {
+        [SerializeField] private GameObject _limitPoint1;
+        [SerializeField] private GameObject _limitPoint2;
+        [SerializeField] private float _movementSharpness;
+
+        private float _minX;
+        private float _maxX;
+        private float _minY;
+        private float _maxY;
         private GameObject _content;
         private GameObject _spawnObject;
         private GameObject _objectOnScenes;
@@ -16,7 +24,13 @@ namespace Editor
 
         private void SpawnPrefab()
         {
-            _objectOnScenes = Instantiate(_spawnObject, Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.rotation);
+            Vector2 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            mousePosition = new Vector2(Mathf.Clamp(mousePosition.x, _minX, _maxX),
+                Math.Clamp(mousePosition.y, _minY, _maxY));
+
+            _objectOnScenes = Instantiate(_spawnObject, mousePosition, transform.rotation);
             try
             {
                 _objectOnScenes.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
@@ -60,8 +74,28 @@ namespace Editor
                     break;
                 }
             }
+
             _ObjectIsntSpawn = true;
             _spawnPermission = false;
+
+            if(_limitPoint1.transform.position.x > _limitPoint2.transform.position.x) 
+            { 
+                _minX = _limitPoint2.transform.position.x;
+                _maxX = _limitPoint1.transform.position.x;
+            } else
+            {
+                _minX = _limitPoint1.transform.position.x;
+                _maxX = _limitPoint2.transform.position.x;
+            }
+            if (_limitPoint1.transform.position.y > _limitPoint2.transform.position.y)
+            {
+                _minY = _limitPoint2.transform.position.y;
+                _maxY = _limitPoint1.transform.position.y;
+            } else
+            {
+                _minY = _limitPoint1.transform.position.y;
+                _maxY = _limitPoint2.transform.position.y;
+            }
         }
         private void Update()
         {
@@ -81,8 +115,14 @@ namespace Editor
                 
                 Vector2 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-                
-                _objectOnScenes.transform.position = mousePosition;
+
+                mousePosition = new Vector2(Mathf.Clamp(mousePosition.x, _minX, _maxX),
+                    Math.Clamp(mousePosition.y, _minY, _maxY));
+
+                Vector2 objectOnScenesPosition = _objectOnScenes.transform.position;
+                _objectOnScenes.transform.position = new Vector2(Mathf.Lerp(objectOnScenesPosition.x, mousePosition.x,
+                    _movementSharpness * Time.deltaTime), Mathf.Lerp(objectOnScenesPosition.y, mousePosition.y,
+                    _movementSharpness * Time.deltaTime));
             } 
         }
     }
