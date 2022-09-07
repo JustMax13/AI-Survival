@@ -62,6 +62,15 @@ TagManager:
   - name: Frame
     uniqueID: 2086620863
     locked: 0
+  - name: CPU Box
+    uniqueID: 3378288363
+    locked: 0
+  - name: CPU
+    uniqueID: 1885931277
+    locked: 0
+  - name: CPU Glass
+    uniqueID: 2469444485
+    locked: 0
   - name: Bolt
     uniqueID: 544231981
     locked: 0
