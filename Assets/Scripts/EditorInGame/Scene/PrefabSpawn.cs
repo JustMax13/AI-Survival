@@ -19,7 +19,6 @@ namespace Editor
         private GameObject _objectOnScenes;
         private bool _spawnPermission;
         private bool _ObjectIsntSpawn;
-        //private bool _itsClick;
 
         private void SpawnPrefab()
         {
@@ -77,14 +76,12 @@ namespace Editor
 
             _ObjectIsntSpawn = true;
             _spawnPermission = false;
-            //_itsClick = false;
         }
         private void Update()
         {
             try
             {
                 _spawnPermission = gameObject.GetComponent<EventTriggerForSpawn>().IsHold;
-                //_itsClick = gameObject.GetComponent<EventTriggerForSpawn>().ItsClick;
                 if (!_spawnPermission) _ObjectIsntSpawn = true;
             }
             catch
@@ -94,7 +91,7 @@ namespace Editor
 
             if (_spawnPermission)
             {
-                if (_ObjectIsntSpawn/* && !_itsClick*/) SpawnPrefab();
+                if (_ObjectIsntSpawn) SpawnPrefab();
 
                 Vector2 mousePosition = DragAndDrop.MousePositionOnDragArea(_limitPoint1, _limitPoint2);
 
