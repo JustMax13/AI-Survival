@@ -9,21 +9,41 @@ namespace Editor
     public class EventTriggerForSpawn : EventTrigger
     {
         private bool _isHold;
+        //private bool _itsClick;
         public bool IsHold { get => _isHold; }
-        public override void OnPointerDown(PointerEventData eventData)
+        //public bool ItsClick 
+        //{ 
+        //    get => _itsClick;
+        //}
+        public override void OnDrag(PointerEventData eventData)
         {
-            base.OnPointerDown(eventData);
+            base.OnDrag(eventData);
             _isHold = true;
-            
         }
-        public override void OnPointerUp(PointerEventData eventData)
+        public override void OnEndDrag(PointerEventData eventData)
         {
-            base.OnPointerUp(eventData);
+            base.OnEndDrag(eventData);
             _isHold = false;
         }
+        //public override void OnPointerDown(PointerEventData eventData)
+        //{
+        //    base.OnPointerDown(eventData);
+            
+        //}
+        //public override void OnPointerUp(PointerEventData eventData)
+        //{
+        //    base.OnPointerUp(eventData);
+        //    _isHold = false;
+        //}
+        //public override void OnPointerClick(PointerEventData eventData)
+        //{
+        //    base.OnPointerClick(eventData);
+        //    _itsClick = true;
+        //}
         private void Start()
         {
             _isHold = false;
+            //_itsClick = false;
         }
     }
 }

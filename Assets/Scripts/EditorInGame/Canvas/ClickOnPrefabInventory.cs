@@ -10,17 +10,17 @@ namespace Editor
         public void OnPointerDown(PointerEventData eventData)
         {
             ActionManager.CameraMoveAndZoom = false;
-            ActionManager.ContentMove = true;
+            //ActionManager.ContentMove = true;
         }
 
         public void EndTouch()
         {
-            ActionManager.ContentMove = false;
+            //ActionManager.ContentMove = false;
             ActionManager.CameraMoveAndZoom = true;
         }
         private void Update()
         {
-            if (Input.touchCount == 0 && ActionManager.ContentMove)
+            if (Input.touchCount == 0/* && ActionManager.ContentMove*/)
                 EndTouch();
         }
     }

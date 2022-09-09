@@ -128,11 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7415296437730536339, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
   m_PrefabInstance: {fileID: 7415296436749660946}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &628543973 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7415296437730536342, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
-  m_PrefabInstance: {fileID: 7415296436749660946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &628543974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610231112 stripped
 GameObject:
@@ -252,7 +247,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &62841160954095585
 PrefabInstance:
@@ -275,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62841159316989330, guid: 25ad773854f2e6746918ae75a3866ea5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 62841159316989330, guid: 25ad773854f2e6746918ae75a3866ea5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -421,7 +416,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 628543973}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 446147315797447568, guid: b20e48aafeb93f84b9166dad3e47e6e7, type: 3}
       propertyPath: m_Name
@@ -441,7 +436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446147315797447569, guid: b20e48aafeb93f84b9166dad3e47e6e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.205031
+      value: 1.2050314
       objectReference: {fileID: 0}
     - target: {fileID: 446147315797447569, guid: b20e48aafeb93f84b9166dad3e47e6e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -478,7 +473,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 628543973}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1564125205116243845, guid: 7eb1f8fae4f03e047a5957d423f8ee68, type: 3}
       propertyPath: m_Name
@@ -498,7 +493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1564125205116243850, guid: 7eb1f8fae4f03e047a5957d423f8ee68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.205031
+      value: 1.2050314
       objectReference: {fileID: 0}
     - target: {fileID: 1564125205116243850, guid: 7eb1f8fae4f03e047a5957d423f8ee68, type: 3}
       propertyPath: m_LocalRotation.w
@@ -539,7 +534,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2485826658476788978, guid: 3b5aee7df6c0e9a4aaedd082bb0a5df5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2485826658476788978, guid: 3b5aee7df6c0e9a4aaedd082bb0a5df5, type: 3}
       propertyPath: m_LocalScale.x
@@ -620,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7415296437730536342, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7415296437730536342, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
       propertyPath: m_LocalPosition.x
@@ -684,11 +679,11 @@ PrefabInstance:
       objectReference: {fileID: 1610231112}
     - target: {fileID: 8081277513495345814, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
       propertyPath: _sensitivity
-      value: 13
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8081277513495345814, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
       propertyPath: zoomSensivity
-      value: 13
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8081277513495345814, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
       propertyPath: _maxCameraSize

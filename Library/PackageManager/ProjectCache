@@ -5,22 +5,22 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637958877420000000
-    m_Hash: 677790887
+      ticks: 637982217886152222
+    m_Hash: 659416871
   m_LockFileStatus:
     m_FilePath: D:/Users/Max/Project Unity/AI Survival/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637958877420000000
-    m_Hash: 1664143667
+      ticks: 637982218209490601
+    m_Hash: 562366025
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: D:/Users/Max/Project Unity/AI Survival/Packages
-m_EditorVersion: 2021.3.8f1 (b30333d56e81)
+m_EditorVersion: 2021.3.9f1 (ad3870b89536)
 m_ResolvedPackages:
 - packageId: com.unity.2d.animation@7.0.6
   testable: 0
@@ -136,8 +136,10 @@ m_ResolvedPackages:
     - 8.0.0
     - 8.0.1
     - 8.0.2
+    - 8.0.3
     - 9.0.0-pre.1
     - 9.0.0-pre.3
+    - 9.0.0
     compatible:
     - 7.0.6
     - 7.0.7
@@ -239,9 +241,11 @@ m_ResolvedPackages:
     - 5.0.0-pre.2
     - 5.0.0
     - 5.0.1
+    - 5.0.2
     compatible:
     - 5.0.1
-    verified: 5.0.1
+    - 5.0.2
+    verified: 5.0.2
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -349,8 +353,10 @@ m_ResolvedPackages:
     - 7.0.0-pre.4
     - 7.0.0
     - 7.0.1
+    - 7.0.2
     - 8.0.0-pre.1
     - 8.0.0-pre.3
+    - 8.0.0
     compatible:
     - 6.0.4
     - 6.0.5
@@ -553,7 +559,9 @@ m_ResolvedPackages:
     - 8.0.0-pre.4
     - 8.0.0-pre.5
     - 8.0.0
+    - 8.0.1
     - 9.0.0-pre.1
+    - 9.0.0
     compatible:
     - 7.0.5
     - 7.0.6
@@ -667,12 +675,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.collab-proxy@1.17.1
+- packageId: com.unity.collab-proxy@1.17.2
   testable: 0
   isDirectDependency: 1
-  version: 1.17.1
+  version: 1.17.2
   source: 1
-  resolvedPath: D:\Users\Max\Project Unity\AI Survival\Library\PackageCache\com.unity.collab-proxy@1.17.1
+  resolvedPath: D:\Users\Max\Project Unity\AI Survival\Library\PackageCache\com.unity.collab-proxy@1.17.2
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -751,7 +759,6 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
-    - 1.17.1
     - 1.17.2
     - 2.0.0-preview.6
     - 2.0.0-preview.8
@@ -799,16 +806,16 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637916644700000000
+  datePublishedTicks: 637937432480000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 2346af88036ac7256d898e0bb536f60220ce6e18
+    revision: 14d129dcc778f8ea2fdf9d0240b47924e4f0dbb1
     path: 
   unityLifecycle:
-    version: 1.17.1
+    version: 1.17.2
     nextVersion: 
 - packageId: com.unity.ide.rider@3.0.15
   testable: 0
@@ -3664,8 +3671,10 @@ m_ResolvedPackages:
     - 7.0.0-pre.3
     - 7.0.0-pre.4
     - 7.0.0
+    - 7.0.1
     - 8.0.0-pre.1
     - 8.0.0-pre.2
+    - 8.0.0
     compatible:
     - 6.0.3
     - 6.0.4
@@ -3990,6 +3999,7 @@ m_ResolvedPackages:
     - 1.7.1
     - 1.7.2
     - 1.7.3
+    - 1.7.4
     - 1.8.0-pre.1
     - 1.8.0-pre.2
     compatible:
@@ -3999,6 +4009,7 @@ m_ResolvedPackages:
     - 1.7.1
     - 1.7.2
     - 1.7.3
+    - 1.7.4
     - 1.8.0-pre.1
     - 1.8.0-pre.2
     verified: 1.6.6
