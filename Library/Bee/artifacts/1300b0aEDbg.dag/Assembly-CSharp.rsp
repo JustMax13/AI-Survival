@@ -386,6 +386,7 @@
 "Assets/Scripts/Battle/Shooting/General/WeaponLostConected.cs"
 "Assets/Scripts/Battle/Shooting/Gun/ShotGun.cs"
 "Assets/Scripts/Battle/Spawn/SpawnPlayer.cs"
+"Assets/Scripts/EditorInGame/Canvas/ButtonForDestroyObject.cs"
 "Assets/Scripts/EditorInGame/Canvas/ButtonSelected.cs"
 "Assets/Scripts/EditorInGame/Canvas/ClickOnPrefabInventory.cs"
 "Assets/Scripts/EditorInGame/Canvas/EventTriggerForSpawn.cs"

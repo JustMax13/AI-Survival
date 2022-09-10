@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using General;
 
@@ -15,7 +16,10 @@ namespace Editor
         private float _curentClickTime;
         private bool _isSelected;
         private bool _cursorOnObject;
-        
+
+        private GameObject _destroyButton;
+
+        public bool IsSelected { get => _isSelected; }
         public GameObject LimitPoint1
         {
             get => _limitPoint1;
@@ -41,8 +45,6 @@ namespace Editor
             }
         }
 
-
-        // сделать сначало выделение ( посмотреть как в других играх сделано )
         private void OnMouseDown()
         {
             if(_isSelected) ActionManager.CameraMoveAndZoom = false;
@@ -73,10 +75,25 @@ namespace Editor
                 _backlogCursor = 22;
             _clickTime = 0.5f;
             _curentClickTime = 0;
-            _isSelected = false;
+            _isSelected = true;
+
+            _destroyButton = GameObject.FindGameObjectWithTag("DestroyButton");
         }
         private void Update()
         {
+            try
+            {
+                if (_isSelected)
+                {
+                        if (_destroyButton) _destroyButton.GetComponent<ButtonForDestroyObject>().SelectedPart = gameObject;
+                        else Debug.Log("Destroy button isn't found!");
+                }
+            }
+            catch
+            {
+                Debug.Log("DestroyButton lost component: ButtonForDestroyObject");
+            }
+            
             if (Input.GetMouseButtonDown(0) && !_cursorOnObject) _isSelected = false;
         }
         private void FixedUpdate()
