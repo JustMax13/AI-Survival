@@ -10,10 +10,11 @@ namespace CombatMechanics
         public class AssignFiringToThisWeapon : MonoBehaviour
         {
             private static GameObject[] ShotButton;
-
-            private void Start()
+            private void Awake()
             {
                 ShotButton = GameObject.FindGameObjectsWithTag("ShotButton");
+
+
                 if (gameObject.GetComponent<ShotGun>() == null)
                 {
                     Debug.Log($"{gameObject.name} lost ShotGan class");
@@ -27,7 +28,9 @@ namespace CombatMechanics
                         return;
                     }
                 }
-
+            }
+            private void Start()
+            {
                 foreach (var item in ShotButton)
                 {
                     if (item.GetComponent<ButtonNotBusy>() == null)
@@ -41,6 +44,9 @@ namespace CombatMechanics
                         item.GetComponent<Button>().onClick.AddListener(gameObject.GetComponent<GunShot>()
                             .CheckReloadAndShot);
                         item.GetComponent<ButtonNotBusy>().ButtonNotBusyNow = false;
+                        if (!item.active)
+                            item.SetActive(true);
+
                         break;
                     }
                 }

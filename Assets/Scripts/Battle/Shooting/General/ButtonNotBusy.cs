@@ -13,7 +13,7 @@ namespace CombatMechanics
         }
         private void Start()
         {
-            if (ButtonNotBusyNow)
+            if(ButtonNotBusyNow)
                 gameObject.SetActive(false);
         }
     }
