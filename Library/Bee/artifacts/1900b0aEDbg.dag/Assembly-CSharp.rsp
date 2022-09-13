@@ -399,6 +399,7 @@
 "Assets/Scripts/General/DragAndDrop.cs"
 "Assets/Scripts/General/LoadScene.cs"
 "Assets/Scripts/General/MoveAndZoomCamera.cs"
+"Assets/Scripts/General/SetActiveObject.cs"
 "Assets/Scripts/General/SpawnPrefab.cs"
 "Assets/Scripts/Menu/SpawnPlayerInMenu.cs"
 -langversion:9.0
