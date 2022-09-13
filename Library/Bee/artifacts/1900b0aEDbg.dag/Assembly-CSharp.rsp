@@ -394,6 +394,8 @@
 "Assets/Scripts/EditorInGame/Canvas/PartOfBots.cs"
 "Assets/Scripts/EditorInGame/Canvas/Scroling.cs"
 "Assets/Scripts/EditorInGame/Scene/ActionManager.cs"
+"Assets/Scripts/EditorInGame/Scene/AttractionObject.cs"
+"Assets/Scripts/EditorInGame/Scene/AttractionPoint.cs"
 "Assets/Scripts/EditorInGame/Scene/DragAndDropPart.cs"
 "Assets/Scripts/EditorInGame/Scene/PrefabSpawn.cs"
 "Assets/Scripts/General/DragAndDrop.cs"

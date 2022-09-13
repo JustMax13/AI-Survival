@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3445646008412688117}
   - component: {fileID: 3445646008412688118}
   - component: {fileID: 350196000366288427}
+  - component: {fileID: 2386883509312517268}
   m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2086620863
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -155992456, guid: efe721dc1076a2f4c993dcc9b7b0cc34, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,6 +140,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _HP: 100
+--- !u!114 &2386883509312517268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445646008412688113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3872923747840075935
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +162,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5523384464789795197}
   - component: {fileID: 6582074632014072741}
+  - component: {fileID: 6827963213796417707}
+  - component: {fileID: 6640017787865182267}
   m_Layer: 0
   m_Name: Bolt_L
   m_TagString: Untagged
@@ -210,7 +225,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 544231981
-  m_SortingLayer: 6
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: -1968325995, guid: 90f6b45f1a28a294fa833f07e49a81fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -223,6 +238,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6827963213796417707
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872923747840075935}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
+--- !u!114 &6640017787865182267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872923747840075935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attractionObject: {fileID: 2386883509312517268}
 --- !u!1 &5778058311293688811
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +277,8 @@ GameObject:
   m_Component:
   - component: {fileID: 338369178050703736}
   - component: {fileID: 3057332915695200947}
+  - component: {fileID: 9216936782903449297}
+  - component: {fileID: 360202618488259980}
   m_Layer: 0
   m_Name: Bolt_R
   m_TagString: Untagged
@@ -294,7 +340,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 544231981
-  m_SortingLayer: 6
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: -1968325995, guid: 90f6b45f1a28a294fa833f07e49a81fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -307,3 +353,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &9216936782903449297
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778058311293688811}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
+--- !u!114 &360202618488259980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778058311293688811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attractionObject: {fileID: 2386883509312517268}

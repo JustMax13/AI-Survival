@@ -44,7 +44,7 @@ namespace CombatMechanics
                         item.GetComponent<Button>().onClick.AddListener(gameObject.GetComponent<GunShot>()
                             .CheckReloadAndShot);
                         item.GetComponent<ButtonNotBusy>().ButtonNotBusyNow = false;
-                        if (!item.active)
+                        if (!item.activeSelf)
                             item.SetActive(true);
 
                         break;
