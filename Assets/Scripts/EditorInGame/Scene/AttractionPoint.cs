@@ -1,49 +1,72 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Editor
 {
     public class AttractionPoint : MonoBehaviour
     {
-        [SerializeField] private AttractionObject _attractionObject;
+        [SerializeField] private AttractionObject _attractionObj;
+        public AttractionObject AttractionObj  { get => _attractionObj; }
         private void Start()
         {
-            if(_attractionObject == null)
+            if (_attractionObj == null)
             {
-                _attractionObject = new AttractionObject();
+                _attractionObj = new AttractionObject();
                 Debug.Log($"AttractionObject is null. Pls add AttractionObject on {gameObject.name}");
             }
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (_attractionObject.IsDrag) _attractionObject.WasMouseDown = true;
+            if (_attractionObj.IsDrag) _attractionObj.WasMouseDown = true;
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (_attractionObject.IsDrag) _attractionObject.WasMouseDown = false;
+            if (_attractionObj.IsDrag) _attractionObj.WasMouseDown = false;
         }
         private void OnTriggerStay2D(Collider2D collision)
         {
             bool itsMagnet;
+
             if (collision.GetComponent<AttractionPoint>()) itsMagnet = true;
             else itsMagnet = false;
 
-            if (_attractionObject.WasMouseDown && !_attractionObject.IsDrag && itsMagnet) // поменять условия захода ( смотри на доску )
+            if (_attractionObj.WasMouseDown && !_attractionObj.IsDrag && itsMagnet)
             {
                 GameObject magnet = new GameObject();
 
-                magnet.transform.SetParent(_attractionObject.transform);
+                magnet.transform.SetParent(_attractionObj.transform);
                 magnet.transform.localPosition = gameObject.transform.localPosition;
                 magnet.transform.parent = null;
 
-                _attractionObject.gameObject.transform.SetParent(magnet.transform);
+                _attractionObj.gameObject.transform.SetParent(magnet.transform);
                 magnet.transform.position = collision.transform.position;
                 
-                _attractionObject.transform.parent = null;
+                _attractionObj.transform.parent = null;
                 Destroy(magnet);
-                _attractionObject.WasMouseDown = false;
+
+                Connect(collision);
+
+                _attractionObj.WasMouseDown = false;
             }
+        }
+        private void Connect(Collider2D collision)
+        {
+            FixedJoint2D jointOnObject = _attractionObj.gameObject.AddComponent<FixedJoint2D>();
+            jointOnObject.anchor = gameObject.transform.localPosition;
+
+            jointOnObject.connectedBody = collision.GetComponent<AttractionPoint>().AttractionObj
+                .gameObject.GetComponent<Rigidbody2D>();
+            // прописать силу разрыва деталей
+        }
+        private void Disconnect()
+        {
+            foreach (var item in _attractionObj.GetComponents<FixedJoint2D>()) Destroy(item);
+        }
+        private void Update()
+        {
+            if (_attractionObj.IsDrag) Disconnect();
         }
     }
 }
