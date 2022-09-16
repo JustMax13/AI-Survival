@@ -7,7 +7,7 @@ namespace Editor
     public class AttractionObject : MonoBehaviour
     {
         public bool WasMouseDown { get; set; }
-        private const float _timeWasMouseDown = 0.2f;
+        private const float _timeWasMouseDown = 0.05f;
         private float _currentTimeWasMouseDown;
         private bool _firstTimeMouseUp;
         public bool IsDrag { get; set; }
@@ -56,18 +56,22 @@ namespace Editor
                 _currentTimeWasMouseDown = _timeWasMouseDown;
                 _firstTimeMouseUp = false;
             }
-            if (_currentTimeWasMouseDown > 0)
-                _currentTimeWasMouseDown -= Time.deltaTime;
-            else if (WasMouseDown && !IsDrag)
-                WasMouseDown = false;
 
-            if(gameObject.GetComponent<FixedJoint2D>())
+            if (gameObject.GetComponent<FixedJoint2D>())
             {
                 foreach (var item in gameObject.GetComponents<FixedJoint2D>())
                 {
                     if (item.connectedBody.gameObject.GetComponent<AttractionObject>().IsDrag) Destroy(item);
+
                 }
             }
+        }
+        private void FixedUpdate()
+        {
+            if (_currentTimeWasMouseDown > 0)
+                _currentTimeWasMouseDown -= Time.deltaTime;
+            else if (WasMouseDown && !IsDrag)
+                WasMouseDown = false;
         }
     }
 }
