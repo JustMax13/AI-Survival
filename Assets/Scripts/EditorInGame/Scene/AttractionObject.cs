@@ -7,7 +7,7 @@ namespace Editor
     public class AttractionObject : MonoBehaviour
     {
         public bool WasMouseDown { get; set; }
-        private const float _timeWasMouseDown = 0.05f;
+        private const float _timeWasMouseDown = 0.02f;
         private float _currentTimeWasMouseDown;
         private bool _firstTimeMouseUp;
         public bool IsDrag { get; set; }
@@ -50,7 +50,7 @@ namespace Editor
         } 
         private void Update()
         {
-            if (_firstTimeMouseUp && Input.touchCount == 0/* Input.GetMouseButtonUp(0)*/) // решение бага для ПК
+            if (_firstTimeMouseUp &&/* Input.touchCount == 0*/ Input.GetMouseButtonUp(0)) // зараз рішення багу на пк, у 1х коментарях - для андроид.
             {
                 IsDrag = false;
                 _currentTimeWasMouseDown = _timeWasMouseDown;
@@ -62,7 +62,6 @@ namespace Editor
                 foreach (var item in gameObject.GetComponents<FixedJoint2D>())
                 {
                     if (item.connectedBody.gameObject.GetComponent<AttractionObject>().IsDrag) Destroy(item);
-
                 }
             }
         }
