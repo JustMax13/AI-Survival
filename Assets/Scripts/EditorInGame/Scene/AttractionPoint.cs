@@ -7,6 +7,7 @@ namespace Editor
         [SerializeField] private AttractionObject _attractionObj;
 
         private bool _isConected;
+        private bool _onTrigger;
         private const int MaxCountConnectedObject = 2;
         private int _currentCountConnectedObject;
         private Collider2D _findedCollider;
@@ -30,8 +31,11 @@ namespace Editor
             }
 
             _isConected = false;
+            _onTrigger = false;
             _currentCountConnectedObject = 0;
         }
+        private void OnTriggerEnter2D(Collider2D collision) => _onTrigger = true;
+        private void OnTriggerExit2D(Collider2D collision) => _onTrigger = false;
         private void OnTriggerStay2D(Collider2D collision)
         {
             _findedCollider = collision;
@@ -89,7 +93,7 @@ namespace Editor
         private void Update()
         {
             if (_attractionObj.IsDrag) Disconnect();
-            else if (_attractionObj.WasMouseDown && _findedCollider != null)
+            else if (_attractionObj.WasMouseDown && _findedCollider != null && _onTrigger)
                 OnTriggerStay2D(_findedCollider);
         }
         private void FixedUpdate()

@@ -867,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8081277513495345814, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}
       propertyPath: _minCameraSize
-      value: 1.3
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 113d6670e6ac8bd4faf8d6f1a8c95664, type: 3}

@@ -50,7 +50,7 @@ namespace Editor
         } 
         private void Update()
         {
-            if (_firstTimeMouseUp &&/* Input.touchCount == 0*/ Input.GetMouseButtonUp(0)) // зараз рішення багу на пк, у 1х коментарях - для андроид.
+            if (_firstTimeMouseUp && Input.GetMouseButtonUp(0))
             {
                 IsDrag = false;
                 _currentTimeWasMouseDown = _timeWasMouseDown;
