@@ -25,7 +25,15 @@ namespace Editor
         public override void OnPointerDown(PointerEventData eventData)
         {
             base.OnPointerDown(eventData);
+
+            ActionManager.ActionButtonDown = true;
             DestroySelectPart();
+        }
+        public override void OnPointerUp(PointerEventData eventData)
+        {
+            base.OnPointerUp(eventData);
+
+            ActionManager.ActionButtonDown = true;
         }
         protected override void Start()
         {
@@ -50,10 +58,6 @@ namespace Editor
             {
                 gameObject.GetComponent<Button>().interactable = false;
             }
-            
-            
-
-             //gameObject.GetComponent<Button>().interactable = _selectedPart;
         }
     }
 }

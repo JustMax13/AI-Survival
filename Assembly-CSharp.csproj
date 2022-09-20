@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Battle\Spawn\SpawnPlayer.cs" />
     <Compile Include="Assets\Scripts\General\LoadScene.cs" />
     <Compile Include="Assets\Scripts\General\SpawnPrefab.cs" />
+    <Compile Include="Assets\Scripts\EditorInGame\Scene\RotatePart.cs" />
     <Compile Include="Assets\Scripts\Menu\SpawnPlayerInMenu.cs" />
     <Compile Include="Assets\Scripts\General\DragAndDrop.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\ActionManager.cs" />

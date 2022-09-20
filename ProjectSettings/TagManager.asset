@@ -14,7 +14,7 @@ TagManager:
   - SelectedBox
   - CenterOfBot
   - DestroyButton
-  - Shot1
+  - RotationButton
   layers:
   - Default
   - TransparentFX

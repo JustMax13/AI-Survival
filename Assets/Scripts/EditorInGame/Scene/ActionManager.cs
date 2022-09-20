@@ -7,6 +7,7 @@ namespace Editor
     public class ActionManager : MonoBehaviour
     {
         private static bool _cameraMoveAndZoom;
+        private static bool _actionButtonDown;
         //private static bool _contentMove;
 
         public static bool CameraMoveAndZoom
@@ -16,6 +17,11 @@ namespace Editor
             {
                 _cameraMoveAndZoom = value;
             }
+        }
+        public static bool ActionButtonDown 
+        {
+            get => _actionButtonDown;
+            set { _actionButtonDown = value; }
         }
         //public static bool ContentMove
         //{
@@ -28,11 +34,13 @@ namespace Editor
         public static void AnyoneFalse()
         {
             _cameraMoveAndZoom = false;
+            _actionButtonDown = false;
             //_contentMove = false;
         }
         private void Start()
         {
             _cameraMoveAndZoom = true;
+            _actionButtonDown = false;
             //_contentMove = false;
         }
     }

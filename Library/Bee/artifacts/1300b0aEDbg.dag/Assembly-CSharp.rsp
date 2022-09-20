@@ -398,6 +398,7 @@
 "Assets/Scripts/EditorInGame/Scene/AttractionPoint.cs"
 "Assets/Scripts/EditorInGame/Scene/DragAndDropPart.cs"
 "Assets/Scripts/EditorInGame/Scene/PrefabSpawn.cs"
+"Assets/Scripts/EditorInGame/Scene/RotatePart.cs"
 "Assets/Scripts/General/DragAndDrop.cs"
 "Assets/Scripts/General/LoadScene.cs"
 "Assets/Scripts/General/MoveAndZoomCamera.cs"

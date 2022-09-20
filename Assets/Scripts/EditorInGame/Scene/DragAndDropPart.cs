@@ -9,15 +9,16 @@ namespace Editor
 {
     public class DragAndDropPart : MonoBehaviour
     {
+        [SerializeField] private float _backlogCursor;
         [SerializeField] private GameObject _limitPoint1;
         [SerializeField] private GameObject _limitPoint2;
-        [SerializeField] private float _backlogCursor;
+
         private float _clickTime;
         private float _curentClickTime;
         private bool _isSelected;
         private bool _cursorOnObject;
-
         private GameObject _destroyButton;
+        private GameObject[] _rotationButton;
 
         public bool IsSelected { get => _isSelected; }
         public GameObject LimitPoint1
@@ -78,6 +79,7 @@ namespace Editor
             _isSelected = true;
 
             _destroyButton = GameObject.FindGameObjectWithTag("DestroyButton");
+            _rotationButton = GameObject.FindGameObjectsWithTag("RotationButton");
         }
         private void Update()
         {
@@ -85,8 +87,17 @@ namespace Editor
             {
                 if (_isSelected)
                 {
-                        if (_destroyButton) _destroyButton.GetComponent<ButtonForDestroyObject>().SelectedPart = gameObject;
-                        else Debug.Log("Destroy button isn't found!");
+                    if (_destroyButton) _destroyButton.GetComponent<ButtonForDestroyObject>().SelectedPart = gameObject;
+                    else Debug.Log("Destroy button isn't found!");
+
+                    if (_rotationButton != null)
+                    {
+                        foreach (var item in _rotationButton)
+                        {
+                            item.GetComponent<RotatePart>().SelectedPart = gameObject;
+                        }
+                    }
+                    else Debug.Log("Lost RotationButton");
                 }
             }
             catch
@@ -94,7 +105,7 @@ namespace Editor
                 Debug.Log("DestroyButton lost component: ButtonForDestroyObject");
             }
             
-            if (Input.GetMouseButtonDown(0) && !_cursorOnObject) _isSelected = false;
+            if (Input.GetMouseButtonDown(0) && !_cursorOnObject && !ActionManager.ActionButtonDown) _isSelected = false;
         }
         private void FixedUpdate()
         {
