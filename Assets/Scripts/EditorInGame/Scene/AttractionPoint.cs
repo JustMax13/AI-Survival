@@ -74,6 +74,7 @@ namespace Editor
 
                 jointOnObject.connectedBody = collision.GetComponent<AttractionPoint>().AttractionObj
                     .gameObject.GetComponent<Rigidbody2D>();
+                
 
                 //_connectedFixedJoint2D[_currentCountConnectedObject++] = jointOnObject;
                 //collision.GetComponent<AttractionPoint>().CurrentCountConnectedObject = _currentCountConnectedObject;
@@ -84,11 +85,10 @@ namespace Editor
         {
             if (_attractionObj.GetComponent<FixedJoint2D>())
             {
-                foreach (var item in _attractionObj.GetComponents<FixedJoint2D>()) Destroy(item);
-
-                _isConected = false;
-                _currentCountConnectedObject = 0;
+                foreach (var item in _attractionObj.GetComponents<FixedJoint2D>()) Destroy(item);  
             }
+            _isConected = false;
+            _currentCountConnectedObject = 0;
         }
         private void Update()
         {

@@ -61,7 +61,8 @@ namespace Editor
             {
                 foreach (var item in gameObject.GetComponents<FixedJoint2D>())
                 {
-                    if (item.connectedBody.gameObject.GetComponent<AttractionObject>().IsDrag) Destroy(item);
+                    if (item.connectedBody.gameObject.GetComponent<AttractionObject>().IsDrag) 
+                        Destroy(item);
                 }
             }
         }

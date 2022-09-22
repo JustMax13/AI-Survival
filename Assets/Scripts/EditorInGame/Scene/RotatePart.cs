@@ -19,7 +19,7 @@ namespace Editor
         private float _currentSpeed;
         private float _speedStep;
 
-        private float _slowdown;
+        private float _acceleration;
         private bool _useForce;
         private float _angle;
         private float _forceAngle;
@@ -93,18 +93,18 @@ namespace Editor
 
             _forceRotatingStart = false;
             _minSpeed = 0;
-            _maxSpeed = 0.22f;
+            _maxSpeed = 1f;
             _currentSpeed = 0;
-            _speedStep = _maxSpeed / 150;
+            _speedStep = _maxSpeed / 50;
 
-            _slowdown = 0.001f;
-            _angle = 5;
-            _forceAngle = _angle * _slowdown;
-            _maxForceAngle = _angle * _slowdown * 100;
+            _acceleration = 2f;
+            _angle = 1;
+            _forceAngle = _angle * _acceleration;
+            _maxForceAngle = _angle * _acceleration;
 
             _selectedPart = null;
         }
-        private void Update()
+        private void FixedUpdate()
         {
             if (_selectedPart != null)
             {
@@ -122,7 +122,7 @@ namespace Editor
                     {
                         _currentTimeToEndClick -= Time.deltaTime;
                         _forceRotatingStart = true;
-                        _forceAngle = _angle * _slowdown;
+                        _forceAngle = _angle * _acceleration;
                     }
                     else if (_buttonDown)
                     {

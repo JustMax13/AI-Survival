@@ -12,16 +12,14 @@ namespace General
         public GameObject LoadingScreen
         {
             get => _loadingScreen;
-            set
-            {
-                _loadingScreen = value;
-            }
+            set { _loadingScreen = value; }
         }
         public void LoadNextScane(string sceneName)
         {
             LoadingScreen = Instantiate(LoadingScreen);
-            LoadingScreen.transform.SetParent(gameObject.transform);
+            LoadingScreen.GetComponent<Canvas>().worldCamera = gameObject.transform.GetComponent<Canvas>().worldCamera;
             LoadingScreen.SetActive(true);
+            
             SceneManager.LoadScene(sceneName);
         }
     }

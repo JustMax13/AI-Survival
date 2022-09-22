@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using General;
-using UnityEditor.SceneManagement;
+using UnityEngine;
 
 namespace Editor
 {
@@ -53,7 +48,7 @@ namespace Editor
                 Debug.Log($"Can't found object with name 'Content'");
                 return;
             }
-            
+
             GameObject[] PrefabBoxes = new GameObject[0];
             try
             {
@@ -64,7 +59,7 @@ namespace Editor
                 Debug.Log($"Lost class Scroling on {_content.name}.");
                 return;
             }
-            
+
             for (int i = 0; i < PrefabBoxes.Length; i++)
             {
                 if (PrefabBoxes[i] == gameObject)
@@ -99,7 +94,7 @@ namespace Editor
                 _objectOnScenes.transform.position = new Vector2(Mathf.Lerp(objectOnScenesPosition.x, mousePosition.x,
                     _movementSharpness * Time.deltaTime), Mathf.Lerp(objectOnScenesPosition.y, mousePosition.y,
                     _movementSharpness * Time.deltaTime));
-            } 
+            }
         }
     }
 }

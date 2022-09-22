@@ -15,6 +15,7 @@ TagManager:
   - CenterOfBot
   - DestroyButton
   - RotationButton
+  - Shot1
   layers:
   - Default
   - TransparentFX
@@ -58,9 +59,6 @@ TagManager:
   - name: Map ( dynemic )
     uniqueID: 3971998703
     locked: 0
-  - name: UI
-    uniqueID: 2455428651
-    locked: 0
   - name: Bullet
     uniqueID: 3697647477
     locked: 0
@@ -84,4 +82,7 @@ TagManager:
     locked: 0
   - name: WheelShadow
     uniqueID: 4108363891
+    locked: 0
+  - name: UI
+    uniqueID: 2455428651
     locked: 0
