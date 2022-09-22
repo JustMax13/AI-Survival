@@ -11,6 +11,7 @@ namespace Editor
         private const int MaxCountConnectedObject = 2;
         private int _currentCountConnectedObject;
         private Collider2D _findedCollider;
+        private SpriteRenderer _pointSprite;
 
         public int CurrentCountConnectedObject
         {
@@ -33,6 +34,7 @@ namespace Editor
             _isConected = false;
             _onTrigger = false;
             _currentCountConnectedObject = 0;
+            _pointSprite = gameObject.GetComponent<SpriteRenderer>() != null ? gameObject.GetComponent<SpriteRenderer>() : null;
         }
         private void OnTriggerEnter2D(Collider2D collision) => _onTrigger = true;
         private void OnTriggerExit2D(Collider2D collision) => _onTrigger = false;
@@ -92,6 +94,13 @@ namespace Editor
         }
         private void Update()
         {
+            if(_isConected)
+            {
+                if (_pointSprite)
+                    _pointSprite.enabled = true;
+            } else if (_pointSprite)
+                _pointSprite.enabled = false;
+
             if (_attractionObj.IsDrag) Disconnect();
             else if (_attractionObj.WasMouseDown && _findedCollider != null && _onTrigger)
                 OnTriggerStay2D(_findedCollider);

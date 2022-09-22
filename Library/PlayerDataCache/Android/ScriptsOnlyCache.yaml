@@ -8,12 +8,10 @@ ScriptsOnlyBuild:
     - CombatMechanics.MoveAllWheels
     - CombatMechanics.MoveLeft
     - CombatMechanics.MoveRight
-    - CombatMechanics.PauseMenu
     - CombatMechanics.ShotGun
     - CombatMechanics.SpawnPlayer
     - CombatMechanics.Weapon.AssignFiringToThisWeapon
     - CombatMechanics.Weapon.WeaponLostConected
-    - Editor.ActionManager
     - Editor.AttractionObject
     - Editor.AttractionPoint
     - Editor.ButtonForDestroyObject
@@ -28,11 +26,11 @@ ScriptsOnlyBuild:
     - General.SpawnPrefab
     - Menu.SpawnPlayerInMenu
     - ProjectileRotation
-    - SetActiveObject
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -43,6 +41,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.Mobile.AndroidLogcat.Editor.dll:
+    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -104,44 +104,14 @@ ScriptsOnlyBuild:
     fullTypeName: General.LoadScene
     methodName: LoadNextScane
   - assembly: Assembly-CSharp
-    fullTypeName: CombatMechanics.PauseMenu
-    methodName: Resume
-  - assembly: Assembly-CSharp
-    fullTypeName: General.LoadScene
-    methodName: LoadNextScane
-  - assembly: Assembly-CSharp
-    fullTypeName: CombatMechanics.PauseMenu
-    methodName: ButtonPause
-  - assembly: Assembly-CSharp
-    fullTypeName: SetActiveObject
-    methodName: ObjectOFF
-  - assembly: Assembly-CSharp
-    fullTypeName: SetActiveObject
-    methodName: ObjectOFF
-  - assembly: Assembly-CSharp
-    fullTypeName: SetActiveObject
-    methodName: ObjectOFF
-  - assembly: Assembly-CSharp
-    fullTypeName: CombatMechanics.PauseMenu
-    methodName: Resume
-  - assembly: Assembly-CSharp
-    fullTypeName: SetActiveObject
-    methodName: ObjectON
-  - assembly: Assembly-CSharp
-    fullTypeName: SetActiveObject
-    methodName: ObjectON
-  - assembly: Assembly-CSharp
-    fullTypeName: SetActiveObject
-    methodName: ObjectON
-  - assembly: Assembly-CSharp
     fullTypeName: Editor.RotatePart
     methodName: RotatingRight
   - assembly: Assembly-CSharp
-    fullTypeName: General.LoadScene
-    methodName: LoadNextScane
-  - assembly: Assembly-CSharp
     fullTypeName: Editor.RotatePart
     methodName: RotatingLeft
+  - assembly: Assembly-CSharp
+    fullTypeName: General.LoadScene
+    methodName: LoadNextScane
   sceneClasses:
     Assets/Scenes/Battle.unity:
     - Class: 1
@@ -210,10 +180,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4988}
     - Class: 114
       Script: {instanceID: 5102}
-    - Class: 114
-      Script: {instanceID: 5332}
-    - Class: 114
-      Script: {instanceID: 5584}
     - Class: 114
       Script: {instanceID: 6406}
     - Class: 114
@@ -297,8 +263,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3910}
     - Class: 114
       Script: {instanceID: 4416}
-    - Class: 114
-      Script: {instanceID: 4788}
     - Class: 114
       Script: {instanceID: 5102}
     - Class: 114
@@ -429,16 +393,16 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
   - hash:
       serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
