@@ -1,31 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CombatMechanics
 {
     public class PauseMenu : MonoBehaviour
     {
-        public static bool gameIsPaused = false;
-        [SerializeField] public GameObject PauseUI;
+        private static bool _gameIsPaused = false;
+        [SerializeField] private GameObject _pauseUI;
+        [SerializeField] private GameObject _moveButton;
+        [SerializeField] private GameObject _shotButton;
 
         public void ButtonPause()
         {
-            if (gameIsPaused) Resume();
+            if (_gameIsPaused) Resume();
             else Pause();
         }
 
+        private void SetActiveAllInterface(bool value)
+        {
+            _moveButton.SetActive(value);
+            _shotButton.SetActive(value);
+        }
         public void Resume()
         {
-            PauseUI.SetActive(false);
+            _pauseUI.SetActive(false);
+            SetActiveAllInterface(true);
+
             Time.timeScale = 1f;
-            gameIsPaused = false;
+            _gameIsPaused = false;
         }
-        void Pause()
+        public void Pause()
         {
-            PauseUI.SetActive(true);
+            SetActiveAllInterface(false);
+            _pauseUI.SetActive(true);
+            
+
             Time.timeScale = 0f;
-            gameIsPaused = true;
+            _gameIsPaused = true;
+        }
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Resume();
         }
 
     }
