@@ -12,13 +12,6 @@ namespace Editor
         private int _currentCountConnectedObject;
         private Collider2D _findedCollider;
         private SpriteRenderer _pointSprite;
-        private FixedJoint2D[] _connectedFixedJoints;
-
-        public FixedJoint2D[] ConnectedFixedJoints
-        {
-            get => _connectedFixedJoints;
-            set { _connectedFixedJoints = value; }
-        }
         public int CurrentCountConnectedObject
         {
             get => _currentCountConnectedObject;
@@ -54,18 +47,9 @@ namespace Editor
 
                 jointOnObject.connectedBody = collision.GetComponent<AttractionPoint>().AttractionObj
                     .gameObject.GetComponent<Rigidbody2D>();
-
-                for (int i = 0; i < _connectedFixedJoints.Length; i++)
-                {
-                    if (_connectedFixedJoints[i] == null)
-                    {
-                        _connectedFixedJoints[i] = jointOnObject;
-                        break;
-                    }
-
-                }
             }
             // прописати силу розриву деталей
+            // у майбутньому переписати конект, щоб був бег не критичних багів
         }
         private void Disconnect()
         {
@@ -73,8 +57,7 @@ namespace Editor
             {
                 foreach (var item in _attractionObj.GetComponents<FixedJoint2D>()) Destroy(item);
             }
-            for (int i = 0; i < _connectedFixedJoints.Length; i++)
-                _connectedFixedJoints[i] = null;
+
             _isConected = false;
             _currentCountConnectedObject = 0;
         }
@@ -109,7 +92,6 @@ namespace Editor
             _onTrigger = false;
             _currentCountConnectedObject = 0;
             _pointSprite = gameObject.GetComponent<SpriteRenderer>() != null ? gameObject.GetComponent<SpriteRenderer>() : null;
-            _connectedFixedJoints = new FixedJoint2D[MaxCountConnectedObject];
         }
         private void Update()
         {
@@ -121,19 +103,7 @@ namespace Editor
         {
             if (_isConected)
             {
-                int count = 0;
-                foreach (var item in _connectedFixedJoints)
-                {
-                    if (item != null) count++;
-                }
-                bool oneBoltON = false;
-
-                if (count == 1) 
-                    oneBoltON = true;
-                
-                Debug.Log(oneBoltON);
-
-                if (_pointSprite && !_pointSprite.enabled && oneBoltON)
+                if (_pointSprite && !_pointSprite.enabled)
                     _pointSprite.enabled = true;
             }
             else if (_pointSprite && _pointSprite.enabled)
@@ -141,13 +111,6 @@ namespace Editor
         }
         private void FixedUpdate()
         {
-            bool haveConnectedObject = false;
-            foreach (var item in _connectedFixedJoints)
-            {
-                if (item != null) haveConnectedObject = true;
-            }
-            _isConected = haveConnectedObject;
-
             int count = 0;
             foreach (var item in Physics2D.OverlapPointAll(gameObject.transform.position))
             {

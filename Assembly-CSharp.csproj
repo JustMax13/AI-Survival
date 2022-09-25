@@ -79,7 +79,7 @@
     <Compile Include="Assets\Scripts\Battle\Shooting\General\ButtonNotBusy.cs" />
     <Compile Include="Assets\Scripts\Battle\HP\IHaveHP.cs" />
     <Compile Include="Assets\Scripts\Battle\HP\HPofPart.cs" />
-    <Compile Include="Assets\Scripts\EditorInGame\Canvas\PartOfBots.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\PartOfBots.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\Scroling.cs" />
     <Compile Include="Assets\Scripts\Battle\Canvas\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\AbstractBullet.cs" />
@@ -91,6 +91,9 @@
     <Compile Include="Assets\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonSelected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\MoveAllWheels.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\CPU.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\Frame.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\Gun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

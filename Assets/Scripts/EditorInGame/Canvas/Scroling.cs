@@ -3,41 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using General;
+
 namespace Editor
 {
     public class Scroling : MonoBehaviour
     {
+        [SerializeField] private uint space;
+
         [SerializeField] private GameObject boxForPrefab;
         [SerializeField] private PartOfBots[] partOfBots;
-        [SerializeField] private uint space;
-        private GameObject[] prefabBoxes;
+
         private int panelCount;
 
-        public GameObject[] PrefabBoxes { get => prefabBoxes; }
+        private GameObject[] _prefabBoxes;
+
+        public GameObject[] PrefabBoxes { get => _prefabBoxes; }
         public PartOfBots[] PartOfBotsAll { get => partOfBots; }
+        
         private void Start()
         {
             partOfBots ??= new PartOfBots[0];
             panelCount = partOfBots.Length;
-            prefabBoxes = new GameObject[panelCount];
+            _prefabBoxes = new GameObject[panelCount];
 
             for (int i = 0; i < panelCount; i++)
             {
-                prefabBoxes[i] = Instantiate(boxForPrefab, transform, false);
+                _prefabBoxes[i] = Instantiate(boxForPrefab, transform, false);
 
                 try
                 {
-                    prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
-                    prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().sprite = partOfBots[i]
-                        .Prefab.GetComponent<SpriteRenderer>().sprite;
+                    _prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
+                    _prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().sprite = partOfBots[i].Icon;
                 }
                 catch
                 {
-                    Debug.Log("Does not exist child or Image on child");
+                    Debug.Log("Does not exist child or Icon on child");
                 }
                 if (i == 0) continue;
-                prefabBoxes[i].transform.localPosition = new Vector2(prefabBoxes[i - 1].transform.localPosition.x
-                    + boxForPrefab.transform.GetComponent<RectTransform>().sizeDelta.x + space, prefabBoxes[i].transform.localPosition.y);
+                _prefabBoxes[i].transform.localPosition = new Vector2(_prefabBoxes[i - 1].transform.localPosition.x
+                    + boxForPrefab.transform.GetComponent<RectTransform>().sizeDelta.x + space, _prefabBoxes[i].transform.localPosition.y);
             }
 
             {
@@ -45,6 +50,21 @@ namespace Editor
                 transform.GetComponent<RectTransform>().offsetMax = new Vector2(newContentSizeX, transform.GetComponent<RectTransform>().offsetMax.y);
             }
         }
-
+        private void FixedUpdate()
+        {
+            for (int i = 0; i < panelCount; i++)
+            {
+                if (partOfBots[i].CurrentCountOfPart >= partOfBots[i].MaxCountOfPart)
+                {
+                    _prefabBoxes[i].GetComponent<Button>().interactable = false;
+                    _prefabBoxes[i].GetComponent<PrefabSpawn>().enabled = false;
+                }
+                else 
+                {
+                    _prefabBoxes[i].GetComponent<Button>().interactable = true;
+                    _prefabBoxes[i].GetComponent<PrefabSpawn>().enabled = true;
+                }
+            }
+        }
     }
 }

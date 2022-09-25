@@ -1,5 +1,6 @@
 using General;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Editor
 {
@@ -9,17 +10,20 @@ namespace Editor
         [SerializeField] private GameObject _limitPoint2;
         [SerializeField] private float _movementSharpness;
 
-        private GameObject _content;
-        private GameObject _spawnObject;
-        private GameObject _objectOnScenes;
+        private bool _spawnEnd;
         private bool _spawnPermission;
         private bool _ObjectIsntSpawn;
+        private GameObject _content;
+        private PartOfBots _spawnObject;
+        private GameObject _objectOnScenes;
+        // поскольку скрипт висит на конкретной кнопке и он отвечает за 1н обьект,
+        // тут нужн обьект типа PartOfBots в который присвоить обьект который спавнит эта кнопка
 
         private void SpawnPrefab()
         {
             Vector2 mousePosition = DragAndDrop.MousePositionOnDragArea(_limitPoint1, _limitPoint2);
 
-            _objectOnScenes = Instantiate(_spawnObject, mousePosition, transform.rotation);
+            _objectOnScenes = Instantiate(_spawnObject.Prefab, mousePosition, transform.rotation);
             try
             {
                 _objectOnScenes.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
@@ -34,8 +38,10 @@ namespace Editor
             _objectOnScenes.GetComponent<DragAndDropPart>().BacklogCursor = 22;
             _objectOnScenes.GetComponent<DragAndDropPart>().LimitPoint1 = _limitPoint1;
             _objectOnScenes.GetComponent<DragAndDropPart>().LimitPoint2 = _limitPoint2;
+            _objectOnScenes.GetComponent<DragAndDropPart>().PartOfBot = _spawnObject;
 
             _ObjectIsntSpawn = false;
+            _spawnEnd = true;
         }
         private void Start()
         {
@@ -49,7 +55,7 @@ namespace Editor
                 return;
             }
 
-            GameObject[] PrefabBoxes = new GameObject[0];
+            var PrefabBoxes = new GameObject[0];
             try
             {
                 PrefabBoxes = _content.GetComponent<Scroling>().PrefabBoxes;
@@ -64,11 +70,12 @@ namespace Editor
             {
                 if (PrefabBoxes[i] == gameObject)
                 {
-                    _spawnObject = _content.GetComponent<Scroling>().PartOfBotsAll[i].Prefab;
+                    _spawnObject = _content.GetComponent<Scroling>().PartOfBotsAll[i];
                     break;
                 }
             }
 
+            _spawnEnd = false;
             _ObjectIsntSpawn = true;
             _spawnPermission = false;
         }
@@ -77,7 +84,16 @@ namespace Editor
             try
             {
                 _spawnPermission = gameObject.GetComponent<EventTriggerForSpawn>().IsHold;
-                if (!_spawnPermission) _ObjectIsntSpawn = true;
+                if (!_spawnPermission)
+                {
+                    _ObjectIsntSpawn = true;
+                }
+
+                if(!_spawnPermission && _spawnEnd)
+                {
+                    _spawnEnd = false;
+                    _spawnObject.CurrentCountOfPart++;
+                }
             }
             catch
             {

@@ -1,24 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
+using General;
 
 namespace Editor
 {
     public class ButtonForDestroyObject : Button
     {
         private GameObject _selectedPart;
+        private PartOfBots _partOfBot;
         public GameObject SelectedPart
         {
             get => _selectedPart;
-            set
-            {
-                _selectedPart = value;
-            }
+            set { _selectedPart = value; }
+        }
+        public PartOfBots PartOfBot
+        {
+            get => _partOfBot;
+            set { _partOfBot = value; }
         }
         private void DestroySelectPart()
         {
+            _partOfBot.CurrentCountOfPart--;
             Destroy(_selectedPart);
             gameObject.GetComponent<Button>().interactable = false;
         }
@@ -47,12 +51,11 @@ namespace Editor
                 {
                     _selectedPart = null;
                     gameObject.GetComponent<Button>().interactable = false;
-
-                } else
+                }
+                else
                 {
                     gameObject.GetComponent<Button>().interactable = true;
                 }
-                
             }
             catch
             {

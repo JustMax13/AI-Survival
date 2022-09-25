@@ -10,17 +10,29 @@ namespace Editor
     public class DragAndDropPart : MonoBehaviour
     {
         [SerializeField] private float _backlogCursor;
+
         [SerializeField] private GameObject _limitPoint1;
         [SerializeField] private GameObject _limitPoint2;
 
-        private float _clickTime;
-        private float _curentClickTime;
         private bool _isSelected;
         private bool _cursorOnObject;
+        private float _clickTime;
+        private float _curentClickTime;
+
         private GameObject _destroyButton;
         private GameObject[] _rotationButton;
+        private PartOfBots _partOfBot;
 
         public bool IsSelected { get => _isSelected; }
+        public float BacklogCursor
+        {
+            get => _backlogCursor;
+            set
+            {
+                _backlogCursor = value;
+            }
+        }
+
         public GameObject LimitPoint1
         {
             get => _limitPoint1;
@@ -37,14 +49,12 @@ namespace Editor
                 _limitPoint2 = value;
             }
         }
-        public float BacklogCursor 
+        public PartOfBots PartOfBot
         {
-            get => _backlogCursor;
-            set
-            {
-                _backlogCursor = value;
-            }
+            get => _partOfBot;
+            set { _partOfBot = value; }
         }
+        
 
         private void OnMouseDown()
         {
@@ -87,7 +97,11 @@ namespace Editor
             {
                 if (_isSelected)
                 {
-                    if (_destroyButton) _destroyButton.GetComponent<ButtonForDestroyObject>().SelectedPart = gameObject;
+                    if (_destroyButton)
+                    {
+                        _destroyButton.GetComponent<ButtonForDestroyObject>().SelectedPart = gameObject;
+                        _destroyButton.GetComponent<ButtonForDestroyObject>().PartOfBot = _partOfBot;
+                    }
                     else Debug.Log("Destroy button isn't found!");
 
                     if (_rotationButton != null)

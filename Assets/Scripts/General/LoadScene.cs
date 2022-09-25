@@ -18,6 +18,7 @@ namespace General
         {
             LoadingScreen = Instantiate(LoadingScreen);
             LoadingScreen.GetComponent<Canvas>().worldCamera = gameObject.transform.GetComponent<Canvas>().worldCamera;
+            LoadingScreen.GetComponent<Canvas>().sortingLayerName = "UI";
             LoadingScreen.SetActive(true);
             
             SceneManager.LoadScene(sceneName);
