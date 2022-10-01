@@ -7,9 +7,10 @@ namespace Menu
 {
     public class SpawnPlayerInMenu : SpawnPrefab
     {
-        private void Start()
+        override protected void Start()
         {
-            spawnObject.transform.localScale *= 1.5f;
+            base.Start();
+            SpawnObject.transform.localScale *= 1.5f;
         }
     }
 }

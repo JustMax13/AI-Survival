@@ -1,24 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 namespace General
 {
     public class SpawnPrefab : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject _prefabSpawn;
-        public GameObject PrefabSpawn
+        [SerializeField] private GameObject _prefabForSpawn;
+        [SerializeField] private Transform _spawnPoint;
+        public GameObject PrefabForSpawn
         {
-            get => _prefabSpawn;
+            get => _prefabForSpawn;
             set
             {
-                _prefabSpawn = value;
+                _prefabForSpawn = value;
             }
-        }
-        [SerializeField]
-        private GameObject _spawnPoint;
-        public GameObject SpawnPoint
+        } 
+        public Transform SpawnPoint
         {
             get => _spawnPoint;
             set
@@ -26,10 +27,11 @@ namespace General
                 _spawnPoint = value;
             }
         }
-        protected GameObject spawnObject { get; set; }
-        private void Awake()
+        protected GameObject SpawnObject { get; set; }
+
+        virtual protected void Start()
         {
-            spawnObject = Instantiate(PrefabSpawn, SpawnPoint.transform.position, PrefabSpawn.transform.rotation);
+            SpawnObject = Instantiate(PrefabForSpawn, SpawnPoint.transform.position, PrefabForSpawn.transform.rotation);
         }
     }
 }

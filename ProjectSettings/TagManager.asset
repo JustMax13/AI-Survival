@@ -15,6 +15,7 @@ TagManager:
   - CenterOfBot
   - DestroyButton
   - RotationButton
+  - Enemy
   layers:
   - Default
   - TransparentFX

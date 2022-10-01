@@ -180,11 +180,11 @@ GameObject:
   - component: {fileID: 8854797796699257736}
   - component: {fileID: 8854797796699257739}
   - component: {fileID: 8854797796699257738}
-  - component: {fileID: 8854797796699257741}
   - component: {fileID: 6351884175463792285}
+  - component: {fileID: 1463340551335337704}
   m_Layer: 0
   m_Name: CentralBox
-  m_TagString: Untagged
+  m_TagString: CPU
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,19 +306,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8854797796699257741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8854797796699257740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a60f41cc010dd243bf6dbbca3ef9ed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _HP: 2000
 --- !u!114 &6351884175463792285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +318,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1463340551335337704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854797796699257740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba100d815f60844bad5d3259a828e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _HP: 2000
 --- !u!1001 &5906553340118866665
 PrefabInstance:
   m_ObjectHideFlags: 0

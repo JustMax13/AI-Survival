@@ -62,11 +62,14 @@
     <Compile Include="Assets\Scripts\Battle\Shooting\General\AssignFiringToThisWeapon.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\AttractionPoint.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\EventTriggerForSpawn.cs" />
+    <Compile Include="Assets\Scripts\Battle\Canvas\WinOrLose.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\BotsWheel.cs" />
+    <Compile Include="Assets\Scripts\Battle\Spawn\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ClickOnPrefabInventory.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\Bullet\ProjectileRotation.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\PrefabSpawn.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\DragAndDropPart.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\Gun.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\Gun\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Battle\Spawn\SpawnPlayer.cs" />
     <Compile Include="Assets\Scripts\General\LoadScene.cs" />
@@ -82,18 +85,19 @@
     <Compile Include="Assets\Scripts\General\PartOfBot\PartOfBots.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\Scroling.cs" />
     <Compile Include="Assets\Scripts\Battle\Canvas\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Battle\EventFolder\GameOverEvent.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\AbstractBullet.cs" />
     <Compile Include="Assets\Scripts\General\SetActiveObject.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\AttractionObject.cs" />
     <Compile Include="Assets\Scripts\General\MoveAndZoomCamera.cs" />
+    <Compile Include="Assets\Scripts\Battle\HP\CPUHP.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonForDestroyObject.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\CPU.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\Frame.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonSelected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\MoveAllWheels.cs" />
-    <Compile Include="Assets\Scripts\General\PartOfBot\CPU.cs" />
-    <Compile Include="Assets\Scripts\General\PartOfBot\Frame.cs" />
-    <Compile Include="Assets\Scripts\General\PartOfBot\Gun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

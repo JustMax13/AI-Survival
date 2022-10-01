@@ -43,6 +43,15 @@ namespace CombatMechanics
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Resume();
         }
-
+        private void Start()
+        {
+            GameOverEvent.PlayerWon += Pause;
+            GameOverEvent.EnemyWon += Pause;
+        }
+        private void OnDestroy()
+        {
+            GameOverEvent.PlayerWon -= Pause;
+            GameOverEvent.EnemyWon -= Pause;
+        }
     }
 }

@@ -338,6 +338,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1143729139301848585, guid: 222801f2e439f8d45a756ba0ad37936b, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 1143729139373184154}
+    - target: {fileID: 1143729139301848585, guid: 222801f2e439f8d45a756ba0ad37936b, type: 3}
+      propertyPath: _prefabForSpawn
+      value: 
+      objectReference: {fileID: 591156690814752894, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
     - target: {fileID: 1143729139443680969, guid: 222801f2e439f8d45a756ba0ad37936b, type: 3}
       propertyPath: m_Name
       value: menu background
@@ -388,6 +396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 222801f2e439f8d45a756ba0ad37936b, type: 3}
+--- !u!4 &1143729139373184154 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1143729139301848598, guid: 222801f2e439f8d45a756ba0ad37936b, type: 3}
+  m_PrefabInstance: {fileID: 1143729139373184153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5761846693776560783
 PrefabInstance:
   m_ObjectHideFlags: 0
