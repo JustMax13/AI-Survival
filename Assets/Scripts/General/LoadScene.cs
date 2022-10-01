@@ -16,12 +16,36 @@ namespace General
         }
         public void LoadNextScane(string sceneName)
         {
+            LoadingScene.OnLoadedSomeScene();
+
             LoadingScreen = Instantiate(LoadingScreen);
             LoadingScreen.GetComponent<Canvas>().worldCamera = gameObject.transform.GetComponent<Canvas>().worldCamera;
             LoadingScreen.GetComponent<Canvas>().sortingLayerName = "UI";
             LoadingScreen.SetActive(true);
             
             SceneManager.LoadScene(sceneName);
+        }
+        public void LoadNextScane(int sceneIndex)
+        {
+            LoadingScene.OnLoadedSomeScene();
+
+            LoadingScreen = Instantiate(LoadingScreen);
+            LoadingScreen.GetComponent<Canvas>().worldCamera = gameObject.transform.GetComponent<Canvas>().worldCamera;
+            LoadingScreen.GetComponent<Canvas>().sortingLayerName = "UI";
+            LoadingScreen.SetActive(true);
+
+            SceneManager.LoadScene(sceneIndex);
+        }
+        public void LoadCurrentScane()
+        {
+            LoadingScene.OnLoadedSomeScene();
+
+            LoadingScreen = Instantiate(LoadingScreen);
+            LoadingScreen.GetComponent<Canvas>().worldCamera = gameObject.transform.GetComponent<Canvas>().worldCamera;
+            LoadingScreen.GetComponent<Canvas>().sortingLayerName = "UI";
+            LoadingScreen.SetActive(true);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

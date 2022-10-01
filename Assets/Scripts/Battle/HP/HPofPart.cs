@@ -18,7 +18,7 @@ namespace CombatMechanics
         }
         public void MakeDamage(float damage) => HP -= damage;
 
-        private void FixedUpdate()
+        virtual protected void FixedUpdate()
         {
             if (HP <= 0)
                 Destroy(gameObject);

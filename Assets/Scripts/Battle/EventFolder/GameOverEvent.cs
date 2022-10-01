@@ -1,3 +1,4 @@
+using General;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,30 +8,36 @@ namespace CombatMechanics
 {
     public class GameOverEvent : MonoBehaviour
     {
-        private static bool GameOver;
+        private static bool _gameOver;
+
         public static event Action PlayerWon;
         public static event Action EnemyWon;
 
         public static void OnPlayerWon()
         {
-            if(!GameOver)
+            if(!_gameOver)
             {
                 PlayerWon?.Invoke();
-                GameOver = true;
+                _gameOver = true;
             }
         }
         public static void OnEnemyWon()
         {
-            if (!GameOver)
+            if (!_gameOver)
             {
                 EnemyWon?.Invoke();
-                GameOver = true;
+                _gameOver = true;
             }
         }
-       
+        private static void OnLoadedSomeScene() => _gameOver = false;
         private void Start()
         {
-            GameOver = false;
+            _gameOver = false;
+            LoadingScene.LoadedSomeScene += OnLoadedSomeScene;
+        }
+        private void OnDestroy()
+        {
+            LoadingScene.LoadedSomeScene -= OnLoadedSomeScene;
         }
     }
 }

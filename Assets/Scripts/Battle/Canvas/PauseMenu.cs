@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using General;
 namespace CombatMechanics
 {
     public class PauseMenu : MonoBehaviour
@@ -9,6 +9,7 @@ namespace CombatMechanics
         [SerializeField] private GameObject _pauseUI;
         [SerializeField] private GameObject _moveButton;
         [SerializeField] private GameObject _shotButton;
+        [SerializeField] private GameObject _pauseButton;
 
         public void ButtonPause()
         {
@@ -34,24 +35,24 @@ namespace CombatMechanics
             SetActiveAllInterface(false);
             _pauseUI.SetActive(true);
             
-
             Time.timeScale = 0f;
             _gameIsPaused = true;
         }
-        public void RestartLevel()
+        private void OnGameOver()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Resume();
+            Pause();
+            SetActiveAllInterface(false);
+            _pauseButton.SetActive(false);
         }
         private void Start()
         {
-            GameOverEvent.PlayerWon += Pause;
-            GameOverEvent.EnemyWon += Pause;
+            GameOverEvent.PlayerWon += OnGameOver;
+            GameOverEvent.EnemyWon += OnGameOver;
         }
         private void OnDestroy()
         {
-            GameOverEvent.PlayerWon -= Pause;
-            GameOverEvent.EnemyWon -= Pause;
+            GameOverEvent.PlayerWon -= OnGameOver;
+            GameOverEvent.EnemyWon -= OnGameOver;
         }
     }
 }

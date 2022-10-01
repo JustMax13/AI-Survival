@@ -16,7 +16,7 @@ namespace CombatMechanics
         }
         private void OnEnemyWon()
         {
-            VictoryWindow.SetActive(true);
+            LoseWindow.SetActive(true);
         }
         private void Start()
         {

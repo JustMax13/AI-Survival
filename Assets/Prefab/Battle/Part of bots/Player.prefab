@@ -329,11 +329,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 97733616093640395, guid: b2113cb3a35c0c342a3ef6a2d141923d, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 6.6916633
+      value: 3.5209906
       objectReference: {fileID: 0}
     - target: {fileID: 97733616093640395, guid: b2113cb3a35c0c342a3ef6a2d141923d, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.74219877
+      value: 1.0331408
       objectReference: {fileID: 0}
     - target: {fileID: 97733616093640395, guid: b2113cb3a35c0c342a3ef6a2d141923d, type: 3}
       propertyPath: m_ConnectedRigidBody
@@ -349,11 +349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 97733616093640439, guid: b2113cb3a35c0c342a3ef6a2d141923d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.06
+      value: 0.526
       objectReference: {fileID: 0}
     - target: {fileID: 97733616093640439, guid: b2113cb3a35c0c342a3ef6a2d141923d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: 0.189
       objectReference: {fileID: 0}
     - target: {fileID: 97733616093640439, guid: b2113cb3a35c0c342a3ef6a2d141923d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -431,11 +431,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.487
+      value: 0.399
       objectReference: {fileID: 0}
     - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.435
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
       propertyPath: m_LocalPosition.z
@@ -505,7 +505,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -2.4937882, y: 2.4937875}
+  m_ConnectedAnchor: {x: 2.7669175, y: 0.50469536}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!4 &544705926026289501 stripped

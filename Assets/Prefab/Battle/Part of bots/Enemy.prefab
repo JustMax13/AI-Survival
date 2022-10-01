@@ -32,6 +32,7 @@ Transform:
   - {fileID: 4803391273103712790}
   - {fileID: 3024065096095308881}
   - {fileID: 2905867909170996823}
+  - {fileID: 2054035771838246739}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -278,3 +279,90 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3262019369951475923, guid: a87d1e29f08c4b64583c1cdd76c37dec, type: 3}
   m_PrefabInstance: {fileID: 5771981560304000204}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7377996838193239258
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5135326416310090887}
+    m_Modifications:
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854797796699257740, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+      propertyPath: m_Name
+      value: CentralBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2846496411934912355, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+    - {fileID: 6351884175463792285, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+--- !u!4 &2054035771838246739 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+  m_PrefabInstance: {fileID: 7377996838193239258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2054035771838246742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8854797796699257740, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}
+  m_PrefabInstance: {fileID: 7377996838193239258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!255 &2656636197253125960
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054035771838246742}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 9034000883010036767}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -11.095837, y: -1.6317406}
+  m_DampingRatio: 0
+  m_Frequency: 0
