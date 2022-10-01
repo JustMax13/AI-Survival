@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Battle\Shooting\Gun\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Battle\Spawn\SpawnPlayer.cs" />
     <Compile Include="Assets\Scripts\General\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Scripts\General\SpawnPrefab.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\RotatePart.cs" />
     <Compile Include="Assets\Scripts\Menu\SpawnPlayerInMenu.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Scripts\General\SetActiveObject.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\AttractionObject.cs" />
     <Compile Include="Assets\Scripts\General\MoveAndZoomCamera.cs" />
+    <Compile Include="Assets\Scripts\Battle\EventFolder\LoadingScene.cs" />
     <Compile Include="Assets\Scripts\Battle\HP\CPUHP.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonForDestroyObject.cs" />
     <Compile Include="Assets\Scripts\General\PartOfBot\CPU.cs" />
@@ -98,8 +100,6 @@
     <Compile Include="Assets\Scripts\General\PartOfBot\Frame.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonSelected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\MoveAllWheels.cs" />
-    <Compile Include="Assets\Scripts\Battle\Canvas\GaveOverMenu.cs" />
-    <Compile Include="Assets\Scripts\Battle\EventFolder\LoadingScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
