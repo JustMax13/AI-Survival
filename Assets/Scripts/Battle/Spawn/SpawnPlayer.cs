@@ -1,5 +1,5 @@
-using General;
 using UnityEngine;
+using General;
 
 namespace CombatMechanics
 {

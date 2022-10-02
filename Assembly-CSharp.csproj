@@ -96,7 +96,6 @@
     <Compile Include="Assets\Scripts\Battle\HP\CPUHP.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonForDestroyObject.cs" />
     <Compile Include="Assets\Scripts\General\PartOfBot\CPU.cs" />
-    <Compile Include="Assets\Scripts\Menu\ModesSellection.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
     <Compile Include="Assets\Scripts\Menu\EnablePlay.cs" />

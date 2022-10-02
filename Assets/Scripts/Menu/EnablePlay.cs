@@ -16,7 +16,6 @@ namespace Menu
         public Button PlayButton
         {
             get => _playButton;
-            
             set { _playButton = value; }
         }
         public override void OnDeselect(BaseEventData eventData)
@@ -33,12 +32,10 @@ namespace Menu
         protected override void Start()
         {
             _pressLvlButton = false;
-
         }
         
         private void FixedUpdate()
         {
-
            _playButton.interactable = _pressLvlButton;
         }
     }

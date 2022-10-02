@@ -415,7 +415,6 @@
 "Assets/Scripts/General/SpawnPrefab.cs"
 "Assets/Scripts/Menu/ElementsForButton.cs"
 "Assets/Scripts/Menu/EnablePlay.cs"
-"Assets/Scripts/Menu/ModesSellection.cs"
 "Assets/Scripts/Menu/SpawnPlayerInMenu.cs"
 -langversion:9.0
 
