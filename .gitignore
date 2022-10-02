@@ -70,3 +70,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Library/Bee/tundra.digestcache
+Library/Bee/TundraBuildState.state
+Library/Bee/TundraBuildState.state.map
+Library/SceneVisibilityState.asset
+Library/Search/transactions.db
+Library/SourceAssetDB
