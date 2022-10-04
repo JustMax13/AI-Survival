@@ -17,11 +17,24 @@ namespace CombatMechanics
         }
         private void OnConnectedShotButton(Button shotButton)
         {
-            if(!_gunConnected)
+            int index = -1;
+            GameObject shotButtonParent = shotButton.transform.parent.gameObject;
+
+            for (int i = 0; i < shotButtonParent.GetComponent<ConnectedShotButton>().ShotButtons.Length; i++)
+            {
+                if (shotButtonParent.GetComponent<ConnectedShotButton>().ShotButtons[i] == shotButton)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (!_gunConnected && index != -1)
             {
                 shotButton.gameObject.SetActive(true);
                 shotButton.onClick.AddListener(gameObject.GetComponent<ShotGun>().CheckReloadAndShot);
                 _gunConnected = true;
+                shotButtonParent.GetComponent<ConnectedShotButton>().BusyShotButton[index] = true;
             }
         }
         private void OnDestroy()
