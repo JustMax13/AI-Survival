@@ -5,12 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Menu.ButtonEditor;
 
-
 namespace Menu
 {
-    public class EnablePlay : Button
+    public class EnableLevel : Button
     {
         private bool _pressLvlButton;
+        private const float _turnOffTime = 0.1f;
+        private float _currentOffTime;
         private Button _playButton;
 
         public Button PlayButton
@@ -21,6 +22,7 @@ namespace Menu
         public override void OnDeselect(BaseEventData eventData)
         {
             base.OnDeselect(eventData);
+            _currentOffTime = _turnOffTime;
             _pressLvlButton = false;
         }
         public override void OnSelect(BaseEventData eventData)
@@ -32,15 +34,13 @@ namespace Menu
         protected override void Start()
         {
             _pressLvlButton = false;
+            _currentOffTime = 0;
         }
-        
+
         private void FixedUpdate()
         {
-           _playButton.interactable = _pressLvlButton;
+            if (_currentOffTime < 0) _playButton.interactable = _pressLvlButton;
+            else _currentOffTime -= Time.deltaTime;
         }
     }
-    
-        
-    
-
 }

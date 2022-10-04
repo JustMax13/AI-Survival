@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Battle\Shooting\General\GunShot.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\IMover.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\ButtonEventTrigger\MoveLeft.cs" />
+    <Compile Include="Assets\Scripts\General\PartOfBot\PartOfBot.cs" />
     <Compile Include="Assets\Scripts\Menu\ElementsForButton.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\AssignFiringToThisWeapon.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\AttractionPoint.cs" />
@@ -97,11 +98,10 @@
     <Compile Include="Assets\Scripts\General\PartOfBot\CPU.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
-    <Compile Include="Assets\Scripts\Menu\EnablePlay.cs" />
     <Compile Include="Assets\Scripts\General\PartOfBot\Frame.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Canvas\ButtonSelected.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\MoveAllWheels.cs" />
-    <Compile Include="Assets\Scripts\General\PartOfBot\PartOfBot.cs" />
+    <Compile Include="Assets\Scripts\Menu\EnableLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
