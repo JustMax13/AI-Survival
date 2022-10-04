@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2126683e83b3f6f499a86ec6a7f12b0a, type: 3}
   m_Name: "\u0421lassical CPU"
   m_EditorClassIdentifier: 
-  _icon: {fileID: 972967993, guid: 8632264687410934da52ef2925b40279, type: 3}
+  _icon: {fileID: -187893165, guid: 8632264687410934da52ef2925b40279, type: 3}
   _prefab: {fileID: 8854797796699257740, guid: 37c88c4e53f6a584187f1107c246b162, type: 3}

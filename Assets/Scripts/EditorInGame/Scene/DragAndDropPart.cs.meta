@@ -3,10 +3,7 @@ guid: 78788feb73df75644b11976049bcfe61
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - _limitPoint1: {fileID: 1564125205116243845, guid: 7eb1f8fae4f03e047a5957d423f8ee68, type: 3}
-  - _limitPoint2: {fileID: 446147315797447568, guid: b20e48aafeb93f84b9166dad3e47e6e7, type: 3}
-  - _destroyButton: {fileID: 1257698720365124032, guid: 944048ba8e3ef484faea836bf28d5723, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

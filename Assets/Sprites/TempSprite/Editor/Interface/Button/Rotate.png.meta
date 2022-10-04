@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rotate
+      name: Rotate_0
       rect:
         serializedVersion: 2
         x: 384
@@ -125,14 +125,14 @@ TextureImporter:
         width: 910
         height: 930
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02f4b157975797346a529ad94656bfb2
-      internalID: 1128655651
+      spriteID: ac748d3921376a24c8257c9e756b9cd3
+      internalID: -1975556933
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rotate: 1128655651
+      Rotate_0: -1975556933
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

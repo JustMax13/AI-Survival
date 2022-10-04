@@ -117,10 +117,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NextLvl
+      name: NextLvl_0
       rect:
         serializedVersion: 2
-        x: 986
+        x: 983
         y: 97
         width: 1898
         height: 1895
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 591a4f85f61b3764789f941303ba4cd0
-      internalID: -1881227555
+      spriteID: f71bbca9601af684da5be2bdb2f249ed
+      internalID: 1338903431
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NextLvl: -1881227555
+      NextLvl_0: 1338903431
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

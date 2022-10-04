@@ -3,7 +3,7 @@ guid: c4dd81edea7a72b4ea6950a69a0e0290
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -112,18 +113,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -142,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0961c265e9cbc6c45a13238293790370
-      internalID: 2064217870
+      spriteID: bd779e59f213b664687a29067801e1ec
+      internalID: 1962125945
       vertices: []
       indices: 
       edges: []
@@ -163,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33e65a4fc5e0cde49a860330acc52d78
-      internalID: 843165540
+      spriteID: 8e64e9fe9419cba44b7dec979d95605d
+      internalID: 858027068
       vertices: []
       indices: 
       edges: []
@@ -180,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CentralBox and glass_1: 843165540
-      CentralBox and glass_0: 2064217870
+      CentralBox and glass_1: 858027068
+      CentralBox and glass_0: 1962125945
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

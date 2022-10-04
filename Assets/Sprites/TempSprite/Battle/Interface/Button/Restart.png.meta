@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Restart
+      name: Restart_0
       rect:
         serializedVersion: 2
         x: 983
@@ -125,14 +125,14 @@ TextureImporter:
         width: 1898
         height: 1895
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d469900316a69e469948943971dbd00
-      internalID: -1996211677
+      spriteID: f088d024b68b0524e90cc31d9672ae9b
+      internalID: -948892937
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Restart: -1996211677
+      Restart_0: -948892937
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
