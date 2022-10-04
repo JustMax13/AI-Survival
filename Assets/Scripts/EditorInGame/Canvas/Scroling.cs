@@ -12,19 +12,19 @@ namespace Editor
         [SerializeField] private uint space;
 
         [SerializeField] private GameObject boxForPrefab;
-        [SerializeField] private PartOfBots[] partOfBots;
+        [SerializeField] private PartOfBot[] partOfBot;
 
         private int panelCount;
 
         private GameObject[] _prefabBoxes;
 
         public GameObject[] PrefabBoxes { get => _prefabBoxes; }
-        public PartOfBots[] PartOfBotsAll { get => partOfBots; }
+        public PartOfBot[] PartOfBotsAll { get => partOfBot; }
         
         private void Start()
         {
-            partOfBots ??= new PartOfBots[0];
-            panelCount = partOfBots.Length;
+            partOfBot ??= new PartOfBot[0];
+            panelCount = partOfBot.Length;
             _prefabBoxes = new GameObject[panelCount];
 
             for (int i = 0; i < panelCount; i++)
@@ -34,7 +34,7 @@ namespace Editor
                 try
                 {
                     _prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
-                    _prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().sprite = partOfBots[i].Icon;
+                    _prefabBoxes[i].transform.GetChild(0).GetComponent<Image>().sprite = partOfBot[i].Icon;
                 }
                 catch
                 {
@@ -54,7 +54,7 @@ namespace Editor
         {
             for (int i = 0; i < panelCount; i++)
             {
-                if (partOfBots[i].CurrentCountOfPart >= partOfBots[i].MaxCountOfPart)
+                if (partOfBot[i].CurrentCountOfPart >= partOfBot[i].MaxCountOfPart)
                 {
                     _prefabBoxes[i].GetComponent<Button>().interactable = false;
                     _prefabBoxes[i].GetComponent<PrefabSpawn>().enabled = false;

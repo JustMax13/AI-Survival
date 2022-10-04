@@ -5,7 +5,7 @@ using UnityEngine;
 namespace General
 {
     [CreateAssetMenu(fileName = "CPU", menuName = "PartOfBots/New part/CPU", order = 0)]
-    public class CPU : PartOfBots
+    public class CPU : PartOfBot
     {
         [SerializeField] private GameObject _prefab;
         

@@ -15,7 +15,7 @@ namespace Menu
             [SerializeField] private GameObject _lvlButton;
             private void Start()
             {
-                _lvlButton.GetComponent<EnablePlay>().PlayButton = _playButton;
+                _lvlButton.GetComponent<EnableLevel>().PlayButton = _playButton;
             }
         }
         

@@ -7,7 +7,6 @@ namespace CombatMechanics
     using Weapon;
     public class ShotGun : GunShot
     {
-
         protected override void Shot()
         {
             GameObject newBullet = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
@@ -23,8 +22,6 @@ namespace CombatMechanics
                 Debug.Log("The generated bullet does not have a Rigidbody 2d or ClassicBullet component");
             }
             finally { CurrentProjectilesInAClip -= 1; }
-                
-            
         }
     }
 }
