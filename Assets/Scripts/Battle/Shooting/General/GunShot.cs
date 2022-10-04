@@ -8,74 +8,32 @@ namespace CombatMechanics
     {
         public abstract class GunShot : MonoBehaviour
         {
-            [SerializeField]
-            private Transform _bulletSpawn;
-            public Transform BulletSpawn
-            {
-                get
-                {
-                    return _bulletSpawn;
-                }
-                private set
-                {
-                    _bulletSpawn = value;
-                }
-            }
-            [SerializeField]
-            private GameObject _bulletPrefab;
-            public GameObject BulletPrefab
-            {
-                get
-                {
-                    return _bulletPrefab;
-                }
-                private set
-                {
-                    _bulletPrefab = value;
-                }
-            }
+            [SerializeField] [Range(1, 10000)]
+            private uint _projectilesInAClip;
+
+            [SerializeField] [Range(0, 1000000)]
+            private float _bulletDamage;
+            [SerializeField] [Range(_minBulletVelocity, _maxBulletVelocity)]
+            private float _bulletVelocity = 50f;
+
+            [SerializeField] [Range(0.001f, 300)]
+            private float _reloadBetweenProjectilesInAClip;
+            [SerializeField] [Range(0.1f, 300)]
+            private float _reloadTime;
+
+            [SerializeField] private Transform _bulletSpawn;
+
+            [SerializeField] private GameObject _bulletPrefab;
 
             private const float _minBulletVelocity = 10f;
             private const float _maxBulletVelocity = 150f;
-            [SerializeField]
-            [Range(_minBulletVelocity, _maxBulletVelocity)]
-            private float _bulletVelocity = 50f;
 
-            public float BulletVelocity
-            {
-                get
-                {
-                    return _bulletVelocity;
-                }
-                set
-                {
-                    if (value < _minBulletVelocity)
-                        value = _minBulletVelocity;
-                    if (value > _maxBulletVelocity)
-                        value = _maxBulletVelocity;
+            private uint _currentProjectilesInAClip;
 
-                    _bulletVelocity = value;
-                }
-            }
-            [SerializeField]
-            [Range(0, 1000000)]
-            private float _bulletDamage;
-            public float BulletDamage
-            {
-                get => _bulletDamage;
-                set
-                {
-                    if (value < 0)
-                        value = 0;
-                    else if (value > 1000000)
-                        value = 1000000;
+            bool ReloadEnd;
 
-                    _bulletDamage = value;
-                }
-            }
-            [SerializeField]
-            [Range(1, 10000)]
-            private uint _projectilesInAClip;
+            private float _currentReloadTime;
+
             public uint ProjectilesInAClip
             {
                 get => _projectilesInAClip;
@@ -89,7 +47,57 @@ namespace CombatMechanics
                     _projectilesInAClip = value;
                 }
             }
-            private uint _currentProjectilesInAClip;
+
+            public float BulletDamage
+            {
+                get => _bulletDamage;
+                set
+                {
+                    if (value < 0)
+                        value = 0;
+                    else if (value > 1000000)
+                        value = 1000000;
+
+                    _bulletDamage = value;
+                }
+            }
+            public float BulletVelocity
+            {
+                get => _bulletVelocity;
+                set
+                {
+                    if (value < _minBulletVelocity)
+                        value = _minBulletVelocity;
+                    if (value > _maxBulletVelocity)
+                        value = _maxBulletVelocity;
+
+                    _bulletVelocity = value;
+                }
+            }
+
+            public float ReloadBetweenProjectilesInAClip
+            {
+                get => _reloadBetweenProjectilesInAClip;
+                set
+                {
+                    if (value > 0.001f)
+                        value = 0.001f;
+                    else if (value > 300)
+                        value = 300;
+
+                    _reloadBetweenProjectilesInAClip = 300;
+                }
+            }
+            public float ReloadTime
+            {
+                get => _reloadTime;
+                set
+                {
+                    if (value < 0.1f)
+                        _reloadTime = 0.1f;
+                }
+            }
+
             public uint CurrentProjectilesInAClip
             {
                 get => _currentProjectilesInAClip;
@@ -104,36 +112,18 @@ namespace CombatMechanics
                 }
             }
 
-            [SerializeField]
-            [Range(0.001f, 300)]
-            private float _reloadBetweenProjectilesInAClip;
-            public float ReloadBetweenProjectilesInAClip
+            public Transform BulletSpawn
             {
-                get => _reloadBetweenProjectilesInAClip;
-                set
-                {
-                    if (value > 0.001f)
-                        value = 0.001f;
-                    else if (value > 300)
-                        value = 300;
+                get => _bulletSpawn;
+                private set { _bulletSpawn = value; }
+            }
 
-                    _reloadBetweenProjectilesInAClip = 300;
-                }
-            }
-            [SerializeField]
-            [Range(0.1f, 300)]
-            private float _reloadTime;
-            public float ReloadTime
+            public GameObject BulletPrefab
             {
-                get => _reloadTime;
-                set
-                {
-                    if (value < 0.1f)
-                        _reloadTime = 0.1f;
-                }
+                get => _bulletPrefab;
+                private set { _bulletPrefab = value; }
             }
-            private float _currentReloadTime;
-            bool ReloadEnd;
+
             public void CheckReloadAndShot()
             {
                 if (ReloadEnd)
@@ -146,7 +136,6 @@ namespace CombatMechanics
                     }
                     else _currentReloadTime = ReloadBetweenProjectilesInAClip;
                 }
-
             }
             abstract protected void Shot();
 
