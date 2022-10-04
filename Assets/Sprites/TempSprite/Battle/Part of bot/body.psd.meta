@@ -1,12 +1,9 @@
 fileFormatVersion: 2
 guid: eb389d48b27de1a4292821cc182a6ae2
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1880120661550918566
-    second: body_0
+  internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -66,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -92,7 +90,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -122,10 +120,10 @@ TextureImporter:
       name: body_0
       rect:
         serializedVersion: 2
-        x: 409
+        x: 369
         y: 388
-        width: 1154
-        height: 347
+        width: 1203
+        height: 348
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a549269383878e5e0800000000000000
-      internalID: -1880120661550918566
+      spriteID: 89157ecf4867f5944bb74f9c129b42cf
+      internalID: -996717447
       vertices: []
       indices: 
       edges: []
@@ -150,7 +148,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      body_0: -1880120661550918566
+      body_1: 1593461802
+      body_0: -996717447
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

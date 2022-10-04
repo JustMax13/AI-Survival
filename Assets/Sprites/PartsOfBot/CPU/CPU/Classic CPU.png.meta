@@ -3,7 +3,7 @@ guid: 8632264687410934da52ef2925b40279
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -119,10 +120,10 @@ TextureImporter:
       name: Classic CPU_0
       rect:
         serializedVersion: 2
-        x: 1204
-        y: 637
-        width: 1013
-        height: 938
+        x: 1201
+        y: 633
+        width: 1020
+        height: 946
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 900d4b469a6d7ee4088b1270505b2404
-      internalID: 972967993
+      spriteID: 047946da3e3208e4d98cc6b71cec22dd
+      internalID: -187893165
       vertices: []
       indices: 
       edges: []
@@ -147,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Classic CPU_0: 972967993
+      Classic CPU_0: -187893165
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

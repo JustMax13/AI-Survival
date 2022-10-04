@@ -3,7 +3,7 @@ guid: 90f6b45f1a28a294fa833f07e49a81fa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -130,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 520976c4738098543ab3cde4cc723a0c
-      internalID: -1968325995
+      spriteID: 766db60093ef8af4e82d219ae4384ea4
+      internalID: 1226857034
       vertices: []
       indices: 
       edges: []
@@ -147,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bolt_0: -1968325995
+      Bolt_0: 1226857034
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
