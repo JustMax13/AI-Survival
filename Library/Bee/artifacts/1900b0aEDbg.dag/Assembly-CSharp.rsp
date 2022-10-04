@@ -410,7 +410,7 @@
 "Assets/Scripts/General/PartOfBot/CPU.cs"
 "Assets/Scripts/General/PartOfBot/Frame.cs"
 "Assets/Scripts/General/PartOfBot/Gun.cs"
-"Assets/Scripts/General/PartOfBot/PartOfBots.cs"
+"Assets/Scripts/General/PartOfBot/PartOfBot.cs"
 "Assets/Scripts/General/SetActiveObject.cs"
 "Assets/Scripts/General/SpawnPrefab.cs"
 "Assets/Scripts/Menu/ElementsForButton.cs"

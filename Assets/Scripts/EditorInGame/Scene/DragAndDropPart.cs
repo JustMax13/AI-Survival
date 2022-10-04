@@ -21,7 +21,7 @@ namespace Editor
 
         private GameObject _destroyButton;
         private GameObject[] _rotationButton;
-        private PartOfBots _partOfBot;
+        private PartOfBot _partOfBot;
 
         public bool IsSelected { get => _isSelected; }
         public float BacklogCursor
@@ -49,7 +49,7 @@ namespace Editor
                 _limitPoint2 = value;
             }
         }
-        public PartOfBots PartOfBot
+        public PartOfBot PartOfBot
         {
             get => _partOfBot;
             set { _partOfBot = value; }

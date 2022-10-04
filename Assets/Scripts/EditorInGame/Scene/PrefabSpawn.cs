@@ -14,7 +14,7 @@ namespace Editor
         private bool _spawnPermission;
         private bool _ObjectIsntSpawn;
         private GameObject _content;
-        private PartOfBots _spawnObject;
+        private PartOfBot _spawnObject;
         private GameObject _objectOnScenes;
         // поскольку скрипт висит на конкретной кнопке и он отвечает за 1н обьект,
         // тут нужн обьект типа PartOfBots в который присвоить обьект который спавнит эта кнопка

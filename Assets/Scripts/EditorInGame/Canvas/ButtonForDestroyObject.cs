@@ -9,13 +9,13 @@ namespace Editor
     public class ButtonForDestroyObject : Button
     {
         private GameObject _selectedPart;
-        private PartOfBots _partOfBot;
+        private PartOfBot _partOfBot;
         public GameObject SelectedPart
         {
             get => _selectedPart;
             set { _selectedPart = value; }
         }
-        public PartOfBots PartOfBot
+        public PartOfBot PartOfBot
         {
             get => _partOfBot;
             set { _partOfBot = value; }
