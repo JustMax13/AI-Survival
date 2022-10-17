@@ -64,7 +64,7 @@
     <Compile Include="Assets\Scripts\Menu\ElementsForButton.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\Attraction\AttractionPoint.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Interface\Inventory\EventTriggerForSpawn.cs" />
-    <Compile Include="Assets\Scripts\EditorInGame\Scene\Spawn\CallSpawnPrefab.cs" />
+    <Compile Include="Assets\Scripts\EditorInGame\Scene\Spawn\PartForSpawn.cs" />
     <Compile Include="Assets\Scripts\Battle\Canvas\WinOrLose.cs" />
     <Compile Include="Assets\Scripts\Battle\EventFolder\ButtonConnection.cs" />
     <Compile Include="Assets\Scripts\Battle\Move\Bots Move\BotsWheel.cs" />
@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Battle\Shooting\Gun\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Battle\Spawn\SpawnPlayer.cs" />
     <Compile Include="Assets\Scripts\General\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\EditorInGame\Scene\Spawn\SpawnPart.cs" />
     <Compile Include="Assets\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Scripts\General\SpawnPrefab.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />

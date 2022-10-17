@@ -16,6 +16,7 @@ TagManager:
   - DestroyButton
   - RotationButton
   - Enemy
+  - ValuesForSpawn
   layers:
   - Default
   - TransparentFX

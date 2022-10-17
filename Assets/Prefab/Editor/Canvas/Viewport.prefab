@@ -56,6 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5523629419460270613}
   - component: {fileID: 5523629419460270826}
+  - component: {fileID: 5404953021916816087}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -95,11 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e864aa31f679c74ebd567682c758e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxForPrefab: {fileID: 2091858815156712658, guid: 36826da1ca248f54b9f61c93837eccbd, type: 3}
-  partOfBots:
-  - {fileID: 11400000, guid: 60ccb80c3f5043a4a8a529fe25ae9ba4, type: 2}
-  - {fileID: 11400000, guid: 2a287307bf2186c4aaa6aaaf6a6763ca, type: 2}
-  - {fileID: 11400000, guid: 2b39611a8dd68ad4ea4f0d510c555f17, type: 2}
-  - {fileID: 11400000, guid: 228462747e10f56428c4e558ddd34511, type: 2}
-  - {fileID: 11400000, guid: c074cfba616deaa46be00b89fecf7a0d, type: 2}
   space: 20
+  boxForPrefab: {fileID: 2091858815156712658, guid: 36826da1ca248f54b9f61c93837eccbd,
+    type: 3}
+  partOfBot: []
+--- !u!114 &5404953021916816087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5523629419460270827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5500214c9cf219e4fb59c3ad2cae4138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSharpness: 22
+  _limitPoint1: {fileID: 0}
+  _limitPoint2: {fileID: 0}
+  _content: {fileID: 5523629419460270827}

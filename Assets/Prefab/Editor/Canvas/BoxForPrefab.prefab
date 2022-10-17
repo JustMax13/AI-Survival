@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1553432263952340251}
   - component: {fileID: 6188210396308038400}
   - component: {fileID: 5514387640428613486}
-  - component: {fileID: -8248045526140981980}
+  - component: {fileID: 1878142788543937370}
   m_Layer: 5
   m_Name: BoxForPrefab
   m_TagString: Untagged
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b66ee4dd8a2e2f46aa94b1a6f35d89f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8248045526140981980
+--- !u!114 &1878142788543937370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,12 +145,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2091858815156712658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa0ae6b08e52a74381cb357dc9b393f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9111359bf1444ac4ca81490d796bddce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _limitPoint1: {fileID: 1564125205116243845, guid: 7eb1f8fae4f03e047a5957d423f8ee68, type: 3}
-  _limitPoint2: {fileID: 446147315797447568, guid: b20e48aafeb93f84b9166dad3e47e6e7, type: 3}
-  _movementSharpness: 22
+  valuesForSpawnPart: {fileID: 0}
 --- !u!1 &5231614980060599459
 GameObject:
   m_ObjectHideFlags: 0

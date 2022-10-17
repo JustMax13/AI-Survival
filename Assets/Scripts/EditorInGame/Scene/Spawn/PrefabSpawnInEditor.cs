@@ -43,6 +43,7 @@ namespace Editor
             _ObjectIsntSpawn = false;
             _spawnEnd = true;
         }
+        // ---------------------------------------------------
         private void Start()
         {
             try
@@ -54,8 +55,10 @@ namespace Editor
                 Debug.Log($"Can't found object with name 'Content'");
                 return;
             }
+            // логика высше нам не понадобиться, так как контент мы вставим сразу content
+            // тут мы просто возьмем content из SpawnPart и запишем в переменную
 
-            var PrefabBoxes = new GameObject[0];
+            GameObject[] PrefabBoxes;
             try
             {
                 PrefabBoxes = _content.GetComponent<Scroling>().PrefabBoxes;
@@ -74,12 +77,12 @@ namespace Editor
                     break;
                 }
             }
-            // всю высше описаную логику закинуть в общий скрипт, но не в Start, а в отдельный метод,
-            // а тут его уже просто вызвать 
 
             _spawnEnd = false; // в общий скрипт
             _ObjectIsntSpawn = true; // в общий скрипт
             _spawnPermission = false; // в общий скрипт
+
+            // для обращения к этим переменным просто создадим свойство; а в этом скрипте будем иметь обьект класса SpawnPart
         }
         private void Update()
         {

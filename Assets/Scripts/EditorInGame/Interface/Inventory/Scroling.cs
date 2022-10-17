@@ -57,12 +57,12 @@ namespace Editor.Interface
                 if (partOfBot[i].CurrentCountOfPart >= partOfBot[i].MaxCountOfPart)
                 {
                     _prefabBoxes[i].GetComponent<Button>().interactable = false;
-                    _prefabBoxes[i].GetComponent<PrefabSpawnInEditor>().enabled = false;
+                    _prefabBoxes[i].GetComponent<PartForSpawn>().enabled = false;
                 }
                 else 
                 {
                     _prefabBoxes[i].GetComponent<Button>().interactable = true;
-                    _prefabBoxes[i].GetComponent<PrefabSpawnInEditor>().enabled = true;
+                    _prefabBoxes[i].GetComponent<PartForSpawn>().enabled = true;
                 }
             }
         }
