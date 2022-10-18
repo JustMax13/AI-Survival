@@ -6,7 +6,7 @@ namespace Editor
     {
         [SerializeField] private AttractionObject _attractionObj;
 
-        private bool _isConected;
+        private bool _isConected; // не становится false, если другая деталь дисконектиться
         private bool _onTrigger;
         private const int MaxCountConnectedObject = 3;
         private int _currentCountConnectedObject;
@@ -31,10 +31,12 @@ namespace Editor
             magnet.transform.localPosition = gameObject.transform.localPosition;
             magnet.transform.parent = null;
 
+            Transform pastParent = _attractionObj.transform.parent;
+
             _attractionObj.gameObject.transform.SetParent(magnet.transform);
             magnet.transform.position = collision.transform.position;
 
-            _attractionObj.transform.parent = null;
+            _attractionObj.transform.parent = pastParent;
             Destroy(magnet);
         }
         private void Connect(Collider2D collision)
@@ -60,6 +62,8 @@ namespace Editor
 
             _isConected = false;
             _currentCountConnectedObject = 0;
+            // чувствую тут нужно создать событие, которое заставит всех, кто отконектился -
+            // и переподключиться
         }
 
         private void OnTriggerEnter2D(Collider2D collision) => _onTrigger = true;
@@ -109,14 +113,17 @@ namespace Editor
             else if (_pointSprite && _pointSprite.enabled)
                 _pointSprite.enabled = false;
         }
-        private void FixedUpdate()
+        private void FixedUpdate() // мега не оптимизировано, ибо GetComponent
         {
             int count = 0;
             foreach (var item in Physics2D.OverlapPointAll(gameObject.transform.position))
             {
-                if (item.GetComponent<AttractionPoint>() && item.GetComponent<AttractionPoint>()._isConected) count++;
+                if (item.GetComponent<AttractionPoint>() && item.GetComponent<AttractionPoint>()._isConected &&
+                    item.gameObject != gameObject)
+                    count++;
             }
-            _currentCountConnectedObject = count;
+            _currentCountConnectedObject = count; // так же если подключений - 0, то выключать спрайт
+            // болта
         }
     }
 }

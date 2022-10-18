@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Editor
 {
-    using CombatMechanics;
     using General;
 
     public class SpawnPart : MonoBehaviour
@@ -14,6 +13,7 @@ namespace Editor
         [SerializeField] private GameObject _limitPoint1;
         [SerializeField] private GameObject _limitPoint2;
         [SerializeField] private GameObject _content;
+        [SerializeField] private GameObject _parentsOfParts;
 
         public float MovementSharpness { get => _movementSharpness; }
         public GameObject LimitPoint1 { get => _limitPoint1; }
@@ -35,6 +35,7 @@ namespace Editor
                 Destroy(partOnScene);
             }
 
+            partOnScene.transform.parent = _parentsOfParts.transform;
             partOnScene.AddComponent<DragAndDropPart>();
             partOnScene.GetComponent<DragAndDropPart>().BacklogCursor = 22;
             partOnScene.GetComponent<DragAndDropPart>().LimitPoint1 = _limitPoint1;

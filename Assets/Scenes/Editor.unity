@@ -609,6 +609,11 @@ PrefabInstance:
       propertyPath: _limitPoint2
       value: 
       objectReference: {fileID: 1610231112}
+    - target: {fileID: 6613777592223967528, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: _parentsOfParts
+      value: 
+      objectReference: {fileID: 902931429}
     - target: {fileID: 6660054464766382356, guid: e070b8fd643eea54888c38eec827b81f,
         type: 3}
       propertyPath: m_TagString

@@ -71,7 +71,6 @@
     <Compile Include="Assets\Scripts\Battle\Spawn\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Interface\Inventory\ClickOnPrefabInventory.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\Bullet\ProjectileRotation.cs" />
-    <Compile Include="Assets\Scripts\EditorInGame\Scene\Spawn\PrefabSpawnInEditor.cs" />
     <Compile Include="Assets\Scripts\EditorInGame\Scene\Move\DragAndDropPart.cs" />
     <Compile Include="Assets\Scripts\General\PartOfBot\Gun.cs" />
     <Compile Include="Assets\Scripts\Battle\Shooting\Gun\ShotGun.cs" />

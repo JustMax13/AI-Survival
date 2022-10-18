@@ -406,7 +406,6 @@
 "Assets/Scripts/EditorInGame/Scene/Manager/ActionManager.cs"
 "Assets/Scripts/EditorInGame/Scene/Move/DragAndDropPart.cs"
 "Assets/Scripts/EditorInGame/Scene/Spawn/PartForSpawn.cs"
-"Assets/Scripts/EditorInGame/Scene/Spawn/PrefabSpawnInEditor.cs"
 "Assets/Scripts/EditorInGame/Scene/Spawn/SpawnPart.cs"
 "Assets/Scripts/General/DragAndDrop.cs"
 "Assets/Scripts/General/LoadScene.cs"
