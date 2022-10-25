@@ -1,8 +1,9 @@
 using UnityEngine;
 
-namespace General
+namespace General.PartOfBots
 {
-    public abstract class PartOfBot : ScriptableObject
+
+    public abstract class PartOfBot : ScriptableObject, IPathOfPart
     {
         [SerializeField] private Sprite _icon;
         public Sprite Icon
@@ -13,5 +14,7 @@ namespace General
         public abstract GameObject Prefab { get; protected set; }
         public abstract float MaxCountOfPart { get; protected set; }
         public abstract float CurrentCountOfPart { get; set; }
+
+        public abstract string Path { get; }
     }
 }

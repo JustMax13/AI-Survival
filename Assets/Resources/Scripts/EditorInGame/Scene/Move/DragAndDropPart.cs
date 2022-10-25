@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using General;
+using General.PartOfBots;
+using UnityEngine;
 
 namespace Editor
 {
@@ -55,28 +52,28 @@ namespace Editor
             get => _partOfBot;
             set { _partOfBot = value; }
         }
-        
+
 
         private void OnMouseDown()
         {
-            if(_isSelected) ActionManager.CameraMoveAndZoom = false;
+            if (_isSelected) ActionManager.CameraMoveAndZoom = false;
             else _curentClickTime = 0;
         }
 
         private void OnMouseDrag()
         {
-            if(_isSelected)
+            if (_isSelected)
             {
                 Vector2 touth = DragAndDrop.MousePositionOnDragArea(_limitPoint1, _limitPoint2);
                 transform.position = new Vector2(Mathf.Lerp(transform.position.x, touth.x, _backlogCursor * Time.deltaTime),
                     Mathf.Lerp(transform.position.y, touth.y, _backlogCursor * Time.deltaTime));
             }
         }
-        private void OnMouseUp() 
+        private void OnMouseUp()
         {
-            if (ActionManager.CameraMoveAndZoom == false) 
+            if (ActionManager.CameraMoveAndZoom == false)
                 ActionManager.CameraMoveAndZoom = true;
-            else if(_curentClickTime <= _clickTime) _isSelected = true;
+            else if (_curentClickTime <= _clickTime) _isSelected = true;
         }
         private void OnMouseEnter() => _cursorOnObject = true;
         private void OnMouseExit() => _cursorOnObject = false;
@@ -119,12 +116,12 @@ namespace Editor
             {
                 Debug.Log("DestroyButton lost component: ButtonForDestroyObject");
             }
-            
+
             if (Input.GetMouseButtonDown(0) && !_cursorOnObject && !ActionManager.ActionButtonDown) _isSelected = false;
         }
         private void FixedUpdate()
         {
-            if(_curentClickTime <= _clickTime) _curentClickTime += Time.deltaTime;
+            if (_curentClickTime <= _clickTime) _curentClickTime += Time.deltaTime;
         }
     }
 }

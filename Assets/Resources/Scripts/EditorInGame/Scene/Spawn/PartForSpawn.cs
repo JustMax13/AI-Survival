@@ -1,10 +1,12 @@
-using General;
 using UnityEngine;
+using System;
 
 namespace Editor
 {
+    using General;
+    using General.PartOfBots;
     using Editor.Interface;
-    using System;
+    
 
     public class PartForSpawn : MonoBehaviour
     {

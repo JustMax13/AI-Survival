@@ -19,17 +19,19 @@ ScriptsOnlyBuild:
     - CombatMechanics.WinOrLose
     - Editor.AttractionObject
     - Editor.AttractionPoint
-    - Editor.ButtonForDestroyObject
-    - Editor.ButtonSelected
-    - Editor.ClickOnPrefabInventory
-    - Editor.PrefabSpawn
-    - Editor.RotatePart
-    - Editor.Scroling
+    - Editor.Interface.ButtonForDestroyObject
+    - Editor.Interface.ButtonSelected
+    - Editor.Interface.ClickOnPrefabInventory
+    - Editor.Interface.RotatePartButton
+    - Editor.Interface.Scroling
+    - Editor.PartForSpawn
+    - Editor.SpawnPart
     - GaveOverMenu
-    - General.CPU
-    - General.Frame
+    - General.ClassicCentralBlock
+    - General.ClassicFrame
     - General.LoadScene
     - General.MoveAndZoomCamera
+    - General.PartOfBots.ClassicFramePath
     - Menu.ButtonEditor.ElementsForButton
     - Menu.EnableLevel
     - Menu.SpawnPlayerInMenu
@@ -39,7 +41,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -50,6 +51,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.Notifications.dll:
+    - Unity.Notifications.NotificationSettingsManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -71,6 +74,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.ScrollRect
   serializedClasses:
+    Unity.Notifications:
+    - Unity.Notifications.NotificationSettingsCollection
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
@@ -105,6 +110,15 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
+    fullTypeName: SetActiveObject
+    methodName: ObjectON
+  - assembly: Assembly-CSharp
+    fullTypeName: SetActiveObject
+    methodName: ObjectOFF
+  - assembly: Assembly-CSharp
+    fullTypeName: General.LoadScene
+    methodName: LoadNextScane
+  - assembly: Assembly-CSharp
     fullTypeName: General.LoadScene
     methodName: LoadNextScane
   - assembly: Assembly-CSharp
@@ -114,8 +128,74 @@ ScriptsOnlyBuild:
     fullTypeName: General.LoadScene
     methodName: LoadNextScane
   - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: ButtonPause
+  - assembly: Assembly-CSharp
+    fullTypeName: GaveOverMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: ButtonPause
+  - assembly: Assembly-CSharp
+    fullTypeName: GaveOverMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: GaveOverMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: GaveOverMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: General.LoadScene
+    methodName: LoadNextScane
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: General.LoadScene
+    methodName: LoadNextScane
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: CombatMechanics.PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
     fullTypeName: SetActiveObject
     methodName: ObjectON
+  - assembly: Assembly-CSharp
+    fullTypeName: General.LoadScene
+    methodName: LoadNextScane
+  - assembly: Assembly-CSharp
+    fullTypeName: Editor.Interface.RotatePartButton
+    methodName: RotatingLeft
+  - assembly: Assembly-CSharp
+    fullTypeName: Editor.Interface.RotatePartButton
+    methodName: RotatingRight
+  - assembly: Assembly-CSharp
+    fullTypeName: SetActiveObject
+    methodName: ObjectON
+  - assembly: Assembly-CSharp
+    fullTypeName: SetActiveObject
+    methodName: ObjectON
+  - assembly: Assembly-CSharp
+    fullTypeName: SetActiveObject
+    methodName: ObjectOFF
   - assembly: Assembly-CSharp
     fullTypeName: General.LoadScene
     methodName: LoadCurrentScane
@@ -159,16 +239,16 @@ ScriptsOnlyBuild:
     fullTypeName: CombatMechanics.PauseMenu
     methodName: ButtonPause
   - assembly: Assembly-CSharp
-    fullTypeName: Editor.RotatePart
+    fullTypeName: Editor.Interface.RotatePartButton
     methodName: RotatingRight
   - assembly: Assembly-CSharp
-    fullTypeName: Editor.RotatePart
+    fullTypeName: Editor.Interface.RotatePartButton
     methodName: RotatingLeft
   - assembly: Assembly-CSharp
     fullTypeName: General.LoadScene
     methodName: LoadNextScane
   sceneClasses:
-    Assets/Scenes/Battle.unity:
+    Assets/Resources/Scenes/Battle.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -210,47 +290,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2050}
     - Class: 114
-      Script: {instanceID: 2634}
-    - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2638}
     - Class: 114
       Script: {instanceID: 3042}
     - Class: 114
-      Script: {instanceID: 3206}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 3224}
+      Script: {instanceID: 3214}
     - Class: 114
-      Script: {instanceID: 3284}
+      Script: {instanceID: 3232}
     - Class: 114
-      Script: {instanceID: 3390}
+      Script: {instanceID: 3292}
     - Class: 114
-      Script: {instanceID: 3724}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 3830}
+      Script: {instanceID: 3732}
     - Class: 114
-      Script: {instanceID: 3854}
+      Script: {instanceID: 3838}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3862}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 3924}
     - Class: 114
-      Script: {instanceID: 4860}
+      Script: {instanceID: 4324}
     - Class: 114
-      Script: {instanceID: 5110}
+      Script: {instanceID: 4872}
     - Class: 114
-      Script: {instanceID: 5338}
+      Script: {instanceID: 5122}
     - Class: 114
-      Script: {instanceID: 5368}
+      Script: {instanceID: 5350}
     - Class: 114
-      Script: {instanceID: 5930}
+      Script: {instanceID: 5380}
     - Class: 114
-      Script: {instanceID: 6224}
+      Script: {instanceID: 5942}
     - Class: 114
-      Script: {instanceID: 6424}
+      Script: {instanceID: 6236}
     - Class: 114
-      Script: {instanceID: 6514}
+      Script: {instanceID: 6436}
     - Class: 114
-      Script: {instanceID: 6774}
+      Script: {instanceID: 6526}
+    - Class: 114
+      Script: {instanceID: 6786}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -273,7 +353,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 255
       Script: {instanceID: 0}
-    Assets/Scenes/Editor.unity:
+    Assets/Resources/Scenes/Editor.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -313,39 +393,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2270}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2486}
     - Class: 114
-      Script: {instanceID: 3224}
+      Script: {instanceID: 2516}
     - Class: 114
-      Script: {instanceID: 3284}
+      Script: {instanceID: 3042}
     - Class: 114
-      Script: {instanceID: 3356}
+      Script: {instanceID: 3232}
     - Class: 114
-      Script: {instanceID: 3410}
+      Script: {instanceID: 3292}
     - Class: 114
-      Script: {instanceID: 3854}
+      Script: {instanceID: 3364}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3862}
     - Class: 114
-      Script: {instanceID: 4424}
+      Script: {instanceID: 3924}
     - Class: 114
-      Script: {instanceID: 5110}
+      Script: {instanceID: 4274}
     - Class: 114
-      Script: {instanceID: 5214}
+      Script: {instanceID: 4434}
     - Class: 114
-      Script: {instanceID: 5680}
+      Script: {instanceID: 5122}
     - Class: 114
-      Script: {instanceID: 5798}
+      Script: {instanceID: 5226}
     - Class: 114
-      Script: {instanceID: 5930}
+      Script: {instanceID: 5692}
     - Class: 114
-      Script: {instanceID: 5970}
+      Script: {instanceID: 5810}
     - Class: 114
-      Script: {instanceID: 6202}
+      Script: {instanceID: 5942}
     - Class: 114
-      Script: {instanceID: 6682}
+      Script: {instanceID: 5982}
     - Class: 114
-      Script: {instanceID: 6740}
+      Script: {instanceID: 6214}
+    - Class: 114
+      Script: {instanceID: 6694}
+    - Class: 114
+      Script: {instanceID: 6752}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -364,7 +448,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/Menu.unity:
+    Assets/Resources/Scenes/Menu.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -391,6 +475,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
@@ -402,49 +488,95 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1588}
     - Class: 114
+      Script: {instanceID: 1590}
+    - Class: 114
+      Script: {instanceID: 1834}
+    - Class: 114
       Script: {instanceID: 1944}
     - Class: 114
       Script: {instanceID: 1950}
     - Class: 114
       Script: {instanceID: 2050}
     - Class: 114
-      Script: {instanceID: 2538}
+      Script: {instanceID: 2270}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2486}
+    - Class: 114
+      Script: {instanceID: 2516}
+    - Class: 114
+      Script: {instanceID: 2542}
+    - Class: 114
+      Script: {instanceID: 2638}
     - Class: 114
       Script: {instanceID: 3042}
     - Class: 114
-      Script: {instanceID: 3224}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 3284}
+      Script: {instanceID: 3214}
     - Class: 114
-      Script: {instanceID: 3390}
+      Script: {instanceID: 3232}
     - Class: 114
-      Script: {instanceID: 3724}
+      Script: {instanceID: 3292}
     - Class: 114
-      Script: {instanceID: 3854}
+      Script: {instanceID: 3364}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 4570}
+      Script: {instanceID: 3732}
     - Class: 114
-      Script: {instanceID: 4860}
+      Script: {instanceID: 3838}
     - Class: 114
-      Script: {instanceID: 5110}
+      Script: {instanceID: 3862}
     - Class: 114
-      Script: {instanceID: 5592}
+      Script: {instanceID: 3924}
     - Class: 114
-      Script: {instanceID: 5640}
+      Script: {instanceID: 4274}
     - Class: 114
-      Script: {instanceID: 5930}
+      Script: {instanceID: 4324}
     - Class: 114
-      Script: {instanceID: 6102}
+      Script: {instanceID: 4434}
     - Class: 114
-      Script: {instanceID: 6160}
+      Script: {instanceID: 4580}
     - Class: 114
-      Script: {instanceID: 6424}
+      Script: {instanceID: 4872}
     - Class: 114
-      Script: {instanceID: 6774}
+      Script: {instanceID: 5122}
+    - Class: 114
+      Script: {instanceID: 5226}
+    - Class: 114
+      Script: {instanceID: 5350}
+    - Class: 114
+      Script: {instanceID: 5604}
+    - Class: 114
+      Script: {instanceID: 5652}
+    - Class: 114
+      Script: {instanceID: 5692}
+    - Class: 114
+      Script: {instanceID: 5810}
+    - Class: 114
+      Script: {instanceID: 5942}
+    - Class: 114
+      Script: {instanceID: 5982}
+    - Class: 114
+      Script: {instanceID: 6114}
+    - Class: 114
+      Script: {instanceID: 6172}
+    - Class: 114
+      Script: {instanceID: 6214}
+    - Class: 114
+      Script: {instanceID: 6236}
+    - Class: 114
+      Script: {instanceID: 6436}
+    - Class: 114
+      Script: {instanceID: 6526}
+    - Class: 114
+      Script: {instanceID: 6694}
+    - Class: 114
+      Script: {instanceID: 6752}
+    - Class: 114
+      Script: {instanceID: 6786}
+    - Class: 114
+      Script: {instanceID: 6792}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -604,7 +736,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 134322c9293c1896357cce271b819ce4
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Editor
+    namespaceName: Editor.Interface
     className: EventTriggerForSpawn
   - hash:
       serializedVersion: 2
@@ -624,6 +756,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinUpdateHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Editor
+    className: PartForSpawn
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: General.PartOfBots
+    className: ClassicFramePath
   - hash:
       serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
@@ -736,7 +880,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Editor
+    namespaceName: Editor.Interface
     className: ClickOnPrefabInventory
   - hash:
       serializedVersion: 2
@@ -744,12 +888,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProjectileRotation
-  - hash:
-      serializedVersion: 2
-      Hash: 0fe71ee745bff4c056b87a03ba5b1ba6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Editor
-    className: PrefabSpawn
   - hash:
       serializedVersion: 2
       Hash: d95853fa9abd97e61ebb555cbab3bac0
@@ -872,6 +1010,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 098c7a5b8473d6a2b4537f3be73e0a47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Editor
+    className: SpawnPart
+  - hash:
+      serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -898,8 +1042,8 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Editor
-    className: RotatePart
+    namespaceName: Editor.Interface
+    className: RotatePartButton
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -966,6 +1110,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: General
     className: DragAndDrop
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: General.PartOfBots
+    className: ClassicCentralBlockPath
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1042,7 +1192,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 5ac87b2046a8757c3585f23e9ce35dcf
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Editor
+    namespaceName: Editor.Interface
     className: Scroling
   - hash:
       serializedVersion: 2
@@ -1168,7 +1318,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Editor
+    namespaceName: Editor.Interface
     className: ButtonForDestroyObject
   - hash:
       serializedVersion: 2
@@ -1199,7 +1349,7 @@ ScriptsOnlyBuild:
       Hash: 5e31d721cd4da12280f487d89afd8813
     assemblyName: Assembly-CSharp.dll
     namespaceName: General
-    className: CPU
+    className: ClassicCentralBlock
   - hash:
       serializedVersion: 2
       Hash: a17e95ebfefb366bb62abe2ca8c51b53
@@ -1238,10 +1388,10 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: e97577ac466b4959602fcf72b10a401a
+      Hash: b2a73595d6bc67eb14c0269bccb7a43b
     assemblyName: Assembly-CSharp.dll
     namespaceName: General
-    className: Frame
+    className: ClassicFrame
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -1258,7 +1408,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Editor
+    namespaceName: Editor.Interface
     className: ButtonSelected
   - hash:
       serializedVersion: 2
@@ -1272,9 +1422,15 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: CombatMechanics
     className: MoveAllWheels
+  - hash:
+      serializedVersion: 2
+      Hash: 4e547e5ffde472fc3746a05ebb21d2df
+    assemblyName: Unity.Notifications.dll
+    namespaceName: Unity.Notifications
+    className: NotificationSettingsManager
   platform: 13
   scenePathNames:
-  - Assets/Scenes/Menu.unity
-  - Assets/Scenes/Battle.unity
-  - Assets/Scenes/Editor.unity
+  - Assets/Resources/Scenes/Menu.unity
+  - Assets/Resources/Scenes/Battle.unity
+  - Assets/Resources/Scenes/Editor.unity
   playerPath: "C:/Users/\u041C\u0430\u043A\u0441\u0438\u043C/Desktop/AI  Survival.apk"

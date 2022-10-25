@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using General;
+using General.PartOfBots;
+
 namespace Editor
 {
-    using General;
+    
 
     public class SpawnPart : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-using General;
+using General.PartOfBots;
 
 namespace Editor.Interface
 {

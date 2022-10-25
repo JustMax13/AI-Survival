@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace General
 {
+    using General.PartOfBots;
     [CreateAssetMenu(fileName = "Gun", menuName = "PartOfBots/New part/Gun", order = 2)]
     public class Gun : PartOfBot
     {
@@ -27,5 +28,7 @@ namespace General
             get => _maxCountOfPart;
             protected set { _maxCountOfPart = value; }
         }
+
+        public override string Path => throw new System.NotImplementedException("missing path");
     }
 }
