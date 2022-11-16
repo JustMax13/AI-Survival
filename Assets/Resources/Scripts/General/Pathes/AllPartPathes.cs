@@ -7,22 +7,28 @@ namespace General.Pathes
 {
     public class AllPartPathes : MonoBehaviour
     {
-        public static List<TurnkeyPath> PartPathes { get; }
+        public static Dictionary<string,string> PartPathes { get; }
 
         static AllPartPathes()
         {
-            PartPathes = new List<TurnkeyPath>();
-            PartPathes.Add(new TurnkeyPath("Classic central block",
-                "Prefab/PartOfBot/CebtralBlock/ClassicCentralBlock"));
-            PartPathes.Add(new TurnkeyPath("Classic frame",
-                "Prefab/PartOfBot/Frame/ClassicFrame"));
+            PartPathes = new Dictionary<string, string>
+            {
+                { 
+                    "Classic central block", 
+                    "Prefab/PartOfBot/CebtralBlock/ClassicCentralBlock" 
+                },
+                {
+                    "Classic frame",
+                    "Prefab/PartOfBot/Frame/ClassicFrame"
+                }
+            };
         }
         public static string GetPathOfPart(string key)
         {
             foreach (var item in PartPathes)
             {
                 if (item.Key == key)
-                    return item.Path;
+                    return item.Value;
             }
             throw new System.NotImplementedException($"Can't found part by key {key}");
         }

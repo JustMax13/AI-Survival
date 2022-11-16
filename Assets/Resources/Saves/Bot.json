@@ -4,8 +4,8 @@
       "ID": 0,
       "PathToPrefab": "Prefab/PartOfBot/Frame/ClassicFrame",
       "PartPosition": {
-        "X": -1.40415013,
-        "Y": -0.0433846973,
+        "X": -1.28743756,
+        "Y": 0.360379,
         "Z": 0.0
       },
       "PartRotation": {
@@ -19,16 +19,16 @@
         {
           "SpriteRendererEnabled": false,
           "Position": {
-            "X": -1.07970011,
-            "Y": -0.0433846973,
+            "X": -0.962987542,
+            "Y": 0.360379,
             "Z": 0.0
           }
         },
         {
           "SpriteRendererEnabled": false,
           "Position": {
-            "X": -1.73115015,
-            "Y": -0.0433846973,
+            "X": -1.61443758,
+            "Y": 0.360379,
             "Z": 0.0
           }
         }
@@ -38,8 +38,8 @@
       "ID": 1,
       "PathToPrefab": "Prefab/PartOfBot/Frame/ClassicFrame",
       "PartPosition": {
-        "X": -0.75270015,
-        "Y": -0.0433846973,
+        "X": -0.6359875,
+        "Y": 0.360379,
         "Z": 0.0
       },
       "PartRotation": {
@@ -58,27 +58,22 @@
           "XAnchor": -10.9,
           "YAnchor": 0.0,
           "ID": 0
-        },
-        {
-          "XAnchor": -10.9,
-          "YAnchor": 0.0,
-          "ID": 0
         }
       ],
       "boltsData": [
         {
           "SpriteRendererEnabled": false,
           "Position": {
-            "X": -0.428250164,
-            "Y": -0.0433846973,
+            "X": -0.311537534,
+            "Y": 0.360379,
             "Z": 0.0
           }
         },
         {
           "SpriteRendererEnabled": true,
           "Position": {
-            "X": -1.07970011,
-            "Y": -0.0433846973,
+            "X": -0.962987542,
+            "Y": 0.360379,
             "Z": 0.0
           }
         }

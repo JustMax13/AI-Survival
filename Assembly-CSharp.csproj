@@ -86,7 +86,6 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\Pathes\TurnkeyPath.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\DragAndDrop.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Manager\ActionManager.cs" />

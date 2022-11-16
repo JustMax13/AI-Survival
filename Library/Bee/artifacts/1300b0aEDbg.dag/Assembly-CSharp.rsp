@@ -419,7 +419,6 @@
 "Assets/Resources/Scripts/General/PartOfBot/ScriptebleObject/Gun.cs"
 "Assets/Resources/Scripts/General/Pathes/AllPartPathes.cs"
 "Assets/Resources/Scripts/General/Pathes/PartPath.cs"
-"Assets/Resources/Scripts/General/Pathes/TurnkeyPath.cs"
 "Assets/Resources/Scripts/General/Saves/Data/BoltData.cs"
 "Assets/Resources/Scripts/General/Saves/Data/BotData.cs"
 "Assets/Resources/Scripts/General/Saves/Data/ConnectedBody2D.cs"
