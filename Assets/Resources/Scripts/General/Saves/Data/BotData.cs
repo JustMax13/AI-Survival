@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using General.Pathes;
 
 namespace General.Saves
 {
@@ -10,8 +11,13 @@ namespace General.Saves
         public List<PartData> BotPartsData { get; private set; }
         public BotData(GameObject bot)
         {
-            var parts = bot.GetComponentsInChildren<Transform>();
+            var partsPath = bot.GetComponentsInChildren<PartPath>();
+            var parts = new Transform[partsPath.Length];
 
+            for (int i = 0; i < partsPath.Length; i++)
+                parts[i] = partsPath[i].PartTransform;
+
+            BotPartsData = new List<PartData>();
             foreach (var item in parts)
                 BotPartsData.Add(new PartData(item.gameObject));
 

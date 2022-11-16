@@ -63,10 +63,10 @@
     <Compile Include="Assets\Resources\Prefab\Battle\Connected\ConnectButtonToGun.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\ElementsForButton.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\ConnectedBody2D.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Saves\Data\BoltData.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Attraction\AttractionPoint.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\EventTriggerForSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Spawn\PartForSpawn.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\PartOfBot\PathVariability\Frame\ClassicFramePath.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\General\IPathOfPart.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\WinOrLose.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\ButtonConnection.cs" />
@@ -86,19 +86,22 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Pathes\TurnkeyPath.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\DragAndDrop.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\PartOfBot\PathVariability\CentralBlock\ClassicCentralBlockPath.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Manager\ActionManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\SpawnEnd.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\Varieties\ClassicBullet.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Saves\SaveBotController.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\General\IHaveHP.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\HPofPart.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\Scroling.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Pathes\PartPath.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\PauseMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\SimplePosition.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\GameOverEvent.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\General\AbstractBullet.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Saves\SaveAndLoadData.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SetActiveObject.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Attraction\AttractionObject.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\MoveAndZoomCamera.cs" />
@@ -108,13 +111,12 @@
     <Compile Include="Assets\Resources\Scripts\Menu\EnableLevel.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\ScriptebleObject\ClassicCentralBlock.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\ConnectedShotButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Pathes\AllPartPathes.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\ScriptebleObject\ClassicFrame.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\Saves\SaveAndLoadBot.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\Saves\Data\BoltData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

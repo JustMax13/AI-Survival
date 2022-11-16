@@ -2,6 +2,8 @@ using General.PartOfBots;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using General.Pathes;
+using Editor;
 
 namespace General.Saves
 {
@@ -21,20 +23,18 @@ namespace General.Saves
         public PartData(GameObject part)
         {
             ID = _nextFreeID++;
-            PathToPrefab = part.GetComponent<IPathOfPart>().Path;
+            PathToPrefab = part.GetComponent<PartPath>().Path;
 
             PartPosition = new SimplePosition(part);
             PartRotation = new SimpleRotation(part);
 
             ConnectedBodys2D = new ConnectedBody2D[part.GetComponents<FixedJoint2D>().Length];
 
-            var AllBolts = part.GetComponentsInChildren<Transform>();
+            var AllBolts = part.GetComponentsInChildren<AttractionPoint>();
             boltsData = new BoltData[AllBolts.Length];
 
-            for (int i = 0; i < AllBolts.Length; i++)
+            for (int i = 0; i < boltsData.Length; i++)
                 boltsData[i] = new BoltData(AllBolts[i].gameObject);
-
-            // нужно после всех записаных деталей, добавить в ConnectedBodys2D нужные детали
         }
     }
 }

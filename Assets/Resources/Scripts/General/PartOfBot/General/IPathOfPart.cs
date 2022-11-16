@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace General.PartOfBots
+namespace General.Pathes
 {
     public interface IPathOfPart
     {

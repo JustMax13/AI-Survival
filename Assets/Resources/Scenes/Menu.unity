@@ -210,6 +210,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChooseInterface
       objectReference: {fileID: 0}
+    - target: {fileID: 2560048631715425798, guid: dc7dcf1ee7659cf49a2a595bd6111b1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2560048631715425802, guid: dc7dcf1ee7659cf49a2a595bd6111b1d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -313,6 +318,11 @@ PrefabInstance:
     - target: {fileID: 2560048631715425802, guid: dc7dcf1ee7659cf49a2a595bd6111b1d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483813055169778416, guid: dc7dcf1ee7659cf49a2a595bd6111b1d,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3483813056941068168, guid: dc7dcf1ee7659cf49a2a595bd6111b1d,
