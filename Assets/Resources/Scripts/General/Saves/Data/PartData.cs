@@ -19,7 +19,7 @@ namespace General.Saves
         public ConnectedBody2D[] ConnectedBodys2D { get; set; }
 
         public BoltData[] boltsData { get; private set; }
-        
+
         public PartData(GameObject part)
         {
             ID = _nextFreeID++;
