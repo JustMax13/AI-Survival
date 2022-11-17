@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &11734224 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3483813056880914994, guid: dc7dcf1ee7659cf49a2a595bd6111b1d,
-    type: 3}
-  m_PrefabInstance: {fileID: 170292600}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &28631648 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7412257973120772855, guid: 5e263d00db3ff8542a8b515f7fe0d80d,
@@ -163,7 +151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 11734224}
+      objectReference: {fileID: 1082230240}
     - target: {fileID: 3956689777635321607, guid: 5e263d00db3ff8542a8b515f7fe0d80d,
         type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
@@ -1747,6 +1735,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e263d00db3ff8542a8b515f7fe0d80d, type: 3}
+--- !u!114 &1082230240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7412257973120772855, guid: 5e263d00db3ff8542a8b515f7fe0d80d,
+    type: 3}
+  m_PrefabInstance: {fileID: 100070186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1194395649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2536,6 +2536,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e263d00db3ff8542a8b515f7fe0d80d, type: 3}
+--- !u!114 &1621097427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7412257973120772855, guid: 5e263d00db3ff8542a8b515f7fe0d80d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1751638095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1708913140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7412257973120772855, guid: 5e263d00db3ff8542a8b515f7fe0d80d,
@@ -2564,7 +2576,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 1476996595}
+      objectReference: {fileID: 1621097427}
     - target: {fileID: 3956689777635321607, guid: 5e263d00db3ff8542a8b515f7fe0d80d,
         type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
