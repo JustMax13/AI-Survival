@@ -10,16 +10,16 @@ namespace General.Saves
     public class PartData
     {
         private static int _nextFreeID = 0;
-        public int ID { get; private set; }
-        public string PathToPrefab { get; private set; }
+        public int ID { get; set; }
+        public string PathToPrefab { get; set; }
 
-        public SimplePosition PartPosition { get; private set; }
-        public SimpleRotation PartRotation { get; private set; }
+        public SimplePosition PartPosition { get; set; }
+        public SimpleRotation PartRotation { get; set; }
 
         public ConnectedBody2D[] ConnectedBodys2D { get; set; }
 
-        public BoltData[] boltsData { get; private set; }
-
+        public BoltData[] boltsData { get; set; }
+        public PartData(){}
         public PartData(GameObject part)
         {
             ID = _nextFreeID++;

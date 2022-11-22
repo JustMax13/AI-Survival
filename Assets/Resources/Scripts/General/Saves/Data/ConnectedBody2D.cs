@@ -6,8 +6,8 @@ namespace General.Saves
 {
     public struct ConnectedBody2D
     {
-        public float XAnchor { get; private set; }
-        public float YAnchor { get; private set; }
+        public float XAnchor { get; set; }
+        public float YAnchor { get; set; }
         public int ID { get; set; }
         public ConnectedBody2D(GameObject fixedPart)
         {

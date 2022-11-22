@@ -6,9 +6,9 @@ namespace General.Saves
 {
     public struct SimplePosition
     {
-        public float X { get; private set; }
-        public float Y { get; private set; }
-        public float Z { get; private set; }
+        public float X { get; set; }
+        public float Y { get; set; }
+        public float Z { get; set; }
         public SimplePosition(GameObject gameObject)
         {
             X = gameObject.transform.position.x;

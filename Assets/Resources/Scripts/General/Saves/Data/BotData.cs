@@ -9,6 +9,7 @@ namespace General.Saves
     public class BotData
     {
         public List<PartData> BotPartsData { get; private set; }
+        public BotData() => BotPartsData = new List<PartData>();
         public BotData(GameObject bot)
         {
             var partsPath = bot.GetComponentsInChildren<PartPath>();

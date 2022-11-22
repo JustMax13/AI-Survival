@@ -14,8 +14,8 @@ namespace General.Pathes
             PartPathes = new Dictionary<string, string>
             {
                 { 
-                    "Classic central block", 
-                    "Prefab/PartOfBot/CebtralBlock/ClassicCentralBlock" 
+                    "Classic central block",
+                    "Prefab/PartOfBot/CentralBlock/ClassicCentralBlock"
                 },
                 {
                     "Classic frame",

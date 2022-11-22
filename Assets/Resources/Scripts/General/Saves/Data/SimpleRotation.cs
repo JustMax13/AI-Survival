@@ -6,10 +6,10 @@ namespace General.Saves
 {
     public struct SimpleRotation
     {
-        public float X { get; private set; }
-        public float Y { get; private set; }
-        public float Z { get; private set; }
-        public float W { get; private set; }
+        public float X { get; set; }
+        public float Y { get; set; }
+        public float Z { get; set; }
+        public float W { get; set; }
         public SimpleRotation(GameObject gameObject)
         {
             X = gameObject.transform.rotation.x;

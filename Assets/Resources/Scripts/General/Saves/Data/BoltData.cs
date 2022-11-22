@@ -6,8 +6,8 @@ namespace General.Saves
 {
     public struct BoltData 
     {
-        public bool SpriteRendererEnabled { get; private set; }
-        public SimplePosition Position { get; private set; }
+        public bool SpriteRendererEnabled { get; set; }
+        public SimplePosition Position { get; set; }
 
         public BoltData(GameObject bolt)
         {

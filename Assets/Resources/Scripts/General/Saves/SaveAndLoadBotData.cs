@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace General.Saves
 {
-    public class SaveAndLoadData : MonoBehaviour
+    public class SaveAndLoadBotData : MonoBehaviour
     {
         private static string path = Application.dataPath + "/Resources/Saves/Bot.json";
         public static void Save(GameObject PlayerBot)
@@ -22,7 +22,6 @@ namespace General.Saves
         }
 
         public static BotData Load() => JsonConvert.DeserializeObject<BotData>(File.ReadAllText(path));
-
         // нужен отдельный скрипт, чтобы правильно сохранить и выгрузить данные.
     }
 }

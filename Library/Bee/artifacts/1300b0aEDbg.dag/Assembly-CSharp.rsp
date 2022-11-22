@@ -425,7 +425,7 @@
 "Assets/Resources/Scripts/General/Saves/Data/PartData.cs"
 "Assets/Resources/Scripts/General/Saves/Data/SimplePosition.cs"
 "Assets/Resources/Scripts/General/Saves/Data/SimpleRotation.cs"
-"Assets/Resources/Scripts/General/Saves/SaveAndLoadData.cs"
+"Assets/Resources/Scripts/General/Saves/SaveAndLoadBotData.cs"
 "Assets/Resources/Scripts/General/Saves/SaveBotController.cs"
 "Assets/Resources/Scripts/Menu/ElementsForButton.cs"
 "Assets/Resources/Scripts/Menu/EnableLevel.cs"
