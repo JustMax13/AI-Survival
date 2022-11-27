@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3445646008412688118}
   - component: {fileID: 350196000366288427}
   - component: {fileID: 2386883509312517268}
-  - component: {fileID: 14891280030941116}
   m_Layer: 0
   m_Name: ClassicFrame
   m_TagString: Untagged
@@ -151,18 +150,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &14891280030941116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3445646008412688113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e733656c539771468b9f47f26abf408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &231055769358614818
