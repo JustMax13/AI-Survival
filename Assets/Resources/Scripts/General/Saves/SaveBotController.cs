@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace General.Saves
@@ -7,14 +7,20 @@ namespace General.Saves
     public class SaveBotController : MonoBehaviour
     {
         // сделать асинхронным и добавить чтобы по центу все сохранялось
-        public void SaveBot(GameObject PlayerBot) => SaveAndLoadBotData.Save(PlayerBot); 
+        public static void SaveBot(GameObject PlayerBot) => SaveAndLoadBotData.Save(PlayerBot);
 
-        public void LoadBot(GameObject PlayerBot)
+        public static void LoadBot(GameObject PlayerBot)
         {
-            // прописать делегат, для очистки сцены от деталей, которые на ней находятся
+            {
+                Transform[] child = PlayerBot.GetComponentsInChildren<Transform>();
+
+                for (int i = 1; i < child.Length; i++)
+                    Destroy(child[i].gameObject);
+            }
+
             BotData data = SaveAndLoadBotData.Load();
 
-            var PartOnScene = new Dictionary<GameObject, int>();
+            var PartOnScene = new Dictionary<int, GameObject>();
             GameObject part;
 
             foreach (var item in data.BotPartsData)
@@ -26,7 +32,7 @@ namespace General.Saves
                 part.transform.rotation = new Quaternion(item.PartRotation.X,
                     item.PartRotation.Y, item.PartRotation.Z, item.PartRotation.W);
 
-                part = Instantiate(part, part.transform.position, 
+                part = Instantiate(part, part.transform.position,
                     part.transform.rotation, PlayerBot.transform);
 
                 for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
@@ -52,12 +58,29 @@ namespace General.Saves
                     }
                 }
 
-                PartOnScene.Add(part, item.ID);
-                // тут осталось сделать их физическими, если это в редакторе + нужно пофиксить там баг,
-                // который выплывает
+                PartOnScene.Add(item.ID, part);
             }
 
-            // теперь все детали записаны в PartOnScene, осталось их подключить между собой
+
+            for (int i = 0; i < PartOnScene.Count; i++)
+            {
+                ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
+                FixedJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<FixedJoint2D>();
+                // скорее всего размерности 2х масивов не всегда совпадают... но почему?
+                for (int j = 0; j < conectedBody.Length; j++)
+                {
+                    JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID]
+                        .GetComponent<Rigidbody2D>();
+                    JointsOnPart[j].anchor = new Vector2(conectedBody[i].XAnchor, conectedBody[i].YAnchor);
+                }
+            }
+            // На этих частях нет DragAndDrop
+            // а еще с включенным AttractionPoint и AttractionObject, в старте там написано
+            // что обьект не подключен, вот оно и создает без болтика, хотя физически они 
+            // между собой подключены
+
+            // когда много деталей, то не все правильно сохранило /
+            // выгрузило при присоединении детали
         }
     }
 }

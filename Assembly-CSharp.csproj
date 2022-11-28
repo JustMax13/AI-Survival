@@ -116,6 +116,7 @@
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\ScriptebleObject\ClassicFrame.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Other\ChangeBodyType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

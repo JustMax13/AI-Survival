@@ -407,6 +407,7 @@
 "Assets/Resources/Scripts/EditorInGame/Scene/Move/DragAndDropPart.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Spawn/PartForSpawn.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Spawn/SpawnPart.cs"
+"Assets/Resources/Scripts/General/Other/ChangeBodyType.cs"
 "Assets/Resources/Scripts/General/Other/DragAndDrop.cs"
 "Assets/Resources/Scripts/General/Other/LoadScene.cs"
 "Assets/Resources/Scripts/General/Other/MoveAndZoomCamera.cs"
