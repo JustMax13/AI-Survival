@@ -73,6 +73,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\BotsWheel.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\BotData.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Spawn\SpawnEnemy.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Other\ChangeBodyType.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\SimpleRotation.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\ClickOnPrefabInventory.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\General\ProjectileRotation.cs" />
@@ -116,7 +117,6 @@
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\ScriptebleObject\ClassicFrame.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\Other\ChangeBodyType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

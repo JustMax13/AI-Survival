@@ -61,17 +61,16 @@ namespace General.Saves
                 PartOnScene.Add(item.ID, part);
             }
 
-
             for (int i = 0; i < PartOnScene.Count; i++)
             {
                 ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
                 FixedJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<FixedJoint2D>();
                 // скорее всего размерности 2х масивов не всегда совпадают... но почему?
-                for (int j = 0; j < conectedBody.Length; j++)
+                for (int j = 0; j < JointsOnPart.Length; j++)
                 {
                     JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID]
                         .GetComponent<Rigidbody2D>();
-                    JointsOnPart[j].anchor = new Vector2(conectedBody[i].XAnchor, conectedBody[i].YAnchor);
+                    JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
                 }
             }
             // На этих частях нет DragAndDrop
