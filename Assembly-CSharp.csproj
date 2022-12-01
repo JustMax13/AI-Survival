@@ -104,6 +104,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveAndLoadBotData.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SetActiveObject.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Attraction\AttractionObject.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\SwipeLevelsMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\MoveAndZoomCamera.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\LoadingScene.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\CPUHP.cs" />
