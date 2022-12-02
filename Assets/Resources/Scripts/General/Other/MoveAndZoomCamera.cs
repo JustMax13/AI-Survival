@@ -5,24 +5,23 @@ namespace General
     public class MoveAndZoomCamera : MonoBehaviour
     {
         [SerializeField] private GameObject _limitPoint1;
-        [SerializeField] private GameObject _limitPoint2;
+        [SerializeField] private GameObject _limitPoint2, _Canv;
         private Vector3 touchPosition;
 
         [SerializeField] private float _sensitivity;
 
         [SerializeField] private float _minCameraSize;
-        [SerializeField] private float _maxCameraSize;
+        [SerializeField] private float _maxCameraSize, _zoomSpeed, _zoomYPosition, _zoomXPosition;
         public float MinCameraSize { get; set; }
         public float MaxCameraSize { get; set; }
         [SerializeField] private float zoomSensivity;
         private bool zoomEnd;
-
         private bool executionCondition;
 
 
         private void Move()
         {
-            
+
             if (Input.GetMouseButton(0))
             {
                 Vector3 targetPosition;
@@ -47,6 +46,18 @@ namespace General
 
             Vector2 touchZeroLastPosition = touchZero.position - touchZero.deltaPosition;
             Vector2 touchOneLastPosition = touchOne.position - touchOne.deltaPosition;
+            Vector3 Finger1 = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
+            Vector3 Finger2 = Camera.main.ScreenToWorldPoint(Input.touches[1].position);
+
+            if (Input.GetTouch(1).phase == TouchPhase.Began)
+            {
+                _zoomXPosition = (Finger1.x + Finger2.x) / 2;
+                _zoomYPosition = (Finger1.y + Finger2.y) / 2;
+                if (_zoomXPosition > _limitPoint2.transform.position.x) _zoomXPosition = _limitPoint2.transform.position.x;
+                if (_zoomXPosition < _limitPoint1.transform.position.x) _zoomXPosition = _limitPoint1.transform.position.x;
+                if (_zoomYPosition < _limitPoint2.transform.position.y) _zoomYPosition = _limitPoint2.transform.position.y;
+                if (_zoomYPosition > _limitPoint1.transform.position.y) _zoomYPosition = _limitPoint1.transform.position.y;
+            }
 
             float distanceTouch = (touchZeroLastPosition - touchOneLastPosition).magnitude;
             float currentDistanceTouch = (touchZero.position - touchOne.position).magnitude;
@@ -55,6 +66,14 @@ namespace General
 
             float EndPosition = Mathf.Clamp(Camera.main.orthographicSize - difference, _minCameraSize, _maxCameraSize);
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, EndPosition, zoomSensivity * 0.01f);
+            if (Camera.main.orthographicSize > _minCameraSize+0.05 & Camera.main.orthographicSize < _maxCameraSize - 0.05)
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Moved & Input.GetTouch(1).phase == TouchPhase.Moved)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(_zoomXPosition, _zoomYPosition, -20), _zoomSpeed  * Time.deltaTime);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, -20);
+                }
+            }
 
             if (Input.touchCount == 0)
                 zoomEnd = true;
