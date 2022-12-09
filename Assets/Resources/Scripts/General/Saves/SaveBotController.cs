@@ -38,25 +38,30 @@ namespace General.Saves
                 for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
                     part.AddComponent<FixedJoint2D>();
 
-                {
-                    var Bolts = part.GetComponentsInChildren<Transform>();
-                    BoltData BoltData;
-                    Vector3 BoltPosition = new Vector3();
-                    for (int i = 0; i < item.boltsData.Length; i++)
-                    {
-                        for (int j = 0; j < item.boltsData.Length; j++)
-                        {
-                            BoltData = item.boltsData[j];
+                //{
+                //    var Bolts = part.GetComponentsInChildren<Transform>();
+                //    BoltData BoltData;
+                //    var BoltPosition = new Vector3();
+                //    for (int i = 0; i < item.boltsData.Length; i++)
+                //    {
+                //        for (int j = 0; j < item.boltsData.Length; j++)
+                //        {
+                //            BoltData = item.boltsData[j];
 
-                            BoltPosition.x = BoltData.Position.X;
-                            BoltPosition.y = BoltData.Position.Y;
-                            BoltPosition.z = BoltData.Position.Z;
+                //            BoltPosition.x = BoltData.Position.X;
+                //            BoltPosition.y = BoltData.Position.Y;
+                //            BoltPosition.z = BoltData.Position.Z;
 
-                            if (Bolts[i + 1].transform.position == BoltPosition)
-                                Bolts[i + 1].GetComponent<SpriteRenderer>().enabled = BoltData.SpriteRendererEnabled;
-                        }
-                    }
-                }
+                //            if (Bolts[i + 1].transform.position == BoltPosition)
+                //            {
+                //                try
+                //                {
+                //                    Bolts[i + 1].GetComponent<SpriteRenderer>().enabled = BoltData.SpriteRendererEnabled;
+                //                }catch { }
+                //            }
+                //        }
+                //    }
+                //}
 
                 PartOnScene.Add(item.ID, part);
             }

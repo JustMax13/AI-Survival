@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace General.Pathes
 {
-    public class PartPath : MonoBehaviour
+    public class PartPath : MonoBehaviour, IPathOfPart
     {
         [SerializeField] private string _partName;
         public Transform PartTransform => gameObject.transform;
