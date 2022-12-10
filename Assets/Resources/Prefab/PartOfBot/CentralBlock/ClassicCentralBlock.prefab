@@ -362,7 +362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8854797796699257740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.68240225, y: 0.29096094, z: 0}
+  m_LocalPosition: {x: 0.07663146, y: -0.39590696, z: 0}
   m_LocalScale: {x: 0.02988, y: 0.02988, z: 0.02988}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -510,4 +510,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958e67d3c445b744c837f04b6ac441c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partName: Classic central block
+  _partName: ClassicCentralBlock

@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958e67d3c445b744c837f04b6ac441c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partName: Hard armor
+  _partName: HardArmor
 --- !u!1 &312083932752504755
 GameObject:
   m_ObjectHideFlags: 0

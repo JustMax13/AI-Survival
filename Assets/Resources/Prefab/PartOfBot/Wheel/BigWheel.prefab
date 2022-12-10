@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1240695537614905025}
   - component: {fileID: 3584021877629729872}
   m_Layer: 0
-  m_Name: Big wheel
+  m_Name: BigWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958e67d3c445b744c837f04b6ac441c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partName: Big wheel
+  _partName: BigWheel
 --- !u!1 &6487106603693310498
 GameObject:
   m_ObjectHideFlags: 0

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958e67d3c445b744c837f04b6ac441c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partName: Easy armor
+  _partName: EasyArmor
 --- !u!1 &312083931561649778
 GameObject:
   m_ObjectHideFlags: 0
