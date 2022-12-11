@@ -63,6 +63,8 @@ namespace General.Saves
                 //    }
                 //}
 
+                // болты переделать в connectedPoint, так они сохраняют расположение подключаемых деталей
+
                 PartOnScene.Add(item.ID, part);
             }
 

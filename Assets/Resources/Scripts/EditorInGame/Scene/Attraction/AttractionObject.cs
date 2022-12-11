@@ -13,9 +13,9 @@ namespace Editor
         public bool IsDrag { get; set; }
         private void Start()
         {
-            WasMouseDown = true;
-            IsDrag = true;
-            _firstTimeMouseUp = true;
+            WasMouseDown = false;
+            IsDrag = false;
+            _firstTimeMouseUp = false;
             _currentTimeWasMouseDown = 0;
         }
         private void OnMouseDown() 
