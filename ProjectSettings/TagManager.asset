@@ -63,26 +63,20 @@ TagManager:
   - name: Bullet
     uniqueID: 3697647477
     locked: 0
-  - name: Frame
-    uniqueID: 2086620863
+  - name: BaseBlock
+    uniqueID: 3159302071
     locked: 0
-  - name: Bolt
-    uniqueID: 544231981
-    locked: 0
-  - name: CPU Box
-    uniqueID: 3378288363
-    locked: 0
-  - name: CPU
-    uniqueID: 1885931277
-    locked: 0
-  - name: CPU Glass
-    uniqueID: 2469444485
+  - name: CentralBlock
+    uniqueID: 9381475
     locked: 0
   - name: Wheel
-    uniqueID: 63353327
+    uniqueID: 1434177139
     locked: 0
-  - name: WheelShadow
-    uniqueID: 4108363891
+  - name: Gun
+    uniqueID: 3593535387
+    locked: 0
+  - name: Armor
+    uniqueID: 2209063079
     locked: 0
   - name: UI
     uniqueID: 2455428651

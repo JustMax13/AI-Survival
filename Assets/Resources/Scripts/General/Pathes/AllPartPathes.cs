@@ -14,13 +14,29 @@ namespace General.Pathes
             PartPathes = new Dictionary<string, string>
             {
                 { 
-                    "Classic central block",
+                    "EasyArmor",
+                    "Prefab/PartOfBot/Armor/EasyArmor"
+                },
+                {
+                    "HardArmor",
+                    "Prefab/PartOfBot/Armor/HardArmor"
+                },
+                {
+                    "BigWheel",
+                    "Prefab/PartOfBot/Wheel/BigWheel"
+                },
+                {
+                    "ClassicCentralBlock",
                     "Prefab/PartOfBot/CentralBlock/ClassicCentralBlock"
                 },
                 {
-                    "Classic frame",
-                    "Prefab/PartOfBot/Frame/ClassicFrame"
-                }
+                    "CarbonNoise",
+                    "Prefab/PartOfBot/BaseBlock/CarbonNoise"
+                },
+                {
+                    "CarbonShine",
+                    "Prefab/PartOfBot/BaseBlock/CarbonShine"
+                },
             };
         }
         public static string GetPathOfPart(string key)

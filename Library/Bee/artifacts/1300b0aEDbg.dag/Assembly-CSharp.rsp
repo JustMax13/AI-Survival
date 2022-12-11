@@ -109,7 +109,6 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
--define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -381,7 +380,7 @@
 "Assets/Resources/Scripts/Battle/EventFolder/SpawnEnd.cs"
 "Assets/Resources/Scripts/Battle/HP/General/IHaveHP.cs"
 "Assets/Resources/Scripts/Battle/HP/HPofPart.cs"
-"Assets/Resources/Scripts/Battle/HP/Varieties/CPUHP.cs"
+"Assets/Resources/Scripts/Battle/HP/Varieties/CentralBlockHP.cs"
 "Assets/Resources/Scripts/Battle/Move/Bots Move/General/IMover.cs"
 "Assets/Resources/Scripts/Battle/Move/Bots Move/Wheel/BotsWheel.cs"
 "Assets/Resources/Scripts/Battle/Move/Bots Move/Wheel/MoveAllWheels.cs"
@@ -415,9 +414,6 @@
 "Assets/Resources/Scripts/General/Other/SpawnPrefab.cs"
 "Assets/Resources/Scripts/General/PartOfBot/General/IPathOfPart.cs"
 "Assets/Resources/Scripts/General/PartOfBot/General/PartOfBot.cs"
-"Assets/Resources/Scripts/General/PartOfBot/ScriptebleObject/ClassicCentralBlock.cs"
-"Assets/Resources/Scripts/General/PartOfBot/ScriptebleObject/ClassicFrame.cs"
-"Assets/Resources/Scripts/General/PartOfBot/ScriptebleObject/Gun.cs"
 "Assets/Resources/Scripts/General/Pathes/AllPartPathes.cs"
 "Assets/Resources/Scripts/General/Pathes/PartPath.cs"
 "Assets/Resources/Scripts/General/Saves/Data/BoltData.cs"
