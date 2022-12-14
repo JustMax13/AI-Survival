@@ -7,13 +7,13 @@ namespace Menu.ChoseLevel
     {
         private GameObject LevelsButton;
         private Vector2 _start, _end;
-        private float _levelsPositionX,_min,_max,_step=10;
-     
+        [SerializeField]private float _levelsPositionX,_min,_max;  
         private void Start()
         {
             LevelsButton = gameObject;
             _max = LevelsButton.transform.position.x;
-            if(LevelsButton.transform.childCount>5)_min = _max - (LevelsButton.transform.GetChild(LevelsButton.transform.childCount-5).transform.position.x+_step)/1.5f;
+            if (LevelsButton.transform.childCount >= 5) _min = 2 * _max - (LevelsButton.transform.GetChild(LevelsButton.transform.childCount - 5).transform.position.x);
+            else _min = _max;
         }
 
         private void Update()
