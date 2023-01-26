@@ -89,6 +89,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\ckeshing.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\DragAndDrop.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Manager\ActionManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\SpawnEnd.cs" />

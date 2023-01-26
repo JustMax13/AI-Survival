@@ -7,34 +7,44 @@ namespace CombatMechanics.AI
     {
         [SerializeField] private Vector3 _rotationMin, _rotationMax;
         private Vector3 _rotationSpeedMin, _rotationSpeedMax, _rotationSpeedInMoment;
+
         [SerializeField] private float _bulletSpeed = 6, _radius = 0.25f;
+
         [SerializeField] private GunTraectory _traectory;
-        [SerializeField] private GameObject _gun,_prisel, _player;
-        [SerializeField] private LayerMask _playerLayer, _layerPlayerDetal, _layersAll;
-        private List<float> _auditStepsMin=new List<float>(2), _auditStepsMax = new List<float>(2), _auditXMin = new List<float>(2), _auditXMax = new List<float>(2);
+
+        [SerializeField] private GameObject _gun,_prisel, _player,ckesh;
+        [SerializeField] private LayerMask /*_playerLayer,*/ _layerPlayerDetal, _layersAll;
+
+        [SerializeField] private List<float> _auditStepsMin, _auditStepsMax,_auditXMin , _auditXMax;
         private int _auditStepsMinCount, _auditStepsMaxCount;
         void Start()
         {
             // _rotationMin = new Vector3(0, 0, 45);
             _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin.z), _bulletSpeed * Mathf.Sin(_rotationMin.z), 0);
             _rotationSpeedMax = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMax.z), _bulletSpeed * Mathf.Sin(_rotationMax.z), 0);
-            _player = Physics2D.OverlapBox(new Vector2(0, 0), new Vector2(20, 20), 0, _playerLayer, -7, 7).gameObject;
-            //_auditStepsMax.Add(0);
-            //_auditStepsMax.Add(0);
-            //_auditStepsMin.Add(0);
-            //_auditStepsMin.Add(0);
-            //_auditXMin.Add(0);
-            //_auditXMin.Add(0);
-            //_auditXMax.Add(0);
-            //_auditXMax.Add(0);
-            firstAuditCalcut();
-        }
+            Instantiate(ckesh,new Vector3(0,0,0), Quaternion.identity);
+            // _player = Physics2D.OverlapBox(new Vector2(0, 0), new Vector2(20, 20), 0, _playerLayer, -7, 7).gameObject;
+            //_auditStepsMax.Add(0f);
+            //_auditStepsMax.Add(0f);
+            //_auditStepsMin.Add(0f);
+            //_auditStepsMin.Add(0f);
+            //_auditXMin.Add(0f);
+            //_auditXMin.Add(0f);
+            //_auditXMax.Add(0f);
+            //_auditXMax.Add(0f);
 
-        // Update is called once per frame
-        void Update()
+        }
+        public void FoundPlayer(GameObject player)
         {
-
+            _player = player.gameObject;
+            StartCoroutine(startWaiting());
         }
+        private IEnumerator startWaiting()
+        {
+            yield return new WaitForSeconds(1f);
+         firstAuditCalcut();
+        }
+
 
         private void firstAuditCalcut()
         {
@@ -79,12 +89,13 @@ namespace CombatMechanics.AI
 
                 }
                 else _auditStepsMinCount = 0;
-                firstAuditXPositionCalcut();
+              
             }
             else
             {
                 _auditStepsMaxCount = 0;
             }
+            firstAuditXPositionCalcut();
         }
         private void firstAuditXPositionCalcut()
         {
@@ -97,15 +108,21 @@ namespace CombatMechanics.AI
         }
         private void firstAudit()
         {
+          //  float znak;
             if (_auditStepsMaxCount > 0)
             {
                 if (_auditStepsMaxCount == 1)
                 {
+                    ///znak = (_auditXMax[0] - _auditXMin[0]) / Mathf.Abs(_auditXMax[0] - _auditXMin[0]);
                     if (_player.transform.position.x != _auditXMin[0] & _player.transform.position.x != _auditXMax[0])
                     {
                         if ((_player.transform.position.x > _auditXMin[0] & _player.transform.position.x < _auditXMax[0]) || (_player.transform.position.x < _auditXMin[0] & _player.transform.position.x > _auditXMax[0]))
                         {
                             secondAuditRotatoionCalcut(0);
+                        }
+                        else
+                        {
+                            _prisel.SetActive(false);
                         }// якщо більше рух вперед менше рух назад 
                     }
                     else
@@ -128,7 +145,19 @@ namespace CombatMechanics.AI
                         {
                             if ((_player.transform.position.x > _auditXMax[0] & _player.transform.position.x < _auditXMax[1]) || (_player.transform.position.x < _auditXMax[0] & _player.transform.position.x > _auditXMax[1]))
                             {
-                                secondAuditRotatoionCalcut(0);
+                                if(Mathf.Abs(_gun.transform.position.x-((_auditXMax[0]+ _auditXMax[1])/2))< Mathf.Abs(_gun.transform.position.x - _player.transform.position.x))
+                                {
+                                     secondAuditRotatoionCalcut(0);
+                                }
+                                else
+                                {
+                                    secondAuditRotatoionCalcut(1);
+                                }
+                               
+                            }
+                            else
+                            {
+                                _prisel.SetActive(false);
                             }// якщо більше рух вперед менше рух назад 
                         }
                         else
@@ -151,6 +180,9 @@ namespace CombatMechanics.AI
                                     if ((_player.transform.position.x > _auditXMin[1] & _player.transform.position.x < _auditXMax[1]) || (_player.transform.position.x < _auditXMin[1] & _player.transform.position.x > _auditXMax[1]))
                                     {
                                         secondAuditRotatoionCalcut(1);
+                                    }
+                                    else {
+                                        _prisel.SetActive(false);
                                     }// якщо більше рух вперед менше рух назад, рахуємо за першими точками(нульовими)
                                 }
                                 else
@@ -179,7 +211,8 @@ namespace CombatMechanics.AI
                         }
                     }
                 }
-            }
+            }else StartCoroutine(startWaiting());
+            
         }
         private void secondAuditMaxMinRotation(bool max)
         {
@@ -190,9 +223,10 @@ namespace CombatMechanics.AI
         private void secondAuditRotatoionCalcut(int step)
         {
             float speedX = _rotationSpeedMin.x, speedY = _rotationSpeedMin.y, time, descriminant;
+            float znak =( _rotationMax.z - _rotationMin.z)/ Mathf.Abs(_rotationMax.z - _rotationMin.z);
             if (step == 0)
             {
-                for (float i = _rotationMin.z; i < _rotationMax.z; i += 0.1f)
+                for (float i =  _rotationMin.z;  i < znak * _rotationMax.z; i += znak* 0.1f)
                 {
                     descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i), 2) - 2 * (_player.transform.position.y - _gun.transform.position.y);
                     if (descriminant >= 0)
@@ -210,7 +244,7 @@ namespace CombatMechanics.AI
             }
             else
             {
-                for (float i = _rotationMin.z; i < _rotationMax.z; i += 0.1f)
+                for (float i = _rotationMin.z; i < znak * _rotationMax.z; i += znak * 0.1f)
                 {
                     descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i), 2) - 2 * (_player.transform.position.y - _gun.transform.position.y);
                     if (descriminant >= 0) { 
@@ -242,8 +276,9 @@ namespace CombatMechanics.AI
             {
                 //shooting
             }//else// гравець за перещкодою
-            _prisel.SetActive(false);
-            //timebreak + again shoot
+            //_prisel.SetActive(false);
+          
+            StartCoroutine(startWaiting());
         }
 
 
