@@ -16,7 +16,8 @@ namespace CombatMechanics
             {
                 i++;
                 float _time = i * 0.001f*radius;
-                _point= origin + speed * _time + Physics.gravity * _time * _time / 2f;
+                _point.y = origin.y + speed.y * _time + Physics.gravity.y * _time * _time / 2f;
+                _point.x = origin.x + speed.x * _time;
                 _pointX = _point.x;
                 _pointY = _point.y;
                 _working = Physics2D.OverlapCircle(new Vector2(_pointX, _pointY), radius, layers, -10, 10);
