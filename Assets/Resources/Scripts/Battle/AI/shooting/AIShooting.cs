@@ -12,6 +12,7 @@ namespace CombatMechanics.AI
 
         [SerializeField] private GunTraectory _traectory;
         [SerializeField] private PaintTraectory[] _traectoryPoint;
+        [SerializeField] private GameObject[] mm;
 
         [SerializeField] private GameObject _gun,_prisel, _player,ckesh;
         [SerializeField] private LayerMask /*_playerLayer,*/ _layerPlayerDetal, _layersAll;
@@ -22,19 +23,11 @@ namespace CombatMechanics.AI
         private bool _can;
         void Start()
         {
-            // _rotationMin = new Vector3(0, 0, 45);
-            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin.z), _bulletSpeed * Mathf.Sin(_rotationMin.z), 0);
-            _rotationSpeedMax = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMax.z), _bulletSpeed * Mathf.Sin(_rotationMax.z), 0);
+            
+            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin.z*Mathf.Deg2Rad), _bulletSpeed * Mathf.Sin(_rotationMin.z * Mathf.Deg2Rad), 0);
+            _rotationSpeedMax = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMax.z * Mathf.Deg2Rad), _bulletSpeed * Mathf.Sin(_rotationMax.z * Mathf.Deg2Rad), 0);
             Instantiate(ckesh,new Vector3(0,0,0), Quaternion.identity);
-            // _player = Physics2D.OverlapBox(new Vector2(0, 0), new Vector2(20, 20), 0, _playerLayer, -7, 7).gameObject;
-            //_auditStepsMax.Add(0f);
-            //_auditStepsMax.Add(0f);
-            //_auditStepsMin.Add(0f);
-            //_auditStepsMin.Add(0f);
-            //_auditXMin.Add(0f);
-            //_auditXMin.Add(0f);
-            //_auditXMax.Add(0f);
-            //_auditXMax.Add(0f);
+          
 
         }
         public void FoundPlayer(GameObject player)
@@ -45,7 +38,7 @@ namespace CombatMechanics.AI
         private IEnumerator startWaiting()
         {
             yield return new WaitForSeconds(1f);
-            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin.z), _bulletSpeed * Mathf.Sin(_rotationMin.z), 0);
+            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin.z * Mathf.Deg2Rad), _bulletSpeed * Mathf.Sin(_rotationMin.z * Mathf.Deg2Rad), 0);
            _traectoryPoint[0].ShowTrajectory(_gun.transform.position, _rotationSpeedMin, _radius, _layersAll);
             
            _traectoryPoint[2].ShowTrajectory(_gun.transform.position, _rotationSpeedMax, _radius, _layersAll);
@@ -81,7 +74,7 @@ namespace CombatMechanics.AI
                 descriminant = _rotationSpeedMin.y * _rotationSpeedMin.y - 2 * Physics.gravity.y * (_gun.transform.position.y- _player.transform.position.y);
                 if (descriminant > 0)
                 {
-                    _auditStepsMin[0] = (-_rotationSpeedMin.y + Mathf.Sqrt(descriminant)) / Physics.gravity.y;
+                    _auditStepsMin[0] = (_rotationSpeedMin.y + Mathf.Sqrt(descriminant)) / Physics.gravity.y;
                     if (descriminant > 0)
                     {
                         _auditStepsMin[1] = (_rotationSpeedMin.y - Mathf.Sqrt(descriminant)) / Physics.gravity.y;
@@ -107,10 +100,14 @@ namespace CombatMechanics.AI
         }
         private void firstAuditXPositionCalcut()
         {
-            _auditXMin[0] = -_gun.transform.position.x+ _rotationSpeedMin.x* _auditStepsMin[0];
-            _auditXMin[1] = -_gun.transform.position.x+ _rotationSpeedMin.x * _auditStepsMin[1];
-            _auditXMax[0] = -_gun.transform.position.x+ _rotationSpeedMax.x * _auditStepsMax[0];
-            _auditXMax[1] = -_gun.transform.position.x + _rotationSpeedMax.x * _auditStepsMax[1];
+            _auditXMin[0] = _gun.transform.position.x- _rotationSpeedMin.x* _auditStepsMin[0];
+            _auditXMin[1] = _gun.transform.position.x -_rotationSpeedMin.x * _auditStepsMin[1];
+            _auditXMax[0] = _gun.transform.position.x- _rotationSpeedMax.x * _auditStepsMax[0];
+            _auditXMax[1] = _gun.transform.position.x - _rotationSpeedMax.x * _auditStepsMax[1];
+            mm[0].transform.position = new Vector3(_auditXMin[0], _player.transform.position.y, 0);
+            mm[1].transform.position = new Vector3(_auditXMin[1], _player.transform.position.y, 0);
+            mm[2].transform.position = new Vector3(_auditXMax[0], _player.transform.position.y, 0);
+            mm[3].transform.position = new Vector3(_auditXMax[1], _player.transform.position.y, 0);
             firstAudit();
         }
         private void firstAudit()
@@ -234,24 +231,24 @@ namespace CombatMechanics.AI
         {
             float speedX = _rotationSpeedMin.x, speedY = _rotationSpeedMin.y, time, descriminant,xx;
            
-            if(_rotationMax.z<0)
+            if(_rotationMax.z- _rotationMin.z< 0)
             {
                 if (step == 0) step = 2;
                 else step = 3;
             }
-            if (step == 0)
+            if (step == 1)
             {
                 for (float i =  _rotationMin.z;  i < _rotationMax.z; i +=  0.01f)
                 {
-                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i), 2) - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
+                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2) - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
                     if (descriminant >= 0)
                     {
-                        time = (-_bulletSpeed * Mathf.Sin(i) + Mathf.Sqrt(descriminant)) / Physics.gravity.y;
-                        xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i) * time);
-                        if (Physics2D.OverlapCircle(new Vector2(xx, _player.transform.position.y), _radius * 3, _layerPlayerDetal, -10, 10))
+                        time = (-_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad) + Mathf.Sqrt(descriminant)) / Physics.gravity.y;
+                        xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad) * time);
+                        if (Physics2D.OverlapCircle(new Vector2(xx, _player.transform.position.y), _radius , _layerPlayerDetal, -10, 10))
                         {
-                            speedX = _bulletSpeed * Mathf.Cos(i);
-                            speedY = _bulletSpeed * Mathf.Sin(i);
+                            speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
+                            speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
                             
                             break;
                         }
@@ -260,19 +257,19 @@ namespace CombatMechanics.AI
                 }
 
             }
-            if (step == 1)
+            if (step == 0)
             {
                 for (float i = _rotationMin.z;  i <  _rotationMax.z; i += 0.01f)
                 {
-                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i), 2) - 2 * Physics.gravity.y*(_gun.transform.position.y - _player.transform.position.y);
+                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2) - 2 * Physics.gravity.y*(_gun.transform.position.y - _player.transform.position.y);
                     if (descriminant >= 0)
                     { 
-                    time = (-_bulletSpeed * Mathf.Sin(i) - Mathf.Sqrt(descriminant)) / Physics.gravity.y;
-                    xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i) * time);
-                    if (Physics2D.OverlapCircle(new Vector2(xx, _player.transform.position.y), _radius * 3, _layerPlayerDetal, -10, 10)) 
+                    time = (-_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad) - Mathf.Sqrt(descriminant)) / Physics.gravity.y;
+                    xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad) * time);
+                    if (Physics2D.OverlapCircle(new Vector2(xx, _player.transform.position.y), _radius , _layerPlayerDetal, -10, 10)) 
                     {
-                            speedX = _bulletSpeed * Mathf.Cos(i);
-                        speedY = _bulletSpeed * Mathf.Sin(i);
+                            speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
+                        speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
                            
                         break;
                     }
@@ -282,19 +279,19 @@ namespace CombatMechanics.AI
                 }
 
             }
-            if (step == 2)
+            if (step == 3)
             {
                 for (float i = _rotationMin.z; i > _rotationMax.z; i -= 0.01f)
                 {
-                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i), 2) - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
+                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2) - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
                     if (descriminant >= 0)
                     {
-                        time = (-_bulletSpeed * Mathf.Sin(i) + Mathf.Sqrt(descriminant)) / Physics.gravity.y;
-                        xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i) * time);
-                        if (Physics2D.OverlapCircle(new Vector2(xx, _player.transform.position.y), _radius * 3, _layerPlayerDetal, -10, 10))
+                        time = (-_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad) + Mathf.Sqrt(descriminant)) / Physics.gravity.y;
+                        xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad) * time);
+                        if (Physics2D.OverlapCircle(new Vector2(xx, _player.transform.position.y), _radius , _layerPlayerDetal, -10, 10))
                         {
-                            speedX = _bulletSpeed * Mathf.Cos(i);
-                            speedY = _bulletSpeed * Mathf.Sin(i);
+                            speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
+                            speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
 
                             break;
                         }
@@ -303,19 +300,19 @@ namespace CombatMechanics.AI
                 }
 
             }
-            if (step == 3)
+            if (step == 2)
             {
                 for (float i = _rotationMin.z; i > _rotationMax.z; i -= 0.01f)
                 {
-                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i), 2) - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
+                    descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2) - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
                     if (descriminant >= 0)
                     {
-                        time = (-_bulletSpeed * Mathf.Sin(i) - Mathf.Sqrt(descriminant)) / Physics.gravity.y;
-                        xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i) * time);
+                        time = (-_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad) - Mathf.Sqrt(descriminant)) / Physics.gravity.y;
+                        xx = (_gun.transform.position.x + _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad) * time);
                         if (Physics2D.OverlapCircle(new Vector2(xx, _player.transform.position.y), _radius, _layerPlayerDetal, -10, 10))
                         {
-                            speedX = _bulletSpeed * Mathf.Cos(i);
-                            speedY = _bulletSpeed * Mathf.Sin(i);
+                            speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
+                            speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
 
                             break;
                         }
