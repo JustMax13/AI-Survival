@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4591909813221737758}
   - component: {fileID: 5678214568416948646}
-  - component: {fileID: 3951460108471588217}
   - component: {fileID: 3984882732816772257}
+  - component: {fileID: 6763903896471214350}
   m_Layer: 0
   m_Name: ckashingAI
   m_TagString: Untagged
@@ -60,24 +60,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21, y: 12}
   m_EdgeRadius: 0
---- !u!114 &3951460108471588217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5255127088219590002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8380b70d617346e4381e69589b7b6b83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _tagPlayer: CPU
-  _tagEnemy: CPU
-  _playerLayer: Player
-  _enemyLayer: Enemy
-  _enemy: {fileID: 0}
 --- !u!50 &3984882732816772257
 Rigidbody2D:
   serializedVersion: 4
@@ -99,3 +81,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &6763903896471214350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255127088219590002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb17906b5624e6b47adf72b0343a3c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tagPlayer: CPU
+  _tagEnemy: CPU
+  _playerLayer: Player
+  _enemyLayer: Enemy
+  _player: {fileID: 0}
+  _enemy: {fileID: 0}

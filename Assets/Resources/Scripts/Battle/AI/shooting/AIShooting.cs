@@ -48,7 +48,7 @@ namespace CombatMechanics.AI
 
             _traectoryPoint[2].ShowTrajectory(_gun.transform.position, _rotationSpeedMax, _radius, _layersAll);
             FirstAuditCalcut();
-            //secondAuditRotatoionCalcut(0);
+            
         }
 
 
@@ -113,12 +113,12 @@ namespace CombatMechanics.AI
         }
         private void FirstAudit()
         {
-            //  float znak;
+            
             if (_auditStepsMaxCount > 0)
             {
                 if (_auditStepsMaxCount == 1)
                 {
-                    ///znak = (_auditXMax[0] - _auditXMin[0]) / Mathf.Abs(_auditXMax[0] - _auditXMin[0]);
+                    
                     if (_player.transform.position.x != _auditXMin[0] && _player.transform.position.x != _auditXMax[0])
                     {
                         if ((_player.transform.position.x > _auditXMin[0] && _player.transform.position.x < _auditXMax[0]) || (_player.transform.position.x < _auditXMin[0] && _player.transform.position.x > _auditXMax[0]))
