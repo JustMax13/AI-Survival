@@ -102,8 +102,8 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\General\AbstractBullet.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveAndLoadBotData.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SetActiveObject.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Enum\EnumBuildIndexOfScene.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Attraction\AttractionObject.cs" />
-    <Compile Include="Assets\Resources\Scripts\Menu\SwipeLevelsMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\MoveAndZoomCamera.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\LoadingScene.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\CentralBlockHP.cs" />
@@ -113,6 +113,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Pathes\AllPartPathes.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Managers\DestroyUnnecessaryScripts.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
   </ItemGroup>

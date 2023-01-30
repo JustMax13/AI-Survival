@@ -80,6 +80,8 @@ namespace Editor
 
         private void Start()
         {
+            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+
             if (_backlogCursor == 0)
                 _backlogCursor = 22;
             _clickTime = 0.5f;
