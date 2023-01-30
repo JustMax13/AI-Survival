@@ -429,6 +429,7 @@
 "Assets/Resources/Scripts/Menu/ElementsForButton.cs"
 "Assets/Resources/Scripts/Menu/EnableLevel.cs"
 "Assets/Resources/Scripts/Menu/SpawnPlayerInMenu.cs"
+"Assets/Resources/Scripts/Menu/SwipeLevelsMenu.cs"
 -langversion:9.0
 
 /deterministic

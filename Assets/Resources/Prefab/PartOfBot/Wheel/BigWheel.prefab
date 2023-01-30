@@ -32,7 +32,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4967957442469757938}
-  m_LocalRotation: {x: 0, y: 0, z: 0.93042153, w: 0.36649126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9994727, y: -0.15923917, z: 0}
   m_LocalScale: {x: 0.0498, y: 0.0498, z: 0.0498}
   m_ConstrainProportionsScale: 0
@@ -145,7 +145,7 @@ WheelJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.9225535, y: 0.01607947}
+  m_ConnectedAnchor: {x: 0.9994727, y: -0.15923917}
   m_Suspension:
     m_DampingRatio: 0.7
     m_Frequency: 2
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnOffInMenu:
   - {fileID: 1240695537614905025}
+  - {fileID: 4691925430809529791}
   TurnOffInEditor:
   - {fileID: 4691925430809529791}
   TurnOffInBattle:

@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using General.EnumNamespace;
+using static UnityEditor.Progress;
 
 namespace General.Managers
 {
@@ -19,25 +20,38 @@ namespace General.Managers
         private void Start()
         {
             int buildIndexActiveScene = SceneManager.GetActiveScene().buildIndex;
+            string type;
 
             switch (buildIndexActiveScene)
             {
                 case (int)EnumBuildIndexOfScene.Menu:
                     {
                         foreach (var item in TurnOffInMenu)
-                            Destroy(item);
+                        {
+                            type = item.GetType().ToString();
+                            Destroy(gameObject.GetComponent(type));
+                        }
+                            
                         break;
                     }
                 case (int)EnumBuildIndexOfScene.Editor:
                     {
                         foreach (var item in TurnOffInEditor)
-                            Destroy(item);
+                        {
+                            type = item.GetType().ToString();
+                            Destroy(gameObject.GetComponent(type));
+                        }
+
                         break;
                     }
                 case (int)EnumBuildIndexOfScene.Battle:
                     {
                         foreach (var item in TurnOffInBattle)
-                            Destroy(item);
+                        {
+                            type = item.GetType().ToString();
+                            Destroy(gameObject.GetComponent(type));
+                        }
+
                         break;
                     }
             }
