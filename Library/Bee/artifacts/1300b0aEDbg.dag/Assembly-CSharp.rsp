@@ -406,6 +406,8 @@
 "Assets/Resources/Scripts/EditorInGame/Scene/Move/DragAndDropPart.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Spawn/PartForSpawn.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Spawn/SpawnPart.cs"
+"Assets/Resources/Scripts/General/Enum/EnumBuildIndexOfScene.cs"
+"Assets/Resources/Scripts/General/Managers/DestroyUnnecessaryScripts.cs"
 "Assets/Resources/Scripts/General/Other/ChangeBodyType.cs"
 "Assets/Resources/Scripts/General/Other/DragAndDrop.cs"
 "Assets/Resources/Scripts/General/Other/LoadScene.cs"
@@ -427,7 +429,6 @@
 "Assets/Resources/Scripts/Menu/ElementsForButton.cs"
 "Assets/Resources/Scripts/Menu/EnableLevel.cs"
 "Assets/Resources/Scripts/Menu/SpawnPlayerInMenu.cs"
-"Assets/Resources/Scripts/Menu/SwipeLevelsMenu.cs"
 -langversion:9.0
 
 /deterministic
