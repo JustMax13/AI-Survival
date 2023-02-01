@@ -87,7 +87,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\Other\DragAndDrop.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDrop.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Manager\ActionManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\SpawnEnd.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\Varieties\ClassicBullet.cs" />
@@ -117,6 +117,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Managers\DestroyUnnecessaryScripts.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

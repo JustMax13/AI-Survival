@@ -120,10 +120,10 @@ TextureImporter:
       name: HardArmor_0
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 683
-        width: 1211
-        height: 807
+        x: 1135
+        y: 682
+        width: 1215
+        height: 810
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07fb2d8d07d2d4d4a80ac71364d87941
-      internalID: 360575364
+      spriteID: 3f8b93a673db02e4a8001e61af0a9bb1
+      internalID: 1817566744
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HardArmor_0: 360575364
+      HardArmor_0: 1817566744
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
