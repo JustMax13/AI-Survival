@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf2a0ac9548a4c8955264e0b9590b, type: 3}
   m_Name: HardArmor
   m_EditorClassIdentifier: 
-  _icon: {fileID: 360575364, guid: 678e349541d839c408ab55ca5a89f081, type: 3}
+  _icon: {fileID: 1817566744, guid: 678e349541d839c408ab55ca5a89f081, type: 3}
   _prefab: {fileID: 312083931281737964, guid: 6c854832d2aa2844a8514a7cd01f51c6, type: 3}
   _maxCountOfPart: 10

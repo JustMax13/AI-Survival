@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+using General.EnumNamespace;
+using Editor.Interface;
+using Editor;
 
 namespace General.Saves
 {
@@ -65,6 +70,12 @@ namespace General.Saves
 
                 // болты переделать в connectedPoint, так они сохраняют расположение подключаемых деталей
 
+                if (SceneManager.GetActiveScene().buildIndex == (int)EnumBuildIndexOfScene.Editor)
+                    part.AddComponent<DragAndDropPart>();
+                // еще нужно добавить limitPoint1 и limitPoint2
+                // так же, нельзя удалить загруженую с сохранения часть
+                // После сохранения кочество подключенных деталей равна 0
+
                 PartOnScene.Add(item.ID, part);
             }
 
@@ -80,6 +91,7 @@ namespace General.Saves
                     JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
                 }
             }
+
             // На этих частях нет DragAndDrop
             // а еще с включенным AttractionPoint и AttractionObject, в старте там написано
             // что обьект не подключен, вот оно и создает без болтика, хотя физически они 

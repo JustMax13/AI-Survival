@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5196193401324259173}
   - component: {fileID: 4471209869223068481}
   - component: {fileID: 8052949681027134435}
+  - component: {fileID: 2855531333538825758}
   m_Layer: 0
   m_Name: 'Connected Point ( Right  Down ) '
   m_TagString: Untagged
@@ -62,6 +63,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0092
+--- !u!114 &2855531333538825758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846812940723420020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnOffInMenu:
+  - {fileID: 4471209869223068481}
+  TurnOffInEditor: []
+  TurnOffInBattle:
+  - {fileID: 4471209869223068481}
 --- !u!1 &2220310348333694076
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +175,7 @@ GameObject:
   - component: {fileID: 7093692064958634340}
   - component: {fileID: 7771105798258182524}
   - component: {fileID: 391791262019748643}
+  - component: {fileID: 468849861885003075}
   m_Layer: 0
   m_Name: 'Connected Point ( Right Up ) '
   m_TagString: Untagged
@@ -208,6 +227,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0092
+--- !u!114 &468849861885003075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405742648625939774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnOffInMenu:
+  - {fileID: 7771105798258182524}
+  TurnOffInEditor: []
+  TurnOffInBattle:
+  - {fileID: 7771105798258182524}
 --- !u!1 &5949068942550834868
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +255,7 @@ GameObject:
   - component: {fileID: 7544969598079828865}
   - component: {fileID: 8518995017000338456}
   - component: {fileID: 6321779366045830699}
+  - component: {fileID: 1924199629852746005}
   m_Layer: 0
   m_Name: Connected Point ( Left Up )
   m_TagString: Untagged
@@ -270,6 +307,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0092
+--- !u!114 &1924199629852746005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5949068942550834868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnOffInMenu:
+  - {fileID: 8518995017000338456}
+  TurnOffInEditor: []
+  TurnOffInBattle:
+  - {fileID: 8518995017000338456}
 --- !u!1 &8028562899456403098
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +335,7 @@ GameObject:
   - component: {fileID: 8217693123666766631}
   - component: {fileID: 7166782342714896915}
   - component: {fileID: 7085013848567305008}
+  - component: {fileID: 8528424956738994483}
   m_Layer: 0
   m_Name: 'Connected Point ( Left Down ) '
   m_TagString: Untagged
@@ -332,6 +387,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0092
+--- !u!114 &8528424956738994483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028562899456403098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnOffInMenu:
+  - {fileID: 7166782342714896915}
+  TurnOffInEditor: []
+  TurnOffInBattle:
+  - {fileID: 7166782342714896915}
 --- !u!1 &8854797796699257740
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +419,7 @@ GameObject:
   - component: {fileID: 6351884175463792285}
   - component: {fileID: 1463340551335337704}
   - component: {fileID: 6592950511983873525}
+  - component: {fileID: 7271410304579126087}
   m_Layer: 0
   m_Name: ClassicCentralBlock
   m_TagString: CPU
@@ -362,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8854797796699257740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5301631, y: -41.979576, z: 0}
+  m_LocalPosition: {x: 0.49552077, y: 0.64753944, z: 0}
   m_LocalScale: {x: 0.02988, y: 0.02988, z: 0.02988}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -511,3 +584,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partName: ClassicCentralBlock
+--- !u!114 &7271410304579126087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854797796699257740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnOffInMenu:
+  - {fileID: 6351884175463792285}
+  TurnOffInEditor: []
+  TurnOffInBattle:
+  - {fileID: 6351884175463792285}

@@ -22,7 +22,7 @@ namespace Editor.Interface
         }
         private void DestroySelectPart()
         {
-            _partOfBot.CurrentCountOfPart--;
+            //_partOfBot.CurrentCountOfPart--; // когда пытаешся загруженую часть удалить, то _partOfBot - null
             Destroy(_selectedPart);
             gameObject.GetComponent<Button>().interactable = false;
         }
@@ -37,7 +37,7 @@ namespace Editor.Interface
         {
             base.OnPointerUp(eventData);
 
-            ActionManager.ActionButtonDown = true;
+            ActionManager.ActionButtonDown = false;
         }
         protected override void Start()
         {

@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 8854797796699257737}
   - component: {fileID: 8854797796699257736}
   - component: {fileID: 8854797796699257738}
+  - component: {fileID: 1622570402334995084}
   - component: {fileID: 6351884175463792285}
   - component: {fileID: 6592950511983873525}
-  - component: {fileID: 1622570402334995084}
   - component: {fileID: 7212762302524645416}
+  - component: {fileID: 4525390790754250223}
   m_Layer: 0
   m_Name: CarbonNoise
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8854797796699257740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.468276, y: 0.25513354, z: 0}
+  m_LocalPosition: {x: 1.1298739, y: -0.21934113, z: 0}
   m_LocalScale: {x: 0.0997, y: 0.0997, z: 0.0997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -113,31 +114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6351884175463792285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8854797796699257740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6592950511983873525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8854797796699257740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958e67d3c445b744c837f04b6ac441c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partName: CarbonNoise
 --- !u!61 &1622570402334995084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,6 +140,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 24.073265, y: 8.07}
   m_EdgeRadius: 0
+--- !u!114 &6351884175463792285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854797796699257740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6592950511983873525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854797796699257740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958e67d3c445b744c837f04b6ac441c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partName: CarbonNoise
 --- !u!114 &7212762302524645416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +178,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _HP: 300
+--- !u!114 &4525390790754250223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854797796699257740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnOffInMenu:
+  - {fileID: 6351884175463792285}
+  TurnOffInEditor: []
+  TurnOffInBattle:
+  - {fileID: 6351884175463792285}
 --- !u!1001 &5475519900393374955
 PrefabInstance:
   m_ObjectHideFlags: 0
