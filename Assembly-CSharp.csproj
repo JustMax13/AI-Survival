@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunShot.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunRotation.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\General\IMover.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\ButtonEventTrigger\MoveLeft.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\General\PartOfBot.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Manager\ActionManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\SpawnEnd.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\Varieties\ClassicBullet.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\Сkeshing.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveBotController.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\General\IHaveHP.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\HPofPart.cs" />
@@ -118,9 +120,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Move\ButtonEventTrigger\MoveRight.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunRotation.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\RotationTest.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\Сkeshing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

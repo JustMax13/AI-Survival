@@ -1,19 +1,40 @@
 using System.Collections;
 using UnityEngine;
+using CombatMechanics.Weapon;
 namespace CombatMechanics
 {
     public class GunRotation : MonoBehaviour
     {
-        [SerializeField] private float _minRotation, _maxRotation, speed, r, p;
+        public float _minRotation, _maxRotation;
+        [SerializeField] float speed;
         [SerializeField] private GameObject _gun;
-        private bool _stopMove;
+        [SerializeField] private bool _aI;
+        [SerializeField]private GunShot _shot;
+        private bool _stopMove, _revers;
+        private void Start()
+        {
+            if (_maxRotation < _minRotation)
+                _revers = true;
+           
+        }
         public void RotationMoveCulcut(float angel)
         {
-            if (angel > _maxRotation)
-                angel = _maxRotation;
+            if (_revers)
+            {
+                if (angel > 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation;
+                else
+                   if (angel < 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
+            }
+            else 
+            { 
+                if (angel > 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation)
+                angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
             else
-                if (angel < _minRotation)
-                 angel = _minRotation;
+                if (angel < 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation)
+                 angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation;
+            }
             RotationMove(angel);
         }
         private void RotationMove(float angel)
@@ -31,7 +52,12 @@ namespace CombatMechanics
                 }
                 else
                 {
-                    //fire (only for AI)
+                    if (_aI)
+                    {
+                        //fire (only for AI)
+                        _shot.CheckReloadAndShot();
+                    }
+                   
                 }
             }
 
@@ -44,11 +70,24 @@ namespace CombatMechanics
         public void StarRotation(bool moveUp)
         {
             float angel;
-            if (moveUp)
-                angel = _maxRotation;
-            else
-                angel = _minRotation;
-            _stopMove = false;
+            if (_revers)
+            {
+                if (moveUp)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation ;
+                else
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
+                _stopMove = false;
+            }
+            else 
+            { 
+            
+             if (moveUp)
+                angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
+             else
+                angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation;
+             _stopMove = false;
+             
+            }
             RotationMove(angel);
         }
         public void StopRotation()

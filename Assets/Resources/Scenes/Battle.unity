@@ -1213,6 +1213,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8629785013682163639, guid: 64bffcc139d0c5441903fb3596bc72fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8650889567521370509, guid: 64bffcc139d0c5441903fb3596bc72fd,
         type: 3}
       propertyPath: m_IsActive

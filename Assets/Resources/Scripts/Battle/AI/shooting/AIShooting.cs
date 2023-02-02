@@ -8,15 +8,14 @@ namespace CombatMechanics.AI
     {
         //private bool _can;
         private int _auditStepsMinCount, _auditStepsMaxCount;
-
-        [SerializeField] private Vector3 _rotationMin, _rotationMax;
-        [SerializeField] private Vector3 _rotationSpeedMin, _rotationSpeedMax, _rotationSpeedInMoment;
-
+        private Vector3 _rotationSpeedMin, _rotationSpeedMax, _rotationSpeedInMoment;
+        private float _rotationInMoment,_rotationMin, _rotationMax;
         [SerializeField] private float _bulletSpeed = 6, _radius = 0.25f;
 
         [SerializeField] private GunTraectory _traectory;
         [SerializeField] private PaintTraectory[] _traectoryPoint;
-        [SerializeField] private GameObject[] mm; // переіменувати, бо не зрозуміло, що то таке
+        private GunRotation _gunRotation;
+
 
         [SerializeField] private GameObject _gun, _prisel, _player, ckesh;
         [SerializeField] private LayerMask /*_playerLayer,*/ _layerPlayerDetal, _layersAll;
@@ -25,12 +24,16 @@ namespace CombatMechanics.AI
 
         void Start()
         {
-            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin.z * Mathf.Deg2Rad),
-                _bulletSpeed * Mathf.Sin(_rotationMin.z * Mathf.Deg2Rad), 0);
-            _rotationSpeedMax = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMax.z * Mathf.Deg2Rad),
-                _bulletSpeed * Mathf.Sin(_rotationMax.z * Mathf.Deg2Rad), 0);
+            _gunRotation = _gun.GetComponent<GunRotation>();
+            _rotationMin = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._minRotation;
+            _rotationMax = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._maxRotation;
+            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin * Mathf.Deg2Rad),
+                _bulletSpeed * Mathf.Sin(_rotationMin* Mathf.Deg2Rad), 0);
+            _rotationSpeedMax = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMax * Mathf.Deg2Rad),
+                _bulletSpeed * Mathf.Sin(_rotationMax * Mathf.Deg2Rad), 0);
 
             Instantiate(ckesh, new Vector3(0, 0, 0), Quaternion.identity);
+            
         }
         public void FoundPlayer(GameObject player)
         {
@@ -39,10 +42,14 @@ namespace CombatMechanics.AI
         }
         private IEnumerator StartWaiting()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
 
-            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin.z * Mathf.Deg2Rad),
-                _bulletSpeed * Mathf.Sin(_rotationMin.z * Mathf.Deg2Rad), 0);
+            _rotationMin = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._minRotation;
+            _rotationMax = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._maxRotation;
+            _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin * Mathf.Deg2Rad),
+                _bulletSpeed * Mathf.Sin(_rotationMin * Mathf.Deg2Rad), 0);
+            _rotationSpeedMax = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMax * Mathf.Deg2Rad),
+                _bulletSpeed * Mathf.Sin(_rotationMax * Mathf.Deg2Rad), 0);
 
             _traectoryPoint[0].ShowTrajectory(_gun.transform.position, _rotationSpeedMin, _radius, _layersAll);
 
@@ -104,10 +111,7 @@ namespace CombatMechanics.AI
             _auditXMax[0] = _gun.transform.position.x - _rotationSpeedMax.x * _auditStepsMax[0];
             _auditXMax[1] = _gun.transform.position.x - _rotationSpeedMax.x * _auditStepsMax[1];
 
-            mm[0].transform.position = new Vector3(_auditXMin[0], _player.transform.position.y, 0);
-            mm[1].transform.position = new Vector3(_auditXMin[1], _player.transform.position.y, 0);
-            mm[2].transform.position = new Vector3(_auditXMax[0], _player.transform.position.y, 0);
-            mm[3].transform.position = new Vector3(_auditXMax[1], _player.transform.position.y, 0);
+       
 
             FirstAudit();
         }
@@ -210,7 +214,7 @@ namespace CombatMechanics.AI
         {
             float speedX = _rotationSpeedMin.x, speedY = _rotationSpeedMin.y, time, descriminant, xx;
 
-            if (_rotationMax.z - _rotationMin.z < 0)
+            if (_rotationMax - _rotationMin < 0)
             {
                 if (step == 0)
                     step = 2;
@@ -222,7 +226,7 @@ namespace CombatMechanics.AI
             {
                 case 0:
                     {
-                        for (float i = _rotationMin.z; i < _rotationMax.z; i += 0.01f)
+                        for (float i = _rotationMin; i < _rotationMax; i += 0.01f)
                         {
                             descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2)
                                 - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
@@ -236,7 +240,7 @@ namespace CombatMechanics.AI
                                 {
                                     speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
                                     speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
-
+                                    _rotationInMoment = i;
                                     break;
                                 }
                             }
@@ -246,7 +250,7 @@ namespace CombatMechanics.AI
                     }
                 case 1:
                     {
-                        for (float i = _rotationMin.z; i < _rotationMax.z; i += 0.01f)
+                        for (float i = _rotationMin; i < _rotationMax; i += 0.01f)
                         {
                             descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2)
                                 - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
@@ -260,7 +264,7 @@ namespace CombatMechanics.AI
                                 {
                                     speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
                                     speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
-
+                                    _rotationInMoment = i;
                                     break;
                                 }
                             }
@@ -270,7 +274,7 @@ namespace CombatMechanics.AI
                     }
                 case 2:
                     {
-                        for (float i = _rotationMin.z; i > _rotationMax.z; i -= 0.01f)
+                        for (float i = _rotationMin; i > _rotationMax; i -= 0.01f)
                         {
                             descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2)
                                 - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
@@ -284,7 +288,7 @@ namespace CombatMechanics.AI
                                 {
                                     speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
                                     speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
-
+                                    _rotationInMoment = i;
                                     break;
                                 }
                             }
@@ -294,7 +298,7 @@ namespace CombatMechanics.AI
                     }
                 case 3:
                     {
-                        for (float i = _rotationMin.z; i > _rotationMax.z; i -= 0.01f)
+                        for (float i = _rotationMin; i > _rotationMax; i -= 0.01f)
                         {
                             descriminant = Mathf.Pow(_bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad), 2)
                                 - 2 * Physics.gravity.y * (_gun.transform.position.y - _player.transform.position.y);
@@ -308,7 +312,7 @@ namespace CombatMechanics.AI
                                 {
                                     speedX = _bulletSpeed * Mathf.Cos(i * Mathf.Deg2Rad);
                                     speedY = _bulletSpeed * Mathf.Sin(i * Mathf.Deg2Rad);
-
+                                    _rotationInMoment = i;
                                     break;
                                 }
                             }
@@ -331,7 +335,11 @@ namespace CombatMechanics.AI
         {
             yield return new WaitForSeconds(0.5f);
             if (Physics2D.OverlapCircle(_prisel.transform.position, _radius, _layerPlayerDetal, -10, 10))
-                _traectoryPoint[1].ShowTrajectory(_gun.transform.position, _rotationSpeedInMoment, _radius, _layersAll); //shooting
+            {
+               _traectoryPoint[1].ShowTrajectory(_gun.transform.position, _rotationSpeedInMoment, _radius, _layersAll);
+                _gunRotation.RotationMoveCulcut(_rotationInMoment);
+            }
+                 //shooting
                                                                                                                          //else// ������� �� ����������
                                                                                                                          //_prisel.SetActive(false);                                                                                                             
 
