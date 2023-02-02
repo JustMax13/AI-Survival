@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 312083931065807840}
   - component: {fileID: 3897536983274009341}
   - component: {fileID: 2424516793655013902}
-  - component: {fileID: 2430221626056651245}
   m_Layer: 0
   m_Name: Connected Point ( Right )
   m_TagString: Untagged
@@ -63,23 +62,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0092
---- !u!114 &2430221626056651245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083931065807843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnOffInMenu:
-  - {fileID: 3897536983274009341}
-  TurnOffInEditor: []
-  TurnOffInBattle:
-  - {fileID: 3897536983274009341}
 --- !u!1 &312083931281737964
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +77,6 @@ GameObject:
   - component: {fileID: 7320012696846339062}
   - component: {fileID: 4838389123061600818}
   - component: {fileID: 5731443881472214527}
-  - component: {fileID: 3533650845992769335}
   m_Layer: 0
   m_Name: HardArmor
   m_TagString: Untagged
@@ -111,7 +92,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312083931281737964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3353038, y: -0.21934113, z: 0}
+  m_LocalPosition: {x: -0.6832157, y: 0.6919541, z: 0}
   m_LocalScale: {x: 0.09909, y: 0.09909, z: 0.09909}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -161,12 +142,12 @@ SpriteRenderer:
   m_SortingLayerID: -2085904217
   m_SortingLayer: 8
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1817566744, guid: 678e349541d839c408ab55ca5a89f081, type: 3}
+  m_Sprite: {fileID: 360575364, guid: 678e349541d839c408ab55ca5a89f081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.151648, y: 8.099999}
+  m_Size: {x: 9.28, y: 6.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -210,8 +191,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.151648, y: 8.099999}
-    newSize: {x: 12.151648, y: 8.099999}
+    oldSize: {x: 12.111643, y: 8.07}
+    newSize: {x: 9.28, y: 6.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -257,23 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partName: HardArmor
---- !u!114 &3533650845992769335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083931281737964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnOffInMenu:
-  - {fileID: 4838389123061600818}
-  TurnOffInEditor: []
-  TurnOffInBattle:
-  - {fileID: 4838389123061600818}
 --- !u!1 &312083932752504755
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +249,6 @@ GameObject:
   - component: {fileID: 312083932752504752}
   - component: {fileID: 356549312121752770}
   - component: {fileID: 7410315119699117613}
-  - component: {fileID: 141543747722479708}
   m_Layer: 0
   m_Name: Connected Point ( Left )
   m_TagString: Untagged
@@ -337,20 +300,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0092
---- !u!114 &141543747722479708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083932752504755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnOffInMenu:
-  - {fileID: 356549312121752770}
-  TurnOffInEditor: []
-  TurnOffInBattle:
-  - {fileID: 356549312121752770}

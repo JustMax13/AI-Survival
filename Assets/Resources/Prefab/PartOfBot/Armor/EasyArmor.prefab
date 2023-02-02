@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7320012696846339062}
   - component: {fileID: 4838389123061600818}
   - component: {fileID: 3796956381938037625}
-  - component: {fileID: -2697829095272270022}
   m_Layer: 0
   m_Name: EasyArmor
   m_TagString: Untagged
@@ -31,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312083931281737964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4702315, y: -0.21934113, z: 0}
+  m_LocalPosition: {x: 1.302743, y: 0.06952747, z: 0}
   m_LocalScale: {x: 0.12931, y: 0.12931, z: 0.12931}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -81,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: -2085904217
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1218712265, guid: a79fb8e56f71f6e459ad67c4a9b51cc0, type: 3}
+  m_Sprite: {fileID: -535395917, guid: a79fb8e56f71f6e459ad67c4a9b51cc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.3, y: 6.25}
+  m_Size: {x: 9.28, y: 6.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -109,8 +108,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.3, y: 6.25}
-    newSize: {x: 9.3, y: 6.25}
+    oldSize: {x: 9.28, y: 6.18}
+    newSize: {x: 9.28, y: 6.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -177,23 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partName: EasyArmor
---- !u!114 &-2697829095272270022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083931281737964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnOffInMenu:
-  - {fileID: 4838389123061600818}
-  TurnOffInEditor: []
-  TurnOffInBattle:
-  - {fileID: 4838389123061600818}
 --- !u!1 &312083931561649778
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +187,6 @@ GameObject:
   - component: {fileID: 312083931561649779}
   - component: {fileID: 6148218842200208763}
   - component: {fileID: 8124735654813412472}
-  - component: {fileID: 3083752900923694765}
   m_Layer: 0
   m_Name: Connected Point ( Right   )
   m_TagString: Untagged
@@ -257,23 +238,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.77333
---- !u!114 &3083752900923694765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083931561649778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnOffInMenu:
-  - {fileID: 6148218842200208763}
-  TurnOffInEditor: []
-  TurnOffInBattle:
-  - {fileID: 6148218842200208763}
 --- !u!1 &2489570577796967482
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +249,6 @@ GameObject:
   - component: {fileID: 4152773290889360924}
   - component: {fileID: 5470376596346925156}
   - component: {fileID: 3150130825646490031}
-  - component: {fileID: 3265163851236037890}
   m_Layer: 0
   m_Name: MagnetZone ( Left  )
   m_TagString: Untagged
@@ -337,20 +300,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.77333
---- !u!114 &3265163851236037890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2489570577796967482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnOffInMenu:
-  - {fileID: 5470376596346925156}
-  TurnOffInEditor: []
-  TurnOffInBattle:
-  - {fileID: 5470376596346925156}

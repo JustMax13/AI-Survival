@@ -7,20 +7,46 @@ namespace Editor
     using Editor.Interface;
     public class DragAndDropPart : MonoBehaviour
     {
+        [SerializeField] private float _backlogCursor;
+
+        [SerializeField] private GameObject _limitPoint1;
+        [SerializeField] private GameObject _limitPoint2;
+
         private bool _isSelected;
         private bool _cursorOnObject;
         private float _clickTime;
         private float _curentClickTime;
-        private float _movementSpeed;
-
-        private GameObject _limitPoint1;
-        private GameObject _limitPoint2;
 
         private GameObject _destroyButton;
         private GameObject[] _rotationButton;
         private PartOfBot _partOfBot;
 
         public bool IsSelected { get => _isSelected; }
+        public float BacklogCursor
+        {
+            get => _backlogCursor;
+            set
+            {
+                _backlogCursor = value;
+            }
+        }
+
+        public GameObject LimitPoint1
+        {
+            get => _limitPoint1;
+            set
+            {
+                _limitPoint1 = value;
+            }
+        }
+        public GameObject LimitPoint2
+        {
+            get => _limitPoint2;
+            set
+            {
+                _limitPoint2 = value;
+            }
+        }
         public PartOfBot PartOfBot
         {
             get => _partOfBot;
@@ -39,8 +65,8 @@ namespace Editor
             if (_isSelected)
             {
                 Vector2 touth = DragAndDrop.MousePositionOnDragArea(_limitPoint1, _limitPoint2);
-                transform.position = new Vector2(Mathf.Lerp(transform.position.x, touth.x, _movementSpeed * Time.deltaTime),
-                    Mathf.Lerp(transform.position.y, touth.y, _movementSpeed * Time.deltaTime));
+                transform.position = new Vector2(Mathf.Lerp(transform.position.x, touth.x, _backlogCursor * Time.deltaTime),
+                    Mathf.Lerp(transform.position.y, touth.y, _backlogCursor * Time.deltaTime));
             }
         }
         private void OnMouseUp()
@@ -54,16 +80,11 @@ namespace Editor
 
         private void Start()
         {
-            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-
+            if (_backlogCursor == 0)
+                _backlogCursor = 22;
             _clickTime = 0.5f;
             _curentClickTime = 0;
             _isSelected = true;
-
-            _movementSpeed = DragAndDropValue.MovementSpeed;
-
-            _limitPoint1 = DragAndDropValue.LimitPoint1;
-            _limitPoint2 = DragAndDropValue.LimitPoint2;
 
             _destroyButton = GameObject.FindGameObjectWithTag("DestroyButton");
             _rotationButton = GameObject.FindGameObjectsWithTag("RotationButton");
@@ -96,8 +117,7 @@ namespace Editor
                 Debug.Log("DestroyButton lost component: ButtonForDestroyObject");
             }
 
-            if (Input.GetMouseButtonDown(0) && !_cursorOnObject && !ActionManager.ActionButtonDown)
-                _isSelected = false;
+            if (Input.GetMouseButtonDown(0) && !_cursorOnObject && !ActionManager.ActionButtonDown) _isSelected = false;
         }
         private void FixedUpdate()
         {

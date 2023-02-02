@@ -14,8 +14,7 @@ namespace General
         public static float MinX { get => _minX; }
         public static float MaxX { get => _maxX; }
         public static float MinY { get => _minY; }
-        public static float MaxY { get => _maxY; }         
-        
+        public static float MaxY { get => _maxY; }
         public static void Save2Point(GameObject limitPoint1, GameObject limitPoint2)
         {
             if (limitPoint1 == null || limitPoint2 == null)
