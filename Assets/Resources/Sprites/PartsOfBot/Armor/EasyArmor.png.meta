@@ -120,10 +120,10 @@ TextureImporter:
       name: EasyArmor_0
       rect:
         serializedVersion: 2
-        x: 204
-        y: 198
-        width: 930
-        height: 625
+        x: 201
+        y: 202
+        width: 928
+        height: 618
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27096d8c1cf85824590bbbc5b10137cb
-      internalID: 1218712265
+      spriteID: 43f356c1c765459449a701c8fc9cb640
+      internalID: -535395917
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EasyArmor_0: 1218712265
+      EasyArmor_1: 116536325
+      EasyArmor_0: -535395917
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

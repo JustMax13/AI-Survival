@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf2a0ac9548a4c8955264e0b9590b, type: 3}
   m_Name: EasyArmor
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1218712265, guid: a79fb8e56f71f6e459ad67c4a9b51cc0, type: 3}
+  _icon: {fileID: -535395917, guid: a79fb8e56f71f6e459ad67c4a9b51cc0, type: 3}
   _prefab: {fileID: 312083931281737964, guid: 7475b2a3a1cc6ea4292e0fd885e3ee18, type: 3}
   _maxCountOfPart: 10

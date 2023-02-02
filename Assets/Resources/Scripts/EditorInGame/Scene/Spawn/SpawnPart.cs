@@ -40,6 +40,9 @@ namespace Editor
 
             partOnScene.transform.parent = _parentsOfParts.transform;
             partOnScene.AddComponent<DragAndDropPart>();
+            partOnScene.GetComponent<DragAndDropPart>().BacklogCursor = 22;
+            partOnScene.GetComponent<DragAndDropPart>().LimitPoint1 = _limitPoint1;
+            partOnScene.GetComponent<DragAndDropPart>().LimitPoint2 = _limitPoint2;
             partOnScene.GetComponent<DragAndDropPart>().PartOfBot = spawnPart;
 
             partIsntSpawn = false;
