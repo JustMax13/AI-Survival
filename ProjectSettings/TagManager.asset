@@ -17,6 +17,7 @@ TagManager:
   - RotationButton
   - Enemy
   - ValuesForSpawn
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -29,8 +30,8 @@ TagManager:
   - Invisible wall
   - Bullet
   - Enemy
-  - 
-  - 
+  - Walls
+  - PlayerCB
   - 
   - 
   - 
