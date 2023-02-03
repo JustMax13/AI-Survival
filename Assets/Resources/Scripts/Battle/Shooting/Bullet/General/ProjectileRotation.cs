@@ -17,6 +17,7 @@ public class ProjectileRotation : MonoBehaviour
         FlightDirection = NewVector - OldVector;
         OldVector = NewVector;
 
-        transform.Rotate(0, 0, -Vector2.Angle(transform.TransformDirection(Vector2.right), FlightDirection));
+        // не правильно поворачивает
+        transform.Rotate(0, 0, Vector2.Angle(transform.TransformDirection(Vector2.right), FlightDirection));
     }
-}
+}   

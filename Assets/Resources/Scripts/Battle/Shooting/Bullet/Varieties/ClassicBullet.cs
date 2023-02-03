@@ -9,7 +9,6 @@ namespace CombatMechanics
 
     public class ClassicBullet : AbstractBullet
     {
-        [SerializeField]
         private float _damage;
         public override float Damage 
         { 
@@ -22,16 +21,25 @@ namespace CombatMechanics
             } 
         }
 
-        protected override LayerMask[] IgnoreLayers { get; set; }
+        public override List<LayerMask> IgnoreLayers { get; set; }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void Awake()
         {
-            IgnoreLayers = new LayerMask[] {LayerMask.GetMask("Player"), LayerMask.GetMask("Invisible wall") };
+            IgnoreLayers = new List<LayerMask>();
+        }
+        private void Start()
+        {
+            IgnoreLayers.Add(LayerMask.GetMask("Invisible wall"));
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
             foreach (var item in IgnoreLayers)
                 if (collision.gameObject.layer == item)
                     return;
 
-            collision.gameObject.GetComponent<IHaveHP>()?.TakeDamage(collision.gameObject.GetComponent<IHaveHP>(), Damage);
+            IHaveHP collisionHaveHP = collision.transform.GetComponent<IHaveHP>();
+            collisionHaveHP?.TakeDamage(collisionHaveHP, Damage);
+
             Destroy(gameObject);
         }
     }

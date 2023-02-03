@@ -196,9 +196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectilesInAClip: 1
   _bulletDamage: 1500
-  _bulletVelocity: 60
+  _bulletVelocity: 40
   _reloadBetweenProjectilesInAClip: 0.001
-  _reloadTime: 0.5
+  _reloadTime: 1
   _bulletSpawn: {fileID: 482871077999789854}
   _bulletPrefab: {fileID: 1630338132620539897, guid: 0362b506bbce7524da5a9c2317923138,
     type: 3}

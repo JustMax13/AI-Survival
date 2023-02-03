@@ -42,7 +42,7 @@ namespace CombatMechanics.AI
         }
         private IEnumerator StartWaiting()
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1f);
 
             _rotationMin = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._minRotation;
             _rotationMax = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._maxRotation;

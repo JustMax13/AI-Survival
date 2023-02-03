@@ -8,8 +8,8 @@ namespace CombatMechanics
         public float _minRotation, _maxRotation;
         [SerializeField] float speed;
         [SerializeField] private GameObject _gun;
-        [SerializeField] private bool _aI;
-        [SerializeField]private GunShot _shot;
+        [SerializeField] private bool _ai;
+        [SerializeField] private GunShot _shot;
         private bool _stopMove, _revers;
         private void Start()
         {
@@ -48,11 +48,11 @@ namespace CombatMechanics
                        Vector3.MoveTowards(new Vector3(_gun.transform.rotation.x, _gun.transform.rotation.y, 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg),
                         new Vector3(_gun.transform.rotation.x, _gun.transform.rotation.y, angel), speed * Time.deltaTime));
 
-                    StartCoroutine(timer(angel));
+                    StartCoroutine(Timer(angel));
                 }
                 else
                 {
-                    if (_aI)
+                    if (_ai)
                     {
                         //fire (only for AI)
                         _shot.CheckReloadAndShot();
@@ -62,7 +62,7 @@ namespace CombatMechanics
             }
 
         }
-        private IEnumerator timer(float angel)
+        private IEnumerator Timer(float angel)
         {
             yield return new WaitForSeconds(1f / 60f);
             RotationMove(angel);

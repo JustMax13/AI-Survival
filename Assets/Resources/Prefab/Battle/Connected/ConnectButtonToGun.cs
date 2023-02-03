@@ -17,24 +17,28 @@ namespace CombatMechanics
         }
         private void OnConnectedShotButton(Button shotButton)
         {
-            int index = -1;
-            GameObject shotButtonParent = shotButton.transform.parent.gameObject;
-
-            for (int i = 0; i < shotButtonParent.GetComponent<ConnectedShotButton>().ShotButtons.Length; i++)
+            if (!_gunConnected && gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                if (shotButtonParent.GetComponent<ConnectedShotButton>().ShotButtons[i] == shotButton)
+                int index = -1;
+                GameObject shotButtonParent = shotButton.transform.parent.gameObject;
+
+                var connectedShotButton = shotButtonParent.GetComponent<ConnectedShotButton>();
+                for (int i = 0; i < connectedShotButton.ShotButtons.Length; i++)
                 {
-                    index = i;
-                    break;
+                    if (connectedShotButton.ShotButtons[i] == shotButton)
+                    {
+                        index = i;
+                        break;
+                    }
                 }
-            }
 
-            if (!_gunConnected && index != -1)
-            {
-                shotButton.gameObject.SetActive(true);
-                shotButton.onClick.AddListener(gameObject.GetComponent<ShotGun>().CheckReloadAndShot);
-                _gunConnected = true;
-                shotButtonParent.GetComponent<ConnectedShotButton>().BusyShotButton[index] = true;
+                if (index != -1) // тут дописать условие: если это пушка игрока
+                {
+                    shotButton.gameObject.SetActive(true);
+                    shotButton.onClick.AddListener(gameObject.GetComponent<ShotGun>().CheckReloadAndShot);
+                    _gunConnected = true;
+                    shotButtonParent.GetComponent<ConnectedShotButton>().BusyShotButton[index] = true;
+                }
             }
         }
         private void OnDestroy()

@@ -129,12 +129,15 @@ namespace CombatMechanics
                 if (ReloadEnd)
                 {
                     Shot();
+
                     if (CurrentProjectilesInAClip <= 0)
                     {
                         _currentReloadTime = ReloadTime;
                         CurrentProjectilesInAClip = ProjectilesInAClip;
                     }
                     else _currentReloadTime = ReloadBetweenProjectilesInAClip;
+
+                    ReloadEnd = _currentReloadTime <= 0 ? true : false;
                 }
             }
             abstract protected void Shot();

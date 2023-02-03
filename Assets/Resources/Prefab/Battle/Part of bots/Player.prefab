@@ -59,18 +59,23 @@ PrefabInstance:
     - target: {fileID: 695890375446575170, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -4.4531927
+      value: -4.114749
       objectReference: {fileID: 0}
     - target: {fileID: 695890375446575170, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 2.3275359
+      value: 3.0578587
       objectReference: {fileID: 0}
     - target: {fileID: 695890375446575170, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 5230992809706272385}
+    - target: {fileID: 2465850826229173439, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
+        type: 3}
+      propertyPath: _bulletVelocity
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_RootOrder
@@ -79,12 +84,12 @@ PrefabInstance:
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.817
+      value: -0.76
       objectReference: {fileID: 0}
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.407
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
@@ -94,22 +99,22 @@ PrefabInstance:
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999769
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.006806706
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
@@ -255,7 +260,7 @@ PrefabInstance:
     - target: {fileID: 2302855935782353078, guid: 8a771ef164a8cec4fa5ab718eef041dc,
         type: 3}
       propertyPath: _addSpeed
-      value: 120
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2869653343876002910, guid: 8a771ef164a8cec4fa5ab718eef041dc,
         type: 3}
@@ -375,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 2302855935782353078, guid: 8a771ef164a8cec4fa5ab718eef041dc,
         type: 3}
       propertyPath: _addSpeed
-      value: 80
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 2869653343876002910, guid: 8a771ef164a8cec4fa5ab718eef041dc,
         type: 3}
@@ -477,6 +482,11 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 5230992809706272385}
+    - target: {fileID: 3724984570692815071, guid: 8a771ef164a8cec4fa5ab718eef041dc,
+        type: 3}
+      propertyPath: m_Suspension.m_Frequency
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 5956456764373643898, guid: 8a771ef164a8cec4fa5ab718eef041dc,
         type: 3}
       propertyPath: m_Sprite
@@ -526,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 8854797796699257737, guid: 37c88c4e53f6a584187f1107c246b162,
         type: 3}
@@ -608,7 +618,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.7669175, y: 0.50469536}
+  m_ConnectedAnchor: {x: 2.7669175, y: 2.0484688}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!4 &544705926026289501 stripped

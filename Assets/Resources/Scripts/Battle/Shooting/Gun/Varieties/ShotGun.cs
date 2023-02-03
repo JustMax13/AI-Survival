@@ -15,12 +15,15 @@ namespace CombatMechanics
             try
             {
                 newBullet.GetComponent<Rigidbody2D>().velocity = BulletVelocity * BulletSpawn.right;
-                newBullet.GetComponent<ClassicBullet>().Damage = BulletDamage;
+
+                var classicBullet = newBullet.GetComponent<AbstractBullet>();
+                classicBullet.Damage = BulletDamage;
+                classicBullet.IgnoreLayers.Add(gameObject.layer);
             }
             catch
             {
                 Destroy(newBullet);
-                Debug.Log("The generated bullet does not have a Rigidbody 2d or ClassicBullet component");
+                throw new System.Exception("The generated bullet does not have a Rigidbody 2d or ClassicBullet component");
             }
             finally { CurrentProjectilesInAClip -= 1; }
         }

@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using General;
+using UnityEngine;
 
 namespace CombatMechanics
 {
@@ -12,9 +10,16 @@ namespace CombatMechanics
         override protected void Start()
         {
             base.Start();
+
             SpawnObject.layer = LayerMask.NameToLayer("Enemy");
+
             foreach (Transform child in SpawnObject.transform)
+            {
                 child.gameObject.layer = LayerMask.NameToLayer("Enemy");
+
+                foreach (Transform childInChild in child.transform)
+                    childInChild.gameObject.layer = LayerMask.NameToLayer("Enemy");
+            }
 
             GameOverEvent.PlayerWon += OnPlayerWon;
         }

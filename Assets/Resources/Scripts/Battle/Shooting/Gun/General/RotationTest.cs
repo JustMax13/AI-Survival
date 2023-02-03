@@ -9,16 +9,16 @@ namespace CombatMechanics
         [SerializeField] GunRotation _gun;
         void Start()
         {
-            StartCoroutine(timer());
+            StartCoroutine(Timer());
         }
 
-        private IEnumerator timer()
+        private IEnumerator Timer()
         {
             yield return new WaitForSeconds(_time);
             float random;
             random = Random.Range(_min, _max);
             _gun.RotationMoveCulcut(2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + random);
-            StartCoroutine(timer());
+            StartCoroutine(Timer());
         }
     }
 }
