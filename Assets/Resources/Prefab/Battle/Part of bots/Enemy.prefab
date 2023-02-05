@@ -1415,6 +1415,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1708348581627644600, guid: 8f599ab6121a8924f96ad8f4aa48a3fc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8f599ab6121a8924f96ad8f4aa48a3fc, type: 3}
+--- !u!1 &1829437332626787342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5593096394082312657, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6124292990342376927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8558433883903484256 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2465850826229173439, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
@@ -1433,6 +1439,47 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6124292990342376927}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &885754353781177912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743943424710460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0467cd5d99e806c4fa84410b47e8382e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletSpeed: 10
+  _radius: 0.4
+  _traectory: {fileID: 706906342314543608}
+  _traectoryPoint:
+  - {fileID: 3055896317765849807}
+  - {fileID: 6837743913098598053}
+  - {fileID: 2340615126470677153}
+  _gun: {fileID: 8743943424710460120}
+  _prisel: {fileID: 8213434295107974853}
+  _player: {fileID: 0}
+  _gunEnd: {fileID: 1829437332626787342}
+  _layerPlayerDetal:
+    serializedVersion: 2
+    m_Bits: 64
+  _layersAll:
+    serializedVersion: 2
+    m_Bits: 6592
+  _auditStepsMin:
+  - 0
+  - 0
+  _auditStepsMax:
+  - 0
+  - 0
+  _auditXMin:
+  - 0
+  - 0
+  _auditXMax:
+  - 0
+  - 0
 --- !u!4 &9184760782752021119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3137618341655140256, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
@@ -1545,47 +1592,6 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -11.095837, y: -1.6317406}
   m_DampingRatio: 0
   m_Frequency: 0
---- !u!114 &393369855252686979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054035771838246742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0467cd5d99e806c4fa84410b47e8382e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeed: 10
-  _radius: 0.25
-  _traectory: {fileID: 706906342314543608}
-  _traectoryPoint:
-  - {fileID: 3055896317765849807}
-  - {fileID: 6837743913098598053}
-  - {fileID: 2340615126470677153}
-  _gun: {fileID: 8743943424710460120}
-  _prisel: {fileID: 8213434295107974853}
-  _player: {fileID: 0}
-  ckesh: {fileID: 5255127088219590002, guid: b6fccb5be133e774c9ff23227d33e427, type: 3}
-  _layerPlayerDetal:
-    serializedVersion: 2
-    m_Bits: 64
-  _layersAll:
-    serializedVersion: 2
-    m_Bits: 6592
-  _auditStepsMin:
-  - 0
-  - 0
-  _auditStepsMax:
-  - 0
-  - 0
-  _auditXMin:
-  - 0
-  - 0
-  _auditXMax:
-  - 0
-  - 0
 --- !u!114 &706906342314543608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,3 +1604,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac15dd1776e6de74581e8def2f954506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4953514371603496867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054035771838246742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515ea8a7f34b3b043bf228cdc02afe71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ckesh: {fileID: 5255127088219590002, guid: b6fccb5be133e774c9ff23227d33e427, type: 3}
+  _player: {fileID: 0}
+  _guns:
+  - {fileID: 885754353781177912}

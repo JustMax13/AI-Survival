@@ -7,7 +7,7 @@ namespace CombatMechanics.AI
 
         [SerializeField] private string _tagPlayer, _tagEnemy, _playerLayer, _enemyLayer;
         [SerializeField] private GameObject _player;
-        [SerializeField] private AIShooting _enemy;
+        [SerializeField] private AiBrain _enemy;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -18,7 +18,7 @@ namespace CombatMechanics.AI
             }
             if (collision.gameObject.tag == _tagEnemy && collision.gameObject.layer == LayerMask.NameToLayer(_enemyLayer))
             {
-                _enemy = collision.gameObject.GetComponent<AIShooting>();
+                _enemy = collision.gameObject.GetComponent<AiBrain>();
                 _enemyCresh = true;
             }
             if (_enemyCresh == true && _playerCresh == true)
