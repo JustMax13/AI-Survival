@@ -40,7 +40,7 @@ namespace Editor.Interface
             {
                 if (_useForce) _selectedPart.transform.Rotate(Vector3.forward, _forceAngle);
                 else _selectedPart.transform.Rotate(Vector3.forward, _angle);
-                _selectedPart.GetComponent<AttractionObject>().IsDrag = true;
+                _selectedPart.GetComponent<PluggableObject>().IsDrag = true;
             }
         }
         public void OneTurnRight()
@@ -49,7 +49,7 @@ namespace Editor.Interface
             {
                 if (_useForce) _selectedPart.transform.Rotate(Vector3.forward, -_forceAngle);
                 else _selectedPart.transform.Rotate(Vector3.forward, -_angle);
-                _selectedPart.GetComponent<AttractionObject>().IsDrag = true;
+                _selectedPart.GetComponent<PluggableObject>().IsDrag = true;
             }
         }
 

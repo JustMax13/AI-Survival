@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8517733195174429054}
   - component: {fileID: 967731742129186519}
-  - component: {fileID: 8536717749444113802}
   - component: {fileID: 5819660443026420206}
+  - component: {fileID: 5574297344734329417}
   m_Layer: 0
   m_Name: ConnectPoint
   m_TagString: Untagged
@@ -50,19 +50,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &8536717749444113802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2497519378672430061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 0}
 --- !u!114 &5819660443026420206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +63,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 8536717749444113802}
+  - {fileID: 5574297344734329417}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 8536717749444113802}
+  - {fileID: 5574297344734329417}
+--- !u!114 &5574297344734329417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497519378672430061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attractionObj: {fileID: 0}

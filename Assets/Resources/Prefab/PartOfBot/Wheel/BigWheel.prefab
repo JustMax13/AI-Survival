@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4967957442469757938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4115322, y: 0.098060906, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0498, y: 0.0498, z: 0.0498}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -145,7 +145,7 @@ WheelJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.9994727, y: -0.15923917}
+  m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.7
     m_Frequency: 2
@@ -192,6 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partType: 1
+  _connectPointsOnPart:
+  - {fileID: 5888776287245500543}
 --- !u!114 &3584021877629729872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,8 +237,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5643303686315890688}
   - component: {fileID: 6677190793952490904}
-  - component: {fileID: 7974049624332251918}
   - component: {fileID: 6401816505416364634}
+  - component: {fileID: 5888776287245500543}
   m_Layer: 0
   m_Name: Connect Point
   m_TagString: Untagged
@@ -274,19 +277,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
---- !u!114 &7974049624332251918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6487106603693310498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 1240695537614905025}
 --- !u!114 &6401816505416364634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +290,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 7974049624332251918}
+  - {fileID: 5888776287245500543}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 7974049624332251918}
+  - {fileID: 5888776287245500543}
+--- !u!114 &5888776287245500543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6487106603693310498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 1240695537614905025}

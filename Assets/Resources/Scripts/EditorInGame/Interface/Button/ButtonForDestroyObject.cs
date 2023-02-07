@@ -1,8 +1,7 @@
+using General.PartOfBots;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
-using General.PartOfBots;
 
 namespace Editor.Interface
 {
@@ -10,28 +9,27 @@ namespace Editor.Interface
     {
         private GameObject _selectedPart;
         private PartOfBot _partOfBot;
-        public GameObject SelectedPart
-        {
-            get => _selectedPart;
-            set { _selectedPart = value; }
-        }
-        public PartOfBot PartOfBot
-        {
-            get => _partOfBot;
-            set { _partOfBot = value; }
-        }
+        public GameObject SelectedPart { get => _selectedPart; set { _selectedPart = value; } }
+        public PartOfBot PartOfBot { get => _partOfBot; set { _partOfBot = value; } }
         private void DestroySelectPart()
         {
-            //_partOfBot.CurrentCountOfPart--; // когда пытаешся загруженую часть удалить, то _partOfBot - null
+            PluggableObject pluggableObject;
+
+            try { pluggableObject = _selectedPart.GetComponent<PluggableObject>(); }
+            catch { throw new System.Exception($"На {_selectedPart} немає скрипта 'PluggableObject'!"); }
+
+            PluggableObject.FullDisconnect(pluggableObject);
             Destroy(_selectedPart);
-            gameObject.GetComponent<Button>().interactable = false;
+            interactable = false;
         }
         public override void OnPointerDown(PointerEventData eventData)
         {
             base.OnPointerDown(eventData);
 
             ActionManager.ActionButtonDown = true;
-            DestroySelectPart();
+
+            if(interactable)
+                DestroySelectPart();
         }
         public override void OnPointerUp(PointerEventData eventData)
         {
@@ -53,14 +51,9 @@ namespace Editor.Interface
                     gameObject.GetComponent<Button>().interactable = false;
                 }
                 else
-                {
                     gameObject.GetComponent<Button>().interactable = true;
-                }
             }
-            catch
-            {
-                gameObject.GetComponent<Button>().interactable = false;
-            }
+            catch { gameObject.GetComponent<Button>().interactable = false; }
         }
     }
 }

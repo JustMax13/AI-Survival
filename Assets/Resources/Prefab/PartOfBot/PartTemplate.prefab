@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partType: 0
 --- !u!114 &6592950511983873525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +165,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 5574297344734329417, guid: 4f043be0487cdd04fb0d2bf0a787a170,
+        type: 3}
+      propertyPath: _pluggableObj
+      value: 
+      objectReference: {fileID: 6351884175463792285}
     - target: {fileID: 8517733195174429054, guid: 4f043be0487cdd04fb0d2bf0a787a170,
         type: 3}
       propertyPath: m_RootOrder
