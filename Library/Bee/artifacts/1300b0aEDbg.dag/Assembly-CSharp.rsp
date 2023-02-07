@@ -369,6 +369,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/Resources/Scripts/Battle/AI/general/AiBrain.cs"
 "Assets/Resources/Scripts/Battle/AI/general/Сkeshing.cs"
 "Assets/Resources/Scripts/Battle/AI/shooting/AIShooting.cs"
 "Assets/Resources/Scripts/Battle/Canvas/ConnectedShotButton.cs"
