@@ -7,6 +7,7 @@ namespace CombatMechanics.AI
     {
         [SerializeField] GameObject ckesh, _player;
         [SerializeField] private AIShooting[] _guns;
+        [SerializeField] private Vector2[] _allPoints;
         // Start is called before the first frame update
         void Start()
         {
@@ -14,6 +15,7 @@ namespace CombatMechanics.AI
             Instantiate(ckesh, new Vector3(0, 0, 0), Quaternion.identity);
 
         }
+        public void FoundAllPoints(Vector2[] point) => _allPoints = point;        
         public void FoundPlayer(GameObject player)
         {
             _player = player.gameObject;

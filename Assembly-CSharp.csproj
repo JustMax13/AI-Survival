@@ -84,7 +84,9 @@
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\PartData.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\Varieties\ShotGun.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Spawn\SpawnPlayer.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\MoveTest.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\LoadScene.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\AIMoving.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Spawn\SpawnPart.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Assets\Resources\Scripts\Menu\SwipeLevelsMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\MoveAndZoomCamera.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\LoadingScene.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\AiBrain.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\CentralBlockHP.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonForDestroyObject.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\EnableLevel.cs" />
@@ -124,7 +127,6 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\RotationTest.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\AiBrain.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />
