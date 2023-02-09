@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312083931281737964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4702315, y: -0.21934113, z: 0}
+  m_LocalPosition: {x: 0.013351917, y: 0.25411272, z: 0}
   m_LocalScale: {x: 0.12931, y: 0.12931, z: 0.12931}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -164,6 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partType: 0
+  _connectPointsOnPart:
+  - {fileID: 7383373537332510234}
+  - {fileID: 2507387146147202512}
 --- !u!114 &3796956381938037625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,9 +207,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312083931561649779}
-  - component: {fileID: 6148218842200208763}
   - component: {fileID: 8124735654813412472}
   - component: {fileID: 3083752900923694765}
+  - component: {fileID: 2507387146147202512}
   m_Layer: 0
   m_Name: Connected Point ( Right   )
   m_TagString: Untagged
@@ -228,19 +232,6 @@ Transform:
   m_Father: {fileID: 312083931281737963}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6148218842200208763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083931561649778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 4838389123061600818}
 --- !u!58 &8124735654813412472
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -270,10 +261,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 6148218842200208763}
+  - {fileID: 2507387146147202512}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 6148218842200208763}
+  - {fileID: 2507387146147202512}
+--- !u!114 &2507387146147202512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312083931561649778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 4838389123061600818}
 --- !u!1 &2489570577796967482
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,9 +287,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4152773290889360924}
-  - component: {fileID: 5470376596346925156}
   - component: {fileID: 3150130825646490031}
   - component: {fileID: 3265163851236037890}
+  - component: {fileID: 7383373537332510234}
   m_Layer: 0
   m_Name: MagnetZone ( Left  )
   m_TagString: Untagged
@@ -308,19 +312,6 @@ Transform:
   m_Father: {fileID: 312083931281737963}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5470376596346925156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2489570577796967482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 4838389123061600818}
 --- !u!58 &3150130825646490031
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -350,7 +341,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 5470376596346925156}
+  - {fileID: 7383373537332510234}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 5470376596346925156}
+  - {fileID: 7383373537332510234}
+--- !u!114 &7383373537332510234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2489570577796967482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 4838389123061600818}

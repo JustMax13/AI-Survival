@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5196193401324259173}
-  - component: {fileID: 4471209869223068481}
   - component: {fileID: 8052949681027134435}
   - component: {fileID: 2855531333538825758}
+  - component: {fileID: 5535178650404840661}
   m_Layer: 0
   m_Name: 'Connected Point ( Right  Down ) '
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 8854797796699257737}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4471209869223068481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846812940723420020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 6351884175463792285}
 --- !u!58 &8052949681027134435
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -76,10 +63,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 4471209869223068481}
+  - {fileID: 5535178650404840661}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 4471209869223068481}
+  - {fileID: 5535178650404840661}
+--- !u!114 &5535178650404840661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846812940723420020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 6351884175463792285}
 --- !u!1 &2220310348333694076
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,9 +173,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7093692064958634340}
-  - component: {fileID: 7771105798258182524}
   - component: {fileID: 391791262019748643}
   - component: {fileID: 468849861885003075}
+  - component: {fileID: 7059655672264605651}
   m_Layer: 0
   m_Name: 'Connected Point ( Right Up ) '
   m_TagString: Untagged
@@ -198,19 +198,6 @@ Transform:
   m_Father: {fileID: 8854797796699257737}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7771105798258182524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2405742648625939774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 6351884175463792285}
 --- !u!58 &391791262019748643
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -240,10 +227,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 7771105798258182524}
+  - {fileID: 7059655672264605651}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 7771105798258182524}
+  - {fileID: 7059655672264605651}
+--- !u!114 &7059655672264605651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405742648625939774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 6351884175463792285}
 --- !u!1 &5949068942550834868
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,9 +253,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7544969598079828865}
-  - component: {fileID: 8518995017000338456}
   - component: {fileID: 6321779366045830699}
   - component: {fileID: 1924199629852746005}
+  - component: {fileID: 5697586872613880452}
   m_Layer: 0
   m_Name: Connected Point ( Left Up )
   m_TagString: Untagged
@@ -278,19 +278,6 @@ Transform:
   m_Father: {fileID: 8854797796699257737}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8518995017000338456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949068942550834868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 6351884175463792285}
 --- !u!58 &6321779366045830699
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -320,10 +307,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 8518995017000338456}
+  - {fileID: 5697586872613880452}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 8518995017000338456}
+  - {fileID: 5697586872613880452}
+--- !u!114 &5697586872613880452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5949068942550834868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 6351884175463792285}
 --- !u!1 &8028562899456403098
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,9 +333,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8217693123666766631}
-  - component: {fileID: 7166782342714896915}
   - component: {fileID: 7085013848567305008}
   - component: {fileID: 8528424956738994483}
+  - component: {fileID: 1779602033199720209}
   m_Layer: 0
   m_Name: 'Connected Point ( Left Down ) '
   m_TagString: Untagged
@@ -358,19 +358,6 @@ Transform:
   m_Father: {fileID: 8854797796699257737}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7166782342714896915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8028562899456403098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 6351884175463792285}
 --- !u!58 &7085013848567305008
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -400,10 +387,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 7166782342714896915}
+  - {fileID: 1779602033199720209}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 7166782342714896915}
+  - {fileID: 1779602033199720209}
+--- !u!114 &1779602033199720209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028562899456403098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 6351884175463792285}
 --- !u!1 &8854797796699257740
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8854797796699257740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49552077, y: 0.64753944, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02988, y: 0.02988, z: 0.02988}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -558,6 +558,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partType: 0
+  ConnectPointsOnPart:
+  - {fileID: 7059655672264605651}
+  - {fileID: 5535178650404840661}
+  - {fileID: 5697586872613880452}
+  - {fileID: 1779602033199720209}
 --- !u!114 &1463340551335337704
 MonoBehaviour:
   m_ObjectHideFlags: 0

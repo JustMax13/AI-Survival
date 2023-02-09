@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312083931065807840}
-  - component: {fileID: 3897536983274009341}
   - component: {fileID: 2424516793655013902}
   - component: {fileID: 2430221626056651245}
+  - component: {fileID: 6665453399316795937}
   m_Layer: 0
   m_Name: Connected Point ( Right )
   m_TagString: Untagged
@@ -32,21 +32,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 312083931281737963}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3897536983274009341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083931065807843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 4838389123061600818}
 --- !u!58 &2424516793655013902
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -76,10 +63,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 3897536983274009341}
+  - {fileID: 6665453399316795937}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 3897536983274009341}
+  - {fileID: 6665453399316795937}
+--- !u!114 &6665453399316795937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312083931065807843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 4838389123061600818}
 --- !u!1 &312083931281737964
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,12 +111,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312083931281737964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3353038, y: -0.21934113, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.09909, y: 0.09909, z: 0.09909}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 312083931065807840}
   - {fileID: 312083932752504752}
+  - {fileID: 312083931065807840}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -244,6 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partType: 0
+  _connectPointsOnPart:
+  - {fileID: 6660622443453818162}
+  - {fileID: 6665453399316795937}
 --- !u!114 &5731443881472214527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,9 +287,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312083932752504752}
-  - component: {fileID: 356549312121752770}
   - component: {fileID: 7410315119699117613}
   - component: {fileID: 141543747722479708}
+  - component: {fileID: 6660622443453818162}
   m_Layer: 0
   m_Name: Connected Point ( Left )
   m_TagString: Untagged
@@ -306,21 +310,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 312083931281737963}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &356549312121752770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312083932752504755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bb2e1f0759cd4458f8908cafbf9331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attractionObj: {fileID: 4838389123061600818}
 --- !u!58 &7410315119699117613
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -350,7 +341,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffInMenu:
-  - {fileID: 356549312121752770}
+  - {fileID: 6660622443453818162}
   TurnOffInEditor: []
   TurnOffInBattle:
-  - {fileID: 356549312121752770}
+  - {fileID: 6660622443453818162}
+--- !u!114 &6660622443453818162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312083932752504755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb815c6743c2db418e48bb1e0687a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pluggableObj: {fileID: 4838389123061600818}
