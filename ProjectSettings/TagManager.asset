@@ -18,6 +18,11 @@ TagManager:
   - Enemy
   - ValuesForSpawn
   - Walls
+  - sight
+  - gunRotation
+  - BulletSpawn
+  - AIShooting
+  - Gun
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,7 @@ namespace CombatMechanics.AI
             }
             if (collision.gameObject.tag == _tagEnemy && collision.gameObject.layer == LayerMask.NameToLayer(_enemyLayer))
             {
-                _enemy = collision.gameObject.GetComponent<AiBrain>();
+                _enemy = collision.gameObject.transform.parent.GetComponent<AiBrain>();
                 _enemyCresh = true;
             }
             if (_enemyCresh == true && _playerCresh == true)

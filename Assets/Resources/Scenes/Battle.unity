@@ -600,7 +600,7 @@ PrefabInstance:
     - target: {fileID: 1669340963725350802, guid: b9e39d02721d23244b47e79481d29bf1,
         type: 3}
       propertyPath: allPoints.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1669340963725350802, guid: b9e39d02721d23244b47e79481d29bf1,
         type: 3}
@@ -610,6 +610,11 @@ PrefabInstance:
     - target: {fileID: 1669340963725350802, guid: b9e39d02721d23244b47e79481d29bf1,
         type: 3}
       propertyPath: allPoints.Array.data[1].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669340963725350802, guid: b9e39d02721d23244b47e79481d29bf1,
+        type: 3}
+      propertyPath: allPoints.Array.data[1].y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1669340963725350802, guid: b9e39d02721d23244b47e79481d29bf1,

@@ -12,6 +12,16 @@ namespace CombatMechanics.AI
         [SerializeField] private Transform[] _pointsForCheak;// 0-Right UP 1-Right Down 2- Left Down 3-Left Up
         [SerializeField] private LayerMask _layers;
         private float timeMove;
+        private void Awake()
+        {
+            foreach (Transform child in gameObject.transform)
+            {
+                if (child.gameObject.tag == "CPU")
+                {
+                    _CPU = child.gameObject;
+                }
+            }
+        }
         public void StartMove(float xPosition)
         {
 

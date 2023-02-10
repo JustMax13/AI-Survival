@@ -14,14 +14,12 @@ namespace CombatMechanics
             base.Start();
 
             SpawnObject.layer = LayerMask.NameToLayer("Enemy");
+            SpawnObject.GetComponent<AiBrain>().FoundAllPoints(allPoints);
 
             foreach (Transform child in SpawnObject.transform)
             {
                 child.gameObject.layer = LayerMask.NameToLayer("Enemy");
-                if (child.gameObject.tag == "CPU")
-                {
-                    child.GetComponent<AiBrain>().FoundAllPoints(allPoints);
-                }
+               
                 foreach (Transform childInChild in child.transform)
                     childInChild.gameObject.layer = LayerMask.NameToLayer("Enemy");
             }

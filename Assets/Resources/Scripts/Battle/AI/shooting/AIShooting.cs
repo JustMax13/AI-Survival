@@ -23,7 +23,36 @@ namespace CombatMechanics.AI
 
         void Start()
         {
+            
+            _traectory = gameObject.transform.parent.transform.parent.GetComponent<GunTraectory>();
+            _gun = gameObject.transform.parent.gameObject;
             _gunRotation = _gun.GetComponent<GunRotation>();
+            foreach (Transform child in gameObject.transform.parent.transform.parent.transform)
+            {
+                if (child.gameObject.tag == "sight")
+                {
+                    _prisel = child.gameObject;
+                }
+            }
+            foreach (Transform child in gameObject.transform.parent.transform)
+            {
+                if (child.gameObject.tag == "gunRotation")
+                {
+                    foreach (Transform childInCaild in child.transform)
+                    {
+                        if (childInCaild.gameObject.tag == "Weapon")
+                        {
+                            foreach (Transform childInCaild2 in childInCaild.transform)
+                            {
+                                if (childInCaild2.gameObject.tag == "BulletSpawn")
+                                {
+                                    _gunEnd = childInCaild2.gameObject;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         public void FoundPlayer(GameObject player)
         {
