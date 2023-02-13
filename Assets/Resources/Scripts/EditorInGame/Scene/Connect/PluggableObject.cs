@@ -10,13 +10,11 @@ namespace Editor
         [SerializeField] private TypeOfPart _partType = TypeOfPart.AnotherPart;
         [SerializeField] private ConnectPoint[] _connectPointsOnPart = null;
 
+        private bool _removeAllDone;
         private const float _timeWasMouseDown = 0.02f;
         private float _currentTimeWasMouseDown;
 
         private DragAndDropPart _dragAndDropPartComponent;
-
-        public event Action<PluggableObject> DragStart;
-        public event Action DragStop;
 
         public TypeOfPart PartType { get => _partType; }
         public bool WasMouseDown { get; set; }
@@ -29,8 +27,6 @@ namespace Editor
             {
                 IsDrag = true;
                 WasMouseDown = true;
-
-                DragStart?.Invoke(this);
             }
         }
         private void OnMouseUp()
@@ -39,19 +35,16 @@ namespace Editor
             {
                 IsDrag = false;
                 _currentTimeWasMouseDown = _timeWasMouseDown;
-
-                DragStop?.Invoke();
             }
         }
 
         private void Start()
         {
+            _removeAllDone = false;
             WasMouseDown = false;
             IsDrag = false;
 
             _currentTimeWasMouseDown = 0;
-
-            DragStart += FullDisconnect;
 
             try { _dragAndDropPartComponent = gameObject.GetComponent<DragAndDropPart>(); }
             catch { throw new System.Exception($"{gameObject.name} lost DragAndDropPart script."); }
@@ -65,24 +58,27 @@ namespace Editor
                 _currentTimeWasMouseDown -= Time.deltaTime;
             else if (WasMouseDown && !IsDrag)
                 WasMouseDown = false;
-        }
 
+            if (IsDrag && !_removeAllDone)
+            {
+                FullDisconnect(this);
+
+                _removeAllDone = true;
+            }
+            else if (!IsDrag)
+                _removeAllDone = false;
+        }
         public static void FullDisconnect(PluggableObject pluggableObject)
         {
-            DecrementCounters(pluggableObject);
-
             RemoveСonnectionFromThisParts(pluggableObject.gameObject);
             ClearConnectPoints(pluggableObject.ConnectPointsOnPart);
             RemoveСonnectionFromOtherParts(pluggableObject.ConnectPointsOnPart);
         }
-        private static void ClearConnectPoints(ConnectPoint[] connectPoints)
-        {
-            foreach (var point in connectPoints)
-                point.FixedJointOnPoint.Clear();
-        }
         private static void RemoveСonnectionFromThisParts(GameObject gameObject)
         {
-            FixedJoint2D[] fixedJoints2D = gameObject.GetComponents<FixedJoint2D>();
+            FixedJoint2D[] fixedJoints2D;
+            fixedJoints2D = gameObject.GetComponents<FixedJoint2D>();
+
 
             if (fixedJoints2D.Length != 0)
             {
@@ -110,33 +106,17 @@ namespace Editor
                         {
                             point.FixedJointOnPoint.Remove(fixedJoint2D);
                             Destroy(fixedJoint2D);
-
-                            point.TryReconnectThisPoint();
                         }
                     }
                 }
             }
         }
-        private static void DecrementCounters(PluggableObject pluggableObject)
+        private static void ClearConnectPoints(ConnectPoint[] connectPoints)
         {
-            ConnectPoint[] connectPoints = pluggableObject.ConnectPointsOnPart;
-
             foreach (var point in connectPoints)
-            {
-                Collider2D[] colliders2D = Physics2D.OverlapPointAll(point.transform.position);
-
-                foreach (var item in colliders2D)
-                {
-                    var partCounter = item.GetComponent<PartCounter>();
-                    if (partCounter)
-                    {
-                        partCounter.RemovePart(point);
-                        break;
-                    }
-                }
-            }
+                point.FixedJointOnPoint.Clear();
         }
-
+        
         public enum TypeOfPart
         {
             AnotherPart,

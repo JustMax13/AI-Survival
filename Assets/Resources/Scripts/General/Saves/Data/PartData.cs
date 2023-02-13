@@ -30,7 +30,7 @@ namespace General.Saves
 
             ConnectedBodys2D = new ConnectedBody2D[part.GetComponents<FixedJoint2D>().Length];
 
-            //var AllBolts = part.GetComponentsInChildren<ConnectPoint>();
+            //var AllBolts = part.GetComponentsInChildren<AttractionPoint>();
             //boltsData = new BoltData[AllBolts.Length];
 
             //for (int i = 0; i < boltsData.Length; i++)

@@ -4,16 +4,16 @@
 
 //namespace General.Saves
 //{
-//    public struct BoltData
+//    public struct BoltData 
 //    {
 //        public bool SpriteRendererEnabled { get; set; }
 //        public SimplePosition Position { get; set; }
 
 //        public BoltData(GameObject bolt)
 //        {
-//            try { SpriteRendererEnabled = bolt.GetComponent<SpriteRenderer>().enabled; }
+//            try { SpriteRendererEnabled = bolt.GetComponent<SpriteRenderer>().enabled; } 
 //            catch { SpriteRendererEnabled = false; }
-
+            
 //            Position = new SimplePosition(bolt);
 //        }
 //    }

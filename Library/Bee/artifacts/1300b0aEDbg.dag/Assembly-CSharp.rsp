@@ -409,8 +409,6 @@
 "Assets/Resources/Scripts/EditorInGame/Interface/Inventory/Scroling.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Connect/ConnectPoint.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Connect/PluggableObject.cs"
-"Assets/Resources/Scripts/EditorInGame/Scene/CountingSystem/PartCounter.cs"
-"Assets/Resources/Scripts/EditorInGame/Scene/CountingSystem/PartCountValue.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Manager/ActionManager.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Move/DragAndDrop.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Move/DragAndDropPart.cs"
