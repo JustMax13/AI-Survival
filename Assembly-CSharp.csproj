@@ -69,6 +69,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunTraectory.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\shooting\AIShooting.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Spawn\PartForSpawn.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\CountingSystem\PartCountValue.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\General\IPathOfPart.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\WinOrLose.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\ButtonConnection.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\CountingSystem\PartCounter.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDrop.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Manager\ActionManager.cs" />

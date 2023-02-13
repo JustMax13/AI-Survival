@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6351884175463792285}
   - component: {fileID: 6592950511983873525}
   - component: {fileID: 4473813170847833415}
+  - component: {fileID: 6390180062336645159}
   m_Layer: 0
   m_Name: CarbonShine
   m_TagString: Untagged
@@ -200,6 +201,19 @@ MonoBehaviour:
   TurnOffInEditor: []
   TurnOffInBattle:
   - {fileID: 6351884175463792285}
+--- !u!114 &6390180062336645159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854797796699257740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a51205ddc48cb488046c91d457e4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxPossibleConnectionToPoint: 2
 --- !u!1001 &5475519900393374955
 PrefabInstance:
   m_ObjectHideFlags: 0

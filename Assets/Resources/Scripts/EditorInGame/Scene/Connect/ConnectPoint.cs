@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.MemoryProfiler;
 using UnityEngine;
 
 namespace Editor
@@ -11,19 +10,21 @@ namespace Editor
 
         private Collider2D _findedCollider;
         private List<FixedJoint2D> _fixedJointOnPoint;
+        private PartCounter _partCounter;
 
         public List<FixedJoint2D> FixedJointOnPoint { get => _fixedJointOnPoint; set { _fixedJointOnPoint = value; } }
         public PluggableObject PluggableObj { get => _pluggableObj; }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            _findedCollider = collision;
+            if (collision)
+            {
+                if (collision == _findedCollider)
+                    return;
 
-            if (!_findedCollider.GetComponent<ConnectPoint>())
-                return;
-
-            if (_pluggableObj.WasMouseDown && !_pluggableObj.IsDrag)
-                CheckMoveAndConnect(_findedCollider);
+                if (!collision.GetComponent<PartCounter>())
+                    _findedCollider = collision;
+            }
         }
 
         private void Start()
@@ -31,7 +32,9 @@ namespace Editor
             _fixedJointOnPoint = new List<FixedJoint2D>();
 
             if (_pluggableObj == null)
-                throw new Exception($"AttractionObject is null. Pls add AttractionObject on {gameObject.name}");
+                throw new Exception($"PluggableObject is null. Pls add PluggableObject on {gameObject.name}");
+
+            _pluggableObj.DragStop += DragIsEnd;
         }
         private void Update()
         {
@@ -39,6 +42,29 @@ namespace Editor
                 OnTriggerStay2D(_findedCollider);
         }
 
+        private void DragIsEnd()
+        {
+            if (!_findedCollider)
+                return;
+
+            var findedPoint = _findedCollider.GetComponent<ConnectPoint>();
+            if (!findedPoint)
+            {
+                Collider2D[] collider2D = Physics2D.OverlapPointAll(transform.position);
+
+                List<ConnectPoint> connectPoint = FindConnectedPoints(collider2D);
+
+                connectPoint.Remove(this);
+
+                if (connectPoint.Count == 0)
+                    return;
+
+                CheckMoveAndConnect(connectPoint[0]);
+            }
+            else
+                CheckMoveAndConnect(findedPoint);
+
+        }
         public List<ConnectPoint> FindConnectedPoints(in Collider2D[] colliders)
         {
             var connectPoints = new List<ConnectPoint>();
@@ -54,30 +80,117 @@ namespace Editor
 
             return connectPoints;
         }
-        private void CheckMoveAndConnect(in Collider2D connectPoint)
+        private void CheckMoveAndConnect(in ConnectPoint connectPoint)
         {
-            GetAttractionObjectFromCollisionParent(connectPoint, out PluggableObject pluggableObject);
-
-            if (CheckConnectionCompatibility(pluggableObject))
+            if (CheckConnectionCompatibility(connectPoint.PluggableObj) && !PartsAlreadyConnected(connectPoint, this))
             {
-                MoveToConnectedObject(connectPoint);
+                _partCounter = PartCounter.FindCounterObject(connectPoint.transform.position);
+
+                if (!_partCounter)
+                {
+                    var gameObject = new GameObject("PartCounter");
+
+                    var collider = gameObject.AddComponent<CircleCollider2D>();
+                    _partCounter = gameObject.AddComponent<PartCounter>();
+
+                    collider.radius = 0.01f;
+
+                    Transform parentOfConnectPoint = connectPoint.transform.parent;
+                    connectPoint.transform.parent = null;
+
+                    gameObject.transform.position = connectPoint.transform.position;
+
+                    connectPoint.transform.parent = parentOfConnectPoint;
+                    gameObject.transform.parent = _pluggableObj.transform.parent;
+                }
+                else if (_partCounter.CurrentCount >= _partCounter.MaxCount)
+                    return;
+
+                MoveTo(connectPoint.transform);
+
+                List<ConnectPoint> connectedPoints = FindConnectedPoints(connectPoint.transform.position);
+
+                var baseBlocks = new List<ConnectPoint>();
+
+                foreach (var point in connectedPoints)
+                    if (point.PluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
+                        baseBlocks.Add(point);
 
                 if (_pluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
                 {
-                    List<Collider2D> connectedPoints = CheckAnotherConnectedPointsInPoint(connectPoint);
-
-                    if (connectedPoints.Count > 1)
+                    switch (baseBlocks.Count)
                     {
-                        Collider2D collider2DThisPoint = GetComponent<Collider2D>();
+                        case 0:
+                            {
+                                if (connectedPoints.Count > 1)
+                                {
+                                    foreach (var point in connectedPoints)
+                                        MoveTo(connectPoint.transform, point.transform);
 
-                        foreach (var item in connectedPoints)
-                            MoveToConnectedObject(collider2DThisPoint, item);
+                                    MultipleConnect(this, connectedPoints, _partCounter);
+                                }
+                                else
+                                {
+                                    Connect(this, connectPoint);
 
-                        MultipleConnect(collider2DThisPoint, connectedPoints);
+                                    if (_partCounter.MaxCount == 0)
+                                    {
+                                        _partCounter.AddFirstPart(this);
+                                        _partCounter.AddPart(connectPoint);
+                                    }
+                                    else
+                                        _partCounter.AddPart(connectPoint);
+                                }
+                                break;
+                            }
+                        case 1:
+                            {
+                                Connect(baseBlocks[0], this);
+
+                                if (_partCounter.MaxCount == 0)
+                                {
+                                    _partCounter.AddFirstPart(baseBlocks[0]);
+                                    _partCounter.AddPart(this);
+                                }
+                                else
+                                    _partCounter.AddPart(this);
+                                break;
+                            }
+                        default: // коли знайдено більше одного БК
+                            {
+                                Connect(_partCounter.GetFirstBaseBlock(), this);
+                                _partCounter.AddPart(this);
+
+                                break;
+                            }
                     }
-                    else Connect(this, connectPoint.GetComponent<ConnectPoint>());
                 }
-                else Connect(connectPoint.GetComponent<ConnectPoint>());
+                else
+                {
+                    switch (baseBlocks.Count)
+                    {
+                        case 1:
+                            {
+                                Connect(baseBlocks[0], this);
+
+                                if (_partCounter.MaxCount == 0)
+                                {
+                                    _partCounter.AddFirstPart(baseBlocks[0]);
+                                    _partCounter.AddPart(this);
+                                }
+                                else
+                                    _partCounter.AddPart(this);
+                                break;
+                            }
+                        default: // коли знайдено більше одного БК
+                            {
+                                Connect(_partCounter.GetFirstBaseBlock(), this);
+                                _partCounter.AddPart(this);
+
+                                break;
+                            }
+                    }
+                }
             }
         }
         private bool CheckConnectionCompatibility(PluggableObject pluggableObject)
@@ -88,44 +201,55 @@ namespace Editor
             else
                 return false;
         }
-        private bool ThisPartAlreadyConnected(PluggableObject pluggableObject, ConnectPoint connectPoint)
+        private bool PartsAlreadyConnected(ConnectPoint connectPoint1, ConnectPoint connectPoint2)
         {
-            var pluggableObjectRB = pluggableObject.GetComponent<Rigidbody2D>();
+            var pluggableObject1RB = connectPoint1.PluggableObj.GetComponent<Rigidbody2D>();
 
-            foreach (var item in connectPoint.FixedJointOnPoint)
-                if (item.connectedBody == pluggableObjectRB)
+            foreach (var item in connectPoint2.FixedJointOnPoint)
+                if (item.connectedBody == pluggableObject1RB)
+                    return true;
+
+            var pluggableObject2RB = connectPoint2.PluggableObj.GetComponent<Rigidbody2D>();
+
+            foreach (var item in connectPoint1.FixedJointOnPoint)
+                if (item.connectedBody == pluggableObject2RB)
                     return true;
 
             return false;
         }
-        private List<Collider2D> CheckAnotherConnectedPointsInPoint(in Collider2D connectPoint)
+        private List<ConnectPoint> FindConnectedPoints(in Vector2 point)
         {
-            Vector2 connectPointPosition = connectPoint.transform.position;
-            Collider2D[] collidersInPoint = Physics2D.OverlapPointAll(connectPointPosition);
+            Collider2D[] collidersInPoint = Physics2D.OverlapPointAll(point);
 
-            var allConnectedPointsCollider = new List<Collider2D>();
-            Collider2D thisCollider = gameObject.GetComponent<Collider2D>();
+            var connectedPoints = new List<ConnectPoint>();
 
             foreach (var item in collidersInPoint)
             {
-                if (item.GetComponent<ConnectPoint>() && item != thisCollider)
-                    allConnectedPointsCollider.Add(item);
+                var connectPoint = item.GetComponent<ConnectPoint>();
+                if (connectPoint && connectPoint != this)
+                    connectedPoints.Add(connectPoint);
             }
 
-            return allConnectedPointsCollider;
+            return connectedPoints;
         }
-        private void GetAttractionObjectFromCollisionParent(in Collider2D connectPoint, out PluggableObject pluggableObject)
+        private void GetConnectPoint(in Collider2D connectPointCollider, out ConnectPoint connectPoint)
         {
             try
-            { pluggableObject = connectPoint.GetComponentInParent<PluggableObject>(); }
+            { connectPoint = connectPointCollider.GetComponent<ConnectPoint>(); }
             catch
-            { throw new Exception($"On the object {connectPoint.GetComponentInParent<Transform>().gameObject} not found script \"AttractionObject\" "); }
+            { throw new Exception($"On the object {connectPointCollider.GetComponentInParent<Transform>().gameObject} not found script \"ConnectPoint\" "); }
         }
-
-        private void MoveToConnectedObject(in Collider2D moveTo, Collider2D movable = null)
+        private void TryGetConnectPoint(in Collider2D connectPointCollider, out ConnectPoint connectPoint)
+        {
+            try
+            { connectPoint = connectPointCollider.GetComponent<ConnectPoint>(); }
+            catch
+            { connectPoint = null; }
+        }
+        private void MoveTo(in Transform moveTo, Transform movable = null)
         {
             if (!movable)
-                movable = gameObject.GetComponent<Collider2D>();
+                movable = transform;
 
             Transform movableParentTransform = movable.transform.parent;
 
@@ -162,9 +286,7 @@ namespace Editor
         {
             if (!toPlugPoint)
                 toPlugPoint = this;
-
-            if (ThisPartAlreadyConnected(connectTo.PluggableObj, toPlugPoint))
-                return;
+            //Debug.Log($"Подключаем к {connectTo.PluggableObj}, в точку {connectTo}\n обьект {toPlugPoint.PluggableObj} в точке {toPlugPoint}");
 
             if (connectTo.PluggableObj != toPlugPoint._pluggableObj)
             {
@@ -176,7 +298,7 @@ namespace Editor
                 toPlugPoint.FixedJointOnPoint.Add(jointOnObject);
             }
         }
-        private void MultipleConnect(in Collider2D connectTo, in List<Collider2D> toPlug)
+        private void MultipleConnect(in Collider2D connectTo, in List<Collider2D> toPlug, PartCounter partCounter)
         {
             if (toPlug == null)
                 throw new Exception("Не було передано масиву для підключення!");
@@ -188,77 +310,45 @@ namespace Editor
             foreach (var item in toPlug)
                 toPlugPoints.Add(item.GetComponent<ConnectPoint>());
 
-            MultipleConnect(connectToPoint, toPlugPoints);
+            MultipleConnect(connectToPoint, toPlugPoints, partCounter);
         }
-        private void MultipleConnect(in ConnectPoint connectTo, in List<ConnectPoint> toPlugPoints)
+        private void MultipleConnect(in ConnectPoint connectTo, in List<ConnectPoint> toPlugPoints, PartCounter partCounter)
         {
             if (toPlugPoints == null)
                 throw new Exception("Не було передано масиву для підключення!");
 
             foreach (var point in toPlugPoints)
-                if (ThisPartAlreadyConnected(connectTo.PluggableObj, point))
-                    return;
+                if (PartsAlreadyConnected(connectTo, point))
+                    toPlugPoints.Remove(point);
 
             foreach (var toPlug in toPlugPoints)
             {
-                if (connectTo.PluggableObj != toPlug._pluggableObj)
+                if (partCounter.CurrentCount >= partCounter.MaxCount)
+                    break;
+
+                Connect(connectTo, toPlug);
+
+                if (partCounter.MaxCount == 0)
                 {
-                    FixedJoint2D jointOnObject = toPlug._pluggableObj.gameObject.AddComponent<FixedJoint2D>();
-
-                    jointOnObject.anchor = toPlug.transform.localPosition;
-                    jointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
-
-                    toPlug.FixedJointOnPoint.Add(jointOnObject);
+                    partCounter.AddFirstPart(connectTo);
+                    partCounter.AddPart(toPlug);
                 }
+                else
+                    partCounter.AddPart(toPlug);
             }
         }
-        //private void TryReconnect()
-        //{
-        //    // 1) Найти точки для подключения в точке
-        //    // Логика если да:
-        //    // 2) Если они есть, то проверяем, являются ли те точки точками базового блока.
-        //    // 3) Если являются, проверяем, является наша часть базовым блоком
-        //    // 4) Если да, проверям, не является ли найденая точка, точкой, расположеной на этом базовом блоке
-        //    // 5) Если являются..
 
-        //    Collider2D[] allCollider = Physics2D.OverlapPointAll(this.transform.position);
+        public void TryReconnectThisPoint()
+        {
+            if(_partCounter)
+            {
+                ConnectPoint baseBlock = _partCounter.GetFirstBaseBlock();
 
-        //    List<ConnectPoint> connectPoints = FindConnectedPoints(allCollider);
-        //    // недописано
-        //    if (connectPoints.Count > 1) // більше 1го, бо враховується ця точка, на якій працює метод
-        //    {
-        //        foreach (var point in connectPoints)
-        //        {
-        //            if (point.PluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
-        //            {
-        //                if (_pluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
-        //                {
-        //                    bool pointOnThisPluggableObject = false;
-
-        //                    foreach (var pointOnThisPluggableObj in _pluggableObj.ConnectPointsOnPart)
-        //                        if (pointOnThisPluggableObj == point)
-        //                        {
-        //                            pointOnThisPluggableObject = true;
-        //                            break;
-        //                        }
-
-        //                    if (pointOnThisPluggableObject)
-        //                        break;
-        //                    else
-        //                    {
-
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    MoveToConnectedObject(point.GetComponent<Collider2D>());
-
-        //                }
-        //            }
-        //            else continue;
-        //        }
-        //    }
-        //    else return;
-        //}
+                if (!baseBlock)
+                    return;
+                if(baseBlock != this)
+                    Connect(baseBlock, this);
+            }
+        }
     }
 }
