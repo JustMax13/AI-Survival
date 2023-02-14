@@ -74,6 +74,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\ButtonConnection.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\BotsWheel.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\BotData.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\DetalScriptAdd.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Spawn\SpawnEnemy.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\ChangeBodyType.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\SimpleRotation.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\PauseMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\SimplePosition.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\GameOverEvent.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\SightAlways.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\General\AbstractBullet.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveAndLoadBotData.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SetActiveObject.cs" />
@@ -127,7 +129,6 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\RotationTest.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\AI\general\DetalScriptAdd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

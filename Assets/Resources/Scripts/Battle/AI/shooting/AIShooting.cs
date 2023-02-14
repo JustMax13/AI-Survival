@@ -24,7 +24,7 @@ namespace CombatMechanics.AI
         void Start()
         {
             
-            _traectory = gameObject.transform.parent.transform.parent.GetComponent<GunTraectory>();
+            _traectory = gameObject.transform.parent.GetComponent<GunTraectory>();
             _gun = gameObject.transform.parent.gameObject;
             _gunRotation = _gun.GetComponent<GunRotation>();
             foreach (Transform child in gameObject.transform.parent.transform.parent.transform)

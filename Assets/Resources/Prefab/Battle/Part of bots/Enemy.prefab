@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 4054217288558159381}
   - component: {fileID: 3154221862689131868}
   - component: {fileID: 9022456742171243491}
-  - component: {fileID: 4781492355944269976}
   - component: {fileID: 4886590795987510701}
   m_Layer: 10
   m_Name: Enemy
@@ -210,18 +209,6 @@ MonoBehaviour:
   _player: {fileID: 0}
   _guns: []
   _allPoints: []
---- !u!114 &4781492355944269976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154200372762033637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac15dd1776e6de74581e8def2f954506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4886590795987510701
 MonoBehaviour:
   m_ObjectHideFlags: 0
