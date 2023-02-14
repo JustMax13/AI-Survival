@@ -62,13 +62,12 @@ namespace General.Saves
                 //                try
                 //                {
                 //                    Bolts[i + 1].GetComponent<SpriteRenderer>().enabled = BoltData.SpriteRendererEnabled;
-                //                }catch { }
+                //                }
+                //                catch { }
                 //            }
                 //        }
                 //    }
                 //}
-
-                // болты переделать в connectedPoint, так они сохраняют расположение подключаемых деталей
 
                 if (SceneManager.GetActiveScene().buildIndex == (int)EnumBuildIndexOfScene.Editor)
                     part.AddComponent<DragAndDropPart>();
