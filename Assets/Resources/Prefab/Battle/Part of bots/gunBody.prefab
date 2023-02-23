@@ -49,10 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79141f4d2df20974d8c9015d14cedb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minRotation: 135
-  _maxRotation: 100
+  _minRotationAngel: 180
+  _maxRotationAngel: 160
   speed: 10
-  _gun: {fileID: 4818012160769786711}
+  _rotationGunPoint: {fileID: 0}
   _ai: 1
   _shot: {fileID: 2465850826229173439}
 --- !u!50 &8094343290123839682
@@ -91,7 +91,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.7184485, y: 0.11974141}
-  m_ConnectedAnchor: {x: -0.4569013, y: 0.2106955}
+  m_ConnectedAnchor: {x: 6.770429, y: -2.115052}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!114 &679655240886404193
