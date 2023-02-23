@@ -15,13 +15,7 @@ namespace CombatMechanics
 
             SpawnObject.layer = LayerMask.NameToLayer("Player");
 
-            foreach (Transform child in SpawnObject.transform)
-            {
-                child.gameObject.layer = LayerMask.NameToLayer("Player");
-
-                foreach (Transform childInChild in child.transform)
-                    childInChild.gameObject.layer = LayerMask.NameToLayer("Player");
-            }
+            SetLayerNameForAllChild(SpawnObject.transform, "Player");
 
             LeftButton.SetActive(true);
             RightButton.SetActive(true);

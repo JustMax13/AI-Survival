@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92cf2a0ac9548a4c8955264e0b9590b, type: 3}
+  m_Name: BigWheel
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 854035497, guid: 942e3e80756065e48abd306352fbf7dd, type: 3}
+  _prefab: {fileID: 7642326095505223389, guid: 18cad7349a5b83543bdcb2ef9927fe02, type: 3}
+  _maxCountOfPart: 4

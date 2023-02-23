@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 using General;
 using General.PartOfBots;
+using UnityEngine;
+using static TreeEditor.TreeEditorHelper;
 
 namespace Editor
 {
-    
+
 
     public class SpawnPart : MonoBehaviour
     {
@@ -31,14 +29,17 @@ namespace Editor
             try
             {
                 partOnScene.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+
+                //SetRigidbodyTypeForAllChild(partOnScene.transform, RigidbodyType2D.Kinematic);
             }
             catch
             {
-                Debug.Log($"{partOnScene.name} haven't Rigidbody2D. Object was destroy.");
-                Destroy(partOnScene);
+                //Debug.Log($"{partOnScene.name} haven't Rigidbody2D. Object was destroy.");
+                //Destroy(partOnScene);
             }
 
             partOnScene.transform.parent = _parentsOfParts.transform;
+
             partOnScene.AddComponent<DragAndDropPart>();
             partOnScene.GetComponent<DragAndDropPart>().PartOfBot = spawnPart;
 
@@ -46,6 +47,19 @@ namespace Editor
             spawnEnd = true;
 
             return partOnScene;
+        }
+        private void SetRigidbodyTypeForAllChild(Transform transform, RigidbodyType2D rigidbodyType2D)
+        {
+            foreach (Transform child in transform)
+            {
+                child.TryGetComponent<Rigidbody2D>(out var childRB);
+
+                if (childRB)
+                    childRB.bodyType = rigidbodyType2D;
+
+                if (child.childCount > 0)
+                    SetRigidbodyTypeForAllChild(child, rigidbodyType2D);
+            }
         }
     }
 }

@@ -1,52 +1,55 @@
+using CombatMechanics.Weapon;
 using System.Collections;
 using UnityEngine;
-using CombatMechanics.Weapon;
 namespace CombatMechanics
 {
     public class GunRotation : MonoBehaviour
     {
-        public float _minRotation, _maxRotation;
+        [SerializeField] private float _minRotationAngel, _maxRotationAngel;
         [SerializeField] float speed;
-        [SerializeField] private GameObject _gun;
+        [SerializeField] private Transform _rotationGunPoint;
         [SerializeField] private bool _ai;
         [SerializeField] private GunShot _shot;
+
         private bool _stopMove, _revers;
+
+        public float MinRotationAngel { get => _minRotationAngel; /*set { _minRotationAngel = value; }*/ }
+        public float MaxRotationAngel { get => _maxRotationAngel; /*set { _maxRotationAngel = value; }*/ }
+
         private void Start()
         {
-            if (_maxRotation < _minRotation)
+            if (_maxRotationAngel < _minRotationAngel)
                 _revers = true;
-           
         }
         public void RotationMoveCulcut(float angel)
         {
             if (_revers)
             {
-                if (angel > 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation)
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation;
+                if (angel > 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
                 else
-                   if (angel < 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation)
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
+                   if (angel < 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
             }
-            else 
-            { 
-                if (angel > 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation)
-                angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
             else
-                if (angel < 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation)
-                 angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation;
+            {
+                if (angel > 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
+                else
+                if (angel < 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
             }
             RotationMove(angel);
         }
         private void RotationMove(float angel)
         {
-
             if (_stopMove == false)
             {
-                if (2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg <= angel - 0.01f || 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg >= angel + 0.01f)
+                if (2 * Mathf.Asin(_rotationGunPoint.rotation.z) * Mathf.Rad2Deg <= angel - 0.01f || 2 * Mathf.Asin(_rotationGunPoint.rotation.z) * Mathf.Rad2Deg >= angel + 0.01f)
                 {
-                    _gun.transform.rotation = Quaternion.Euler(
-                       Vector3.MoveTowards(new Vector3(_gun.transform.rotation.x, _gun.transform.rotation.y, 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg),
-                        new Vector3(_gun.transform.rotation.x, _gun.transform.rotation.y, angel), speed * Time.deltaTime));
+                    _rotationGunPoint.rotation = Quaternion.Euler(
+                       Vector3.MoveTowards(new Vector3(_rotationGunPoint.rotation.x, _rotationGunPoint.rotation.y, 2 * Mathf.Asin(_rotationGunPoint.rotation.z) * Mathf.Rad2Deg),
+                        new Vector3(_rotationGunPoint.rotation.x, _rotationGunPoint.rotation.y, angel), speed * Time.deltaTime));
 
                     StartCoroutine(Timer(angel));
                 }
@@ -57,7 +60,7 @@ namespace CombatMechanics
                         //fire (only for AI)
                         _shot.CheckReloadAndShot();
                     }
-                   
+
                 }
             }
 
@@ -73,20 +76,20 @@ namespace CombatMechanics
             if (_revers)
             {
                 if (moveUp)
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation ;
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
                 else
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
                 _stopMove = false;
             }
-            else 
-            { 
-            
-             if (moveUp)
-                angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotation;
-             else
-                angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotation;
-             _stopMove = false;
-             
+            else
+            {
+
+                if (moveUp)
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
+                else
+                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
+                _stopMove = false;
+
             }
             RotationMove(angel);
         }

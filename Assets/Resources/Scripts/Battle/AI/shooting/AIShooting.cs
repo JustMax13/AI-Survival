@@ -67,8 +67,8 @@ namespace CombatMechanics.AI
         {
             yield return new WaitForSeconds(1f);
 
-            _rotationMin = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._minRotation;
-            _rotationMax = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation._maxRotation;
+            _rotationMin = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation.MinRotationAngel;
+            _rotationMax = 2 * Mathf.Asin(_gun.transform.rotation.z) * Mathf.Rad2Deg + _gunRotation.MaxRotationAngel;
             _rotationSpeedMin = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMin * Mathf.Deg2Rad),
                 _bulletSpeed * Mathf.Sin(_rotationMin * Mathf.Deg2Rad), 0);
             _rotationSpeedMax = new Vector3(_bulletSpeed * Mathf.Cos(_rotationMax * Mathf.Deg2Rad),

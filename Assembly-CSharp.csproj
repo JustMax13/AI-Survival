@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunShot.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunRotation.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\RefToHP.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\General\IMover.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\ButtonEventTrigger\MoveLeft.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\General\PartOfBot.cs" />
@@ -102,7 +103,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveBotController.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropValue.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\General\IHaveHP.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\HP\HPofPart.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\HPofPart.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\Scroling.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Pathes\PartPath.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\PauseMenu.cs" />

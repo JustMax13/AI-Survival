@@ -32,5 +32,16 @@ namespace General
         {
             SpawnObject = Instantiate(PrefabForSpawn, SpawnPoint.transform.position, PrefabForSpawn.transform.rotation);
         }
+
+        protected void SetLayerNameForAllChild(Transform transform, string layerName)
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer(layerName);
+
+                if (child.childCount > 0)
+                    SetLayerNameForAllChild(child, layerName);
+            }
+        }
     }
 }

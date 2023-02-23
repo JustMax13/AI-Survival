@@ -54,7 +54,13 @@ namespace Editor
 
         private void Start()
         {
-            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+
+            gameObject.TryGetComponent<Rigidbody2D>(out var rigidbody2D);
+
+            if(rigidbody2D)
+               rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+
+            SetRigidbodyTypeForAllChild(gameObject.transform, RigidbodyType2D.Kinematic);
 
             _clickTime = 0.5f;
             _curentClickTime = 0;
@@ -102,6 +108,19 @@ namespace Editor
         private void FixedUpdate()
         {
             if (_curentClickTime <= _clickTime) _curentClickTime += Time.deltaTime;
+        }
+        private void SetRigidbodyTypeForAllChild(Transform transform, RigidbodyType2D rigidbodyType2D)
+        {
+            foreach (Transform child in transform)
+            {
+                child.TryGetComponent<Rigidbody2D>(out var childRB);
+
+                if (childRB)
+                    childRB.bodyType = rigidbodyType2D;
+
+                if (child.childCount > 0)
+                    SetRigidbodyTypeForAllChild(child, rigidbodyType2D);
+            }
         }
     }
 }

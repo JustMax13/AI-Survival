@@ -82,114 +82,115 @@ namespace Editor
         }
         private void CheckMoveAndConnect(in ConnectPoint connectPoint)
         {
-            if (CheckConnectionCompatibility(connectPoint.PluggableObj) && !PartsAlreadyConnected(connectPoint, this))
+            _partCounter = PartCounter.FindCounterObject(connectPoint.transform.position);
+
+            if (!(CheckConnectionCompatibility(connectPoint.PluggableObj) && !PointAlreadyConnected(connectPoint, this)) && !_partCounter)
+                return;
+
+            if (!_partCounter)
             {
-                _partCounter = PartCounter.FindCounterObject(connectPoint.transform.position);
+                var gameObject = new GameObject("PartCounter");
 
-                if (!_partCounter)
+                var collider = gameObject.AddComponent<CircleCollider2D>();
+                _partCounter = gameObject.AddComponent<PartCounter>();
+
+                collider.radius = 0.01f;
+
+                Transform parentOfConnectPoint = connectPoint.transform.parent;
+                connectPoint.transform.parent = null;
+
+                gameObject.transform.position = connectPoint.transform.position;
+
+                connectPoint.transform.parent = parentOfConnectPoint;
+                gameObject.transform.parent = _pluggableObj.transform.parent;
+            }
+            else if (_partCounter.CurrentCount >= _partCounter.MaxCount)
+                return;
+
+
+            MoveTo(connectPoint.transform);
+
+            List<ConnectPoint> connectedPoints = FindConnectedPoints(connectPoint.transform.position);
+
+            var baseBlocks = new List<ConnectPoint>();
+
+            foreach (var point in connectedPoints)
+                if (point.PluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
+                    baseBlocks.Add(point);
+
+            if (_pluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
+            {
+                switch (baseBlocks.Count)
                 {
-                    var gameObject = new GameObject("PartCounter");
-
-                    var collider = gameObject.AddComponent<CircleCollider2D>();
-                    _partCounter = gameObject.AddComponent<PartCounter>();
-
-                    collider.radius = 0.01f;
-
-                    Transform parentOfConnectPoint = connectPoint.transform.parent;
-                    connectPoint.transform.parent = null;
-
-                    gameObject.transform.position = connectPoint.transform.position;
-
-                    connectPoint.transform.parent = parentOfConnectPoint;
-                    gameObject.transform.parent = _pluggableObj.transform.parent;
-                }
-                else if (_partCounter.CurrentCount >= _partCounter.MaxCount)
-                    return;
-
-                MoveTo(connectPoint.transform);
-
-                List<ConnectPoint> connectedPoints = FindConnectedPoints(connectPoint.transform.position);
-
-                var baseBlocks = new List<ConnectPoint>();
-
-                foreach (var point in connectedPoints)
-                    if (point.PluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
-                        baseBlocks.Add(point);
-
-                if (_pluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
-                {
-                    switch (baseBlocks.Count)
-                    {
-                        case 0:
+                    case 0:
+                        {
+                            if (connectedPoints.Count > 1)
                             {
-                                if (connectedPoints.Count > 1)
-                                {
-                                    foreach (var point in connectedPoints)
-                                        MoveTo(connectPoint.transform, point.transform);
+                                foreach (var point in connectedPoints)
+                                    MoveTo(connectPoint.transform, point.transform);
 
-                                    MultipleConnect(this, connectedPoints, _partCounter);
-                                }
-                                else
-                                {
-                                    Connect(this, connectPoint);
-
-                                    if (_partCounter.MaxCount == 0)
-                                    {
-                                        _partCounter.AddFirstPart(this);
-                                        _partCounter.AddPart(connectPoint);
-                                    }
-                                    else
-                                        _partCounter.AddPart(connectPoint);
-                                }
-                                break;
+                                MultipleConnect(this, connectedPoints, _partCounter);
                             }
-                        case 1:
+                            else
                             {
-                                Connect(baseBlocks[0], this);
+                                Connect(this, connectPoint);
 
                                 if (_partCounter.MaxCount == 0)
                                 {
-                                    _partCounter.AddFirstPart(baseBlocks[0]);
-                                    _partCounter.AddPart(this);
+                                    _partCounter.AddFirstPart(this);
+                                    _partCounter.AddPart(connectPoint);
                                 }
                                 else
-                                    _partCounter.AddPart(this);
-                                break;
+                                    _partCounter.AddPart(connectPoint);
                             }
-                        default: // коли знайдено більше одного БК
-                            {
-                                Connect(_partCounter.GetFirstBaseBlock(), this);
-                                _partCounter.AddPart(this);
+                            break;
+                        }
+                    case 1:
+                        {
+                            Connect(baseBlocks[0], this);
 
-                                break;
+                            if (_partCounter.MaxCount == 0)
+                            {
+                                _partCounter.AddFirstPart(baseBlocks[0]);
+                                _partCounter.AddPart(this);
                             }
-                    }
+                            else
+                                _partCounter.AddPart(this);
+                            break;
+                        }
+                    default: // коли знайдено більше одного БК
+                        {
+                            Connect(_partCounter.GetFirstBaseBlock(), this);
+                            _partCounter.AddPart(this);
+
+                            break;
+                        }
                 }
-                else
+            }
+            else
+            {
+                switch (baseBlocks.Count)
                 {
-                    switch (baseBlocks.Count)
-                    {
-                        case 1:
-                            {
-                                Connect(baseBlocks[0], this);
+                    case 1:
+                        {
+                            Connect(baseBlocks[0], this);
 
-                                if (_partCounter.MaxCount == 0)
-                                {
-                                    _partCounter.AddFirstPart(baseBlocks[0]);
-                                    _partCounter.AddPart(this);
-                                }
-                                else
-                                    _partCounter.AddPart(this);
-                                break;
-                            }
-                        default: // коли знайдено більше одного БК
+                            if (_partCounter.MaxCount == 0)
                             {
-                                Connect(_partCounter.GetFirstBaseBlock(), this);
+                                _partCounter.AddFirstPart(baseBlocks[0]);
                                 _partCounter.AddPart(this);
-
-                                break;
                             }
-                    }
+                            else
+                                _partCounter.AddPart(this);
+                            break;
+                        }
+                    default: // коли знайдено більше одного БК
+                        {
+                            Connect(_partCounter.GetFirstBaseBlock(), this);
+                            _partCounter.AddPart(this);
+
+                            break;
+                        }
                 }
             }
         }
@@ -201,7 +202,7 @@ namespace Editor
             else
                 return false;
         }
-        private bool PartsAlreadyConnected(ConnectPoint connectPoint1, ConnectPoint connectPoint2)
+        private bool PointAlreadyConnected(ConnectPoint connectPoint1, ConnectPoint connectPoint2)
         {
             var pluggableObject1RB = connectPoint1.PluggableObj.GetComponent<Rigidbody2D>();
 
@@ -318,7 +319,7 @@ namespace Editor
                 throw new Exception("Не було передано масиву для підключення!");
 
             foreach (var point in toPlugPoints)
-                if (PartsAlreadyConnected(connectTo, point))
+                if (PointAlreadyConnected(connectTo, point))
                     toPlugPoints.Remove(point);
 
             foreach (var toPlug in toPlugPoints)
@@ -340,13 +341,13 @@ namespace Editor
 
         public void TryReconnectThisPoint()
         {
-            if(_partCounter)
+            if (_partCounter)
             {
                 ConnectPoint baseBlock = _partCounter.GetFirstBaseBlock();
 
                 if (!baseBlock)
                     return;
-                if(baseBlock != this)
+                if (baseBlock != this)
                     Connect(baseBlock, this);
             }
         }

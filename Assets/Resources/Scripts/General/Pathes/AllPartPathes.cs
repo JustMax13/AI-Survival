@@ -13,29 +13,39 @@ namespace General.Pathes
         {
             PartPathes = new Dictionary<string, string>
             {
-                { 
+                // Armor
+
+                {
                     "EasyArmor",
-                    "Prefab/PartOfBot/Armor/EasyArmor"
+                    "Prefab/PartOfBot/ArmorPlates/EasyArmor"
+                },
+
+                // FasteningBlock
+                {
+                    "CarbonNoise",
+                    "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise"
                 },
                 {
-                    "HardArmor",
-                    "Prefab/PartOfBot/Armor/HardArmor"
+                    "CarbonShine",
+                    "Prefab/PartOfBot/FasteningBlock/CarbonShine/CarbonShine"
                 },
+
+                // Wheels
                 {
                     "BigWheel",
-                    "Prefab/PartOfBot/Wheel/BigWheel"
+                    "Prefab/PartOfBot/Wheels/BigWheel"
                 },
+
+                // CentralBlocks
                 {
                     "ClassicCentralBlock",
                     "Prefab/PartOfBot/CentralBlock/ClassicCentralBlock"
                 },
+
+                // Guns
                 {
-                    "CarbonNoise",
-                    "Prefab/PartOfBot/BaseBlock/CarbonNoise"
-                },
-                {
-                    "CarbonShine",
-                    "Prefab/PartOfBot/BaseBlock/CarbonShine"
+                    "OldGun",
+                    "Prefab/PartOfBot/Guns/OldGun/OldGun"
                 },
             };
         }

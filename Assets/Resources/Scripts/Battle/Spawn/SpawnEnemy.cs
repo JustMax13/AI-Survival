@@ -16,13 +16,7 @@ namespace CombatMechanics
             SpawnObject.layer = LayerMask.NameToLayer("Enemy");
             SpawnObject.GetComponent<AiBrain>().FoundAllPoints(allPoints);
 
-            foreach (Transform child in SpawnObject.transform)
-            {
-                child.gameObject.layer = LayerMask.NameToLayer("Enemy");
-               
-                foreach (Transform childInChild in child.transform)
-                    childInChild.gameObject.layer = LayerMask.NameToLayer("Enemy");
-            }
+            SetLayerNameForAllChild(SpawnObject.transform, "Enemy");
 
             GameOverEvent.PlayerWon += OnPlayerWon;
         }

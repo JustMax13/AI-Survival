@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace Editor
@@ -92,7 +93,7 @@ namespace Editor
                 }
             }
 
-            throw new Exception($"Не знайдено {connectPoint.PluggableObj} у списку підключений деталей!");
+            Debug.LogWarning($"Не знайдено {connectPoint.PluggableObj} у списку підключений деталей!");
         }
 
     }
