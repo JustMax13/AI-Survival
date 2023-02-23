@@ -401,6 +401,7 @@
 "Assets/Resources/Scripts/Battle/Shooting/Gun/General/GunTraectory.cs"
 "Assets/Resources/Scripts/Battle/Shooting/Gun/General/PaintTraectory.cs"
 "Assets/Resources/Scripts/Battle/Shooting/Gun/General/RotationTest.cs"
+"Assets/Resources/Scripts/Battle/Shooting/Gun/General/SightAlways.cs"
 "Assets/Resources/Scripts/Battle/Shooting/Gun/General/WeaponLostConected.cs"
 "Assets/Resources/Scripts/Battle/Shooting/Gun/Varieties/ShotGun.cs"
 "Assets/Resources/Scripts/Battle/Spawn/SpawnEnemy.cs"

@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheel: {fileID: 8417008939239752673}
-  _CPU: {fileID: 0}
+  _CPU: {fileID: 2514410965495831910}
   _xPosition: 0
   _position: 0
   stopNum: 2
