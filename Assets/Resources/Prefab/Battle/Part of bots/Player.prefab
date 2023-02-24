@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4012966436754111379}
   - component: {fileID: 2473422400161918543}
+  - component: {fileID: 4819947054010898370}
+  - component: {fileID: 6425677461044238041}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -50,6 +52,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e5763a2a607624bbd7c770439ef1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4819947054010898370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591156690814752894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47587cc2dd916bd40a2751d7a1b67872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointToSpawn:
+  - {x: 0.83, y: 0.75}
+  - {x: 0.67, y: 0.75}
+  - {x: 0.83, y: 0.59}
+  - {x: 0.67, y: 0.59}
+  cameraToSpawn: {fileID: 6642583715687711390, guid: 203352a6abd70004396315f62cff4e67,
+    type: 3}
+--- !u!114 &6425677461044238041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591156690814752894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77b0cda358e629409dbc6d1401c3e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detaleScript:
+  - {fileID: 8397686611205785863, guid: 6fde3d040f5262d439e46a85d93b5d91, type: 3}
+  _detaleTag:
+  - Gun
 --- !u!1001 &4422466309795703877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,6 +94,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4012966436754111379}
     m_Modifications:
+    - target: {fileID: 606913943765755085, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: m_TagString
+      value: gunRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243467680952866118, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: m_TagString
+      value: BulletSpawn
+      objectReference: {fileID: 0}
     - target: {fileID: 1368842147545360441, guid: 98562798b8f93484d90227eed5a37efa,
         type: 3}
       propertyPath: m_RootOrder
@@ -131,6 +178,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OldGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582974942326027221, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940181752280698156, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98562798b8f93484d90227eed5a37efa, type: 3}
@@ -723,6 +780,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199402531556990872, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851227441000910672, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920801d27b977d74084b00da77a8cc45, type: 3}

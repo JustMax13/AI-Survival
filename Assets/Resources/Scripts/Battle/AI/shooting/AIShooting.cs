@@ -27,7 +27,7 @@ namespace CombatMechanics.AI
             _traectory = gameObject.transform.parent.GetComponent<GunTraectory>();
             _gun = gameObject.transform.parent.gameObject;
             _gunRotation = _gun.GetComponent<GunRotation>();
-            foreach (Transform child in gameObject.transform.parent.transform.parent.transform)
+            foreach (Transform child in gameObject.transform.parent.transform)
             {
                 if (child.gameObject.tag == "sight")
                 {
