@@ -32,7 +32,7 @@ namespace Editor.Moves
             _wasClick += FindAndClickOnPart;
         }
         private void Update()
-        {
+        {   
             if (_onGoingCheck)
                 _currentPressTime += Time.deltaTime;
 
@@ -74,10 +74,6 @@ namespace Editor.Moves
         }
         private GameObject FindPartWhereMouseDown(Vector2 mousePosition)
         {
-            // НЕ ПРАВИЛЬНО БЕРЕТ ID ДЕТАЛИ, А ТОЧНЕЕ, У ДЕТАЛИ БУД-ТО НЕТ ID
-            // Там не те вовме ID, которые я представлял. Нужно найти, как правильно получать ID сортировочного слоя
-
-            // эти ID даже не стоят подряд друг за другом
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Collider2D[] colliders = Physics2D.OverlapPointAll(mousePosition);
 
@@ -91,11 +87,11 @@ namespace Editor.Moves
             if (onlyPartSpriteRenderers.Count == 0)
                 return null;
 
-            int upperSortingLaleyID = SpriteManagement.FindUpperSortingLayerID(onlyPartSpriteRenderers);
+            EnumPartSortingLayer upperSortingLayer = SpriteManagement.FindUpperSortingLayerID(onlyPartSpriteRenderers);
 
             var spriteRenderersWithUpperSortingID = new List<SpriteRenderer>();
-            spriteRenderersWithUpperSortingID = SpriteManagement.FindSpriteRendererWithID(onlyPartSpriteRenderers, upperSortingLaleyID);
-            SpriteRenderer upperSpriteRenderer = SpriteManagement.FindUpperSpriteRenderer(spriteRenderersWithUpperSortingID, upperSortingLaleyID);
+            spriteRenderersWithUpperSortingID = SpriteManagement.FindSpriteRendererWithID(onlyPartSpriteRenderers, upperSortingLayer);
+            SpriteRenderer upperSpriteRenderer = SpriteManagement.FindUpperSpriteRenderer(spriteRenderersWithUpperSortingID, upperSortingLayer);
 
             return upperSpriteRenderer.gameObject;
         }
