@@ -132,6 +132,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: OldGun
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 3582974942326027221, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940181752280698156, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921916188110440022, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98562798b8f93484d90227eed5a37efa, type: 3}
 --- !u!1 &929581106971713424 stripped
@@ -654,6 +672,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClassicCentralBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 2932051299144102268, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 40.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932051299144102268, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 40.289997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932051299144102268, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 791218128, guid: 6b02fc77d19127d42beaf60232336e11,
+        type: 3}
+    - target: {fileID: 2932051299144102268, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2932051299144102269, guid: 920801d27b977d74084b00da77a8cc45,
         type: 3}
       propertyPath: m_RootOrder
@@ -724,6 +763,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 3199402531556990872, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514170122010815579, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 40.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514170122010815579, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 40.289997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514170122010815579, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 40.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514170122010815579, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 40.289997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851227441000910672, guid: 920801d27b977d74084b00da77a8cc45,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920801d27b977d74084b00da77a8cc45, type: 3}
 --- !u!4 &8073741036914872051 stripped

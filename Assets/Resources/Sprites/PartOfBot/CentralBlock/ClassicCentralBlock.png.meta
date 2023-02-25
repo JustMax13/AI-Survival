@@ -52,7 +52,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -117,39 +117,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ClassicCentralBlock
+      name: ClassicCentralBlock_0
       rect:
         serializedVersion: 2
-        x: 1525
-        y: 178
-        width: 4010
-        height: 4008
+        x: 1521
+        y: 171
+        width: 4016
+        height: 4029
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b92b39259a73b94f9ba4ed5691f2c3c
-      internalID: 963306621
+      spriteID: 6bf8919df9214ec488320b481bb0f719
+      internalID: 791218128
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline: []
+    - serializedVersion: 2
+      name: ClassicCentralBlock_1
+      rect:
+        serializedVersion: 2
+        x: 6689
+        y: 1590
+        width: 72
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294614d3347bb7147973c2635af4ec1e
+      internalID: 1128648127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -2400, y: -2020}
+      - {x: -2400, y: 2048}
+      - {x: 1742, y: 2048}
+      - {x: 1742, y: -2020}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ClassicCentralBlock: 963306621
-      Central block_1: -561314569
+      ClassicCentralBlock_0: 791218128
+      ClassicCentralBlock_1: 1128648127
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

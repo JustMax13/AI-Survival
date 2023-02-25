@@ -123,6 +123,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\CentralBlockHP.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonForDestroyObject.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\EnableLevel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\Spawn\MiniCameraSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\ConnectedShotButton.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Pathes\AllPartPathes.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\WeaponLostConected.cs" />

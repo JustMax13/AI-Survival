@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5316140036496009212}
   m_Layer: 0
   m_Name: RotatePoint
-  m_TagString: Untagged
+  m_TagString: gunRotation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6097728281125544249}
   m_Layer: 0
   m_Name: SpawnBullet
-  m_TagString: Untagged
+  m_TagString: BulletSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 8492291928729284342}
   m_Layer: 0
   m_Name: OldGun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 7172564694739480509}
   m_Layer: 0
   m_Name: Muzzel
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

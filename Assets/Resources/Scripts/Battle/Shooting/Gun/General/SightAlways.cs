@@ -9,7 +9,7 @@ namespace CombatMechanics
         private GunRotation _gunRotation;
         private Vector3  _rotationSpeedInMoment;
         [SerializeField] private float _bulletSpeed = 6, _radius = 0.25f;
-        [SerializeField] private GameObject _gun, _prisel, _player, _gunEnd;
+        [SerializeField] private GameObject _gun, _prisel, _gunEnd;
         [SerializeField] private LayerMask  _layersAll;
         void Start()
         {

@@ -34,8 +34,8 @@ namespace CombatMechanics.AI
         public void FoundPlayer(GameObject player)
         {
             _player = player.gameObject;
-           _guns[0].FoundPlayer(_player);
             StartCoroutine(StartWaiting());
+            _guns[0].FoundPlayer(_player);
         }
         private IEnumerator StartWaiting()
         {
@@ -44,5 +44,6 @@ namespace CombatMechanics.AI
             _guns[0].StartProtses();
             StartCoroutine(StartWaiting());
         }
+     
     }
 }
