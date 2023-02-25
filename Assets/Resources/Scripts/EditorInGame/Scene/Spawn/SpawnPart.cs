@@ -1,6 +1,7 @@
 using Editor.Moves;
 using General;
 using General.PartOfBots;
+using System;
 using UnityEngine;
 
 namespace Editor
@@ -14,6 +15,7 @@ namespace Editor
         [SerializeField] private GameObject _content;
         [SerializeField] private GameObject _parentsOfParts;
 
+        public static event Action<GameObject> SpawnPartEnd;
         public float MovementSharpness { get => _movementSharpness; }
         public GameObject LimitPoint1 { get => _limitPoint1; }
         public GameObject LimitPoint2 { get => _limitPoint2; }
@@ -28,7 +30,7 @@ namespace Editor
             {
                 partOnScene.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
-                //SetRigidbodyTypeForAllChild(partOnScene.transform, RigidbodyType2D.Kinematic);
+                SetRigidbodyTypeForAllChild(partOnScene.transform, RigidbodyType2D.Kinematic);
             }
             catch
             {
@@ -43,6 +45,8 @@ namespace Editor
 
             partIsntSpawn = false;
             spawnEnd = true;
+
+            SpawnPartEnd?.Invoke(partOnScene);
 
             return partOnScene;
         }

@@ -1,3 +1,6 @@
+using General.Pathes;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -5,57 +8,96 @@ namespace Editor.Moves
 {
     public class ClickedPart : MonoBehaviour
     {
-        private bool _mouseButtonUp;
+        private static bool _mouseButtonUp;
+        private bool _onGoingCheck;
+
+
+        private float _maxTimeForClick;
+        private float _currentPressTime;
+
+        private Vector2 _mouseDownPosition;
+
+        private event Action _wasClick;
+
+        public static bool MouseButtonUp { get => _mouseButtonUp; }
 
         private void Start()
         {
             _mouseButtonUp = false;
+            _onGoingCheck = false;
+
+            _maxTimeForClick = 0.4f;
+            _currentPressTime = 0;
+
+            _wasClick += FindAndClickOnPart;
         }
         private void Update()
         {
+            if (_onGoingCheck)
+                _currentPressTime += Time.deltaTime;
+
             if (Input.GetMouseButtonDown(0))
             {
-                Vector2 mousePosition = Input.mousePosition;
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-                Collider2D[] colliders = Physics2D.OverlapPointAll(mousePosition);
+                _mouseButtonUp = false;
+                _mouseDownPosition = Input.mousePosition;
 
-                
-                // нужно найти как-то спрайт, который отображается высше другого
-                // поход такой параметр нужно самим создавать.
-                // Нужно создать отдельный класс, который будет хранить такой счетчик, в какой последовательности
-                // были заспавнены детали. Сделать его так, чтобы в дальшейшем можно будет сделать правильную сортировку.
-                // возможно, для этого можно использовать то, что в PlayerBot, в дочерние обьекты все добавляется по очереди
-                // - сверху вниз
-
-                //foreach (var item in colliders)
-                //{
-                //    Debug.Log(item);
-                //    Debug.Log(item.GetComponent<SpriteRenderer>().);
-                //}
+                CheckOnClickAsync();
             }
-
-            //if (Input.GetMouseButtonDown(0))
-            //{
-            //    _mouseButtonDown = true; // тут начать счетчик
-            //    Test();
-            //}
-            //else if (Input.GetMouseButtonUp(0))
-            //{
-            //    _mouseButtonDown = false;
-            //}
-            ////    _mouseButtonUp = true; // тут закончить
+            else if (Input.GetMouseButtonUp(0))
+                _mouseButtonUp = true;
         }
-        private async void Test()// так оно работает
+        private async void CheckOnClickAsync()
         {
-            await Task.Run(() =>
-            {
-                while (!_mouseButtonUp)
-                    Debug.Log("Inside while");
+            _onGoingCheck = true;
 
-                Debug.Log("OutSide while");
+            await Task.Run(() => { while (!_mouseButtonUp) { } });
+
+            _onGoingCheck = false;
+            if (_currentPressTime <= _maxTimeForClick)
+                _wasClick?.Invoke();
+
+            _currentPressTime = 0;
+        }
+        private void FindAndClickOnPart()
+        {
+            GameObject part = FindPartWhereMouseDown(_mouseDownPosition);
+
+            if (!part)
+                return;
+
+            var dragAndDropOfPart = part.GetComponent<DragAndDropPart>();
+
+            if (dragAndDropOfPart.IsSelected)
+                dragAndDropOfPart.MoveFollowingTheCursor();
+            else
+                dragAndDropOfPart.IsSelected = true;
+        }
+        private GameObject FindPartWhereMouseDown(Vector2 mousePosition)
+        {
+            // НЕ ПРАВИЛЬНО БЕРЕТ ID ДЕТАЛИ, А ТОЧНЕЕ, У ДЕТАЛИ БУД-ТО НЕТ ID
+            // Там не те вовме ID, которые я представлял. Нужно найти, как правильно получать ID сортировочного слоя
+
+            // эти ID даже не стоят подряд друг за другом
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Collider2D[] colliders = Physics2D.OverlapPointAll(mousePosition);
+
+            var onlyPartSpriteRenderers = new List<SpriteRenderer>();
+            foreach (var item in colliders)
+            {
+                if (item.TryGetComponent<PartPath>(out var partPath))
+                    onlyPartSpriteRenderers.Add(partPath.GetComponent<SpriteRenderer>());
             }
-            );
-            Debug.Log("OutSide await Task");
+
+            if (onlyPartSpriteRenderers.Count == 0)
+                return null;
+
+            int upperSortingLaleyID = SpriteManagement.FindUpperSortingLayerID(onlyPartSpriteRenderers);
+
+            var spriteRenderersWithUpperSortingID = new List<SpriteRenderer>();
+            spriteRenderersWithUpperSortingID = SpriteManagement.FindSpriteRendererWithID(onlyPartSpriteRenderers, upperSortingLaleyID);
+            SpriteRenderer upperSpriteRenderer = SpriteManagement.FindUpperSpriteRenderer(spriteRenderersWithUpperSortingID, upperSortingLaleyID);
+
+            return upperSpriteRenderer.gameObject;
         }
     }
 }
