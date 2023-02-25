@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Editor
+namespace Editor.Moves
 {
     public class DragAndDropValue : MonoBehaviour
     {

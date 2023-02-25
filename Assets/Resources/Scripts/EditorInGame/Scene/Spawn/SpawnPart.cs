@@ -1,12 +1,10 @@
+using Editor.Moves;
 using General;
 using General.PartOfBots;
 using UnityEngine;
-using static TreeEditor.TreeEditorHelper;
 
 namespace Editor
 {
-
-
     public class SpawnPart : MonoBehaviour
     {
         [SerializeField] private float _movementSharpness;

@@ -2,11 +2,12 @@ using General;
 using General.PartOfBots;
 using UnityEngine;
 
-namespace Editor
+namespace Editor.Moves
 {
     using Editor.Interface;
     public class DragAndDropPart : MonoBehaviour
     {
+        // сделать не через методы OnMouse
         private bool _isSelected;
         private bool _cursorOnObject;
         private float _clickTime;
@@ -26,7 +27,6 @@ namespace Editor
             get => _partOfBot;
             set { _partOfBot = value; }
         }
-
 
         private void OnMouseDown()
         {
@@ -49,8 +49,17 @@ namespace Editor
                 ActionManager.CameraMoveAndZoom = true;
             else if (_curentClickTime <= _clickTime) _isSelected = true;
         }
-        private void OnMouseEnter() => _cursorOnObject = true;
-        private void OnMouseExit() => _cursorOnObject = false;
+        private void OnMouseEnter() /*=> _cursorOnObject = true;*/
+        {
+            //Debug.Log("on " + gameObject + " mouse enter"); // 
+            _cursorOnObject = true;
+        }
+
+        private void OnMouseExit() /*=> _cursorOnObject = false;*/
+        {
+            //Debug.Log("on " + gameObject + " mouse exit"); // 
+            _cursorOnObject = false;
+        }
 
         private void Start()
         {

@@ -3,10 +3,9 @@ using System;
 
 namespace Editor
 {
-    using General;
     using General.PartOfBots;
     using Editor.Interface;
-    
+    using Editor.Moves;
 
     public class PartForSpawn : MonoBehaviour
     {
