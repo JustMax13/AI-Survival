@@ -132,8 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OldGun
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 3582974942326027221, guid: 98562798b8f93484d90227eed5a37efa,
         type: 3}
       propertyPath: m_TagString
@@ -149,7 +147,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weapon
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98562798b8f93484d90227eed5a37efa, type: 3}
 --- !u!1 &929581106971713424 stripped
@@ -763,8 +760,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 3199402531556990872, guid: 920801d27b977d74084b00da77a8cc45,
         type: 3}
       propertyPath: m_RootOrder
@@ -795,7 +790,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920801d27b977d74084b00da77a8cc45, type: 3}
 --- !u!4 &8073741036914872051 stripped

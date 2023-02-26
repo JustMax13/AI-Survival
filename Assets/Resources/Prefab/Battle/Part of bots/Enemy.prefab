@@ -131,11 +131,8 @@ Transform:
   - {fileID: 2905867909170996823}
   - {fileID: 2514410965495831907}
   - {fileID: 9184760782752021119}
-<<<<<<< Updated upstream
   - {fileID: 7801491968990331601}
-=======
   - {fileID: 5207302686486048261}
->>>>>>> Stashed changes
   - {fileID: 4200564876970657523}
   - {fileID: 5871979455199863999}
   - {fileID: 3088792030684826438}
@@ -448,8 +445,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 3199402531556990872, guid: 920801d27b977d74084b00da77a8cc45,
         type: 3}
       propertyPath: m_RootOrder
@@ -480,7 +475,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920801d27b977d74084b00da77a8cc45, type: 3}
 --- !u!4 &2514410965495831907 stripped
