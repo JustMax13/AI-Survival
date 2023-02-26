@@ -9,7 +9,10 @@ namespace Editor
     {
         public static Dictionary<EnumPartSortingLayer, List<SpriteRenderer>> PartsInSortingLayer = new Dictionary<EnumPartSortingLayer, List<SpriteRenderer>>();
 
-        static SpriteManagement() => SpawnPart.SpawnPartEnd += AddPartToDictionary;
+        private void Awake()
+        {
+            SpawnPart.SpawnPartEnd += AddPartToDictionary; 
+        }
 
         private static void AddPartToDictionary(GameObject part)
         {
@@ -62,7 +65,7 @@ namespace Editor
                 
             return upperSortingLayer;
         }
-        public static List<SpriteRenderer> FindSpriteRendererWithID(List<SpriteRenderer> spriteRenderers, EnumPartSortingLayer enumPartSortingLayer)
+        public static List<SpriteRenderer> FindSpriteRendererWithOneSortingLayer(List<SpriteRenderer> spriteRenderers, EnumPartSortingLayer enumPartSortingLayer)
         {
             var listSpriteRenderers = new List<SpriteRenderer>();
 
@@ -77,7 +80,7 @@ namespace Editor
         public static SpriteRenderer FindUpperSpriteRenderer(List<SpriteRenderer> spriteRenderers, EnumPartSortingLayer enumPartSortingLayer)
         {
             if (!PartsInSortingLayer.TryGetValue(enumPartSortingLayer, out List<SpriteRenderer> spriteRenderersInDictionary))
-                throw new Exception("enumPartSortingLayer не знайдено!");
+                throw new Exception("enumPartSortingLayer не знайдено!"); // тут выдается ошибка, ибо словарь пустой
 
             var findedIndex = new int[spriteRenderers.Count];
 

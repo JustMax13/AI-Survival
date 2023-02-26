@@ -1,3 +1,4 @@
+using Editor.Moves;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,17 +32,30 @@ namespace Editor
         //        _contentMove = value;
         //    }
         //}
+        private void Start()
+        {
+            _cameraMoveAndZoom = true;
+            _actionButtonDown = false;
+            //_contentMove = false;
+
+            DragAndDropPart.PartStartDrag += SomeOnePartStartDrag;
+            DragAndDropPart.PartEndDrag += SomeOnePartEndDrag;
+        }
         public static void AnyoneFalse()
         {
             _cameraMoveAndZoom = false;
             _actionButtonDown = false;
             //_contentMove = false;
         }
-        private void Start()
+        public static void SomeOnePartStartDrag()
         {
+            Debug.Log("SomeOnePartStartDrag");
+            _cameraMoveAndZoom = false;
+        }
+        public static void SomeOnePartEndDrag()
+        {
+            Debug.Log("SomeOnePartEndrag");
             _cameraMoveAndZoom = true;
-            _actionButtonDown = false;
-            //_contentMove = false;
         }
     }
 }

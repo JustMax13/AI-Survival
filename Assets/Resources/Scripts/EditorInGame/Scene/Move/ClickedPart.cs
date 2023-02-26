@@ -11,11 +11,11 @@ namespace Editor.Moves
         private static bool _mouseButtonUp;
         private bool _onGoingCheck;
 
-
         private float _maxTimeForClick;
         private float _currentPressTime;
 
         private Vector2 _mouseDownPosition;
+        private DragAndDropPart _lastFindPart;
 
         private event Action _wasClick;
 
@@ -29,22 +29,35 @@ namespace Editor.Moves
             _maxTimeForClick = 0.4f;
             _currentPressTime = 0;
 
+            _lastFindPart = null;
+
             _wasClick += FindAndClickOnPart;
         }
         private void Update()
-        {   
-            if (_onGoingCheck)
-                _currentPressTime += Time.deltaTime;
-
+        {
             if (Input.GetMouseButtonDown(0))
             {
                 _mouseButtonUp = false;
                 _mouseDownPosition = Input.mousePosition;
 
-                CheckOnClickAsync();
+                if(_lastFindPart)
+                {
+                    DragAndDropPart.UpdateIsSelect(_lastFindPart);
+
+                    if (!_lastFindPart.IsSelected)
+                    {
+                        _lastFindPart = null;
+                        CheckOnClickAsync();
+                    }  
+                }
+                else 
+                    CheckOnClickAsync();
             }
             else if (Input.GetMouseButtonUp(0))
                 _mouseButtonUp = true;
+
+            if (_onGoingCheck)
+                _currentPressTime += Time.deltaTime;
         }
         private async void CheckOnClickAsync()
         {
@@ -65,12 +78,10 @@ namespace Editor.Moves
             if (!part)
                 return;
 
-            var dragAndDropOfPart = part.GetComponent<DragAndDropPart>();
+            _lastFindPart = part.GetComponent<DragAndDropPart>();
 
-            if (dragAndDropOfPart.IsSelected)
-                dragAndDropOfPart.MoveFollowingTheCursor();
-            else
-                dragAndDropOfPart.IsSelected = true;
+            if (!_lastFindPart.IsSelected)
+                _lastFindPart.IsSelected = true;      
         }
         private GameObject FindPartWhereMouseDown(Vector2 mousePosition)
         {
@@ -89,9 +100,9 @@ namespace Editor.Moves
 
             EnumPartSortingLayer upperSortingLayer = SpriteManagement.FindUpperSortingLayerID(onlyPartSpriteRenderers);
 
-            var spriteRenderersWithUpperSortingID = new List<SpriteRenderer>();
-            spriteRenderersWithUpperSortingID = SpriteManagement.FindSpriteRendererWithID(onlyPartSpriteRenderers, upperSortingLayer);
-            SpriteRenderer upperSpriteRenderer = SpriteManagement.FindUpperSpriteRenderer(spriteRenderersWithUpperSortingID, upperSortingLayer);
+            var spriteRenderersWithUpperSortingLayer = new List<SpriteRenderer>();
+            spriteRenderersWithUpperSortingLayer = SpriteManagement.FindSpriteRendererWithOneSortingLayer(onlyPartSpriteRenderers, upperSortingLayer);
+            SpriteRenderer upperSpriteRenderer = SpriteManagement.FindUpperSpriteRenderer(spriteRenderersWithUpperSortingLayer, upperSortingLayer);
 
             return upperSpriteRenderer.gameObject;
         }

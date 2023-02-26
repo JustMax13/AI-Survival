@@ -9,12 +9,12 @@ namespace Editor.Moves
     {
         [SerializeField] public float _movementSpeed;
 
-        [SerializeField] public GameObject _limitPoint1;
-        [SerializeField] public GameObject _limitPoint2;
+        [SerializeField] public Transform _limitPoint1;
+        [SerializeField] public Transform _limitPoint2;
 
         public static float MovementSpeed { get; set; }
-        public static GameObject LimitPoint1 { get; set; }
-        public static GameObject LimitPoint2 { get; set; }
+        public static Transform LimitPoint1 { get; set; }
+        public static Transform LimitPoint2 { get; set; }
 
         private void Awake()
         {

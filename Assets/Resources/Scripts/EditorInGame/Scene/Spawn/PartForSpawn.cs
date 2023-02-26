@@ -78,13 +78,13 @@ namespace Editor
             {
                 if (_partIsntSpawn) _partOnScene = _generalValuesForSpawnPart.SpawnPrefab(_spawnPart,ref _partIsntSpawn, ref _spawnEnd);
 
-                Vector2 mousePosition = DragAndDrop.MousePositionOnDragArea(_generalValuesForSpawnPart.LimitPoint1,
-                    _generalValuesForSpawnPart.LimitPoint2);
+                //Vector2 mousePosition = DragAndDrop.MousePositionOnDragArea(_generalValuesForSpawnPart.LimitPoint1.position,
+                //    _generalValuesForSpawnPart.LimitPoint2.position);
 
-                Vector2 objectOnScenesPosition = _partOnScene.transform.position;
-                _partOnScene.transform.position = new Vector2(Mathf.Lerp(objectOnScenesPosition.x, mousePosition.x,
-                    _generalValuesForSpawnPart.MovementSharpness * Time.deltaTime), Mathf.Lerp(objectOnScenesPosition.y, mousePosition.y,
-                    _generalValuesForSpawnPart.MovementSharpness * Time.deltaTime));
+                //Vector2 objectOnScenesPosition = _partOnScene.transform.position;
+                //_partOnScene.transform.position = new Vector2(Mathf.Lerp(objectOnScenesPosition.x, mousePosition.x,
+                //    _generalValuesForSpawnPart.MovementSharpness * Time.deltaTime), Mathf.Lerp(objectOnScenesPosition.y, mousePosition.y,
+                //    _generalValuesForSpawnPart.MovementSharpness * Time.deltaTime));
             }
         }
     }

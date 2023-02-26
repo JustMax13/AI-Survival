@@ -10,20 +10,26 @@ namespace Editor
     {
         [SerializeField] private float _movementSharpness;
 
-        [SerializeField] private GameObject _limitPoint1;
-        [SerializeField] private GameObject _limitPoint2;
         [SerializeField] private GameObject _content;
         [SerializeField] private GameObject _parentsOfParts;
 
+        private Transform _limitPoint1;
+        private Transform _limitPoint2;
+
         public static event Action<GameObject> SpawnPartEnd;
         public float MovementSharpness { get => _movementSharpness; }
-        public GameObject LimitPoint1 { get => _limitPoint1; }
-        public GameObject LimitPoint2 { get => _limitPoint2; }
+        public Transform LimitPoint1 { get => _limitPoint1; }
+        public Transform LimitPoint2 { get => _limitPoint2; }
         public GameObject Content { get => _content; }
 
+        private void Start()
+        {
+            _limitPoint1 = DragAndDropValue.LimitPoint1;
+            _limitPoint2 = DragAndDropValue.LimitPoint2;
+        }
         public GameObject SpawnPrefab(PartOfBot spawnPart, ref bool partIsntSpawn, ref bool spawnEnd)
         {
-            Vector2 mousePosition = DragAndDrop.MousePositionOnDragArea(_limitPoint1, _limitPoint2);
+            Vector2 mousePosition = DragAndDrop.MousePositionOnDragArea(_limitPoint1.position, _limitPoint2.position);
 
             GameObject partOnScene = Instantiate(spawnPart.Prefab, mousePosition, transform.rotation);
             try
