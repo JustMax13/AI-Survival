@@ -27,13 +27,15 @@ namespace CombatMechanics.AI
             _traectory = gameObject.transform.parent.GetComponent<GunTraectory>();
             _gun = gameObject.transform.parent.gameObject;
             _gunRotation = _gun.GetComponent<GunRotation>();
-            foreach (Transform child in gameObject.transform.parent.transform.parent.transform)
-            {
-                if (child.gameObject.tag == "sight")
-                {
-                    _prisel = child.gameObject;
-                }
-            }
+            //foreach (Transform child in gameObject.transform.parent.transform.parent.transform)
+            //{
+            //    if (child.gameObject.tag == "sight")
+            //    {
+            //        _prisel = child.gameObject;
+            //    }
+            //}
+            _prisel= Instantiate(_prisel, gameObject.transform.position, Quaternion.identity);
+            _prisel.transform.parent = gameObject.transform.parent.transform.parent;
             foreach (Transform child in gameObject.transform.parent.transform)
             {
                 if (child.gameObject.tag == "gunRotation")

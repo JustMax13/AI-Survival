@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4662343122453041680}
   m_Layer: 10
   m_Name: Player gun ai
-  m_TagString: Untagged
+  m_TagString: ScriptPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,6 @@ MonoBehaviour:
   _radius: 0.2
   _gun: {fileID: 0}
   _prisel: {fileID: 0}
-  _player: {fileID: 0}
   _gunEnd: {fileID: 0}
   _layersAll:
     serializedVersion: 2

@@ -21,7 +21,7 @@ namespace CombatMechanics.AI
                 {
                     foreach (Transform childInCaild in child.transform)
                     {
-                        if (childInCaild.gameObject.tag == "AIShooting")
+                        if (childInCaild.gameObject.GetComponent<AIShooting>())
                         {
                             _guns.Add(childInCaild.GetComponent<AIShooting>());
                         }

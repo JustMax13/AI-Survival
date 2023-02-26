@@ -16,13 +16,13 @@ namespace CombatMechanics
             _traectory = gameObject.transform.parent.GetComponent<GunTraectory>();
             
             _gunRotation = gameObject.transform.parent.gameObject.GetComponent<GunRotation>();
-            foreach (Transform child in gameObject.transform.parent.transform.parent.transform)
-            {
-                if (child.gameObject.tag == "sight")
-                {
-                    _prisel = child.gameObject;
-                }
-            }
+            //foreach (Transform child in gameObject.transform.parent.transform.parent.transform)
+            //{
+            //    if (child.gameObject.tag == "sight")
+            //    {
+            //        _prisel = child.gameObject;
+            //    }
+            //}
             foreach (Transform child in gameObject.transform.parent.transform)
             {
                 if (child.gameObject.tag == "gunRotation")
@@ -43,6 +43,11 @@ namespace CombatMechanics
                     }
                 }
             }
+            
+        }
+        public void FoundSight(GameObject sight)
+        {
+            _prisel = sight;
             StartCoroutine(PrisellingAudit());
         }
         private IEnumerator PrisellingAudit()

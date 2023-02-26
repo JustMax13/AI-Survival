@@ -6,7 +6,7 @@ namespace CombatMechanics
 {
     public class MiniCameraSpawn : MonoBehaviour
     {
-        [SerializeField] private Vector2[] pointToSpawn;
+        [SerializeField] private Vector4[] pointToSpawn;
         [SerializeField] private GameObject cameraToSpawn;
         private int count;
         // Start is called before the first frame update
@@ -18,18 +18,18 @@ namespace CombatMechanics
                 if (child.gameObject.tag == "Gun")
                 {
                     //Instantiate(cameraToSpawn, new Vector3(child.transform.position.x, child.transform.position.y,-10), Quaternion.identity);
-                    foreach (Transform childInchild in child.transform)
+                    
+                            obj =Instantiate(cameraToSpawn, gameObject.transform.position, Quaternion.identity);
+                            obj.transform.parent = gameObject.transform;
+                            obj.transform.GetChild(0).GetComponent<Camera>().rect = new Rect(pointToSpawn[count].x, pointToSpawn[count].y, pointToSpawn[count].z, pointToSpawn[count].w);
+                    foreach (Transform childInCaild in child.transform)
                     {
-                        if (childInchild.gameObject.tag == "sight")
+                        if (childInCaild.gameObject.GetComponent<SightAlways>())
                         {
-                            obj =Instantiate(cameraToSpawn, new Vector3(childInchild.transform.position.x, childInchild.transform.position.y, -10), Quaternion.identity);
-                            obj.transform.parent = childInchild.transform;
-                            obj.GetComponent<Camera>().rect = new Rect(pointToSpawn[count].x, pointToSpawn[count].y, 0.15f, 0.15f);
-                            //childInchild.transform.parent = gameObject.transform;
-                            count++;
-                            break;
+                            childInCaild.GetComponent<SightAlways>().FoundSight(obj);
                         }
                     }
+                    count++;
                     if (count >= pointToSpawn.Length)
                         break;
                 }

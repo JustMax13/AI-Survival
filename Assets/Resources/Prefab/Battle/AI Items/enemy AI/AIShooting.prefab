@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 4895711582969518144}
   m_Layer: 0
   m_Name: AIShooting
-  m_TagString: AIShooting
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,7 +487,7 @@ MonoBehaviour:
   - {fileID: 5816669093736719898}
   - {fileID: 5146564407027958255}
   _gun: {fileID: 0}
-  _prisel: {fileID: 0}
+  _prisel: {fileID: 8265069506816998770, guid: ab66c28838a27d748bcaa82ed79881a5, type: 3}
   _player: {fileID: 0}
   _gunEnd: {fileID: 0}
   _layerPlayerDetal:
