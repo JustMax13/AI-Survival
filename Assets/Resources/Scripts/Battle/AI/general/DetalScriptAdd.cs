@@ -5,7 +5,7 @@ namespace CombatMechanics.AI
     {
         [SerializeField] private GameObject[] _detaleScript;
         [SerializeField] private string[] _detaleTag;
-       private void Awake()
+        private void Awake()
         {
             GameObject obj;
             foreach (Transform child in gameObject.transform)
@@ -22,5 +22,5 @@ namespace CombatMechanics.AI
 
             }
         }
-    } 
+    }
 }

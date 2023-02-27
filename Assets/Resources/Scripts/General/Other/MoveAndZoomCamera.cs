@@ -1,35 +1,57 @@
+using Editor.Moves;
 using UnityEngine;
 
 namespace General
 {
     public class MoveAndZoomCamera : MonoBehaviour
     {
-        [SerializeField] private GameObject _limitPoint1;
-        [SerializeField] private GameObject _limitPoint2, _Canv;
-        private Vector3 touchPosition;
-
         [SerializeField] private float _sensitivity;
 
         [SerializeField] private float _minCameraSize;
         [SerializeField] private float _maxCameraSize, _zoomSpeed, _zoomYPosition, _zoomXPosition;
+
+        private Vector3 touchPosition;
+        private Transform _limitPoint1;
+        private Transform _limitPoint2;
+
         public float MinCameraSize { get; set; }
         public float MaxCameraSize { get; set; }
         [SerializeField] private float zoomSensivity;
         private bool zoomEnd;
         private bool executionCondition;
 
+        private void Start()
+        {
+            executionCondition = Editor.ActionManager.CameraMoveAndZoom;
+            zoomEnd = true;
+
+            _limitPoint1 = DragAndDropValue.LimitPoint1;
+            _limitPoint2 = DragAndDropValue.LimitPoint2;
+        }
+        private void Update()
+        {
+            if (Input.touchCount == 0)
+                zoomEnd = true;
+
+            if (Input.GetMouseButtonDown(0))
+                touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (Input.touchCount == 2 && executionCondition)
+                Zoom();
+            else if (Input.touchCount == 1 && zoomEnd && executionCondition)
+                Move();
+            executionCondition = Editor.ActionManager.CameraMoveAndZoom;
+        }
 
         private void Move()
         {
-
             if (Input.GetMouseButton(0))
             {
                 Vector3 targetPosition;
                 Vector3 direction = touchPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3 CameraPosition = Camera.main.transform.position;
 
-                DragAndDrop.Save2Point(_limitPoint1, _limitPoint2);
-
+                DragAndDrop.Save2Point(_limitPoint1.position, _limitPoint2.position);
 
                 targetPosition = new Vector3(Mathf.Clamp(CameraPosition.x + direction.x, DragAndDrop.MinX,
                     DragAndDrop.MaxX), Mathf.Clamp(CameraPosition.y + direction.y, DragAndDrop.MinY, DragAndDrop.MaxY), CameraPosition.z);
@@ -77,25 +99,6 @@ namespace General
 
             if (Input.touchCount == 0)
                 zoomEnd = true;
-        }
-        private void Start()
-        {
-            executionCondition = Editor.ActionManager.CameraMoveAndZoom;
-            zoomEnd = true;
-        }
-        private void Update()
-        {
-            if (Input.touchCount == 0)
-                zoomEnd = true;
-
-            if (Input.GetMouseButtonDown(0))
-                touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            if (Input.touchCount == 2 && executionCondition)
-                Zoom();
-            else if (Input.touchCount == 1 && zoomEnd && executionCondition)
-                Move();
-            executionCondition = Editor.ActionManager.CameraMoveAndZoom;
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace General
+namespace Editor.Moves
 {
     public sealed class DragAndDrop : MonoBehaviour
     {
@@ -16,51 +16,46 @@ namespace General
         public static float MinY { get => _minY; }
         public static float MaxY { get => _maxY; }         
         
-        public static void Save2Point(GameObject limitPoint1, GameObject limitPoint2)
+        public static void Save2Point(Vector2 limitPoint1, Vector2 limitPoint2)
         {
             if (limitPoint1 == null || limitPoint2 == null)
-            {
-                Debug.Log("limitPoint1 or / and limitpoint2 have null. Nothing save.");
-                return;
-            }
+                throw new Exception("limitPoint1 or / and limitpoint2 have null. Nothing save.");
 
-            if (limitPoint1.transform.position.x > limitPoint2.transform.position.x)
+            if (limitPoint1.x > limitPoint2.x)
             {
-                _minX = limitPoint2.transform.position.x;
-                _maxX = limitPoint1.transform.position.x;
+                _minX = limitPoint2.x;
+                _maxX = limitPoint1.x;
             }
             else
             {
-                _minX = limitPoint1.transform.position.x;
-                _maxX = limitPoint2.transform.position.x;
+                _minX = limitPoint1.x;
+                _maxX = limitPoint2.x;
             }
-            if (limitPoint1.transform.position.y > limitPoint2.transform.position.y)
+            if (limitPoint1.y > limitPoint2.y)
             {
-                _minY = limitPoint2.transform.position.y;
-                _maxY = limitPoint1.transform.position.y;
+                _minY = limitPoint2.y;
+                _maxY = limitPoint1.y;
             }
             else
             {
-                _minY = limitPoint1.transform.position.y;
-                _maxY = limitPoint2.transform.position.y;
+                _minY = limitPoint1.y;
+                _maxY = limitPoint2.y;
             }
         }
-        public static Vector2 MousePositionOnDragArea(GameObject limitPoint1, GameObject limitPoint2)
+        public static Vector2 MousePositionOnDragArea(Vector2 limitPoint1, Vector2 limitPoint2)
         {
             try
             {
                 Save2Point(limitPoint1, limitPoint2);
 
-                Vector2 mousePosition = Input.mousePosition;
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 return new Vector2(Math.Clamp(mousePosition.x, _minX, _maxX),
                     Math.Clamp(mousePosition.y, _minY, _maxY));
             }
             catch
             {
-                Debug.Log("limitPoint1 or / and limitpoint2 have null. Retorn new Vector2(0,0)");
-                return new Vector2(0, 0);
+                throw new Exception("limitPoint1 or / and limitpoint2 have null.");
             }
             
         }

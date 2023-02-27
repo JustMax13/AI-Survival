@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf2a0ac9548a4c8955264e0b9590b, type: 3}
   m_Name: ClassicCentralBlock
   m_EditorClassIdentifier: 
-  _icon: {fileID: 963306621, guid: 6b02fc77d19127d42beaf60232336e11, type: 3}
+  _icon: {fileID: 791218128, guid: 6b02fc77d19127d42beaf60232336e11, type: 3}
   _prefab: {fileID: 2932051299144102264, guid: 920801d27b977d74084b00da77a8cc45, type: 3}
   _maxCountOfPart: 1
