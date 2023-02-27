@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,21 +8,24 @@ namespace Editor.Interface
 {
     public class ClickOnPrefabInventory : MonoBehaviour, IPointerDownHandler
     {
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            ActionManager.CameraMoveAndZoom = false;
-            //ActionManager.ContentMove = true;
-        }
-
-        public void EndTouch()
-        {
-            //ActionManager.ContentMove = false;
-            ActionManager.CameraMoveAndZoom = true;
-        }
+        private static bool _onPointerDownStart;
+        public static event Action PressOnInventory;
         private void Update()
         {
-            if (Input.touchCount == 0/* && ActionManager.ContentMove*/)
-                EndTouch();
+            if (_onPointerDownStart)
+            {
+                if (Input.touchCount == 0)
+                {
+                    _onPointerDownStart = false;
+                    ActionManager.CameraMoveAndZoom = true;
+                }
+            }
+        }
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            _onPointerDownStart = true;
+            PressOnInventory?.Invoke();
+            ActionManager.CameraMoveAndZoom = false;
         }
     }
 }

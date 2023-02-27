@@ -33,7 +33,7 @@ namespace Editor.Moves
 
             _wasClick += FindAndClickOnPart;
         }
-        private void Update()
+        private void LateUpdate()
         {
             if (Input.GetMouseButtonDown(0))
             {

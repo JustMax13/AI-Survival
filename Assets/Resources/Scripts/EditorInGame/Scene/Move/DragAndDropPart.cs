@@ -4,15 +4,12 @@ using UnityEngine;
 namespace Editor.Moves
 {
     using Editor.Interface;
+    using General;
     using System;
-    using System.Data.SqlClient;
-    using System.Threading.Tasks;
 
     public class DragAndDropPart : MonoBehaviour
     {
         private bool _isSelected;
-        private bool _dragStart;
-        private bool _dragEnd;
         private float _movementSpeed;
 
         private Transform _limitPoint1;
@@ -22,51 +19,27 @@ namespace Editor.Moves
         private RotatePartButton[] _rotationButton;
         private PartOfBot _partOfBot;
 
-        public static event Action PartStartDrag;
-        public static event Action PartEndDrag;
-
         public bool IsSelected
         {
             get => _isSelected;
             set
             {
-                _isSelected = value;
-                if (value)
-                    WhenIsSelectSetTrue();
-            }
-
-        }
-        public bool DragStart
-        {
-            get => DragStart;
-
-            private set
-            {
-                if (!_dragStart && value)
+                if(_isSelected != value)
                 {
-                    _dragStart = value;
-                    PartStartDrag?.Invoke();
-                } else _dragStart = value;
+                    _isSelected = value;
+                    if (value)
+                        WhenIsSelectSetTrue();
+
+                    Debug.Log(gameObject + $"ActionManager.SomeOnePartIsSelected({value});");
+                    ActionManager.SomeOnePartIsSelected(value);
+                }
             }
+
         }
         public PartOfBot PartOfBot
         {
             get => _partOfBot;
             set { _partOfBot = value; }
-        }
-
-        public bool DragEnd 
-        {
-            get => _dragEnd;
-            private set
-            {
-                if (!_dragEnd && value)
-                {
-                    _dragEnd = value;
-                    PartEndDrag?.Invoke();
-                }
-                else _dragStart = value;
-            }
         }
 
         private void Start()
@@ -77,10 +50,6 @@ namespace Editor.Moves
                 rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
 
             SetRigidbodyTypeForAllChild(gameObject.transform, RigidbodyType2D.Kinematic);
-
-            _isSelected = true;
-            _dragStart = false;
-            _dragEnd = false;
 
             _movementSpeed = DragAndDropValue.MovementSpeed;
 
@@ -95,27 +64,22 @@ namespace Editor.Moves
             for (int i = 0; i < rotationButtonObject.Length; i++)
                 _rotationButton[i] = rotationButtonObject[i].GetComponent<RotatePartButton>();
 
-            // кнопкам поворота и удаления назначить нужные детали
+            IsSelected = true;
+
+            ClickOnPrefabInventory.PressOnInventory += SetIsSelectedFalse;
         }
+
+        private void SetIsSelectedFalse() => _isSelected = false;
+
         private void Update()
         {
-            Debug.Log(ActionManager.CameraMoveAndZoom);
-
-            // то что снизу, выполняется еще пару раз, после изменения значения
-            if (!ClickedPart.MouseButtonUp && IsSelected)
+            //Debug.Log(!ActionManager.ActionButtonDown);
+            if (!ClickedPart.MouseButtonUp && IsSelected && !ActionManager.ActionButtonDown)
             {
-                DragEnd = false;
-                DragStart = true;
                 Vector2 touth = DragAndDrop.MousePositionOnDragArea(_limitPoint1.position, _limitPoint2.position);
                 transform.position = new Vector2(Mathf.Lerp(transform.position.x, touth.x, _movementSpeed * Time.deltaTime),
                     Mathf.Lerp(transform.position.y, touth.y, _movementSpeed * Time.deltaTime));
             }
-            else
-            {
-                DragStart = false;
-                DragEnd = true;
-            }
-
 
             UpdateIsSelect(this);
         }
@@ -178,7 +142,7 @@ namespace Editor.Moves
         }
         public static void UpdateIsSelect(DragAndDropPart dragAndDropPart)
         {
-            if (Input.GetMouseButtonDown(0) && !CursorOverThisPart(Input.mousePosition, dragAndDropPart) && !ActionManager.ActionButtonDown)
+            if (dragAndDropPart.IsSelected == true && Input.GetMouseButtonDown(0) && !CursorOverThisPart(Input.mousePosition, dragAndDropPart) && !ActionManager.ActionButtonDown)
                 dragAndDropPart.IsSelected = false;
         }
     }
