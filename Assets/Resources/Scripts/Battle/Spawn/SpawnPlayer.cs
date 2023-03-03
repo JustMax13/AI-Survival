@@ -7,6 +7,7 @@ namespace CombatMechanics
     {
         [SerializeField] private GameObject LeftButton;
         [SerializeField] private GameObject RightButton;
+        [SerializeField] private HPBars _HP;
 
         private void OnEnemyWon() => Destroy(SpawnObject);
         override protected void Start()
@@ -14,7 +15,7 @@ namespace CombatMechanics
             base.Start();
 
             SpawnObject.layer = LayerMask.NameToLayer("Player");
-
+            _HP.getCount(SpawnObject.GetComponent<AllHPCount>());
             SetLayerNameForAllChild(SpawnObject.transform, "Player");
 
             LeftButton.SetActive(true);

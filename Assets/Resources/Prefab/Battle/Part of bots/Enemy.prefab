@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3154221862689131868}
   - component: {fileID: 9022456742171243491}
   - component: {fileID: 4886590795987510701}
+  - component: {fileID: 5539894698393352026}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -225,6 +226,20 @@ MonoBehaviour:
   - {fileID: 6724509754630146520, guid: 1b2a601dcabef7c4ea31afa9d68f3988, type: 3}
   _detaleTag:
   - Gun
+--- !u!114 &5539894698393352026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154200372762033637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148b02dff8b666045b7f2aaa1bdfdb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPStart: 0
+  HPInTime: 0
 --- !u!1 &8949232390074915170
 GameObject:
   m_ObjectHideFlags: 0
