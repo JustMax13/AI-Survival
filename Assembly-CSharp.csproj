@@ -72,6 +72,7 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Spawn\PartForSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\CountingSystem\PartCountValue.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\General\IPathOfPart.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\Canvas\HPBars.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\WinOrLose.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Enum\EnumPartSortingLayer.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\ButtonConnection.cs" />
@@ -137,7 +138,6 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\RotationTest.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\Canvas\HPBars.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

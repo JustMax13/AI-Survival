@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 namespace CombatMechanics
 {
@@ -18,16 +17,16 @@ namespace CombatMechanics
             _CPUHPStart = HPCalcut(true);
             StartCoroutine(Check());
         }
-        private float HPCalcut(bool CPU,float i= 0, float j= 0)
+        private float HPCalcut(bool CPU, float i = 0, float j = 0)
         {
             foreach (Transform child in gameObject.transform)
             {
                 if (child.gameObject.TryGetComponent<IHaveHP>(out IHaveHP hinge))
-                i += child.GetComponent<IHaveHP>().HP;
+                    i += child.GetComponent<IHaveHP>().HP;
                 if (child.gameObject.GetComponent<CentralBlockHP>())
-                    j+= child.GetComponent<IHaveHP>().HP;
+                    j += child.GetComponent<IHaveHP>().HP;
             }
-            if(CPU)
+            if (CPU)
                 return (j);
             else
                 return (i);
@@ -36,13 +35,26 @@ namespace CombatMechanics
         {
             yield return new WaitForSeconds(0.1f);
             float i;
-            i= HPCalcut(false);
-            if (_HPInTime != i)
+            i = HPCalcut(false);
+            if (i / _HPStart <= 0.1)
             {
-                _HPInTime = i;
-                _CPUHPInTime = HPCalcut(true);
+                foreach (Transform child in gameObject.transform)
+                {
+                    if (child.gameObject.GetComponent<CentralBlockHP>())
+                        child.GetComponent<IHaveHP>().HP = 0;
+                }
+                _HPInTime = 0;
+                _CPUHPInTime = 0;
             }
-            StartCoroutine(Check());
+            else
+            {
+                if (_HPInTime != i)
+                {
+                    _HPInTime = i;
+                    _CPUHPInTime = HPCalcut(true);
+                }
+                StartCoroutine(Check());
+            }
         }
     }
 }
