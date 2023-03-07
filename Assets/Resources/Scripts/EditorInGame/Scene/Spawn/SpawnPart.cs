@@ -52,6 +52,9 @@ namespace Editor
             partIsntSpawn = false;
             spawnEnd = true;
 
+            EventManager.OffCurrentAction();
+            EventManager.CheckConditionsAndStartEvent(EventManager.ActionType.PartDrag);
+
             SpawnPartEnd?.Invoke(partOnScene);
 
             return partOnScene;

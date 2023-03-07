@@ -27,17 +27,17 @@ namespace Editor.Interface
         {
             base.OnPointerDown(eventData);
 
-            ActionManager.ActionButtonDown = true;
+            EventManager.CheckConditionsAndStartEvent(EventManager.ActionType.PressInteractionInterface);
 
-            if(interactable)
+            if (interactable)
                 DestroySelectPart();
         }
-        public override void OnPointerUp(PointerEventData eventData)
-        {
-            base.OnPointerUp(eventData);
+        //public override void OnPointerUp(PointerEventData eventData)
+        //{
+        //    base.OnPointerUp(eventData);
 
-            ActionManager.ActionButtonDown = false;
-        }
+        //    ActionManager.ActionButtonDown = false;
+        //}
         protected override void Start()
         {
             _selectedPart = null;

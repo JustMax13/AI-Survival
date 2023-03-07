@@ -61,16 +61,13 @@ namespace Editor.Interface
 
             if (_selectedPart)
             {
-                if (_selectedPart.GetComponent<DragAndDropPart>().IsSelected)
+                if (_selectedPart.GetComponent<DragAndDropPart>().IsSelected && EventManager.CheckConditionsAndStartEvent(EventManager.ActionType.PressInteractionInterface))
                 {
                     _currentTimeToEndClick = _timeToEndClick;
                     _buttonDown = true;
 
                     if (_leftRotate) OneTurnLeft();
                     else OneTurnRight();
-
-                    ActionManager.CameraMoveAndZoom = false;
-                    ActionManager.ActionButtonDown = true;
                 }
             }
         }
@@ -80,9 +77,6 @@ namespace Editor.Interface
 
             _buttonDown = false;
             _useForce = false;
-
-            ActionManager.ActionButtonDown = false;
-            ActionManager.CameraMoveAndZoom = true;
         }
         protected override void Start()
         {

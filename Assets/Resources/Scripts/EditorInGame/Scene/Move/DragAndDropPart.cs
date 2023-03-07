@@ -4,8 +4,8 @@ using UnityEngine;
 namespace Editor.Moves
 {
     using Editor.Interface;
-    using General;
-    using System;
+    using static Editor.EventManager;
+    using System.Collections.Generic;
 
     public class DragAndDropPart : MonoBehaviour
     {
@@ -19,19 +19,17 @@ namespace Editor.Moves
         private RotatePartButton[] _rotationButton;
         private PartOfBot _partOfBot;
 
+        private static List<ActionType> _ignoreTypes;
         public bool IsSelected
         {
             get => _isSelected;
             set
             {
-                if(_isSelected != value)
+                _isSelected = value;
+                if (value)
                 {
-                    _isSelected = value;
-                    if (value)
-                        WhenIsSelectSetTrue();
-
-                    //Debug.Log(gameObject + $"ActionManager.SomeOnePartIsSelected({value});");
-                    ActionManager.SomeOnePartIsSelected(value);
+                    WhenIsSelectSetTrue();
+                    //EventManager.CheckConditionsAndStartEvent(ActionType.PartDrag);
                 }
             }
 
@@ -66,15 +64,25 @@ namespace Editor.Moves
 
             IsSelected = true;
 
-            ClickOnPrefabInventory.PressOnInventory += SetIsSelectedFalse;
-        }
+            _ignoreTypes = new List<ActionType>
+            {
+                { ActionType.PartDrag },
+                { ActionType.PressInteractionInterface }
+            };
 
-        private void SetIsSelectedFalse() => _isSelected = false;
+            ClickOnPrefabInventory.PressOnInventory += delegate { IsSelected = false; };
+        }
 
         private void Update()
         {
-            //Debug.Log(!ActionManager.ActionButtonDown);
-            if (!ClickedPart.MouseButtonUp && IsSelected && !ActionManager.ActionButtonDown)
+            if(IsSelected && Input.GetMouseButtonDown(0) && CursorOverThisPart(Input.mousePosition))
+            {
+                EventManager.OffCurrentAction();
+                EventManager.CheckConditionsAndStartEvent(ActionType.PartDrag);
+            }
+
+            EventManager.AllActions.TryGetValue(ActionType.PartDrag, out bool partCanDrag);
+            if (partCanDrag && IsSelected && !ClickedPart.MouseButtonUp)
             {
                 Vector2 touth = DragAndDrop.MousePositionOnDragArea(_limitPoint1.position, _limitPoint2.position);
                 transform.position = new Vector2(Mathf.Lerp(transform.position.x, touth.x, _movementSpeed * Time.deltaTime),
@@ -83,11 +91,11 @@ namespace Editor.Moves
 
             UpdateIsSelect(this);
         }
-        private bool CursorOverThisPart(Vector2 mousePosition)
+        private bool CursorOverThisPart(Vector2 mousePositionOnScreen)
         {
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            mousePositionOnScreen = Camera.main.ScreenToWorldPoint(mousePositionOnScreen);
 
-            foreach (var item in Physics2D.OverlapPointAll(mousePosition))
+            foreach (var item in Physics2D.OverlapPointAll(mousePositionOnScreen))
             {
                 if (transform == item.transform)
                     return true;
@@ -142,7 +150,7 @@ namespace Editor.Moves
         }
         public static void UpdateIsSelect(DragAndDropPart dragAndDropPart)
         {
-            if (dragAndDropPart.IsSelected == true && Input.GetMouseButtonDown(0) && !CursorOverThisPart(Input.mousePosition, dragAndDropPart) && !ActionManager.ActionButtonDown)
+            if (EventManager.SomeEventIsActive(_ignoreTypes))
                 dragAndDropPart.IsSelected = false;
         }
     }
