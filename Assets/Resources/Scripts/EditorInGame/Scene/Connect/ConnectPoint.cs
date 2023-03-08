@@ -35,6 +35,7 @@ namespace Editor
                 throw new Exception($"PluggableObject is null. Pls add PluggableObject on {gameObject.name}");
 
             _pluggableObj.DragStop += DragIsEnd;
+            _pluggableObj.DragStop += EventManager.OffCurrentAction;
         }
         private void Update()
         {
@@ -108,7 +109,7 @@ namespace Editor
                 return;
 
 
-            MoveTo(connectPoint.transform);
+            MoveToCoint(connectPoint.transform);
 
             List<ConnectPoint> connectedPoints = FindConnectedPoints(connectPoint.transform.position);
 
@@ -127,7 +128,7 @@ namespace Editor
                             if (connectedPoints.Count > 1)
                             {
                                 foreach (var point in connectedPoints)
-                                    MoveTo(connectPoint.transform, point.transform);
+                                    MoveToCoint(connectPoint.transform, point.transform);
 
                                 MultipleConnect(this, connectedPoints, _partCounter);
                             }
@@ -247,27 +248,13 @@ namespace Editor
             catch
             { connectPoint = null; }
         }
-        private void MoveTo(in Transform moveTo, Transform movable = null)
+        private void MoveToCoint(in Transform moveTo, Transform movable = null)
         {
             if (!movable)
                 movable = transform;
 
-            Transform movableParentTransform = movable.transform.parent;
-
-            GameObject magnet = new GameObject();
-
-            magnet.transform.SetParent(movableParentTransform);
-            magnet.transform.localPosition = movable.transform.localPosition;
-            magnet.transform.parent = null;
-
-            Transform pastParent = movableParentTransform.parent;
-
-            movableParentTransform.SetParent(magnet.transform);
-            magnet.transform.position = moveTo.transform.position;
-
-            movableParentTransform.parent = pastParent;
-
-            Destroy(magnet);
+            Vector3 distance = moveTo.position - movable.position;
+            movable.parent.position += distance;
         }
 
         private void Connect(in Collider2D connectTo, Collider2D toPlug = null)
