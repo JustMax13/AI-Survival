@@ -2,10 +2,10 @@
   "BotPartsData": [
     {
       "ID": 0,
-      "PathToPrefab": "Prefab/PartOfBot/Guns/OldGun/OldGun",
+      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
       "PartPosition": {
-        "X": 0.06929191,
-        "Y": 1.40372515,
+        "X": -1.10904336,
+        "Y": -0.759692669,
         "Z": 0.0
       },
       "PartRotation": {
@@ -15,6 +15,93 @@
         "W": 1.0
       },
       "ConnectedBodys2D": []
+    },
+    {
+      "ID": 1,
+      "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
+      "PartPosition": {
+        "X": -2.71391535,
+        "Y": -0.759692669,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 0.0,
+          "YAnchor": 0.0,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
+      "PartPosition": {
+        "X": 0.495828629,
+        "Y": -0.759692669,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 0.0,
+          "YAnchor": 0.0,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
+      "PartPosition": {
+        "X": -6.61255074,
+        "Y": -1.13271022,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": []
+    },
+    {
+      "ID": 4,
+      "PathToPrefab": "Prefab/PartOfBot/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": -7.414551,
+        "Y": -1.13271022,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "ID": 3
+        },
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "ID": 3
+        }
+      ]
     }
   ]
 }

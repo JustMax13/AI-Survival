@@ -35,12 +35,12 @@ namespace Editor
         }
         private void Update()
         {
-            _allActions.TryGetValue(ActionType.CameraMoveAndZoom, out bool value);
-            Debug.Log($"CameraMoveAndZoom = {value}");
-            _allActions.TryGetValue(ActionType.PartDrag, out value);
-            Debug.Log($"PartDrag = {value}");
-            _allActions.TryGetValue(ActionType.PressInteractionInterface, out value);
-            Debug.Log($"PressInteractionInterface = {value}");
+            //_allActions.TryGetValue(ActionType.CameraMoveAndZoom, out bool value);
+            //Debug.Log($"CameraMoveAndZoom = {value}");
+            //_allActions.TryGetValue(ActionType.PartDrag, out value);
+            //Debug.Log($"PartDrag = {value}");
+            //_allActions.TryGetValue(ActionType.PressInteractionInterface, out value);
+            //Debug.Log($"PressInteractionInterface = {value}");
 
             if ((!zeroTouchesInLastFrame && Input.touchCount == 0) /*2ге для ПК*/&& ClickedPart.MouseButtonUp)
             {
