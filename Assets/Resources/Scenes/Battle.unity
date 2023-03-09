@@ -758,6 +758,14 @@ PrefabInstance:
       propertyPath: _shotButtons.Array.data[2]
       value: 
       objectReference: {fileID: 2106620588}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 1182870465734326409, guid: 64bffcc139d0c5441903fb3596bc72fd,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 1434711664487051304, guid: 64bffcc139d0c5441903fb3596bc72fd,
         type: 3}
       propertyPath: m_Camera

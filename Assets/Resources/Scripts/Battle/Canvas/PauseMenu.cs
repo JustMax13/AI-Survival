@@ -40,7 +40,7 @@ namespace CombatMechanics
         }
         private void OnGameOver()
         {
-            Pause();
+            // Pause();
             SetActiveAllInterface(false);
             _pauseButton.SetActive(false);
         }
