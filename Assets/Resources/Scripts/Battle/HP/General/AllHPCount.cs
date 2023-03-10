@@ -33,7 +33,7 @@ namespace CombatMechanics
         }
         private IEnumerator Check()
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1/60f);
             float i;
             i = HPCalcut(false);
             if (i / _HPStart <= 0.1)
