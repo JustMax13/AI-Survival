@@ -52,6 +52,8 @@ namespace CombatMechanics
                 {
                     _HPInTime = i;
                     _CPUHPInTime = HPCalcut(true);
+                    if (_CPUHPInTime == 0)
+                        _HPInTime = 0;
                 }
                 StartCoroutine(Check());
             }
