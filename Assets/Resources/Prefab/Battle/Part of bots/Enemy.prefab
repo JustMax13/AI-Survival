@@ -238,8 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148b02dff8b666045b7f2aaa1bdfdb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPStart: 0
-  HPInTime: 0
+  _HPStart: 0
+  _HPInTime: 0
+  _CPUHPStart: 0
+  _CPUHPInTime: 0
 --- !u!1 &8949232390074915170
 GameObject:
   m_ObjectHideFlags: 0

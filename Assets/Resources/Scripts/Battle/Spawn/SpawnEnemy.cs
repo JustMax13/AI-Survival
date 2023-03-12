@@ -16,7 +16,7 @@ namespace CombatMechanics
 
             SpawnObject.layer = LayerMask.NameToLayer("Enemy");
             SpawnObject.GetComponent<AiBrain>().FoundAllPoints(allPoints);
-            _HP.getCount(SpawnObject.GetComponent<AllHPCount>());
+            _HP.Count = SpawnObject.GetComponent<AllHPCount>();
             SetLayerNameForAllChild(SpawnObject.transform, "Enemy");
 
             GameOverEvent.PlayerWon += OnPlayerWon;

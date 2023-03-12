@@ -15,7 +15,7 @@ namespace CombatMechanics
             base.Start();
 
             SpawnObject.layer = LayerMask.NameToLayer("Player");
-            _HP.getCount(SpawnObject.GetComponent<AllHPCount>());
+            _HP.Count = SpawnObject.GetComponent<AllHPCount>();
             SetLayerNameForAllChild(SpawnObject.transform, "Player");
 
             LeftButton.SetActive(true);
