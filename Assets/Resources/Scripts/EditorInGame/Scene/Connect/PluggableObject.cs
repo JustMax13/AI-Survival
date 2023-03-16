@@ -79,7 +79,7 @@ namespace Editor
         private static void ClearConnectPoints(ConnectPoint[] connectPoints)
         {
             foreach (var point in connectPoints)
-                point.FixedJointOnPoint.Clear();
+                point.JointOnPoint.Clear();
         }
         private static void RemoveСonnectionFromThisParts(GameObject gameObject)
         {
@@ -105,11 +105,11 @@ namespace Editor
 
                 foreach (var point in connectPointsList)
                 {
-                    foreach (var fixedJoint2D in point.FixedJointOnPoint.ToList())
+                    foreach (var fixedJoint2D in point.JointOnPoint.ToList())
                     {
                         if (fixedJoint2D.connectedBody == connectObjectRB)
                         {
-                            point.FixedJointOnPoint.Remove(fixedJoint2D);
+                            point.JointOnPoint.Remove(fixedJoint2D);
                             Destroy(fixedJoint2D);
 
                             point.TryReconnectThisPoint();

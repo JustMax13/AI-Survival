@@ -9,10 +9,10 @@ namespace Editor
         [SerializeField] private PluggableObject _pluggableObj;
 
         private Collider2D _findedCollider;
-        private List<FixedJoint2D> _fixedJointOnPoint;
+        private List<Joint2D> _jointOnPoint;
         private PartCounter _partCounter;
 
-        public List<FixedJoint2D> FixedJointOnPoint { get => _fixedJointOnPoint; set { _fixedJointOnPoint = value; } }
+        public List<Joint2D> JointOnPoint { get => _jointOnPoint; set { _jointOnPoint = value; } }
         public PluggableObject PluggableObj { get => _pluggableObj; }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -29,7 +29,7 @@ namespace Editor
 
         private void Start()
         {
-            _fixedJointOnPoint = new List<FixedJoint2D>();
+            _jointOnPoint = new List<Joint2D>();
 
             if (_pluggableObj == null)
                 throw new Exception($"PluggableObject is null. Pls add PluggableObject on {gameObject.name}");
@@ -207,13 +207,13 @@ namespace Editor
         {
             var pluggableObject1RB = connectPoint1.PluggableObj.GetComponent<Rigidbody2D>();
 
-            foreach (var item in connectPoint2.FixedJointOnPoint)
+            foreach (var item in connectPoint2.JointOnPoint)
                 if (item.connectedBody == pluggableObject1RB)
                     return true;
 
             var pluggableObject2RB = connectPoint2.PluggableObj.GetComponent<Rigidbody2D>();
 
-            foreach (var item in connectPoint1.FixedJointOnPoint)
+            foreach (var item in connectPoint1.JointOnPoint)
                 if (item.connectedBody == pluggableObject2RB)
                     return true;
 
@@ -270,21 +270,60 @@ namespace Editor
 
             Connect(connectToPoint, toPlugPoint);
         }
-        private void Connect(in ConnectPoint connectTo, ConnectPoint toPlugPoint = null)
+        private void Connect(in ConnectPoint connectTo, ConnectPoint toPlug = null)
         {
-            if (!toPlugPoint)
-                toPlugPoint = this;
-            //Debug.Log($"Подключаем к {connectTo.PluggableObj}, в точку {connectTo}\n обьект {toPlugPoint.PluggableObj} в точке {toPlugPoint}");
+            if (!toPlug)
+                toPlug = this;
 
-            if (connectTo.PluggableObj != toPlugPoint._pluggableObj)
+
+            switch (toPlug.PluggableObj.PartType)
             {
-                FixedJoint2D jointOnObject = toPlugPoint._pluggableObj.gameObject.AddComponent<FixedJoint2D>();
+                case PluggableObject.TypeOfPart.AnotherPart:
+                    {
+                        if (connectTo.PluggableObj != toPlug._pluggableObj)
+                        {
+                            FixedJoint2D jointOnObject = toPlug._pluggableObj.gameObject.AddComponent<FixedJoint2D>();
 
-                jointOnObject.anchor = toPlugPoint.transform.localPosition;
-                jointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
+                            jointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
+                            jointOnObject.anchor = toPlug.transform.localPosition;
+                            
+                            toPlug.JointOnPoint.Add(jointOnObject);
+                        }
 
-                toPlugPoint.FixedJointOnPoint.Add(jointOnObject);
+                        break;
+                    };
+                case PluggableObject.TypeOfPart.BaseBlock:
+                    {
+                        if (connectTo.PluggableObj != toPlug._pluggableObj)
+                        {
+                            FixedJoint2D jointOnObject = toPlug._pluggableObj.gameObject.AddComponent<FixedJoint2D>();
+
+                            jointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
+                            jointOnObject.anchor = toPlug.transform.localPosition;
+
+                            toPlug.JointOnPoint.Add(jointOnObject);
+                        }
+
+                        break;
+                    };
+                case PluggableObject.TypeOfPart.Wheel:
+                    {
+                        if (connectTo.PluggableObj != toPlug._pluggableObj)
+                        {
+                            WheelJoint2D wheelJointOnObject = toPlug._pluggableObj.gameObject.AddComponent<WheelJoint2D>();
+
+                            wheelJointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
+
+                            wheelJointOnObject.connectedAnchor += (Vector2)connectTo.transform.localPosition;;
+
+                            toPlug.JointOnPoint.Add(wheelJointOnObject);
+                        }
+
+                        break;
+                    };
             }
+
+            
         }
         private void MultipleConnect(in Collider2D connectTo, in List<Collider2D> toPlug, PartCounter partCounter)
         {
@@ -300,29 +339,29 @@ namespace Editor
 
             MultipleConnect(connectToPoint, toPlugPoints, partCounter);
         }
-        private void MultipleConnect(in ConnectPoint connectTo, in List<ConnectPoint> toPlugPoints, PartCounter partCounter)
+        private void MultipleConnect(in ConnectPoint connectTo, in List<ConnectPoint> toPlug, PartCounter partCounter)
         {
-            if (toPlugPoints == null)
+            if (toPlug == null)
                 throw new Exception("Не було передано масиву для підключення!");
 
-            foreach (var point in toPlugPoints)
+            foreach (var point in toPlug)
                 if (PointAlreadyConnected(connectTo, point))
-                    toPlugPoints.Remove(point);
+                    toPlug.Remove(point);
 
-            foreach (var toPlug in toPlugPoints)
+            foreach (var toPlugPoint in toPlug)
             {
                 if (partCounter.CurrentCount >= partCounter.MaxCount)
                     break;
 
-                Connect(connectTo, toPlug);
+                Connect(connectTo, toPlugPoint);
 
                 if (partCounter.MaxCount == 0)
                 {
                     partCounter.AddFirstPart(connectTo);
-                    partCounter.AddPart(toPlug);
+                    partCounter.AddPart(toPlugPoint);
                 }
                 else
-                    partCounter.AddPart(toPlug);
+                    partCounter.AddPart(toPlugPoint);
             }
         }
 
