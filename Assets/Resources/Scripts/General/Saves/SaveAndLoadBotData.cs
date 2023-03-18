@@ -7,7 +7,16 @@ namespace General.Saves
     public class SaveAndLoadBotData : MonoBehaviour
     {
         // скорее всего патч не находит в apk
-        private static string path = Application.dataPath + "/Resources/Saves/Bot.json";
+        private static string path;
+
+        static SaveAndLoadBotData()
+        {
+#if UNITY_ANDROID && !UNITY_EDITOR
+            path = Path.Combine(Application.persistentDataPath, "Bot.json");
+#else
+            path = Path.Combine(Application.dataPath, "Resources/Saves/Bot.json");
+#endif
+        }
         public static void Save(GameObject PlayerBot)
         {
             var BotData = new BotData(PlayerBot);

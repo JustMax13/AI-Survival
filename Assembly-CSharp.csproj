@@ -123,7 +123,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\PaintTraectory.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Connect\PluggableObject.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SwipeLevelsMenu.cs" />
-    <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\MoveAndZoomCamera.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Camera\MoveAndZoomCamera.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\LoadingScene.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\general\AiBrain.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\CentralBlockHP.cs" />
