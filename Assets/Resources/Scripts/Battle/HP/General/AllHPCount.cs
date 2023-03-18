@@ -7,9 +7,20 @@ namespace CombatMechanics
     {
         [SerializeField] private float _HPStart, _HPInTime, _CPUHPStart, _CPUHPInTime;
         public float HPStart { get { return _HPStart; } }
-        public float HPInTime { get { return _HPInTime; } }
+        public float HPInTime { get { return _HPInTime; } set { _HPInTime = value; } }
         public float CPUHPStart { get { return _CPUHPStart; } }
-        public float CPUHPInTime { get { return _CPUHPInTime; } }
+        public float CPUHPInTime
+        {
+            get { return _CPUHPInTime; }
+            set
+            {
+                _CPUHPInTime = value; 
+                if (value == 0)
+                {
+                    dest();
+                }
+            }
+        }
         // Start is called before the first frame update
         void Start()
         {
@@ -33,18 +44,12 @@ namespace CombatMechanics
         }
         private IEnumerator Check()
         {
-            yield return new WaitForSeconds(1/60f);
+            yield return new WaitForSeconds(1 / 60f);
             float i;
             i = HPCalcut(false);
             if (i / _HPStart <= 0.1)
             {
-                foreach (Transform child in gameObject.transform)
-                {
-                    if (child.gameObject.GetComponent<CentralBlockHP>())
-                        child.GetComponent<IHaveHP>().HP = 0;
-                }
-                _HPInTime = 0;
-                _CPUHPInTime = 0;
+                dest();
             }
             else
             {
@@ -57,6 +62,16 @@ namespace CombatMechanics
                 }
                 StartCoroutine(Check());
             }
+        }
+        private void dest()
+        {
+            foreach (Transform child in gameObject.transform)
+            {
+                if (child.gameObject.GetComponent<CentralBlockHP>())
+                    child.GetComponent<IHaveHP>().HP = 0;
+            }
+            _HPInTime = 0;
+            _CPUHPInTime = 0;
         }
     }
 }
