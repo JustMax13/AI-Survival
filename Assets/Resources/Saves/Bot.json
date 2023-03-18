@@ -4,8 +4,8 @@
       "ID": 0,
       "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
       "PartPosition": {
-        "X": -0.6711297,
-        "Y": -2.826638,
+        "X": -3.25334382,
+        "Y": 1.08623934,
         "Z": 0.0
       },
       "PartRotation": {
@@ -20,8 +20,8 @@
       "ID": 1,
       "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
       "PartPosition": {
-        "X": -3.88087368,
-        "Y": -2.826638,
+        "X": -0.043599844,
+        "Y": 1.08623934,
         "Z": 0.0
       },
       "PartRotation": {
@@ -32,7 +32,7 @@
       },
       "ConnectedBodys2D": [
         {
-          "XAnchor": 8.02436,
+          "XAnchor": -8.02436,
           "YAnchor": 0.0,
           "ID": 0
         }
@@ -40,10 +40,10 @@
     },
     {
       "ID": 2,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
+      "PathToPrefab": "Prefab/PartOfBot/ArmorPlates/EasyArmor",
       "PartPosition": {
-        "X": -7.09061766,
-        "Y": -2.826638,
+        "X": -5.660216,
+        "Y": 1.08623934,
         "Z": 0.0
       },
       "PartRotation": {
@@ -54,226 +54,18 @@
       },
       "ConnectedBodys2D": [
         {
-          "XAnchor": 8.02436,
-          "YAnchor": 0.0,
-          "ID": 1
-        }
-      ]
-    },
-    {
-      "ID": 3,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
-      "PartPosition": {
-        "X": 2.53861427,
-        "Y": -2.826638,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": -8.02436,
+          "XAnchor": 8.02,
           "YAnchor": 0.0,
           "ID": 0
         }
       ]
     },
     {
-      "ID": 4,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
-      "PartPosition": {
-        "X": -8.639487,
-        "Y": -1.22274327,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.694659948,
-        "W": 0.7193383
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": -8.02436,
-          "YAnchor": 0.0,
-          "ID": 2
-        }
-      ]
-    },
-    {
-      "ID": 5,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
-      "PartPosition": {
-        "X": -7.03461552,
-        "Y": -1.22274327,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": -8.02436,
-          "YAnchor": 0.0,
-          "ID": 4
-        }
-      ]
-    },
-    {
-      "ID": 6,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
-      "PartPosition": {
-        "X": -3.824872,
-        "Y": -1.22274327,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": -8.02436,
-          "YAnchor": 0.0,
-          "ID": 5
-        }
-      ]
-    },
-    {
-      "ID": 7,
-      "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
-      "PartPosition": {
-        "X": -5.48574543,
-        "Y": -2.826638,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": 0.0,
-          "YAnchor": 0.0,
-          "ID": 1
-        }
-      ]
-    },
-    {
-      "ID": 8,
-      "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
-      "PartPosition": {
-        "X": 4.143486,
-        "Y": -2.826638,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": 0.0,
-          "YAnchor": 0.0,
-          "ID": 3
-        }
-      ]
-    },
-    {
-      "ID": 9,
-      "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
-      "PartPosition": {
-        "X": -8.69549,
-        "Y": -2.826638,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": 0.0,
-          "YAnchor": 0.0,
-          "ID": 2
-        }
-      ]
-    },
-    {
-      "ID": 10,
-      "PathToPrefab": "Prefab/PartOfBot/Guns/OldGun/OldGun",
-      "PartPosition": {
-        "X": -2.90367317,
-        "Y": -0.815543532,
-        "Z": -0.02233912
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": -3.29000282,
-          "YAnchor": -1.45428467,
-          "ID": 6
-        },
-        {
-          "XAnchor": -3.29000282,
-          "YAnchor": -1.45428467,
-          "ID": 6
-        }
-      ]
-    },
-    {
-      "ID": 11,
+      "ID": 3,
       "PathToPrefab": "Prefab/PartOfBot/ArmorPlates/EasyArmor",
       "PartPosition": {
-        "X": -8.583482,
-        "Y": -0.4208485,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.70710814,
-        "W": 0.707105458
-      },
-      "ConnectedBodys2D": [
-        {
-          "XAnchor": -8.02,
-          "YAnchor": 0.0,
-          "ID": 4
-        },
-        {
-          "XAnchor": -8.02,
-          "YAnchor": 0.0,
-          "ID": 4
-        }
-      ]
-    },
-    {
-      "ID": 12,
-      "PathToPrefab": "Prefab/PartOfBot/CentralBlock/ClassicCentralBlock",
-      "PartPosition": {
-        "X": -7.03461552,
-        "Y": -1.22274327,
+        "X": 2.36327219,
+        "Y": 1.08623934,
         "Z": 0.0
       },
       "PartRotation": {
@@ -284,9 +76,9 @@
       },
       "ConnectedBodys2D": [
         {
-          "XAnchor": 0.0,
+          "XAnchor": -8.02,
           "YAnchor": 0.0,
-          "ID": 5
+          "ID": 1
         }
       ]
     }

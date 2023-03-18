@@ -9,10 +9,12 @@ namespace General.Saves
         public float XAnchor { get; set; }
         public float YAnchor { get; set; }
         public int ID { get; set; }
-        public ConnectedBody2D(GameObject fixedPart)
+        public ConnectedBody2D(GameObject fixedPart, int jointNumber)
         {
-            XAnchor = fixedPart.GetComponent<FixedJoint2D>().anchor.x;
-            YAnchor = fixedPart.GetComponent<FixedJoint2D>().anchor.y;
+            FixedJoint2D[] joints = fixedPart.GetComponents<FixedJoint2D>();
+
+            XAnchor = joints[jointNumber].anchor.x;
+            YAnchor = joints[jointNumber].anchor.y;
 
             ID = 0;
         }
