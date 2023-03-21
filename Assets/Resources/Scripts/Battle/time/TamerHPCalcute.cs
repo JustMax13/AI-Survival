@@ -6,11 +6,13 @@ namespace CombatMechanics
 {
     public class TamerHPCalcute : MonoBehaviour
     {
-        public AllHPCount PlayerHPCount { get; set; }
-        public AllHPCount EnemyHPCount { get; set; }
         [SerializeField] private int _time;
         [SerializeField] private UIClock _timer;
-        void Start()
+
+        public AllHPCount PlayerHPCount { get; set; }
+        public AllHPCount EnemyHPCount { get; set; }
+
+        private void Start()
         {
             _timer.Time = _time;
             StartCoroutine(Check(0));

@@ -6,6 +6,7 @@ namespace CombatMechanics
     public class AllHPCount : MonoBehaviour
     {
         [SerializeField] private float _HPStart, _HPInTime, _CPUHPStart, _CPUHPInTime;
+
         public float HPStart { get { return _HPStart; } }
         public float HPInTime { get { return _HPInTime; } set { _HPInTime = value; } }
         public float CPUHPStart { get { return _CPUHPStart; } }
@@ -17,12 +18,12 @@ namespace CombatMechanics
                 _CPUHPInTime = value; 
                 if (value == 0)
                 {
-                    dest();
+                    Dest();
                 }
             }
         }
-        // Start is called before the first frame update
-        void Start()
+
+        private void Start()
         {
             _HPStart = HPCalcut(false);
             _CPUHPStart = HPCalcut(true);
@@ -49,7 +50,7 @@ namespace CombatMechanics
             i = HPCalcut(false);
             if (i / _HPStart <= 0.1)
             {
-                dest();
+                Dest();
             }
             else
             {
@@ -63,7 +64,7 @@ namespace CombatMechanics
                 StartCoroutine(Check());
             }
         }
-        private void dest()
+        private void Dest()
         {
             foreach (Transform child in gameObject.transform)
             {

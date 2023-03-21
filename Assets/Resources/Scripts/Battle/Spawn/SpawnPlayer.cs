@@ -5,12 +5,11 @@ namespace CombatMechanics
 {
     public class SpawnPlayer : SpawnPrefab
     {
-        [SerializeField] private GameObject LeftButton;
-        [SerializeField] private GameObject RightButton;
+        [SerializeField] private GameObject _leftButton;
+        [SerializeField] private GameObject _rightButton;
         [SerializeField] private HPBars _HP;
         [SerializeField] private TamerHPCalcute _timer;
 
-        private void OnEnemyWon() => Destroy(SpawnObject);
         override protected void Start()
         {
             base.Start();
@@ -20,11 +19,13 @@ namespace CombatMechanics
             SetLayerNameForAllChild(SpawnObject.transform, "Player");
             _timer.PlayerHPCount = SpawnObject.GetComponent<AllHPCount>();
 
-            LeftButton.SetActive(true);
-            RightButton.SetActive(true);
+            _leftButton.SetActive(true);
+            _rightButton.SetActive(true);
 
             GameOverEvent.EnemyWon += OnEnemyWon;
         }
+
+        private void OnEnemyWon() => Destroy(SpawnObject);
         private void OnDestroy() => GameOverEvent.EnemyWon -= OnEnemyWon;
     }
 }
