@@ -6,12 +6,24 @@ namespace CombatMechanics
     public class AllHPCount : MonoBehaviour
     {
         [SerializeField] private float _HPStart, _HPInTime, _CPUHPStart, _CPUHPInTime;
+
         public float HPStart { get { return _HPStart; } }
-        public float HPInTime { get { return _HPInTime; } }
+        public float HPInTime { get { return _HPInTime; } set { _HPInTime = value; } }
         public float CPUHPStart { get { return _CPUHPStart; } }
-        public float CPUHPInTime { get { return _CPUHPInTime; } }
-        // Start is called before the first frame update
-        void Start()
+        public float CPUHPInTime
+        {
+            get { return _CPUHPInTime; }
+            set
+            {
+                _CPUHPInTime = value; 
+                if (value == 0)
+                {
+                    Dest();
+                }
+            }
+        }
+
+        private void Start()
         {
             _HPStart = HPCalcut(false);
             _CPUHPStart = HPCalcut(true);
@@ -33,18 +45,12 @@ namespace CombatMechanics
         }
         private IEnumerator Check()
         {
-            yield return new WaitForSeconds(1/60f);
+            yield return new WaitForSeconds(1 / 60f);
             float i;
             i = HPCalcut(false);
             if (i / _HPStart <= 0.1)
             {
-                foreach (Transform child in gameObject.transform)
-                {
-                    if (child.gameObject.GetComponent<CentralBlockHP>())
-                        child.GetComponent<IHaveHP>().HP = 0;
-                }
-                _HPInTime = 0;
-                _CPUHPInTime = 0;
+                Dest();
             }
             else
             {
@@ -57,6 +63,16 @@ namespace CombatMechanics
                 }
                 StartCoroutine(Check());
             }
+        }
+        private void Dest()
+        {
+            foreach (Transform child in gameObject.transform)
+            {
+                if (child.gameObject.GetComponent<CentralBlockHP>())
+                    child.GetComponent<IHaveHP>().HP = 0;
+            }
+            _HPInTime = 0;
+            _CPUHPInTime = 0;
         }
     }
 }

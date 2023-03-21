@@ -77,6 +77,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\WinOrLose.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Enum\EnumPartSortingLayer.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\ButtonConnection.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\time\TamerHPCalcute.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\General\AllHPCount.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\BotsWheel.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\BotData.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\time\UIClock.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\CountingSystem\PartCounter.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\RenderingPart\SpriteManagement.cs" />
