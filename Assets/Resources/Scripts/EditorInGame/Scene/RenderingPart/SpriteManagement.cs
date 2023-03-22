@@ -12,6 +12,7 @@ namespace Editor
         private void Awake()
         {
             SpawnPart.SpawnPartEnd += AddPartToDictionary; 
+            // нужно еще учесть удаление детали и сохранение & загрузку БМ
         }
 
         private static void AddPartToDictionary(GameObject part)
@@ -80,7 +81,7 @@ namespace Editor
         public static SpriteRenderer FindUpperSpriteRenderer(List<SpriteRenderer> spriteRenderers, EnumPartSortingLayer enumPartSortingLayer)
         {
             if (!PartsInSortingLayer.TryGetValue(enumPartSortingLayer, out List<SpriteRenderer> spriteRenderersInDictionary))
-                throw new Exception("enumPartSortingLayer не знайдено!"); // тут выдается ошибка, ибо словарь пустой
+                throw new Exception("enumPartSortingLayer не знайдено!"); // тут выдается ошибка, если словарь пустой
 
             var findedIndex = new int[spriteRenderers.Count];
 
