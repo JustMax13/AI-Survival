@@ -1,12 +1,10 @@
+using Editor;
+using Editor.Moves;
+using General.EnumNamespace;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-using General.EnumNamespace;
-using Editor.Interface;
-using Editor.Moves;
-using Editor;
 
 namespace General.Saves
 {
@@ -44,50 +42,75 @@ namespace General.Saves
                 for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
                     part.AddComponent<FixedJoint2D>();
 
-                //{
-                //    var Bolts = part.GetComponentsInChildren<Transform>();
-                //    BoltData BoltData;
-                //    var BoltPosition = new Vector3();
-                //    for (int i = 0; i < item.boltsData.Length; i++)
-                //    {
-                //        for (int j = 0; j < item.boltsData.Length; j++)
-                //        {
-                //            BoltData = item.boltsData[j];
-
-                //            BoltPosition.x = BoltData.Position.X;
-                //            BoltPosition.y = BoltData.Position.Y;
-                //            BoltPosition.z = BoltData.Position.Z;
-
-                //            if (Bolts[i + 1].transform.position == BoltPosition)
-                //            {
-                //                try
-                //                {
-                //                    Bolts[i + 1].GetComponent<SpriteRenderer>().enabled = BoltData.SpriteRendererEnabled;
-                //                }
-                //                catch { }
-                //            }
-                //        }
-                //    }
-                //}
-
                 if (SceneManager.GetActiveScene().buildIndex == (int)EnumBuildIndexOfScene.Editor)
                     part.AddComponent<DragAndDropPart>();
-               
-                // нужно еще добавить количество подключений ( когда опишу новую систему подсчета конекта )
 
                 PartOnScene.Add(item.ID, part);
             }
 
-            for (int i = 0; i < PartOnScene.Count; i++)
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Editor"))
             {
-                ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
-                FixedJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<FixedJoint2D>();
-                // скорее всего размерности 2х масивов не всегда совпадают... но почему?
-                for (int j = 0; j < JointsOnPart.Length; j++)
+                for (int i = 0; i < PartOnScene.Count; i++)
                 {
-                    JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID]
-                        .GetComponent<Rigidbody2D>();
-                    JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
+                    ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
+                    FixedJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<FixedJoint2D>();
+
+                    for (int j = 0; j < JointsOnPart.Length; j++)
+                    {
+                        JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
+                        JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
+                    }
+                }
+            }
+            else
+            {
+                var partCounters = new List<PartCounter>();
+
+                for (int i = 0; i < PartOnScene.Count; i++)
+                {
+                    ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
+                    FixedJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<FixedJoint2D>();
+                    PluggableObject pluggableObject = PartOnScene.ElementAt(i).Value.GetComponent<PluggableObject>();
+
+                    for (int j = 0; j < JointsOnPart.Length; j++)
+                    {
+                        JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
+                        JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
+
+                        ConnectPoint connectPoint = null;
+                        foreach (var item in pluggableObject.ConnectPointsOnPart)
+                        {
+                            if (JointsOnPart[j].anchor == (Vector2)item.transform.localPosition)
+                            {
+                                connectPoint = item;
+                                break;
+                            }
+                        }
+
+                        bool partCountersExists = false;
+                        PartCounter partCounter = null;
+                        foreach (var item in partCounters)
+                        {
+                            if (item.transform.position == connectPoint.transform.position)
+                            {
+                                partCountersExists = true;
+                                partCounter = item;
+                                break;
+                            }
+                        }
+
+                        if (partCountersExists)
+                        {
+                            if (!partCounter.IsItemOnList(connectPoint))
+                                partCounter.AddPointForLoad(connectPoint);
+                        }
+                        else
+                        {
+                            partCounter = PartCounter.CreatePartCounterObject(connectPoint);
+                            partCounters.Add(partCounter);
+                            partCounter.AddPointForLoad(connectPoint);
+                        }
+                    }
                 }
             }
         }

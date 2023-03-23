@@ -89,25 +89,9 @@ namespace Editor
                 return;
 
             if (!_partCounter)
-            {
-                var gameObject = new GameObject("PartCounter");
-
-                var collider = gameObject.AddComponent<CircleCollider2D>();
-                _partCounter = gameObject.AddComponent<PartCounter>();
-
-                collider.radius = 0.01f;
-
-                Transform parentOfConnectPoint = connectPoint.transform.parent;
-                connectPoint.transform.parent = null;
-
-                gameObject.transform.position = connectPoint.transform.position;
-
-                connectPoint.transform.parent = parentOfConnectPoint;
-                gameObject.transform.parent = _pluggableObj.transform.parent;
-            }
+                _partCounter = PartCounter.CreatePartCounterObject(connectPoint);
             else if (_partCounter.CurrentCount >= _partCounter.MaxCount)
                 return;
-
 
             MoveToCoint(connectPoint.transform);
 
@@ -138,11 +122,11 @@ namespace Editor
 
                                 if (_partCounter.MaxCount == 0)
                                 {
-                                    _partCounter.AddFirstPart(this);
-                                    _partCounter.AddPart(connectPoint);
+                                    _partCounter.AddFirstPoint(this);
+                                    _partCounter.AddPoint(connectPoint);
                                 }
                                 else
-                                    _partCounter.AddPart(connectPoint);
+                                    _partCounter.AddPoint(connectPoint);
                             }
                             break;
                         }
@@ -152,17 +136,17 @@ namespace Editor
 
                             if (_partCounter.MaxCount == 0)
                             {
-                                _partCounter.AddFirstPart(baseBlocks[0]);
-                                _partCounter.AddPart(this);
+                                _partCounter.AddFirstPoint(baseBlocks[0]);
+                                _partCounter.AddPoint(this);
                             }
                             else
-                                _partCounter.AddPart(this);
+                                _partCounter.AddPoint(this);
                             break;
                         }
                     default: // коли знайдено більше одного БК
                         {
                             Connect(_partCounter.GetFirstBaseBlock(), this);
-                            _partCounter.AddPart(this);
+                            _partCounter.AddPoint(this);
 
                             break;
                         }
@@ -178,17 +162,17 @@ namespace Editor
 
                             if (_partCounter.MaxCount == 0)
                             {
-                                _partCounter.AddFirstPart(baseBlocks[0]);
-                                _partCounter.AddPart(this);
+                                _partCounter.AddFirstPoint(baseBlocks[0]);
+                                _partCounter.AddPoint(this);
                             }
                             else
-                                _partCounter.AddPart(this);
+                                _partCounter.AddPoint(this);
                             break;
                         }
                     default: // коли знайдено більше одного БК
                         {
                             Connect(_partCounter.GetFirstBaseBlock(), this);
-                            _partCounter.AddPart(this);
+                            _partCounter.AddPoint(this);
 
                             break;
                         }
@@ -357,11 +341,11 @@ namespace Editor
 
                 if (partCounter.MaxCount == 0)
                 {
-                    partCounter.AddFirstPart(connectTo);
-                    partCounter.AddPart(toPlugPoint);
+                    partCounter.AddFirstPoint(connectTo);
+                    partCounter.AddPoint(toPlugPoint);
                 }
                 else
-                    partCounter.AddPart(toPlugPoint);
+                    partCounter.AddPoint(toPlugPoint);
             }
         }
 
