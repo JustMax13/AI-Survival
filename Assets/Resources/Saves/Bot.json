@@ -2,10 +2,10 @@
   "BotPartsData": [
     {
       "ID": 0,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonShine/CarbonShine",
+      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
       "PartPosition": {
-        "X": -4.41020632,
-        "Y": 0.16795586,
+        "X": 0.92561084,
+        "Y": -0.3762588,
         "Z": 0.0
       },
       "PartRotation": {
@@ -20,8 +20,8 @@
       "ID": 1,
       "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonShine/CarbonShine",
       "PartPosition": {
-        "X": -1.20046222,
-        "Y": 0.16795586,
+        "X": -2.2841332,
+        "Y": -0.3762588,
         "Z": 0.0
       },
       "PartRotation": {
@@ -29,6 +29,28 @@
         "Y": 0.0,
         "Z": 0.0,
         "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 8.02436,
+          "YAnchor": 0.0,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonShine/CarbonShine",
+      "PartPosition": {
+        "X": 0.567957,
+        "Y": 0.633722,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.333807647,
+        "W": 0.9426412
       },
       "ConnectedBodys2D": [
         {

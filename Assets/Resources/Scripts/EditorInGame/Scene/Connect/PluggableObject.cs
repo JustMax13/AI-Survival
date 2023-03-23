@@ -131,7 +131,7 @@ namespace Editor
                     var partCounter = item.GetComponent<PartCounter>();
                     if (partCounter)
                     {
-                        partCounter.RemovePart(point);
+                        partCounter.RemovePoint(point);
                         break;
                     }
                 }

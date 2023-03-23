@@ -66,7 +66,6 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Connected\ConnectButtonToGun.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\ElementsForButton.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\ConnectedBody2D.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\Saves\Data\BoltData.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\EventTriggerForSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunTraectory.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\shooting\AIShooting.cs" />
