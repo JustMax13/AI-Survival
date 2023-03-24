@@ -22,18 +22,17 @@ namespace General.Saves
             foreach (var item in parts)
                 BotPartsData.Add(new PartData(item.gameObject));
 
-
-            FixedJoint2D[] fixedJoint2DOnPart;
+            AnchoredJoint2D[] joint2DOnPart;
             for (int i = 0; i < parts.Length; i++)
             {
-                fixedJoint2DOnPart = parts[i].GetComponents<FixedJoint2D>();
+                joint2DOnPart = parts[i].GetComponents<AnchoredJoint2D>();
 
-                for (int j = 0; j < fixedJoint2DOnPart.Length; j++)
+                for (int j = 0; j < joint2DOnPart.Length; j++)
                 {
                     BotPartsData[i].ConnectedBodys2D[j] = new ConnectedBody2D(parts[i].gameObject, j);
                     for (int k = 0; k < parts.Length; k++)
                     {
-                        if (fixedJoint2DOnPart[j].connectedBody.gameObject == parts[k].gameObject)
+                        if (joint2DOnPart[j].connectedBody.gameObject == parts[k].gameObject)
                             BotPartsData[i].ConnectedBodys2D[j].ID = BotPartsData[k].ID;
                     }
                 }

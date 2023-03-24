@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using General.PartOfBots;
 
 namespace General.Saves
 {
     public class SaveBotController : MonoBehaviour
     {
-        // сделать асинхронным и добавить чтобы по центу все сохранялось
         public static void SaveBot(GameObject PlayerBot) => SaveAndLoadBotData.Save(PlayerBot);
 
         public static void LoadBot(GameObject PlayerBot)
@@ -39,8 +39,16 @@ namespace General.Saves
                 part = Instantiate(part, part.transform.position,
                     part.transform.rotation, PlayerBot.transform);
 
-                for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
-                    part.AddComponent<FixedJoint2D>();
+                if(part.GetComponent<PluggableObject>().PartType == TypeOfPart.Wheel)
+                {
+                    for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
+                        part.AddComponent<WheelJoint2D>();
+                }
+                else
+                {
+                    for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
+                        part.AddComponent<FixedJoint2D>();
+                }   
 
                 if (SceneManager.GetActiveScene().buildIndex == (int)EnumBuildIndexOfScene.Editor)
                     part.AddComponent<DragAndDropPart>();
@@ -53,12 +61,13 @@ namespace General.Saves
                 for (int i = 0; i < PartOnScene.Count; i++)
                 {
                     ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
-                    FixedJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<FixedJoint2D>();
+                    AnchoredJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<AnchoredJoint2D>();
 
                     for (int j = 0; j < JointsOnPart.Length; j++)
                     {
                         JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
                         JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
+                        JointsOnPart[j].connectedAnchor = new Vector2(conectedBody[j].XConnectedAnchor, conectedBody[j].YConnectedAnchor);
                     }
                 }
             }
@@ -69,13 +78,14 @@ namespace General.Saves
                 for (int i = 0; i < PartOnScene.Count; i++)
                 {
                     ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
-                    FixedJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<FixedJoint2D>();
+                    AnchoredJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<AnchoredJoint2D>();
                     PluggableObject pluggableObject = PartOnScene.ElementAt(i).Value.GetComponent<PluggableObject>();
 
                     for (int j = 0; j < JointsOnPart.Length; j++)
                     {
                         JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
                         JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
+                        JointsOnPart[j].connectedAnchor = new Vector2(conectedBody[j].XConnectedAnchor, conectedBody[j].YConnectedAnchor);
 
                         ConnectPoint connectPoint = null;
                         foreach (var item in pluggableObject.ConnectPointsOnPart)

@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using General.PartOfBots;
+using System.Reflection;
+using UnityEditor;
 
 namespace Editor
 {
@@ -8,38 +11,37 @@ namespace Editor
     {
         private int _maxCount = 0;
         private int _currentCount = -1;
+        private static GameObject _prefabPartCounter = null;
 
         private List<ConnectPoint> _connectedPoint = null;
 
         public int MaxCount { get => _maxCount; }
         public int CurrentCount { get => _currentCount; set { _currentCount = value; } }
 
-        private void Update()
-        {
-            Debug.Log($"Имя счетчика - {gameObject.name}\nДлина списка: {_connectedPoint.Count},_currentCount: {_currentCount}");
-            //foreach (var item in _connectedParts)
-            //    Debug.Log(item);
-        }
+        //private void Update()
+        //{
+        //    Debug.Log($"Имя счетчика - {gameObject.name}\nДлина списка: {_connectedPoint.Count},_currentCount: {_currentCount}");
+        //    //foreach (var item in _connectedParts)
+        //    //    Debug.Log(item);
+        //}
+        
         private bool TheDictionaryHasConnectionBlocks()
         {
             foreach (var part in _connectedPoint)
-                if (part.PluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
+                if (part.PluggableObj.PartType == TypeOfPart.BaseBlock)
                     return true;
 
             return false;
         }
         public static PartCounter CreatePartCounterObject(in ConnectPoint OnConnectPoint)
         {
-            var gameObject = new GameObject("PartCounter");
-            gameObject.transform.position = OnConnectPoint.transform.position;
-            gameObject.transform.parent = OnConnectPoint.PluggableObj.transform.parent;
+            if(_prefabPartCounter == null)
+                _prefabPartCounter = Resources.Load<GameObject>("Prefab/Editor/ObjectWithIcon/PartCounter");
 
-            var collider = gameObject.AddComponent<CircleCollider2D>();
-            collider.radius = 0.01f;
+            var partCounter = Instantiate(_prefabPartCounter, OnConnectPoint.transform.position, Quaternion.identity);
+            partCounter.transform.parent = OnConnectPoint.PluggableObj.transform.parent;
 
-            var partCounter = gameObject.AddComponent<PartCounter>();
-
-            return partCounter;
+            return partCounter.GetComponent<PartCounter>();
         }
         public static PartCounter FindCounterObject(Vector2 position)
         {
@@ -75,7 +77,7 @@ namespace Editor
         {
             foreach (var point in _connectedPoint)
             {
-                if (point.PluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
+                if (point.PluggableObj.PartType == TypeOfPart.BaseBlock)
                     return point;
             }
 
@@ -88,7 +90,7 @@ namespace Editor
 
             if (_connectedPoint != null)
                 throw new Exception($"Деталь {pluggableObject} не може бути додана першою, оскільки вже була додана перша деталь!");
-            if (pluggableObject.PartType != PluggableObject.TypeOfPart.BaseBlock)
+            if (pluggableObject.PartType != TypeOfPart.BaseBlock)
                 throw new Exception($"Деталь {pluggableObject} не є базовим блоком і не може бути додана першою!");
 
             try { _maxCount = pluggableObject.GetComponent<PartCountValue>().MaxPossibleConnectionToPoint; }
@@ -111,7 +113,7 @@ namespace Editor
 
             if (_maxCount == 0)
             {
-                foreach (var item in connectPoint.PluggableObj.GetComponents<FixedJoint2D>())
+                foreach (var item in connectPoint.PluggableObj.GetComponents<AnchoredJoint2D>())
                     if (item.anchor == (Vector2)connectPoint.transform.localPosition)
                     {
                         if(item.connectedBody)

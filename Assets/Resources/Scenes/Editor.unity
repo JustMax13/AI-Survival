@@ -585,6 +585,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2267578153634072325, guid: e070b8fd643eea54888c38eec827b81f,
         type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267578153634072325, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}

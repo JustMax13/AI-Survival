@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using General.Pathes;
-using Editor;
 
 namespace General.Saves
 {
@@ -18,7 +17,6 @@ namespace General.Saves
 
         public ConnectedBody2D[] ConnectedBodys2D { get; set; }
 
-        //public BoltData[] boltsData { get; set; }
         public PartData(){}
         public PartData(GameObject part)
         {
@@ -28,13 +26,7 @@ namespace General.Saves
             PartPosition = new SimplePosition(part);
             PartRotation = new SimpleRotation(part);
 
-            ConnectedBodys2D = new ConnectedBody2D[part.GetComponents<FixedJoint2D>().Length];
-
-            //var AllBolts = part.GetComponentsInChildren<ConnectPoint>();
-            //boltsData = new BoltData[AllBolts.Length];
-
-            //for (int i = 0; i < boltsData.Length; i++)
-            //    boltsData[i] = new BoltData(AllBolts[i].gameObject);
+            ConnectedBodys2D = new ConnectedBody2D[part.GetComponents<AnchoredJoint2D>().Length];
         }
     }
 }

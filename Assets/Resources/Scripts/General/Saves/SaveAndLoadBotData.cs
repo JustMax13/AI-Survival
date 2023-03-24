@@ -6,7 +6,6 @@ namespace General.Saves
 {
     public class SaveAndLoadBotData : MonoBehaviour
     {
-        // скорее всего патч не находит в apk
         private static string path;
 
         static SaveAndLoadBotData()
