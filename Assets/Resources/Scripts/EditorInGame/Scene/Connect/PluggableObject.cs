@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Editor.Moves;
+using General.PartOfBots;
 
 namespace Editor
 {
@@ -136,13 +137,6 @@ namespace Editor
                     }
                 }
             }
-        }
-
-        public enum TypeOfPart
-        {
-            AnotherPart,
-            Wheel,
-            BaseBlock,
         }
     }
 }

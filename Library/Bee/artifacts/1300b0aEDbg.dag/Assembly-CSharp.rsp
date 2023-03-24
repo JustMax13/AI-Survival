@@ -437,6 +437,7 @@
 "Assets/Resources/Scripts/General/Other/LoadScene.cs"
 "Assets/Resources/Scripts/General/Other/SetActiveObject.cs"
 "Assets/Resources/Scripts/General/Other/SpawnPrefab.cs"
+"Assets/Resources/Scripts/General/PartOfBot/Enum/TypeOfPart.cs"
 "Assets/Resources/Scripts/General/PartOfBot/General/IPathOfPart.cs"
 "Assets/Resources/Scripts/General/PartOfBot/General/PartOfBot.cs"
 "Assets/Resources/Scripts/General/Pathes/AllPartPathes.cs"

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using General.PartOfBots;
 
 namespace Editor
 {
@@ -100,10 +101,10 @@ namespace Editor
             var baseBlocks = new List<ConnectPoint>();
 
             foreach (var point in connectedPoints)
-                if (point.PluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
+                if (point.PluggableObj.PartType == TypeOfPart.BaseBlock)
                     baseBlocks.Add(point);
 
-            if (_pluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock)
+            if (_pluggableObj.PartType == TypeOfPart.BaseBlock)
             {
                 switch (baseBlocks.Count)
                 {
@@ -181,8 +182,8 @@ namespace Editor
         }
         private bool CheckConnectionCompatibility(PluggableObject pluggableObject)
         {
-            if (_pluggableObj.PartType == PluggableObject.TypeOfPart.BaseBlock
-                || pluggableObject.PartType == PluggableObject.TypeOfPart.BaseBlock)
+            if (_pluggableObj.PartType == TypeOfPart.BaseBlock
+                || pluggableObject.PartType == TypeOfPart.BaseBlock)
                 return true;
             else
                 return false;
@@ -262,7 +263,7 @@ namespace Editor
 
             switch (toPlug.PluggableObj.PartType)
             {
-                case PluggableObject.TypeOfPart.AnotherPart:
+                case TypeOfPart.AnotherPart:
                     {
                         if (connectTo.PluggableObj != toPlug._pluggableObj)
                         {
@@ -276,7 +277,7 @@ namespace Editor
 
                         break;
                     };
-                case PluggableObject.TypeOfPart.BaseBlock:
+                case TypeOfPart.BaseBlock:
                     {
                         if (connectTo.PluggableObj != toPlug._pluggableObj)
                         {
@@ -290,7 +291,7 @@ namespace Editor
 
                         break;
                     };
-                case PluggableObject.TypeOfPart.Wheel:
+                case TypeOfPart.Wheel:
                     {
                         if (connectTo.PluggableObj != toPlug._pluggableObj)
                         {
