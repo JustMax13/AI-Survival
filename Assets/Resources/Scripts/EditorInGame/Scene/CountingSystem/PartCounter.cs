@@ -21,10 +21,10 @@ namespace Editor
         //private void Update()
         //{
         //    Debug.Log($"Имя счетчика - {gameObject.name}\nДлина списка: {_connectedPoint.Count},_currentCount: {_currentCount}");
-        //    //foreach (var item in _connectedParts)
+        //    //foreach (var item in _connectedPoint)
         //    //    Debug.Log(item);
         //}
-        
+
         private bool TheDictionaryHasConnectionBlocks()
         {
             foreach (var part in _connectedPoint)
@@ -75,7 +75,7 @@ namespace Editor
         }
         public ConnectPoint GetFirstBaseBlock()
         {
-            foreach (var point in _connectedPoint)
+            foreach (var point in _connectedPoint) // тут оно ломается, после загрузки с файла
             {
                 if (point.PluggableObj.PartType == TypeOfPart.BaseBlock)
                     return point;
@@ -122,12 +122,16 @@ namespace Editor
                             _maxCount = pluggableObject.GetComponent<PartCountValue>().MaxPossibleConnectionToPoint;
 
                             foreach (var connectedPoint in pluggableObject.ConnectPointsOnPart)
-                                if (item.anchor == (Vector2)connectedPoint.transform.localPosition)
+                                if (item.connectedAnchor == (Vector2)connectedPoint.transform.localPosition) // <<<< тут баг
+                                {
                                     AddPoint(connectedPoint);
-
+                                    break;
+                                }
+                                    
                             break;
                         }
                     }
+                
             }
         }
         public void RemovePoint(ConnectPoint connectPoint)

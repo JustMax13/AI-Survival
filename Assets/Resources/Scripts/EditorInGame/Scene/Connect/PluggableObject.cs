@@ -84,11 +84,11 @@ namespace Editor
         }
         private static void RemoveСonnectionFromThisParts(GameObject gameObject)
         {
-            FixedJoint2D[] fixedJoints2D = gameObject.GetComponents<FixedJoint2D>();
+            AnchoredJoint2D[] anchoredJoints2D = gameObject.GetComponents<AnchoredJoint2D>();
 
-            if (fixedJoints2D.Length != 0)
+            if (anchoredJoints2D.Length != 0)
             {
-                foreach (var item in fixedJoints2D)
+                foreach (var item in anchoredJoints2D)
                     Destroy(item);
             }
         }
@@ -106,12 +106,12 @@ namespace Editor
 
                 foreach (var point in connectPointsList)
                 {
-                    foreach (var fixedJoint2D in point.JointOnPoint.ToList())
+                    foreach (var anchoredJoint2D in point.JointOnPoint.ToList())
                     {
-                        if (fixedJoint2D.connectedBody == connectObjectRB)
+                        if (anchoredJoint2D.connectedBody == connectObjectRB)
                         {
-                            point.JointOnPoint.Remove(fixedJoint2D);
-                            Destroy(fixedJoint2D);
+                            point.JointOnPoint.Remove(anchoredJoint2D);
+                            Destroy(anchoredJoint2D);
 
                             point.TryReconnectThisPoint();
                         }
