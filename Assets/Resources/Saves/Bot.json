@@ -2,10 +2,10 @@
   "BotPartsData": [
     {
       "ID": 0,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonShine/CarbonShine",
+      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
       "PartPosition": {
-        "X": -3.32971215,
-        "Y": -0.69243,
+        "X": -0.249369368,
+        "Y": 1.46961784,
         "Z": 0.0
       },
       "PartRotation": {
@@ -18,10 +18,34 @@
     },
     {
       "ID": 1,
+      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
+      "PartPosition": {
+        "X": 2.96037459,
+        "Y": 1.46961784,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02436,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 8.02436,
+          "YConnectedAnchor": 0.0,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 2,
       "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
       "PartPosition": {
-        "X": -1.72484016,
-        "Y": -0.69243,
+        "X": -1.85424137,
+        "Y": 1.46961784,
         "Z": 0.0
       },
       "PartRotation": {
@@ -34,27 +58,10 @@
         {
           "XAnchor": 0.0,
           "YAnchor": 0.0,
-          "XConnectedAnchor": 8.02436,
+          "XConnectedAnchor": -8.02436,
           "YConnectedAnchor": 0.0,
           "ID": 0
-        }
-      ]
-    },
-    {
-      "ID": 2,
-      "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
-      "PartPosition": {
-        "X": -4.934584,
-        "Y": -0.69243,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": [
+        },
         {
           "XAnchor": 0.0,
           "YAnchor": 0.0,
