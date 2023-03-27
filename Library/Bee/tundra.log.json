@@ -620,6 +620,7 @@
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"WriteText Library/Bee/artifacts/1300b0aEDbg.dag/Unity.CollabProxy.Editor.rsp","enqueuedNodeIndex":413,"enqueueingNodeAnnotation":"Csc Library/Bee/artifacts/1300b0aEDbg.dag/Unity.CollabProxy.Editor.dll (+2 others)","enqueueingNodeIndex":414}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"WriteResponseFile Library/Bee/artifacts/rsp/345768040152562728.rsp","enqueuedNodeIndex":512,"enqueueingNodeAnnotation":"ILPostProcess Library/Bee/artifacts/1300b0aEDbg.dag/post-processed/Unity.CollabProxy.Editor.dll (+pdb)","enqueueingNodeIndex":513}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"CopyFiles Library/ScriptAssemblies/Unity.CollabProxy.Editor.pdb","enqueuedNodeIndex":621,"enqueueingNodeAnnotation":"ScriptAssemblies","enqueueingNodeIndex":5}
+<<<<<<< Updated upstream
 {"msg":"nodeOutputsMissing","annotation":"CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.dll","index":514,"files":["Library\\ScriptAssemblies\\UnityEngine.TestRunner.dll"],"directories":[]}
 {"msg":"nodeOutputsMissing","annotation":"CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.pdb","index":515,"files":["Library\\ScriptAssemblies\\UnityEngine.TestRunner.pdb"],"directories":[]}
 {"msg":"runNodeAction","annotation":"CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.dll","index":514}
@@ -947,3 +948,5 @@
 {"msg":"noderesult","processed_node_count":617,"number_of_nodes_ever_queued":621,"annotation":"CopyFiles Library/ScriptAssemblies/Unity.Burst.CodeGen.dll","index":564,"exitcode":0,"outputfile":"Library\\ScriptAssemblies\\Unity.Burst.CodeGen.dll"}
 {"msg":"noderesult","processed_node_count":618,"number_of_nodes_ever_queued":621,"annotation":"CopyFiles Library/ScriptAssemblies/Unity.Rider.Editor.dll","index":518,"exitcode":0,"outputfile":"Library\\ScriptAssemblies\\Unity.Rider.Editor.dll"}
 {"msg":"noderesult","processed_node_count":619,"number_of_nodes_ever_queued":621,"annotation":"CopyFiles Library/ScriptAssemblies/UnityEditor.TestRunner.dll","index":516,"exitcode":0,"outputfile":"Library\\ScriptAssemblies\\UnityEditor.TestRunner.dll"}
+=======
+>>>>>>> Stashed changes
