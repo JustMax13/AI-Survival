@@ -409,6 +409,8 @@
 "Assets/Resources/Scripts/Battle/Spawn/MiniCameraSpawn.cs"
 "Assets/Resources/Scripts/Battle/Spawn/SpawnEnemy.cs"
 "Assets/Resources/Scripts/Battle/Spawn/SpawnPlayer.cs"
+"Assets/Resources/Scripts/Battle/time/TamerHPCalcute.cs"
+"Assets/Resources/Scripts/Battle/time/UIClock.cs"
 "Assets/Resources/Scripts/EditorInGame/Interface/Button/ButtonForDestroyObject.cs"
 "Assets/Resources/Scripts/EditorInGame/Interface/Button/ButtonSelected.cs"
 "Assets/Resources/Scripts/EditorInGame/Interface/Button/RotatePartButton.cs"
