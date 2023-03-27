@@ -12,7 +12,7 @@ namespace Menu.ChoseLevel
         {
             LevelsButton = gameObject;
             _max = LevelsButton.transform.position.x;
-            if (LevelsButton.transform.childCount >= 5) _min = 2 * _max - (LevelsButton.transform.GetChild(LevelsButton.transform.childCount - 5).transform.position.x);
+            if (LevelsButton.transform.childCount > 5) _min = 2 * _max - (LevelsButton.transform.GetChild(LevelsButton.transform.childCount - 3).transform.position.x);
             else _min = _max;
         }
 

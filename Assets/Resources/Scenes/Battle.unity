@@ -165,6 +165,66 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 430404850857070482}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &841200192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841200194}
+  - component: {fileID: 841200193}
+  - component: {fileID: 841200195}
+  m_Layer: 0
+  m_Name: timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &841200193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841200192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1644a6f0a4d95424fa795bb7a936c3b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 300
+  _timer: {fileID: 841200195}
+--- !u!4 &841200194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841200192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.7748446, y: 0.6461025, z: 46.951923}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841200195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841200192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def0a802136c57e46b9fd33d7e02964b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clock: {fileID: 2239633818345724910}
 --- !u!1 &841846810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3328971040952761593, guid: 64bffcc139d0c5441903fb3596bc72fd,
@@ -504,6 +564,11 @@ PrefabInstance:
       objectReference: {fileID: 1679236684}
     - target: {fileID: 430404850635002184, guid: b9e39d02721d23244b47e79481d29bf1,
         type: 3}
+      propertyPath: _timer
+      value: 
+      objectReference: {fileID: 841200193}
+    - target: {fileID: 430404850635002184, guid: b9e39d02721d23244b47e79481d29bf1,
+        type: 3}
       propertyPath: LeftButton
       value: 
       objectReference: {fileID: 73961336}
@@ -614,6 +679,11 @@ PrefabInstance:
       propertyPath: _timer
       value: 
       objectReference: {fileID: 1679236684}
+    - target: {fileID: 1669340963725350802, guid: b9e39d02721d23244b47e79481d29bf1,
+        type: 3}
+      propertyPath: _timer
+      value: 
+      objectReference: {fileID: 841200193}
     - target: {fileID: 1669340963725350802, guid: b9e39d02721d23244b47e79481d29bf1,
         type: 3}
       propertyPath: _spawnPoint

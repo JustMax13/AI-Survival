@@ -7,7 +7,7 @@ namespace CombatMechanics
     public class SpawnEnemy : SpawnPrefab
     {
         [SerializeField] private Vector2[] _allPoints;
-        [SerializeField] private HPBars _HPBar;
+        [SerializeField] private HPBars _HP;
         [SerializeField] private TamerHPCalcute _timer;
 
         override protected void Start()
@@ -16,7 +16,7 @@ namespace CombatMechanics
 
             SpawnObject.layer = LayerMask.NameToLayer("Enemy");
             SpawnObject.GetComponent<AiBrain>().FoundAllPoints(_allPoints);
-            _HPBar.Count = SpawnObject.GetComponent<AllHPCount>();
+            _HP.Count = SpawnObject.GetComponent<AllHPCount>();
             SetLayerNameForAllChild(SpawnObject.transform, "Enemy");
             _timer.EnemyHPCount = SpawnObject.GetComponent<AllHPCount>();
             GameOverEvent.PlayerWon += OnPlayerWon;

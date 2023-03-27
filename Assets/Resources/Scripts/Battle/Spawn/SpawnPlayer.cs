@@ -7,7 +7,7 @@ namespace CombatMechanics
     {
         [SerializeField] private GameObject _leftButton;
         [SerializeField] private GameObject _rightButton;
-        [SerializeField] private HPBars _HPBar;
+        [SerializeField] private HPBars _HP;
         [SerializeField] private TamerHPCalcute _timer;
 
         override protected void Start()
@@ -15,7 +15,7 @@ namespace CombatMechanics
             base.Start();
 
             SpawnObject.layer = LayerMask.NameToLayer("Player");
-            _HPBar.Count = SpawnObject.GetComponent<AllHPCount>();
+            _HP.Count = SpawnObject.GetComponent<AllHPCount>();
             SetLayerNameForAllChild(SpawnObject.transform, "Player");
             _timer.PlayerHPCount = SpawnObject.GetComponent<AllHPCount>();
 
