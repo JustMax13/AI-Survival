@@ -430,6 +430,7 @@
 "Assets/Resources/Scripts/EditorInGame/Scene/RenderingPart/SpriteManagement.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Spawn/PartForSpawn.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Spawn/SpawnPart.cs"
+"Assets/Resources/Scripts/General/Camera/UnderTouch.cs"
 "Assets/Resources/Scripts/General/Enum/EnumBuildIndexOfScene.cs"
 "Assets/Resources/Scripts/General/Enum/EnumPartSortingLayer.cs"
 "Assets/Resources/Scripts/General/Managers/DestroyUnnecessaryScripts.cs"

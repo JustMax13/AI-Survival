@@ -6,11 +6,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using General.PartOfBots;
+using System;
 
 namespace General.Saves
 {
     public class SaveBotController : MonoBehaviour
     {
+        public static event Action<GameObject> LoadIsEnd;
         public static void SaveBot(GameObject PlayerBot) => SaveAndLoadBotData.Save(PlayerBot);
 
         public static void LoadBot(GameObject PlayerBot)
@@ -24,7 +26,7 @@ namespace General.Saves
 
             BotData data = SaveAndLoadBotData.Load();
 
-            var PartOnScene = new Dictionary<int, GameObject>();
+            var partOnScene = new Dictionary<int, GameObject>();
             GameObject part;
 
             foreach (var item in data.BotPartsData)
@@ -53,19 +55,19 @@ namespace General.Saves
                 if (SceneManager.GetActiveScene().buildIndex == (int)EnumBuildIndexOfScene.Editor)
                     part.AddComponent<DragAndDropPart>();
 
-                PartOnScene.Add(item.ID, part);
+                partOnScene.Add(item.ID, part);
             }
 
             if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Editor"))
             {
-                for (int i = 0; i < PartOnScene.Count; i++)
+                for (int i = 0; i < partOnScene.Count; i++)
                 {
                     ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
-                    AnchoredJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<AnchoredJoint2D>();
+                    AnchoredJoint2D[] JointsOnPart = partOnScene.ElementAt(i).Value.GetComponents<AnchoredJoint2D>();
 
                     for (int j = 0; j < JointsOnPart.Length; j++)
                     {
-                        JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
+                        JointsOnPart[j].connectedBody = partOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
                         JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
                         JointsOnPart[j].connectedAnchor = new Vector2(conectedBody[j].XConnectedAnchor, conectedBody[j].YConnectedAnchor);
                     }
@@ -75,15 +77,15 @@ namespace General.Saves
             {
                 var partCounters = new List<PartCounter>();
 
-                for (int i = 0; i < PartOnScene.Count; i++)
+                for (int i = 0; i < partOnScene.Count; i++)
                 {
                     ConnectedBody2D[] conectedBody = data.BotPartsData[i].ConnectedBodys2D;
-                    AnchoredJoint2D[] JointsOnPart = PartOnScene.ElementAt(i).Value.GetComponents<AnchoredJoint2D>();
-                    PluggableObject pluggableObject = PartOnScene.ElementAt(i).Value.GetComponent<PluggableObject>();
+                    AnchoredJoint2D[] JointsOnPart = partOnScene.ElementAt(i).Value.GetComponents<AnchoredJoint2D>();
+                    PluggableObject pluggableObject = partOnScene.ElementAt(i).Value.GetComponent<PluggableObject>();
 
                     for (int j = 0; j < JointsOnPart.Length; j++)
                     {
-                        JointsOnPart[j].connectedBody = PartOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
+                        JointsOnPart[j].connectedBody = partOnScene[conectedBody[j].ID].GetComponent<Rigidbody2D>();
                         JointsOnPart[j].anchor = new Vector2(conectedBody[j].XAnchor, conectedBody[j].YAnchor);
                         JointsOnPart[j].connectedAnchor = new Vector2(conectedBody[j].XConnectedAnchor, conectedBody[j].YConnectedAnchor);
 
@@ -96,7 +98,18 @@ namespace General.Saves
                                 break;
                             }
                         }
-
+                        // нам нужна точка как текущего обьекта, так и установившегось
+                        //ConnectPoint[] connectPoints = JointsOnPart[j].connectedBody.GetComponent<PluggableObject>().ConnectPointsOnPart;
+                        //foreach (var item in connectPoints)
+                        //{
+                        //    if (JointsOnPart[j].connectedAnchor == (Vector2)item.transform.localPosition)
+                        //    {
+                        //        // 1) Записать положение
+                        //        // думаю, можно сохранять сразу несколько точек: которая на этом обьекте и которая на 
+                        //        connectPoint = item;
+                        //        break;
+                        //    }
+                        //}
                         bool partCountersExists = false;
                         PartCounter partCounter = null;
                         foreach (var item in partCounters)
@@ -123,6 +136,8 @@ namespace General.Saves
                     }
                 }
             }
+
+            LoadIsEnd?.Invoke(PlayerBot);
         }
     }
 }

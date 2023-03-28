@@ -88,6 +88,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\General\ProjectileRotation.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropPart.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\ClickedPart.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\PartOfBot\Enum\TypeOfPart.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\PartData.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\Varieties\ShotGun.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Spawn\SpawnPlayer.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\time\UIClock.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\CountingSystem\PartCounter.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
+    <Compile Include="Assets\Resources\Scripts\General\Camera\UnderTouch.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\RenderingPart\SpriteManagement.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDrop.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\SpawnEnd.cs" />
@@ -139,7 +141,6 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\RotationTest.cs" />
-    <Compile Include="Assets\Resources\Scripts\General\PartOfBot\Enum\TypeOfPart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

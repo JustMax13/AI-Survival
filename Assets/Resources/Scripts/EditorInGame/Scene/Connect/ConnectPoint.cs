@@ -10,10 +10,10 @@ namespace Editor
         [SerializeField] private PluggableObject _pluggableObj;
 
         private Collider2D _findedCollider;
-        private List<Joint2D> _jointOnPoint;
+        private List<AnchoredJoint2D> _jointOnPoint;
         private PartCounter _partCounter;
 
-        public List<Joint2D> JointOnPoint { get => _jointOnPoint; set { _jointOnPoint = value; } }
+        public List<AnchoredJoint2D> JointOnPoint { get => _jointOnPoint; set { _jointOnPoint = value; } }
         public PluggableObject PluggableObj { get => _pluggableObj; }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -30,7 +30,7 @@ namespace Editor
 
         private void Start()
         {
-            _jointOnPoint = new List<Joint2D>();
+            _jointOnPoint = new List<AnchoredJoint2D>();
 
             if (_pluggableObj == null)
                 throw new Exception($"PluggableObject is null. Pls add PluggableObject on {gameObject.name}");
