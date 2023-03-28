@@ -18,12 +18,12 @@ namespace Editor
         public int MaxCount { get => _maxCount; }
         public int CurrentCount { get => _currentCount; set { _currentCount = value; } }
 
-        //private void Update()
-        //{
-        //    Debug.Log($"Имя счетчика - {gameObject.name}\nДлина списка: {_connectedPoint.Count},_currentCount: {_currentCount}");
-        //    //foreach (var item in _connectedPoint)
-        //    //    Debug.Log(item);
-        //}
+        private void Update()
+        {
+            Debug.Log($"Имя счетчика - {gameObject.name}\nДлина списка: {_connectedPoint.Count},_currentCount: {_currentCount}");
+            //foreach (var item in _connectedPoint)
+            //    Debug.Log(item);
+        }
 
         private bool TheDictionaryHasConnectionBlocks()
         {
@@ -134,8 +134,9 @@ namespace Editor
                 
             }
         }
-        public void RemovePoint(ConnectPoint connectPoint)
+        public void RemovePoint(ConnectPoint connectPoint) // метод не всегда срабатывает при отключении детали
         {
+            //Debug.Log($"Видаляємо {connectPoint.PluggableObj.gameObject}");
             foreach (var part in _connectedPoint)
             {
                 if (connectPoint == part)

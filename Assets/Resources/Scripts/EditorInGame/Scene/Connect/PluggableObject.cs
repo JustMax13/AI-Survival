@@ -23,28 +23,39 @@ namespace Editor
         public TypeOfPart PartType { get => _partType; }
         public bool WasMouseDown { get; set; }
         public bool IsDrag { get; set; }
-        public ConnectPoint[] ConnectPointsOnPart { get => _connectPointsOnPart; set { _connectPointsOnPart = value; } }
-
-        private void OnMouseDown()
+        public bool IsSelected
         {
-            if (_dragAndDropPartComponent.IsSelected)
-            {
-                IsDrag = true;
-                WasMouseDown = true;
-
-                DragStart?.Invoke(this);
-            }
+            get => _dragAndDropPartComponent.IsSelected;
+            set => _dragAndDropPartComponent.IsSelected = value;
         }
-        private void OnMouseUp()
+        public ConnectPoint[] ConnectPointsOnPart 
         {
-            if (_dragAndDropPartComponent.IsSelected)
-            {
-                IsDrag = false;
-                _currentTimeWasMouseDown = _timeWasMouseDown;
-
-                DragStop?.Invoke();
-            }
+            get => _connectPointsOnPart; 
+            set => _connectPointsOnPart = value; 
         }
+        // Вместо OnMouseDown и OnMouseUp нужно использовать что-то другое, так 
+        // как не всегда вызывается события, что и сбиравет счетчик с счета
+
+        //private void OnMouseDown()
+        //{
+        //    if (IsSelected)
+        //    {
+        //        IsDrag = true;
+        //        WasMouseDown = true;
+
+        //        DragStart?.Invoke(this);
+        //    }
+        //}
+        //private void OnMouseUp()
+        //{
+        //    if (IsSelected)
+        //    {
+        //        IsDrag = false;
+        //        _currentTimeWasMouseDown = _timeWasMouseDown;
+
+        //        DragStop?.Invoke();
+        //    }
+        //}
 
         private void Start()
         {
@@ -69,7 +80,7 @@ namespace Editor
                 WasMouseDown = false;
         }
 
-        public static void FullDisconnect(PluggableObject pluggableObject)
+        public static void FullDisconnect(PluggableObject pluggableObject) // не всегда заходит в метод ( событие )
         {
             DecrementCounters(pluggableObject);
 
@@ -119,7 +130,7 @@ namespace Editor
                 }
             }
         }
-        private static void DecrementCounters(PluggableObject pluggableObject)
+        private static void DecrementCounters(PluggableObject pluggableObject) // не всегда заходит в метод
         {
             ConnectPoint[] connectPoints = pluggableObject.ConnectPointsOnPart;
 
@@ -127,16 +138,34 @@ namespace Editor
             {
                 Collider2D[] colliders2D = Physics2D.OverlapPointAll(point.transform.position);
 
-                foreach (var item in colliders2D)
+                foreach (var item in colliders2D) // не всегда заходит в цыкл
                 {
                     var partCounter = item.GetComponent<PartCounter>();
                     if (partCounter)
                     {
-                        partCounter.RemovePoint(point);
+                        partCounter.RemovePoint(point); // не всегда вызывается
                         break;
                     }
                 }
             }
+        }
+
+        public void MouseDown()
+        {
+            //Debug.Log($"Mouse Down - {gameObject}");
+            IsDrag = true;
+            WasMouseDown = true;
+
+            DragStart?.Invoke(this);
+        }
+
+        public void MouseUp()
+        {
+            //Debug.Log($"Mouse Up - {gameObject}");
+            IsDrag = false;
+            _currentTimeWasMouseDown = _timeWasMouseDown;
+
+            DragStop?.Invoke();
         }
     }
 }
