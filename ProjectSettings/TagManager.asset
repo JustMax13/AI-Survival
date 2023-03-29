@@ -21,6 +21,8 @@ TagManager:
   - gunRotation
   - BulletSpawn
   - Gun
+  - ScriptPrefab
+  - sight
   layers:
   - Default
   - TransparentFX
@@ -35,7 +37,7 @@ TagManager:
   - Enemy
   - Walls
   - PlayerCB
-  - 
+  - DestroyedObject
   - 
   - 
   - 
