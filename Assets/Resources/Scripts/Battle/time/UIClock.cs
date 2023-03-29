@@ -25,12 +25,15 @@ namespace CombatMechanics
             minute = _time / 60;
             second = _time % 60;
 
-            if (second > 9)
-                _clock.text = minute + ":" + second;
-            else
-                _clock.text = minute + ":0" + second;
-            if (_time > 0)
-                StartCoroutine(Check());
+            if(_clock != null)
+            {
+                if (second > 9)
+                    _clock.text = minute + ":" + second;
+                else
+                    _clock.text = minute + ":0" + second;
+                if (_time > 0)
+                    StartCoroutine(Check());
+            }
         }
         private IEnumerator Check()
         {
