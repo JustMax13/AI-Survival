@@ -843,6 +843,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136835938497143608, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
         type: 3}
+      propertyPath: _maxRotationAngel
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136835938497143608, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
+        type: 3}
+      propertyPath: _minRotationAngel
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136835938497143608, guid: 8f599ab6121a8924f96ad8f4aa48a3fc,
+        type: 3}
       propertyPath: _rotationGunPoint
       value: 
       objectReference: {fileID: 7354894025820257473}

@@ -10,7 +10,7 @@ namespace CombatMechanics
         private GameObject Player;
         public override void OnPointerDown(PointerEventData data) => Player?.GetComponent<MoveAllWheels>().MoveLeftDown();
 
-        public override void OnPointerUp(PointerEventData data) =>Player?.GetComponent<MoveAllWheels>().MoveLeftUp();
+        public override void OnPointerUp(PointerEventData data) => Player?.GetComponent<MoveAllWheels>().MoveLeftUp();
 
         private void Awake() => Player = GameObject.FindGameObjectWithTag("Player");
 

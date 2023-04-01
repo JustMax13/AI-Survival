@@ -63,6 +63,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\General\IMover.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\ButtonEventTrigger\MoveLeft.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\General\PartOfBot.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\Canvas\ConnectShotButton.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Connected\ConnectButtonToGun.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\ElementsForButton.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\ConnectedBody2D.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDrop.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\SpawnEnd.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Bullet\Varieties\ClassicBullet.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\Rotate\RotateButtonParent.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\general\Сkeshing.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveBotController.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropValue.cs" />
@@ -132,7 +134,6 @@
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\CentralBlockHP.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonForDestroyObject.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu\EnableLevel.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\Canvas\ConnectedShotButton.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Pathes\AllPartPathes.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Connect\ConnectPoint.cs" />

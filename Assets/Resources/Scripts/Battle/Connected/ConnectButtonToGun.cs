@@ -15,29 +15,45 @@ namespace CombatMechanics
             ButtonConnection.ConnectedShotButton += OnConnectedShotButton;
             SpawnEnd.CallSpawnEnded();
         }
-        private void OnConnectedShotButton(Button shotButton)
+        private void OnConnectedShotButton(Button shot, RotateButtonParent rotate)
         {
             if (!_gunConnected && gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 int index = -1;
-                GameObject shotButtonParent = shotButton.transform.parent.gameObject;
 
-                var connectedShotButton = shotButtonParent.GetComponent<ConnectedShotButton>();
-                for (int i = 0; i < connectedShotButton.ShotButtons.Length; i++)
+                var connectShotButton = shot.transform.parent.GetComponent<ConnectShotButton>();
                 {
-                    if (connectedShotButton.ShotButtons[i] == shotButton)
+                    int counter = 0;
+                    foreach (var item in connectShotButton.ShotAndRotatePair.Values)
                     {
-                        index = i;
-                        break;
-                    }
+                        if (item == rotate)
+                        {
+                            index = counter;
+                            break;
+                        }
+                        counter++;
+                    }    
                 }
+                
+                //for (int i = 0; i < connectShotButton.ShotAndRotatePair.Count; i++)
+                //{
+                //    if (connectShotButton.ShotAndRotatePair.Values == shot)
+                //    {
+                //        index = i;
+                //        break;
+                //    }
+                //}
 
-                if (index != -1) // тут дописать условие: если это пушка игрока
+                if (index != -1)
                 {
-                    shotButton.gameObject.SetActive(true);
-                    shotButton.onClick.AddListener(gameObject.GetComponent<ShotGun>().CheckReloadAndShot);
+                    shot.gameObject.SetActive(true);
+                    shot.onClick.AddListener(gameObject.GetComponent<ShotGun>().CheckReloadAndShot);
+                    rotate.gameObject.SetActive(true);
+                    rotate.Up.onClick.AddListener(gameObject.GetComponent<GunRotation>().RotateUp);
+                    rotate.Down.onClick.AddListener(gameObject.GetComponent<GunRotation>().RotateDown);
+
                     _gunConnected = true;
-                    shotButtonParent.GetComponent<ConnectedShotButton>().BusyShotButton[index] = true;
+                    connectShotButton.BusyShotAndRotatePair[index] = true;
                 }
             }
         }

@@ -79,7 +79,6 @@ GameObject:
   - component: {fileID: 2898852321134420588}
   - component: {fileID: 2441527170801031247}
   - component: {fileID: 3665172782509198353}
-  - component: {fileID: 6744017033511527873}
   - component: {fileID: 44883188284680541}
   - component: {fileID: 2220328039509778238}
   - component: {fileID: 8492291928729284342}
@@ -238,11 +237,11 @@ MonoBehaviour:
   TurnOffInMenu:
   - {fileID: 2441527170801031247}
   - {fileID: 3665172782509198353}
-  - {fileID: 6744017033511527873}
+  - {fileID: 0}
   - {fileID: 2220328039509778238}
   TurnOffInEditor:
   - {fileID: 3665172782509198353}
-  - {fileID: 6744017033511527873}
+  - {fileID: 0}
   - {fileID: 2220328039509778238}
   TurnOffInBattle:
   - {fileID: 2441527170801031247}
@@ -274,24 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb36a563d8ca124b8ec92d206f8f1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6744017033511527873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3582974942326027221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79141f4d2df20974d8c9015d14cedb14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minRotationAngel: -10
-  _maxRotationAngel: 20
-  speed: 10
-  _rotationGunPoint: {fileID: 5316140036496009212}
-  _ai: 0
-  _shot: {fileID: 971318796364369041}
 --- !u!114 &44883188284680541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +327,7 @@ GameObject:
   - component: {fileID: 1659960561644387596}
   - component: {fileID: 1130071489300198436}
   - component: {fileID: 7751730704971655075}
+  - component: {fileID: 9028521020838391496}
   m_Layer: 0
   m_Name: Muzzel
   m_TagString: Untagged
@@ -537,6 +519,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainPartHP: {fileID: 44883188284680541}
+--- !u!114 &9028521020838391496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921916188110440022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79141f4d2df20974d8c9015d14cedb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minRotationAngel: -10
+  _maxRotationAngel: 20
+  _speed: 0
+  _rotationGunPoint: {fileID: 5316140036496009212}
+  _ai: 0
+  _shot: {fileID: 971318796364369041}
 --- !u!1001 &2828538651061489762
 PrefabInstance:
   m_ObjectHideFlags: 0

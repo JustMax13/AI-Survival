@@ -6,7 +6,7 @@ namespace CombatMechanics
     public class GunRotation : MonoBehaviour
     {
         [SerializeField] private float _minRotationAngel, _maxRotationAngel;
-        [SerializeField] float speed;
+        [SerializeField] float _speed;
         [SerializeField] private Transform _rotationGunPoint;
         [SerializeField] private bool _ai;
         [SerializeField] private GunShot _shot;
@@ -49,7 +49,7 @@ namespace CombatMechanics
                 {
                     _rotationGunPoint.rotation = Quaternion.Euler(
                        Vector3.MoveTowards(new Vector3(_rotationGunPoint.rotation.x, _rotationGunPoint.rotation.y, 2 * Mathf.Asin(_rotationGunPoint.rotation.z) * Mathf.Rad2Deg),
-                        new Vector3(_rotationGunPoint.rotation.x, _rotationGunPoint.rotation.y, angel), speed * Time.deltaTime));
+                        new Vector3(_rotationGunPoint.rotation.x, _rotationGunPoint.rotation.y, angel), _speed * Time.deltaTime));
 
                     StartCoroutine(Timer(angel));
                 }
@@ -70,32 +70,44 @@ namespace CombatMechanics
             yield return new WaitForSeconds(1f / 60f);
             RotationMove(angel);
         }
-        public void StarRotation(bool moveUp)
+
+        // старая реализация
+        //public void StarRotation(bool moveUp)
+        //{
+        //    float angel;
+        //    if (_revers)
+        //    {
+        //        if (moveUp)
+        //            angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
+        //        else
+        //            angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
+        //        _stopMove = false;
+        //    }
+        //    else
+        //    {
+
+        //        if (moveUp)
+        //            angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
+        //        else
+        //            angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
+        //        _stopMove = false;
+
+        //    }
+        //    RotationMove(angel);
+        //}
+        //public void StopRotation()
+        //{
+        //    _stopMove = true;
+        //}
+
+        // методы вызываются на клик кнопки поворота, они уже подключены
+        public void RotateUp()
         {
-            float angel;
-            if (_revers)
-            {
-                if (moveUp)
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
-                else
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
-                _stopMove = false;
-            }
-            else
-            {
-
-                if (moveUp)
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _maxRotationAngel;
-                else
-                    angel = 2 * Mathf.Asin(transform.rotation.z) * Mathf.Rad2Deg + _minRotationAngel;
-                _stopMove = false;
-
-            }
-            RotationMove(angel);
+            // место для кода поворота
         }
-        public void StopRotation()
+        public void RotateDown()
         {
-            _stopMove = true;
+            // место для кода поворота
         }
     }
 }
