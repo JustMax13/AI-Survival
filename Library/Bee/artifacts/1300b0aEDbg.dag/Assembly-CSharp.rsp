@@ -419,6 +419,8 @@
 "Assets/Resources/Scripts/EditorInGame/Interface/Inventory/EventTriggerForSpawn.cs"
 "Assets/Resources/Scripts/EditorInGame/Interface/Inventory/Scroling.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Camera/MoveAndZoomCamera.cs"
+"Assets/Resources/Scripts/EditorInGame/Scene/Centering/Centering.cs"
+"Assets/Resources/Scripts/EditorInGame/Scene/Centering/CenteringPart.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Connect/ConnectPoint.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/Connect/PluggableObject.cs"
 "Assets/Resources/Scripts/EditorInGame/Scene/CountingSystem/PartCounter.cs"

@@ -96,6 +96,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Spawn\MiniCameraSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\general\MoveTest.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\LoadScene.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Centering\Centering.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\general\AIMoving.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Spawn\SpawnPart.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\GaveOverMenu.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\RotationTest.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Centering\CenteringPart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

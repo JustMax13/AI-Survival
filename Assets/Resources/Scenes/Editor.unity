@@ -151,6 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902931430}
   - component: {fileID: 902931431}
+  - component: {fileID: 902931432}
   m_Layer: 0
   m_Name: PlayerBot
   m_TagString: CenterOfBot
@@ -185,6 +186,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d88e71c146e0194db734e68e733f98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &902931432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902931429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1849e43845d9942b6ab5da1f9c361b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentOfAllPart: {fileID: 902931429}
 --- !u!1001 &1064263866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,9 +789,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
         type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 902931432}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2267578155221271915}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CentringPartToCenterOfScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveBot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Editor.CenteringPart, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: General.Saves.SaveBotController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
       objectReference: {fileID: 902931429}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819345419997962195, guid: e070b8fd643eea54888c38eec827b81f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7639152394315190899, guid: e070b8fd643eea54888c38eec827b81f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -790,6 +874,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e070b8fd643eea54888c38eec827b81f, type: 3}
+--- !u!114 &2267578155221271915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2616549328786935352, guid: e070b8fd643eea54888c38eec827b81f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2267578155221271914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c3ee227935c6f41a02a6207e71b198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2485826657727675991
 PrefabInstance:
   m_ObjectHideFlags: 0
