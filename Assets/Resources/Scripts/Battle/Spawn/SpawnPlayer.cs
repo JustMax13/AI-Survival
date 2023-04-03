@@ -9,6 +9,7 @@ namespace CombatMechanics
         [SerializeField] private GameObject _rightButton;
         [SerializeField] private HPBars _HPBar;
         [SerializeField] private TamerHPCalcute _timer;
+        [SerializeField] private CameraMove _cameraMove;
 
         override protected void Start()
         {
@@ -18,6 +19,7 @@ namespace CombatMechanics
             _HPBar.Count = SpawnObject.GetComponent<AllHPCount>();
             SetLayerNameForAllChild(SpawnObject.transform, "Player");
             _timer.PlayerHPCount = SpawnObject.GetComponent<AllHPCount>();
+            _cameraMove.SetPlayer(SpawnObject);
 
             _leftButton.SetActive(true);
             _rightButton.SetActive(true);
