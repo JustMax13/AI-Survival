@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 902931430}
   - component: {fileID: 902931431}
   - component: {fileID: 902931432}
+  - component: {fileID: 902931433}
   m_Layer: 0
   m_Name: PlayerBot
   m_TagString: CenterOfBot
@@ -199,6 +200,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentOfAllPart: {fileID: 902931429}
+--- !u!114 &902931433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902931429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e747ff0d1ef2f674f89ae57592b6aa66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberOfCentralBlock: 10
+  _numberOfBaseBlock: 10
+  _numberOfArmorPlates: 10
+  _numberOfGun: 10
+  _numberOfWheels: 10
 --- !u!1001 &1064263866
 PrefabInstance:
   m_ObjectHideFlags: 0

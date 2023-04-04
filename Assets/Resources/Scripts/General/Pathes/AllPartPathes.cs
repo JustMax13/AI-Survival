@@ -17,35 +17,35 @@ namespace General.Pathes
 
                 {
                     "EasyArmor",
-                    "Prefab/PartOfBot/ArmorPlates/EasyArmor"
+                    "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor"
                 },
 
                 // FasteningBlock
                 {
                     "CarbonNoise",
-                    "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise"
+                    "Prefab/PartOfBot/Part/BaseBlock/CarbonNoise"
                 },
                 {
                     "CarbonShine",
-                    "Prefab/PartOfBot/FasteningBlock/CarbonShine/CarbonShine"
+                    "Prefab/PartOfBot/Part/BaseBlock/CarbonShine"
                 },
 
                 // Wheels
                 {
                     "BigWheel",
-                    "Prefab/PartOfBot/Wheels/BigWheel"
+                    "Prefab/PartOfBot/Part/Wheels/BigWheel"
                 },
 
                 // CentralBlocks
                 {
                     "ClassicCentralBlock",
-                    "Prefab/PartOfBot/CentralBlock/ClassicCentralBlock"
+                    "Prefab/PartOfBot/Part/CentralBlock/ClassicCentralBlock"
                 },
 
                 // Guns
                 {
                     "OldGun",
-                    "Prefab/PartOfBot/Guns/OldGun/OldGun"
+                    "Prefab/PartOfBot/Part/Guns/OldGun"
                 },
             };
         }

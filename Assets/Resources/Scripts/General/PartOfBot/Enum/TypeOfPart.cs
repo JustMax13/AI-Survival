@@ -6,8 +6,11 @@ namespace General.PartOfBots
 {
     public enum TypeOfPart
     {
-        AnotherPart,
-        Wheel,
+        CentralBlock,
         BaseBlock,
+        ArmorPlates,
+        Gun,
+        Wheel
+        // дописать все типы, а вместо AnotherPart использовать default
     }
 }

@@ -263,20 +263,20 @@ namespace Editor
 
             switch (toPlug.PluggableObj.PartType)
             {
-                case TypeOfPart.AnotherPart:
-                    {
-                        if (connectTo.PluggableObj != toPlug._pluggableObj)
-                        {
-                            FixedJoint2D jointOnObject = toPlug._pluggableObj.gameObject.AddComponent<FixedJoint2D>();
+                //case TypeOfPart.AnotherPart:
+                //    {
+                //        if (connectTo.PluggableObj != toPlug._pluggableObj)
+                //        {
+                //            FixedJoint2D jointOnObject = toPlug._pluggableObj.gameObject.AddComponent<FixedJoint2D>();
 
-                            jointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
-                            jointOnObject.anchor = toPlug.transform.localPosition;
+                //            jointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
+                //            jointOnObject.anchor = toPlug.transform.localPosition;
                             
-                            toPlug.JointOnPoint.Add(jointOnObject);
-                        }
+                //            toPlug.JointOnPoint.Add(jointOnObject);
+                //        }
 
-                        break;
-                    };
+                //        break;
+                //    };
                 case TypeOfPart.BaseBlock:
                     {
                         if (connectTo.PluggableObj != toPlug._pluggableObj)
@@ -306,6 +306,20 @@ namespace Editor
 
                         break;
                     };
+                default:
+                    {
+                        if (connectTo.PluggableObj != toPlug._pluggableObj)
+                        {
+                            FixedJoint2D jointOnObject = toPlug._pluggableObj.gameObject.AddComponent<FixedJoint2D>();
+
+                            jointOnObject.connectedBody = connectTo.PluggableObj.GetComponent<Rigidbody2D>();
+                            jointOnObject.anchor = toPlug.transform.localPosition;
+
+                            toPlug.JointOnPoint.Add(jointOnObject);
+                        }
+
+                        break;
+                    }
             }
 
             

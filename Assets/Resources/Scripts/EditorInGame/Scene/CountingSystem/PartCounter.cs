@@ -93,7 +93,7 @@ namespace Editor
             if (pluggableObject.PartType != TypeOfPart.BaseBlock)
                 throw new Exception($"Деталь {pluggableObject} не є базовим блоком і не може бути додана першою!");
 
-            try { _maxCount = pluggableObject.GetComponent<PartCountValue>().MaxPossibleConnectionToPoint; }
+            try { _maxCount = pluggableObject.GetComponent<ConnectToPartValue>().MaxPossibleConnectionToPoint; }
             catch { throw new Exception($"Деталь {pluggableObject} не містить PartCountValue!"); }
 
             _connectedPoint = new List<ConnectPoint>();
@@ -119,7 +119,7 @@ namespace Editor
                         if(item.connectedBody)
                         {
                             PluggableObject pluggableObject = item.connectedBody.GetComponent<PluggableObject>();
-                            _maxCount = pluggableObject.GetComponent<PartCountValue>().MaxPossibleConnectionToPoint;
+                            _maxCount = pluggableObject.GetComponent<ConnectToPartValue>().MaxPossibleConnectionToPoint;
 
                             foreach (var connectedPoint in pluggableObject.ConnectPointsOnPart)
                                 if (item.connectedAnchor == (Vector2)connectedPoint.transform.localPosition)

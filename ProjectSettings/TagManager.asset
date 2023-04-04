@@ -69,7 +69,7 @@ TagManager:
   - name: Bullet
     uniqueID: 3697647477
     locked: 0
-  - name: FasteningBlock
+  - name: BaseBlock
     uniqueID: 3159302071
     locked: 0
   - name: CentralBlock

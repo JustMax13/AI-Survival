@@ -9,7 +9,7 @@ namespace Editor
 {
     public class PluggableObject : MonoBehaviour
     {
-        [SerializeField] private TypeOfPart _partType = TypeOfPart.AnotherPart;
+        [SerializeField] private TypeOfPart _partType;
         [SerializeField] private ConnectPoint[] _connectPointsOnPart = null;
 
         private const float _timeWasMouseDown = 0.02f;
