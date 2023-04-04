@@ -395,6 +395,7 @@
 "Assets/Resources/Scripts/Battle/Move/Bots Move/Wheel/MoveAllWheels.cs"
 "Assets/Resources/Scripts/Battle/Move/ButtonEventTrigger/MoveLeft.cs"
 "Assets/Resources/Scripts/Battle/Move/ButtonEventTrigger/MoveRight.cs"
+"Assets/Resources/Scripts/Battle/Move/CameraMove.cs"
 "Assets/Resources/Scripts/Battle/Rotate/RotateButtonParent.cs"
 "Assets/Resources/Scripts/Battle/Shooting/Bullet/General/AbstractBullet.cs"
 "Assets/Resources/Scripts/Battle/Shooting/Bullet/General/ProjectileRotation.cs"
