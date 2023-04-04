@@ -1,4 +1,5 @@
 using Editor.Interface;
+using General.PartOfBots;
 using General.Pathes;
 using General.Saves;
 using System;
@@ -10,12 +11,12 @@ namespace Editor
 {
     public class SpriteManagement : MonoBehaviour
     {
-        private static Dictionary<EnumPartSortingLayer, List<SpriteRenderer>> PartsInSortingLayer = new Dictionary<EnumPartSortingLayer, List<SpriteRenderer>>();
+        private static Dictionary<TypeOfPart, List<SpriteRenderer>> PartsInSortingLayer = new Dictionary<TypeOfPart, List<SpriteRenderer>>();
 
         private void Awake()
         {
             SpawnPart.SpawnPartEnd += AddPart;
-            ButtonForDestroyObject.BeforeRemovingPart += RemotePart;
+            ButtonForDestroyObject.BeforeDestroyPart += RemotePart;
             SaveBotController.LoadIsEnd += WhenLoadEnd;
         }
 
@@ -23,7 +24,7 @@ namespace Editor
         {
             var partSpriteRenderer = part.GetComponent<SpriteRenderer>();
 
-            EnumPartSortingLayer findKey = EnumPartSortingLayer.Default;
+            TypeOfPart findKey = TypeOfPart.Default;
             foreach (var key in PartsInSortingLayer.Keys)
                 if (partSpriteRenderer.sortingLayerName == key.ToString())
                 {
@@ -32,33 +33,33 @@ namespace Editor
                 }
 
 
-            if (findKey != EnumPartSortingLayer.Default)
+            if (findKey != TypeOfPart.Default)
             {
                 PartsInSortingLayer.TryGetValue(findKey, out List<SpriteRenderer> spriteRenderers);
                 spriteRenderers.Add(partSpriteRenderer);
             }
             else
             {
-                EnumPartSortingLayer enumPartSortingLayer = EnumPartSortingLayer.Default;
-                foreach (var key in Enum.GetNames(typeof(EnumPartSortingLayer)))
+                TypeOfPart TypeOfPart = TypeOfPart.Default;
+                foreach (var key in Enum.GetNames(typeof(TypeOfPart)))
                     if (partSpriteRenderer.sortingLayerName == key)
                     {
-                        enumPartSortingLayer = Enum.Parse<EnumPartSortingLayer>(key);
+                        TypeOfPart = Enum.Parse<TypeOfPart>(key);
                         break;
                     }
 
-                if (enumPartSortingLayer == EnumPartSortingLayer.Default)
-                    throw new Exception("В EnumPartSortingLayer немає вказаного на " + partSpriteRenderer + " сортувального шару");
+                if (TypeOfPart == TypeOfPart.Default)
+                    throw new Exception("В TypeOfPart немає вказаного на " + partSpriteRenderer + " сортувального шару");
 
-                PartsInSortingLayer.Add(enumPartSortingLayer, new List<SpriteRenderer>());
+                PartsInSortingLayer.Add(TypeOfPart, new List<SpriteRenderer>());
 
-                PartsInSortingLayer.TryGetValue(enumPartSortingLayer, out List<SpriteRenderer> spriteRenderers);
+                PartsInSortingLayer.TryGetValue(TypeOfPart, out List<SpriteRenderer> spriteRenderers);
                 spriteRenderers.Add(partSpriteRenderer);
             }
         }
         private static void AddPart(SpriteRenderer part)
         {
-            EnumPartSortingLayer findKey = EnumPartSortingLayer.Default;
+            TypeOfPart findKey = TypeOfPart.Default;
             foreach (var key in PartsInSortingLayer.Keys)
                 if (part.sortingLayerName == key.ToString())
                 {
@@ -67,27 +68,27 @@ namespace Editor
                 }
 
 
-            if (findKey != EnumPartSortingLayer.Default)
+            if (findKey != TypeOfPart.Default)
             {
                 PartsInSortingLayer.TryGetValue(findKey, out List<SpriteRenderer> spriteRenderers);
                 spriteRenderers.Add(part);
             }
             else
             {
-                EnumPartSortingLayer enumPartSortingLayer = EnumPartSortingLayer.Default;
-                foreach (var key in Enum.GetNames(typeof(EnumPartSortingLayer)))
+                TypeOfPart TypeOfPart = TypeOfPart.Default;
+                foreach (var key in Enum.GetNames(typeof(TypeOfPart)))
                     if (part.sortingLayerName == key)
                     {
-                        enumPartSortingLayer = Enum.Parse<EnumPartSortingLayer>(key);
+                        TypeOfPart = Enum.Parse<TypeOfPart>(key);
                         break;
                     }
 
-                if (enumPartSortingLayer == EnumPartSortingLayer.Default)
-                    throw new Exception("В EnumPartSortingLayer немає вказаного на " + part + " сортувального шару");
+                if (TypeOfPart == TypeOfPart.Default)
+                    throw new Exception("В TypeOfPart немає вказаного на " + part + " сортувального шару");
 
-                PartsInSortingLayer.Add(enumPartSortingLayer, new List<SpriteRenderer>());
+                PartsInSortingLayer.Add(TypeOfPart, new List<SpriteRenderer>());
 
-                PartsInSortingLayer.TryGetValue(enumPartSortingLayer, out List<SpriteRenderer> spriteRenderers);
+                PartsInSortingLayer.TryGetValue(TypeOfPart, out List<SpriteRenderer> spriteRenderers);
                 spriteRenderers.Add(part);
             }
         }
@@ -95,14 +96,14 @@ namespace Editor
         {
             var partSpriteRenderer = part.GetComponent<SpriteRenderer>();
 
-            EnumPartSortingLayer findKey = EnumPartSortingLayer.Default;
+            TypeOfPart findKey = TypeOfPart.Default;
             foreach (var key in PartsInSortingLayer.Keys)
                 if (partSpriteRenderer.sortingLayerName == key.ToString())
                 {
                     findKey = key;
                     break;
                 }
-            if (findKey == EnumPartSortingLayer.Default)
+            if (findKey == TypeOfPart.Default)
                 throw new Exception($"Немає відповідного списку до деталі {part}");
 
             PartsInSortingLayer.TryGetValue(findKey, out List<SpriteRenderer> partsByKey);
@@ -118,14 +119,14 @@ namespace Editor
         }
         private static void RemotePart(SpriteRenderer part)
         {
-            EnumPartSortingLayer findKey = EnumPartSortingLayer.Default;
+            TypeOfPart findKey = TypeOfPart.Default;
             foreach (var key in PartsInSortingLayer.Keys)
                 if (part.sortingLayerName == key.ToString())
                 {
                     findKey = key;
                     break;
                 }
-            if (findKey == EnumPartSortingLayer.Default)
+            if (findKey == TypeOfPart.Default)
                 throw new Exception($"Немає відповідного списку до деталі {part}");
 
             PartsInSortingLayer.TryGetValue(findKey, out List<SpriteRenderer> partsByKey);
@@ -141,7 +142,7 @@ namespace Editor
         }
         private static void RewriteSpritesDictionary(List<SpriteRenderer> botParts)
         {
-            PartsInSortingLayer = new Dictionary<EnumPartSortingLayer, List<SpriteRenderer>>();
+            PartsInSortingLayer = new Dictionary<TypeOfPart, List<SpriteRenderer>>();
 
             foreach (var part in botParts)
                 AddPart(part);
@@ -156,35 +157,35 @@ namespace Editor
 
             RewriteSpritesDictionary(spriteRendererOnParts);
         }
-        public static EnumPartSortingLayer FindUpperSortingLayerID(List<SpriteRenderer> spriteRenderers)
+        public static TypeOfPart FindUpperSortingLayerID(List<SpriteRenderer> spriteRenderers)
         {
-            EnumPartSortingLayer upperSortingLayer = EnumPartSortingLayer.Default;
+            TypeOfPart upperSortingLayer = TypeOfPart.Default;
 
             foreach (var spriteRenderer in spriteRenderers)
             {
-                EnumPartSortingLayer enumPartSortingLayer = Enum.Parse<EnumPartSortingLayer>(spriteRenderer.sortingLayerName);
-                if ((int)enumPartSortingLayer > (int)upperSortingLayer)
-                    upperSortingLayer = enumPartSortingLayer;
+                TypeOfPart TypeOfPart = Enum.Parse<TypeOfPart>(spriteRenderer.sortingLayerName);
+                if ((int)TypeOfPart > (int)upperSortingLayer)
+                    upperSortingLayer = TypeOfPart;
             }
 
             return upperSortingLayer;
         }
-        public static List<SpriteRenderer> FindSpriteRendererWithOneSortingLayer(List<SpriteRenderer> spriteRenderers, EnumPartSortingLayer enumPartSortingLayer)
+        public static List<SpriteRenderer> FindSpriteRendererWithOneSortingLayer(List<SpriteRenderer> spriteRenderers, TypeOfPart typeOfPart)
         {
             var listSpriteRenderers = new List<SpriteRenderer>();
 
             foreach (var item in spriteRenderers)
             {
-                if (item.sortingLayerName == enumPartSortingLayer.ToString())
+                if (item.sortingLayerName == typeOfPart.ToString())
                     listSpriteRenderers.Add(item);
             }
 
             return listSpriteRenderers;
         }
-        public static SpriteRenderer FindUpperSpriteRenderer(List<SpriteRenderer> spriteRenderers, EnumPartSortingLayer enumPartSortingLayer)
+        public static SpriteRenderer FindUpperSpriteRenderer(List<SpriteRenderer> spriteRenderers, TypeOfPart typeOfPart)
         {
-            if (!PartsInSortingLayer.TryGetValue(enumPartSortingLayer, out List<SpriteRenderer> spriteRenderersInDictionary))
-                throw new Exception("enumPartSortingLayer не знайдено!"); // тут выдается ошибка, если словарь пустой
+            if (!PartsInSortingLayer.TryGetValue(typeOfPart, out List<SpriteRenderer> spriteRenderersInDictionary))
+                throw new Exception("TypeOfPart не знайдено!"); // тут выдается ошибка, если словарь пустой
 
             var findedIndex = new int[spriteRenderers.Count];
 

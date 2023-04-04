@@ -1,3 +1,4 @@
+using General.PartOfBots;
 using General.Pathes;
 using System;
 using System.Collections.Generic;
@@ -73,7 +74,7 @@ namespace Editor.Moves
         }
         private void FindAndClickOnPart()
         {
-            GameObject part = FindPartWhereMouseDown(_mouseDownPosition);
+            GameObject part = FindPartWhereMouseClick(_mouseDownPosition);
 
             if (!part)
                 return;
@@ -83,7 +84,7 @@ namespace Editor.Moves
             if (!_lastFindPart.IsSelected)
                 _lastFindPart.IsSelected = true;      
         }
-        private GameObject FindPartWhereMouseDown(Vector2 mousePosition)
+        private GameObject FindPartWhereMouseClick(Vector2 mousePosition)
         {
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Collider2D[] colliders = Physics2D.OverlapPointAll(mousePosition);
@@ -98,7 +99,7 @@ namespace Editor.Moves
             if (onlyPartSpriteRenderers.Count == 0)
                 return null;
 
-            EnumPartSortingLayer upperSortingLayer = SpriteManagement.FindUpperSortingLayerID(onlyPartSpriteRenderers);
+            TypeOfPart upperSortingLayer = SpriteManagement.FindUpperSortingLayerID(onlyPartSpriteRenderers);
 
             var spriteRenderersWithUpperSortingLayer = new List<SpriteRenderer>();
             spriteRenderersWithUpperSortingLayer = SpriteManagement.FindSpriteRendererWithOneSortingLayer(onlyPartSpriteRenderers, upperSortingLayer);

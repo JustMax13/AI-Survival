@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4596086060279182318}
   - component: {fileID: 2252438662400397695}
   - component: {fileID: 7114362194918889158}
+  - component: {fileID: 3247659846715821340}
   m_Layer: 0
   m_Name: BigWheel
   m_TagString: Untagged
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partType: 1
+  _partType: 5
   _connectPointsOnPart:
   - {fileID: 7657196275233255705}
 --- !u!114 &2252438662400397695
@@ -210,10 +211,26 @@ MonoBehaviour:
   TurnOffInMenu:
   - {fileID: 4596086060279182318}
   - {fileID: 8062099454307885200}
+  - {fileID: 3247659846715821340}
   TurnOffInEditor:
   - {fileID: 8062099454307885200}
   TurnOffInBattle:
   - {fileID: 4596086060279182318}
+  - {fileID: 3247659846715821340}
+--- !u!114 &3247659846715821340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642326095505223389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa072a3eee53b54c91f906532ca6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _occupiedPlace: 1
+  _typeOfPart: 5
 --- !u!1001 &2817057194966649680
 PrefabInstance:
   m_ObjectHideFlags: 0

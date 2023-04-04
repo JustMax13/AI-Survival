@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 44883188284680541}
   - component: {fileID: 2220328039509778238}
   - component: {fileID: 8492291928729284342}
+  - component: {fileID: -4115512571652875709}
   m_Layer: 0
   m_Name: Example
   m_TagString: Untagged
@@ -237,14 +238,14 @@ MonoBehaviour:
   TurnOffInMenu:
   - {fileID: 2441527170801031247}
   - {fileID: 3665172782509198353}
-  - {fileID: 0}
   - {fileID: 2220328039509778238}
+  - {fileID: -4115512571652875709}
   TurnOffInEditor:
   - {fileID: 3665172782509198353}
-  - {fileID: 0}
   - {fileID: 2220328039509778238}
   TurnOffInBattle:
   - {fileID: 2441527170801031247}
+  - {fileID: -4115512571652875709}
 --- !u!114 &2441527170801031247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partType: 0
+  _partType: 4
   _connectPointsOnPart:
   - {fileID: 7645736729914206763}
   - {fileID: 7645736731210062593}
@@ -311,6 +312,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partName: 
+--- !u!114 &-4115512571652875709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582974942326027221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa072a3eee53b54c91f906532ca6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _occupiedPlace: 0
+  _typeOfPart: 4
 --- !u!1 &7921916188110440022
 GameObject:
   m_ObjectHideFlags: 0

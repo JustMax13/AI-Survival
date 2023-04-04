@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 5033790305186318964}
   - component: {fileID: 312083931281737960}
   - component: {fileID: 3676819665452977634}
+  - component: {fileID: -2697829095272270022}
   - component: {fileID: 7320012696846339062}
   - component: {fileID: 4838389123061600818}
   - component: {fileID: 3796956381938037625}
-  - component: {fileID: -2697829095272270022}
+  - component: {fileID: 6255776487759969593}
   m_Layer: 0
   m_Name: EasyArmor
   m_TagString: Untagged
@@ -151,6 +152,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 24.07, y: 16.1}
   m_EdgeRadius: 0
+--- !u!114 &-2697829095272270022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312083931281737964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnOffInMenu:
+  - {fileID: 4838389123061600818}
+  - {fileID: 7320012696846339062}
+  - {fileID: 6255776487759969593}
+  TurnOffInEditor: []
+  TurnOffInBattle:
+  - {fileID: 4838389123061600818}
+  - {fileID: 6255776487759969593}
 --- !u!114 &7320012696846339062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partType: 0
+  _partType: 3
   _connectPointsOnPart:
   - {fileID: 2235447237334944822}
   - {fileID: 5536724430985068849}
@@ -193,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partName: EasyArmor
---- !u!114 &-2697829095272270022
+--- !u!114 &6255776487759969593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,15 +223,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 312083931281737964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dedcf0cb5ecdc742bd955521ca0aeaa, type: 3}
+  m_Script: {fileID: 11500000, guid: aaa072a3eee53b54c91f906532ca6b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnOffInMenu:
-  - {fileID: 4838389123061600818}
-  - {fileID: 7320012696846339062}
-  TurnOffInEditor: []
-  TurnOffInBattle:
-  - {fileID: 4838389123061600818}
+  _occupiedPlace: 1
+  _typeOfPart: 3
 --- !u!1 &1495120792701792000
 GameObject:
   m_ObjectHideFlags: 0

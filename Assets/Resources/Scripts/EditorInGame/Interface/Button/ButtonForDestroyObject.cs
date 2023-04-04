@@ -14,7 +14,7 @@ namespace Editor.Interface
         private PartOfBot _partOfBot;
         public GameObject SelectedPart { get => _selectedPart; set { _selectedPart = value; } }
         public PartOfBot PartOfBot { get => _partOfBot; set { _partOfBot = value; } }
-        public static Action<GameObject> BeforeRemovingPart;
+        public static event Action<GameObject> BeforeDestroyPart;
         protected override void Start()
         {
             _selectedPart = null;
@@ -42,7 +42,7 @@ namespace Editor.Interface
             catch { throw new System.Exception($"На {_selectedPart} немає скрипта 'PluggableObject'!"); }
 
             PluggableObject.FullDisconnect(pluggableObject);
-            BeforeRemovingPart?.Invoke(pluggableObject.gameObject);
+            BeforeDestroyPart?.Invoke(pluggableObject.gameObject);
             Destroy(_selectedPart);
             interactable = false;
         }

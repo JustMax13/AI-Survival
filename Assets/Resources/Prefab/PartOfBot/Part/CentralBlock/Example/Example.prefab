@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5052166642249438236}
   - component: {fileID: 661166295187195649}
   - component: {fileID: 3943763027661326771}
+  - component: {fileID: -1377576998283596220}
   m_Layer: 0
   m_Name: Example
   m_TagString: CPU
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partType: 0
+  _partType: 2
   _connectPointsOnPart:
   - {fileID: 411484604134734182}
 --- !u!114 &5052166642249438236
@@ -207,9 +208,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnOffInMenu:
   - {fileID: 753332254283854953}
+  - {fileID: -1377576998283596220}
   TurnOffInEditor: []
   TurnOffInBattle:
   - {fileID: 753332254283854953}
+  - {fileID: -1377576998283596220}
+--- !u!114 &-1377576998283596220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2932051299144102264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa072a3eee53b54c91f906532ca6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _occupiedPlace: 0
+  _typeOfPart: 2
 --- !u!1 &5512989573469369992
 GameObject:
   m_ObjectHideFlags: 0

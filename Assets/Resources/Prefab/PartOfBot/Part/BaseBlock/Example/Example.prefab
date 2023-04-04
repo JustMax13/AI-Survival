@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 3590376521784455565}
   - component: {fileID: 7711886078565235786}
   - component: {fileID: 3254068737482008542}
+  - component: {fileID: -7540943161087330051}
   m_Layer: 0
   m_Name: Example
   m_TagString: Untagged
@@ -380,10 +381,12 @@ MonoBehaviour:
   - {fileID: 1003485183055474488}
   - {fileID: 3590376521784455565}
   - {fileID: 3254068737482008542}
+  - {fileID: -7540943161087330051}
   TurnOffInEditor: []
   TurnOffInBattle:
   - {fileID: 1003485183055474488}
   - {fileID: 3254068737482008542}
+  - {fileID: -7540943161087330051}
 --- !u!114 &3254068737482008542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +399,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a51205ddc48cb488046c91d457e4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPossibleConnectionToPoint: 2
+  _maxPossibleConnectionToPoint: 3
+--- !u!114 &-7540943161087330051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3398523214542514729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa072a3eee53b54c91f906532ca6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _occupiedPlace: 1
+  _typeOfPart: 1
 --- !u!1 &8499010084968549298
 GameObject:
   m_ObjectHideFlags: 0
