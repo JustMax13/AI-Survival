@@ -5,17 +5,21 @@ namespace Editor
 {
     using General.PartOfBots;
     using Editor.Interface;
-    using Editor.Moves;
+    using Editor.Counting;
 
     public class PartForSpawn : MonoBehaviour
     {
-        private GameObject _partOnScene;
-        private PartOfBot _spawnPart;
-        private SpawnPart _generalValuesForSpawnPart;
 
         private bool _spawnEnd;
         private bool _partIsntSpawn;
         private bool _spawnPermission;
+
+        private GameObject _partOnScene;
+        private PartOfBot _spawnPart;
+        private PartCountValue _partCountValue;
+        private SpawnPart _generalValuesForSpawnPart;
+
+        public PartCountValue PartCountValue { get => _partCountValue; }
 
         private void Start()
         {
@@ -32,7 +36,7 @@ namespace Editor
             GameObject content = _generalValuesForSpawnPart.Content;
             try
             {
-                PrefabBoxes = content.GetComponent<Scroling>().PrefabBoxes;
+                PrefabBoxes = content.GetComponent<AddContent>().PrefabBoxes;
             }
             catch
             {
@@ -44,7 +48,8 @@ namespace Editor
             {
                 if (PrefabBoxes[i] == gameObject)
                 {
-                    _spawnPart = content.GetComponent<Scroling>().PartOfBotsAll[i];
+                    _spawnPart = content.GetComponent<AddContent>().PartOfBotsAll[i];
+                    _partCountValue = _spawnPart.Prefab.GetComponent<PartCountValue>();
                     break;
                 }
             }
@@ -59,24 +64,17 @@ namespace Editor
             {
                 _spawnPermission = gameObject.GetComponent<EventTriggerForSpawn>().IsHold;
                 if (!_spawnPermission)
-                {
                     _partIsntSpawn = true;
-                }
 
                 if (!_spawnPermission && _spawnEnd)
-                {
                     _spawnEnd = false;
-                    _spawnPart.CurrentCountOfPart++;
-                }
             }
-            catch
-            {
-                _spawnPermission = false;
-            }
+            catch { _spawnPermission = false; }
 
-            if (_spawnPermission)
+            if (_spawnPermission && PartCountingSystem.AddIsPosible(_partCountValue))
             {
-                if (_partIsntSpawn) _partOnScene = _generalValuesForSpawnPart.SpawnPrefab(_spawnPart,ref _partIsntSpawn, ref _spawnEnd);
+                if (_partIsntSpawn)
+                    _partOnScene = _generalValuesForSpawnPart.SpawnPrefab(_spawnPart, ref _partIsntSpawn, ref _spawnEnd);
 
                 //Vector2 mousePosition = DragAndDrop.MousePositionOnDragArea(_generalValuesForSpawnPart.LimitPoint1.position,
                 //    _generalValuesForSpawnPart.LimitPoint2.position);

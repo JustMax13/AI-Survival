@@ -1,5 +1,6 @@
 using Editor.Interface;
 using General.PartOfBots;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -14,6 +15,8 @@ namespace Editor.Counting
         [SerializeField] private int _numberOfArmorPlates;
         [SerializeField] private int _numberOfGun;
         [SerializeField] private int _numberOfWheels;
+
+        public static event Action CountPartUpdate;
 
         public static Dictionary<TypeOfPart, int> MaxNumberOfType { get; private set; }
         public static Dictionary<TypeOfPart, float> CurrentNumberOfType { get; private set; }
@@ -44,25 +47,29 @@ namespace Editor.Counting
         //    foreach (var item in CurrentNumberOfType)
         //        Debug.Log($"{item.Key} | кількість деталей на сцені: {item.Value}");
         //}
-        //public static bool AddIsPosible(PartCountValue partCountValue)
-        //{
-        //    if (MaxNumberOfType.GetValueOrDefault(partCountValue.TypeOfPart) - CurrentNumberOfType.GetValueOrDefault(partCountValue.TypeOfPart)
-        //        < partCountValue.OccupiedPlace)
-        //        return false;
-        //    else
-        //        return true;
-        //}
+        public static bool AddIsPosible(PartCountValue partCountValue)
+        {
+            if (MaxNumberOfType.GetValueOrDefault(partCountValue.TypeOfPart) - CurrentNumberOfType.GetValueOrDefault(partCountValue.TypeOfPart)
+                < partCountValue.OccupiedPlace)
+                return false;
+            else
+                return true;
+        }
         private static void AddPart(TypeOfPart typeOfPart, float occupiedPlace)
         {
             float currentNumber = CurrentNumberOfType.GetValueOrDefault(typeOfPart);
             CurrentNumberOfType.Remove(typeOfPart);
             CurrentNumberOfType.Add(typeOfPart, currentNumber + occupiedPlace);
+
+            CountPartUpdate?.Invoke();
         }
         private static void RemovePart(TypeOfPart typeOfPart, float occupiedPlace)
         {
             float currentNumber = CurrentNumberOfType.GetValueOrDefault(typeOfPart);
             CurrentNumberOfType.Remove(typeOfPart);
             CurrentNumberOfType.Add(typeOfPart, currentNumber - occupiedPlace);
+
+            CountPartUpdate?.Invoke();
         }
         public static void OnDestroyPart(GameObject gameObject)
         {

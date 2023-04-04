@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _numberOfCentralBlock: 10
   _numberOfBaseBlock: 10
-  _numberOfArmorPlates: 10
+  _numberOfArmorPlates: 2
   _numberOfGun: 10
   _numberOfWheels: 10
 --- !u!1001 &1064263866

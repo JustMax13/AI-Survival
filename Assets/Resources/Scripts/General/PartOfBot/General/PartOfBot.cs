@@ -1,5 +1,4 @@
 using UnityEngine;
-using General.Pathes;
 
 namespace General.PartOfBots
 {
@@ -8,7 +7,6 @@ namespace General.PartOfBots
     {
         [SerializeField] private Sprite _icon;
         [SerializeField] private GameObject _prefab;
-        [SerializeField] private float _maxCountOfPart;
         public Sprite Icon
         {
             get => _icon;
@@ -19,11 +17,5 @@ namespace General.PartOfBots
             get => _prefab; 
             protected set { _prefab = value; }
         }
-        public float MaxCountOfPart 
-        { 
-            get => _maxCountOfPart;
-            protected set { _maxCountOfPart = value; }
-        }
-        public float CurrentCountOfPart { get; set; }
     }
 }

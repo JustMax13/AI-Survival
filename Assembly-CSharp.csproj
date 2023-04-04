@@ -116,7 +116,7 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropValue.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\General\IHaveHP.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\HPofPart.cs" />
-    <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\Scroling.cs" />
+    <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\AddContent.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Pathes\PartPath.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\PauseMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\SimplePosition.cs" />
