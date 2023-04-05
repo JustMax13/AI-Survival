@@ -1,11 +1,11 @@
 {
   "BotPartsData": [
     {
-      "ID": 4,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
+      "ID": 0,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
       "PartPosition": {
-        "X": -4.64276266,
-        "Y": -3.63761234,
+        "X": -2.94212,
+        "Y": -7.450581E-09,
         "Z": 0.0
       },
       "PartRotation": {
@@ -17,11 +17,11 @@
       "ConnectedBodys2D": []
     },
     {
-      "ID": 5,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
+      "ID": 1,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
       "PartPosition": {
-        "X": 1.23819256,
-        "Y": 1.26736307,
+        "X": 0.26762405,
+        "Y": 1.86264515E-09,
         "Z": 0.0
       },
       "PartRotation": {
@@ -30,14 +30,22 @@
         "Z": 0.0,
         "W": 1.0
       },
-      "ConnectedBodys2D": []
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02436,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 8.02436,
+          "YConnectedAnchor": 4.656613E-08,
+          "ID": 0
+        }
+      ]
     },
     {
-      "ID": 6,
-      "PathToPrefab": "Prefab/PartOfBot/FasteningBlock/CarbonNoise/CarbonNoise",
+      "ID": 2,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
       "PartPosition": {
-        "X": 1.69256687,
-        "Y": 2.59108019,
+        "X": 2.674496,
+        "Y": 1.86264515E-09,
         "Z": 0.0
       },
       "PartRotation": {
@@ -46,23 +54,15 @@
         "Z": 0.0,
         "W": 1.0
       },
-      "ConnectedBodys2D": []
-    },
-    {
-      "ID": 7,
-      "PathToPrefab": "Prefab/PartOfBot/Wheels/BigWheel",
-      "PartPosition": {
-        "X": 1.71200275,
-        "Y": -0.220830917,
-        "Z": 0.0
-      },
-      "PartRotation": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0,
-        "W": 1.0
-      },
-      "ConnectedBodys2D": []
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 8.02436,
+          "YConnectedAnchor": 0.0,
+          "ID": 1
+        }
+      ]
     }
   ]
 }

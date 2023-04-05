@@ -1,28 +1,42 @@
 using Editor;
 using Editor.Moves;
 using General.EnumNamespace;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using General.PartOfBots;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace General.Saves
 {
     public class SaveBotController : MonoBehaviour
     {
         public static event Action<GameObject> LoadIsEnd;
+        private static bool _needWhaitNextUpdate =false;
+        private static bool _nextUpdate = false;
         public static void SaveBot(GameObject PlayerBot) => SaveAndLoadBotData.Save(PlayerBot);
 
-        public static void LoadBot(GameObject PlayerBot)
+        public static async void LoadBot(GameObject PlayerBot)
         {
-            {
-                Transform[] child = PlayerBot.GetComponentsInChildren<Transform>();
+            for (int i = 0; i < PlayerBot.transform.childCount; i++)
+                Destroy(PlayerBot.transform.GetChild(i).gameObject);
 
-                for (int i = 1; i < child.Length; i++)
-                    Destroy(child[i].gameObject);
-            }
+            _needWhaitNextUpdate = true;
+            await Task.Run(() => 
+            { 
+                while (true) 
+                { 
+                    if (_nextUpdate)
+                    {
+                        _nextUpdate = false;
+                        break;
+                    }
+                        
+                } 
+            });
+            _needWhaitNextUpdate = false;
 
             BotData data = SaveAndLoadBotData.Load();
 
@@ -41,7 +55,7 @@ namespace General.Saves
                 part = Instantiate(part, part.transform.position,
                     part.transform.rotation, PlayerBot.transform);
 
-                if(part.GetComponent<PluggableObject>().PartType == TypeOfPart.Wheel)
+                if (part.GetComponent<PluggableObject>().PartType == TypeOfPart.Wheel)
                 {
                     for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
                         part.AddComponent<WheelJoint2D>();
@@ -50,7 +64,7 @@ namespace General.Saves
                 {
                     for (int i = 0; i < item.ConnectedBodys2D.Length; i++)
                         part.AddComponent<FixedJoint2D>();
-                }   
+                }
 
                 if (SceneManager.GetActiveScene().buildIndex == (int)EnumBuildIndexOfScene.Editor)
                     part.AddComponent<DragAndDropPart>();
@@ -98,18 +112,6 @@ namespace General.Saves
                                 break;
                             }
                         }
-                        // нам нужна точка как текущего обьекта, так и установившегось
-                        //ConnectPoint[] connectPoints = JointsOnPart[j].connectedBody.GetComponent<PluggableObject>().ConnectPointsOnPart;
-                        //foreach (var item in connectPoints)
-                        //{
-                        //    if (JointsOnPart[j].connectedAnchor == (Vector2)item.transform.localPosition)
-                        //    {
-                        //        // 1) Записать положение
-                        //        // думаю, можно сохранять сразу несколько точек: которая на этом обьекте и которая на 
-                        //        connectPoint = item;
-                        //        break;
-                        //    }
-                        //}
                         bool partCountersExists = false;
                         PartCounter partCounter = null;
                         foreach (var item in partCounters)
@@ -138,6 +140,11 @@ namespace General.Saves
             }
 
             LoadIsEnd?.Invoke(PlayerBot);
+        }
+        private void Update()
+        {
+            if (_needWhaitNextUpdate)
+                _nextUpdate = true;
         }
     }
 }

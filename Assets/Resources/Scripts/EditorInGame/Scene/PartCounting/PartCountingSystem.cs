@@ -1,5 +1,6 @@
 using Editor.Interface;
 using General.PartOfBots;
+using General.Saves;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,12 +42,19 @@ namespace Editor.Counting
 
             SpawnPart.SpawnPartEnd += OnSpawnPartEnd;
             ButtonForDestroyObject.BeforeDestroyPart += OnDestroyPart;
+            SaveBotController.LoadIsEnd += OnLoadEnd;
         }
-        //private void Update()
-        //{
-        //    foreach (var item in CurrentNumberOfType)
-        //        Debug.Log($"{item.Key} | кількість деталей на сцені: {item.Value}");
-        //}
+        private void Update()
+        {
+            //foreach (var item in CurrentNumberOfType)
+            //    Debug.Log($"{item.Key} | кількість деталей на сцені: {item.Value}");
+        }
+        private void OnDestroy()
+        {
+            SpawnPart.SpawnPartEnd -= OnSpawnPartEnd;
+            ButtonForDestroyObject.BeforeDestroyPart -= OnDestroyPart;
+            SaveBotController.LoadIsEnd -= OnLoadEnd;
+        }
         public static bool AddIsPosible(PartCountValue partCountValue)
         {
             if (MaxNumberOfType.GetValueOrDefault(partCountValue.TypeOfPart) - CurrentNumberOfType.GetValueOrDefault(partCountValue.TypeOfPart)
@@ -54,6 +62,20 @@ namespace Editor.Counting
                 return false;
             else
                 return true;
+        }
+        private static void AddDetailsFromZero(PartCountValue[] partCountValues)
+        {
+            CurrentNumberOfType = new Dictionary<TypeOfPart, float>
+            {
+                { TypeOfPart.CentralBlock, 0 },
+                { TypeOfPart.BaseBlock, 0 },
+                { TypeOfPart.Armor, 0 },
+                { TypeOfPart.Gun, 0 },
+                { TypeOfPart.Wheel, 0 }
+            };
+
+            foreach (var item in partCountValues)
+                AddPart(item.TypeOfPart, item.OccupiedPlace);
         }
         private static void AddPart(TypeOfPart typeOfPart, float occupiedPlace)
         {
@@ -71,6 +93,7 @@ namespace Editor.Counting
 
             CountPartUpdate?.Invoke();
         }
+        private static void OnLoadEnd(GameObject playerBot) => AddDetailsFromZero(playerBot.GetComponentsInChildren<PartCountValue>());
         public static void OnDestroyPart(GameObject gameObject)
         {
             var value = gameObject.GetComponent<PartCountValue>();
@@ -81,6 +104,5 @@ namespace Editor.Counting
             var value = gameObject.GetComponent<PartCountValue>();
             AddPart(value.TypeOfPart, value.OccupiedPlace);
         }
-
     }
 }

@@ -31,6 +31,5 @@ namespace General.Saves
         }
 
         public static BotData Load() => JsonConvert.DeserializeObject<BotData>(File.ReadAllText(path));
-        // нужен отдельный скрипт, чтобы правильно сохранить и выгрузить данные.
     }
 }

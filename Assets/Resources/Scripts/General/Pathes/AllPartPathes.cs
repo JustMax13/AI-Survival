@@ -14,7 +14,6 @@ namespace General.Pathes
             PartPathes = new Dictionary<string, string>
             {
                 // Armor
-
                 {
                     "EasyArmor",
                     "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor"
