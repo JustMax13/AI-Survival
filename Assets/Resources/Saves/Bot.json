@@ -1,11 +1,11 @@
 {
   "BotPartsData": [
     {
-      "ID": 0,
-      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
+      "ID": 6,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonNoise",
       "PartPosition": {
-        "X": -2.94212,
-        "Y": -7.450581E-09,
+        "X": 1.75358272,
+        "Y": 1.43947077,
         "Z": 0.0
       },
       "PartRotation": {
@@ -17,11 +17,11 @@
       "ConnectedBodys2D": []
     },
     {
-      "ID": 1,
-      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
+      "ID": 7,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonNoise",
       "PartPosition": {
-        "X": 0.26762405,
-        "Y": 1.86264515E-09,
+        "X": 4.963327,
+        "Y": 1.43947077,
         "Z": 0.0
       },
       "PartRotation": {
@@ -34,18 +34,58 @@
         {
           "XAnchor": -8.02436,
           "YAnchor": 0.0,
-          "XConnectedAnchor": 8.02436,
-          "YConnectedAnchor": 4.656613E-08,
-          "ID": 0
+          "XConnectedAnchor": 8.024361,
+          "YConnectedAnchor": 0.0,
+          "ID": 6
         }
       ]
     },
     {
-      "ID": 2,
+      "ID": 8,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
+      "PartPosition": {
+        "X": -2.2389698,
+        "Y": -0.9596472,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": []
+    },
+    {
+      "ID": 9,
       "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
       "PartPosition": {
-        "X": 2.674496,
-        "Y": 1.86264515E-09,
+        "X": -4.645842,
+        "Y": -0.9596472,
+        "Z": 0.0
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.024361,
+          "YConnectedAnchor": 0.0,
+          "ID": 8
+        }
+      ]
+    },
+    {
+      "ID": 10,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": 0.167902112,
+        "Y": -0.9596472,
         "Z": 0.0
       },
       "PartRotation": {
@@ -60,7 +100,7 @@
           "YAnchor": 0.0,
           "XConnectedAnchor": 8.02436,
           "YConnectedAnchor": 0.0,
-          "ID": 1
+          "ID": 8
         }
       ]
     }

@@ -15,6 +15,13 @@ namespace Editor
             foreach (var item in transforms)
                 item.position += dragOn;
         }
+        public static void CentringToPoint(Transform[] transforms, Vector3 point, Vector3 centerOfTransform)
+        {
+            Vector3 dragOn = point - centerOfTransform;
+
+            foreach (var item in transforms)
+                item.position += dragOn;
+        }
         public static Vector3 FindCenter(Transform[] transforms)
         {
             var centerOfPart = new Vector3();
