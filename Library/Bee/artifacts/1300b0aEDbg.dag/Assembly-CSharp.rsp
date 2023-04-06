@@ -388,7 +388,7 @@
 "Assets/Resources/Scripts/Battle/HP/General/AllHPCount.cs"
 "Assets/Resources/Scripts/Battle/HP/General/IHaveHP.cs"
 "Assets/Resources/Scripts/Battle/HP/Varieties/CentralBlockHP.cs"
-"Assets/Resources/Scripts/Battle/HP/Varieties/HPofPart.cs"
+"Assets/Resources/Scripts/Battle/HP/Varieties/HPOnObject.cs"
 "Assets/Resources/Scripts/Battle/HP/Varieties/RefToHP.cs"
 "Assets/Resources/Scripts/Battle/Move/Bots Move/General/IMover.cs"
 "Assets/Resources/Scripts/Battle/Move/Bots Move/Wheel/BotsWheel.cs"

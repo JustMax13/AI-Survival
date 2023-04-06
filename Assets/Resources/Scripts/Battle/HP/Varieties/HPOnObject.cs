@@ -6,7 +6,7 @@ using UnityEngine;
 namespace CombatMechanics
 {
     using HP;
-    public class HPofPart : MonoBehaviour, IHaveHP
+    public class HPOnObject : MonoBehaviour, IHaveHP
     {
         [SerializeField]
         [Range(0, 1000000)]

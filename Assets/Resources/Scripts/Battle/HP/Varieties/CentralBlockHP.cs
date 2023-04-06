@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CombatMechanics
 {
-    public class CentralBlockHP : HPofPart
+    public class CentralBlockHP : HPOnObject
     {
         protected override void FixedUpdate()
         {

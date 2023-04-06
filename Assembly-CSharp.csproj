@@ -117,7 +117,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveBotController.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropValue.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\General\IHaveHP.cs" />
-    <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\HPofPart.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\HPOnObject.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\FillContent.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Pathes\PartPath.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\PauseMenu.cs" />
