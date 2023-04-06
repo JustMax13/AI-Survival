@@ -1,15 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using General;
+
 namespace CombatMechanics
 {
     public class PauseMenu : MonoBehaviour
     {
-        private static bool _gameIsPaused = false;
         [SerializeField] private GameObject _pauseUI;
-        [SerializeField] private GameObject _moveButton;
-        [SerializeField] private GameObject _shotButton;
         [SerializeField] private GameObject _pauseButton;
+        [SerializeField] private GameObject[] _setOffWhenPause;
+
+        private static bool _gameIsPaused = false;
 
         public void ButtonPause()
         {
@@ -17,31 +16,30 @@ namespace CombatMechanics
             else Pause();
         }
 
-        private void SetActiveAllInterface(bool value)
+        private void SetActiveAll(bool value)
         {
-            _moveButton.SetActive(value);
-            _shotButton.SetActive(value);
+            foreach (var item in _setOffWhenPause)
+                item.SetActive(value);
         }
         public void Resume()
         {
             _pauseUI.SetActive(false);
-            SetActiveAllInterface(true);
+            SetActiveAll(true);
 
             Time.timeScale = 1f;
             _gameIsPaused = false;
         }
         public void Pause()
         {
-            SetActiveAllInterface(false);
+            SetActiveAll(false);
             _pauseUI.SetActive(true);
-            
+
             Time.timeScale = 0f;
             _gameIsPaused = true;
         }
         private void OnGameOver()
         {
-            //Pause();
-            SetActiveAllInterface(false);
+            SetActiveAll(false);
             _pauseButton.SetActive(false);
         }
         private void Start()

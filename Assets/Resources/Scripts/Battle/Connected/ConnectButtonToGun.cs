@@ -21,10 +21,10 @@ namespace CombatMechanics
             {
                 int index = -1;
 
-                var connectShotButton = shot.transform.parent.GetComponent<ConnectShotButton>();
+                //var connectShotButton = shot.transform.parent.GetComponent<ConnectShotButton>();
                 {
                     int counter = 0;
-                    foreach (var item in connectShotButton.ShotAndRotatePair.Values)
+                    foreach (var item in ConnectShotButton.ShotAndRotatePair.Values)
                     {
                         if (item == rotate)
                         {
@@ -34,15 +34,6 @@ namespace CombatMechanics
                         counter++;
                     }    
                 }
-                
-                //for (int i = 0; i < connectShotButton.ShotAndRotatePair.Count; i++)
-                //{
-                //    if (connectShotButton.ShotAndRotatePair.Values == shot)
-                //    {
-                //        index = i;
-                //        break;
-                //    }
-                //}
 
                 if (index != -1)
                 {
@@ -53,7 +44,7 @@ namespace CombatMechanics
                     rotate.Down.onClick.AddListener(gameObject.GetComponent<GunRotation>().RotateDown);
 
                     _gunConnected = true;
-                    connectShotButton.BusyShotAndRotatePair[index] = true;
+                    ConnectShotButton.BusyShotAndRotatePair[index] = true;
                 }
             }
         }

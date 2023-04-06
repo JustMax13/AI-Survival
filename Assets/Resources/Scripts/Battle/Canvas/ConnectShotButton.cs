@@ -9,10 +9,10 @@ namespace CombatMechanics
         [SerializeField] private Button[] _shotButtons;
         [SerializeField] private RotateButtonParent[] _rotateButtons;
 
-        private bool[] _busyShotAndRotatePair;
+        private static bool[] _busyShotAndRotatePair;
 
-        public Dictionary<Button, RotateButtonParent> ShotAndRotatePair { get; private set; }
-        public bool[] BusyShotAndRotatePair
+        public static Dictionary<Button, RotateButtonParent> ShotAndRotatePair { get; private set; }
+        public static bool[] BusyShotAndRotatePair
         {
             get => _busyShotAndRotatePair;
             set => _busyShotAndRotatePair = value;
@@ -46,12 +46,6 @@ namespace CombatMechanics
                     
                 counter++;
             }
-
-            //for (int i = 0; i < ShotAndRotatePair.Count; i++)
-            //{
-            //    if (!_busyShotAndRotatePair[i])
-            //        ButtonConnection.CallConnectedShotButton(ShotAndRotatePair); // попробовать через foreath
-            //}
         }
     }
 }
