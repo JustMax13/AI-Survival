@@ -461,6 +461,7 @@
 "Assets/Resources/Scripts/Menu/Managers/InterfaceManager.cs"
 "Assets/Resources/Scripts/Menu/Managers/LevelManager.cs"
 "Assets/Resources/Scripts/Menu/OnScene/SpawnPlayerInMenu.cs"
+"Assets/Resources/Scripts/Menu/Other/LoadMenu.cs"
 -langversion:9.0
 
 /deterministic

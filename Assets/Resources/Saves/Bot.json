@@ -1,12 +1,12 @@
 {
   "BotPartsData": [
     {
-      "ID": 6,
-      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonNoise",
+      "ID": 0,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
       "PartPosition": {
-        "X": 1.75358272,
-        "Y": 1.43947077,
-        "Z": 0.0
+        "X": 2.53583074,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
       },
       "PartRotation": {
         "X": 0.0,
@@ -17,12 +17,12 @@
       "ConnectedBodys2D": []
     },
     {
-      "ID": 7,
-      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonNoise",
+      "ID": 1,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
       "PartPosition": {
-        "X": 4.963327,
-        "Y": 1.43947077,
-        "Z": 0.0
+        "X": -0.67391324,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
       },
       "PartRotation": {
         "X": 0.0,
@@ -32,21 +32,21 @@
       },
       "ConnectedBodys2D": [
         {
-          "XAnchor": -8.02436,
+          "XAnchor": 8.02436,
           "YAnchor": 0.0,
-          "XConnectedAnchor": 8.024361,
-          "YConnectedAnchor": 0.0,
-          "ID": 6
+          "XConnectedAnchor": -8.02436,
+          "YConnectedAnchor": -9.313226E-09,
+          "ID": 0
         }
       ]
     },
     {
-      "ID": 8,
-      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
+      "ID": 2,
+      "PathToPrefab": "Prefab/PartOfBot/Part/Wheels/BigWheel",
       "PartPosition": {
-        "X": -2.2389698,
-        "Y": -0.9596472,
-        "Z": 0.0
+        "X": 4.14070272,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
       },
       "PartRotation": {
         "X": 0.0,
@@ -54,15 +54,191 @@
         "Z": 0.0,
         "W": 1.0
       },
-      "ConnectedBodys2D": []
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 0.0,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 8.02436,
+          "YConnectedAnchor": 0.0,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "PathToPrefab": "Prefab/PartOfBot/Part/Wheels/BigWheel",
+      "PartPosition": {
+        "X": -5.48852873,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 0.0,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.02436,
+          "YConnectedAnchor": 0.0,
+          "ID": 6
+        }
+      ]
+    },
+    {
+      "ID": 4,
+      "PathToPrefab": "Prefab/PartOfBot/Part/Wheels/BigWheel",
+      "PartPosition": {
+        "X": 0.930086851,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 0.0,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.02436,
+          "YConnectedAnchor": 0.0,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 5,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonNoise",
+      "PartPosition": {
+        "X": 2.53582382,
+        "Y": 0.651730061,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.7071083,
+        "W": 0.707105339
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02436,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -7.4505806E-07,
+          "YConnectedAnchor": -1.16415322E-06,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 6,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
+      "PartPosition": {
+        "X": -3.883657,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 8.02436,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.02436,
+          "YConnectedAnchor": 0.0,
+          "ID": 1
+        }
+      ]
+    },
+    {
+      "ID": 7,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonNoise",
+      "PartPosition": {
+        "X": 0.930951834,
+        "Y": 0.651730061,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 8.02436,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 1.25647637E-12,
+          "YConnectedAnchor": 2.98023139E-07,
+          "ID": 5
+        }
+      ]
+    },
+    {
+      "ID": 8,
+      "PathToPrefab": "Prefab/PartOfBot/Part/BaseBlock/CarbonShine",
+      "PartPosition": {
+        "X": -2.278792,
+        "Y": 0.651730061,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 8.02436,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.024359,
+          "YConnectedAnchor": 0.0,
+          "ID": 7
+        }
+      ]
     },
     {
       "ID": 9,
+      "PathToPrefab": "Prefab/PartOfBot/Part/CentralBlock/ClassicCentralBlock",
+      "PartPosition": {
+        "X": -2.27878523,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 0.0,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.02436,
+          "YConnectedAnchor": 3.7252903E-08,
+          "ID": 1
+        }
+      ]
+    },
+    {
+      "ID": 10,
       "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
       "PartPosition": {
-        "X": -4.645842,
-        "Y": -0.9596472,
-        "Z": 0.0
+        "X": 1.733817,
+        "Y": 2.25660229,
+        "Z": 0.000930796668
       },
       "PartRotation": {
         "X": 0.0,
@@ -74,19 +250,19 @@
         {
           "XAnchor": 8.02,
           "YAnchor": 0.0,
-          "XConnectedAnchor": -8.024361,
-          "YConnectedAnchor": 0.0,
-          "ID": 8
+          "XConnectedAnchor": 8.024359,
+          "YConnectedAnchor": 5.906848E-07,
+          "ID": 5
         }
       ]
     },
     {
-      "ID": 10,
+      "ID": 11,
       "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
       "PartPosition": {
-        "X": 0.167902112,
-        "Y": -0.9596472,
-        "Z": 0.0
+        "X": 3.33781719,
+        "Y": 2.25660229,
+        "Z": 0.000930796668
       },
       "PartRotation": {
         "X": 0.0,
@@ -98,9 +274,346 @@
         {
           "XAnchor": -8.02,
           "YAnchor": 0.0,
-          "XConnectedAnchor": 8.02436,
-          "YConnectedAnchor": 0.0,
+          "XConnectedAnchor": 8.024359,
+          "YConnectedAnchor": 4.41673222E-07,
+          "ID": 5
+        }
+      ]
+    },
+    {
+      "ID": 12,
+      "PathToPrefab": "Prefab/PartOfBot/Part/Guns/OldGun",
+      "PartPosition": {
+        "X": 1.8521508,
+        "Y": 1.05892968,
+        "Z": -0.0214083232
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -3.29000282,
+          "YAnchor": -1.45428467,
+          "XConnectedAnchor": -9.536743E-06,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 7
+        },
+        {
+          "XAnchor": 2.44168949,
+          "YAnchor": -1.45428467,
+          "XConnectedAnchor": -5.960463E-07,
+          "YConnectedAnchor": 2.51295274E-12,
+          "ID": 5
+        }
+      ]
+    },
+    {
+      "ID": 13,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": 3.33782387,
+        "Y": 0.651729941,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -5.96045E-07,
+          "YConnectedAnchor": 2.9802564E-07,
+          "ID": 5
+        }
+      ]
+    },
+    {
+      "ID": 14,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": 1.73295,
+        "Y": 0.651729941,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -9.536743E-06,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 7
+        }
+      ]
+    },
+    {
+      "ID": 15,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": 0.128949881,
+        "Y": 0.651729941,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.02001,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 7
+        },
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -9.536743E-06,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 7
+        }
+      ]
+    },
+    {
+      "ID": 16,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": -1.47505021,
+        "Y": 0.651729941,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 0.00870704651,
+          "YConnectedAnchor": -5.96046448E-07,
           "ID": 8
+        },
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.02001,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 7
+        }
+      ]
+    },
+    {
+      "ID": 17,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": -3.07905054,
+        "Y": 0.651729941,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.011293,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 8
+        },
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 0.00870704651,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 8
+        }
+      ]
+    },
+    {
+      "ID": 18,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": -4.68305063,
+        "Y": 0.651729941,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.011293,
+          "YConnectedAnchor": -5.96046448E-07,
+          "ID": 8
+        }
+      ]
+    },
+    {
+      "ID": 19,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": 3.33870268,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 0.0043591857,
+          "YConnectedAnchor": 2.79396772E-08,
+          "ID": 0
+        },
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 8.02436,
+          "YConnectedAnchor": 2.79396772E-08,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 20,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": 1.73470259,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.015641,
+          "YConnectedAnchor": 2.79396772E-08,
+          "ID": 0
+        },
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 0.0043591857,
+          "YConnectedAnchor": 2.79396772E-08,
+          "ID": 0
+        }
+      ]
+    },
+    {
+      "ID": 21,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": 0.1280868,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 0.0,
+          "YConnectedAnchor": 0.0,
+          "ID": 1
+        }
+      ]
+    },
+    {
+      "ID": 22,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": -1.47591329,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": -8.020001,
+          "YConnectedAnchor": 0.0,
+          "ID": 1
+        },
+        {
+          "XAnchor": 8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 0.0,
+          "YConnectedAnchor": 0.0,
+          "ID": 1
+        }
+      ]
+    },
+    {
+      "ID": 23,
+      "PathToPrefab": "Prefab/PartOfBot/Part/ArmorPlates/EasyArmor",
+      "PartPosition": {
+        "X": -3.081657,
+        "Y": -0.953142166,
+        "Z": 0.000930796668
+      },
+      "PartRotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      },
+      "ConnectedBodys2D": [
+        {
+          "XAnchor": -8.02,
+          "YAnchor": 0.0,
+          "XConnectedAnchor": 0.0,
+          "YConnectedAnchor": 0.0,
+          "ID": 6
         }
       ]
     }

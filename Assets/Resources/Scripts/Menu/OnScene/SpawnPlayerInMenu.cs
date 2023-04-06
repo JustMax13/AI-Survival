@@ -1,16 +1,29 @@
+using General.Saves;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using General;
 
 namespace Menu
 {
-    public class SpawnPlayerInMenu : SpawnPrefab
+    public class SpawnPlayerInMenu : MonoBehaviour
     {
-        override protected void Start()
+        [SerializeField] private float _playerBotScale;
+        public static event Action PlayerSpawnEnd;
+
+        private void Start()
         {
-            base.Start();
-            SpawnObject.transform.localScale *= 1.5f;
+            SaveBotController.LoadBot(gameObject);
+            StartCoroutine(SpawnSetting());
+        }
+        private IEnumerator SpawnSetting()
+        {
+            yield return new WaitForEndOfFrame();
+
+            foreach (var item in gameObject.GetComponentsInChildren<Transform>())
+                item.gameObject.layer = LayerMask.NameToLayer("Player");
+            gameObject.transform.localScale = new Vector3(_playerBotScale, _playerBotScale, _playerBotScale);
+
+            PlayerSpawnEnd?.Invoke();
         }
     }
 }

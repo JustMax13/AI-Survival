@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7beed3c54876e244f9a409325d8f1fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabSpawn: {fileID: 591156690814752894, guid: a1823ed50425d7043a5eb166f26b3b78, type: 3}
-  _spawnPoint: {fileID: 8151035341257056603}
-  LeftButton: {fileID: 0}
-  RightButton: {fileID: 0}
+  _prefabForSpawn: {fileID: 591156690814752894, guid: a1823ed50425d7043a5eb166f26b3b78,
+    type: 3}
+  _spawnPoint: {fileID: 8151035341257056597}
+  _leftButton: {fileID: 0}
+  _rightButton: {fileID: 0}
+  _HP: {fileID: 0}
+  _timer: {fileID: 0}
+  _cameraMove: {fileID: 0}

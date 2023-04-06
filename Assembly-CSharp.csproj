@@ -67,6 +67,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\ConnectShotButton.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Connected\ConnectButtonToGun.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\ConnectedBody2D.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\Other\LoadMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\EventTriggerForSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunTraectory.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\shooting\AIShooting.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropPart.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\ClickedPart.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\Enum\TypeOfPart.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\Managers\InterfaceManager.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\PartData.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\PartCounting\PartCountValue.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\Varieties\ShotGun.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Assets\Resources\Scripts\General\Other\LoadScene.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Centering\Centering.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\general\AIMoving.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\Interface\InterfaceValue.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Spawn\SpawnPart.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\GaveOverMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Other\SpawnPrefab.cs" />
@@ -146,8 +149,6 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonSelected.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\Wheel\MoveAllWheels.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\RotationTest.cs" />
-    <Compile Include="Assets\Resources\Scripts\Menu\Managers\InterfaceManager.cs" />
-    <Compile Include="Assets\Resources\Scripts\Menu\Interface\InterfaceValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />

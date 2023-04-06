@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partType: 4
+  _partType: 3
   _connectPointsOnPart:
   - {fileID: 7645736729914206763}
   - {fileID: 7645736731210062593}
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occupiedPlace: 0
-  _typeOfPart: 4
+  _typeOfPart: 3
 --- !u!1 &7921916188110440022
 GameObject:
   m_ObjectHideFlags: 0

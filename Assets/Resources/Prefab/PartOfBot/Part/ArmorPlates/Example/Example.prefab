@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partType: 3
+  _partType: 5
   _connectPointsOnPart:
   - {fileID: 2235447237334944822}
   - {fileID: 5536724430985068849}

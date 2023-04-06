@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b412ee0e51ea4a8ea51989ed2e545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partType: 5
+  _partType: 4
   _connectPointsOnPart:
   - {fileID: 2880484219236673788}
 --- !u!114 &2252438662400397695
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occupiedPlace: 0
-  _typeOfPart: 5
+  _typeOfPart: 4
 --- !u!1001 &7683819107383415477
 PrefabInstance:
   m_ObjectHideFlags: 0
