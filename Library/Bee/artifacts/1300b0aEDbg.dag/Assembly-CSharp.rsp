@@ -455,10 +455,10 @@
 "Assets/Resources/Scripts/General/Saves/Data/SimpleRotation.cs"
 "Assets/Resources/Scripts/General/Saves/SaveAndLoadBotData.cs"
 "Assets/Resources/Scripts/General/Saves/SaveBotController.cs"
-"Assets/Resources/Scripts/Menu/ElementsForButton.cs"
-"Assets/Resources/Scripts/Menu/EnableLevel.cs"
-"Assets/Resources/Scripts/Menu/SpawnPlayerInMenu.cs"
-"Assets/Resources/Scripts/Menu/SwipeLevelsMenu.cs"
+"Assets/Resources/Scripts/Menu/Button/LevelButton.cs"
+"Assets/Resources/Scripts/Menu/Canvas/SwipeLevelsMenu.cs"
+"Assets/Resources/Scripts/Menu/Managers/LevelManager.cs"
+"Assets/Resources/Scripts/Menu/OnScene/SpawnPlayerInMenu.cs"
 -langversion:9.0
 
 /deterministic

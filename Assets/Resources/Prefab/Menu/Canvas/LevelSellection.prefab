@@ -408,6 +408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8998625068884951303}
+  - component: {fileID: 7279936569958495269}
   m_Layer: 5
   m_Name: LevelsScrol
   m_TagString: Untagged
@@ -436,6 +437,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 193.83, y: 196.74}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7279936569958495269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293857430032307890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f997a6e42c0c6be49811f115cc916da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerButton: {fileID: 1432112996789446201}
+  _timeWaitBeforeOnDeselect: 0.3
 --- !u!1 &7131924831215450512
 GameObject:
   m_ObjectHideFlags: 0

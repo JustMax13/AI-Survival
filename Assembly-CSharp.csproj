@@ -63,9 +63,9 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Move\Bots Move\General\IMover.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Move\ButtonEventTrigger\MoveLeft.cs" />
     <Compile Include="Assets\Resources\Scripts\General\PartOfBot\General\PartOfBot.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\Managers\LevelManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Canvas\ConnectShotButton.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Connected\ConnectButtonToGun.cs" />
-    <Compile Include="Assets\Resources\Scripts\Menu\ElementsForButton.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\Data\ConnectedBody2D.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Inventory\EventTriggerForSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\GunTraectory.cs" />
@@ -106,7 +106,7 @@
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\RotatePartButton.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\time\UIClock.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\CountingSystem\PartCounter.cs" />
-    <Compile Include="Assets\Resources\Scripts\Menu\SpawnPlayerInMenu.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\OnScene\SpawnPlayerInMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Camera\UnderTouch.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\RenderingPart\SpriteManagement.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDrop.cs" />
@@ -130,14 +130,14 @@
     <Compile Include="Assets\Resources\Scripts\General\Enum\EnumBuildIndexOfScene.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\PaintTraectory.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Connect\PluggableObject.cs" />
-    <Compile Include="Assets\Resources\Scripts\Menu\SwipeLevelsMenu.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\Canvas\SwipeLevelsMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Camera\MoveAndZoomCamera.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\EventFolder\LoadingScene.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\general\AiBrain.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\CentralBlockHP.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Interface\Button\ButtonForDestroyObject.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Centering\CenteringPart.cs" />
-    <Compile Include="Assets\Resources\Scripts\Menu\EnableLevel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu\Button\LevelButton.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Pathes\AllPartPathes.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\Shooting\Gun\General\WeaponLostConected.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Connect\ConnectPoint.cs" />
