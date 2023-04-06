@@ -19,12 +19,12 @@ namespace Menu.Buttons
         }
         public override void OnDeselect(BaseEventData eventData)
         {
-            DeselectEvent();
+            StartCoroutine(DeselectEvent());
             base.OnDeselect(eventData);
         }
         private IEnumerator DeselectEvent() 
-        { 
-            yield return new WaitForEndOfFrame();
+        {
+            yield return new WaitForSeconds(0.3f);
             ButtonOnDeselect?.Invoke();
         }
     }

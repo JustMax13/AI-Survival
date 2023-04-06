@@ -456,7 +456,9 @@
 "Assets/Resources/Scripts/General/Saves/SaveAndLoadBotData.cs"
 "Assets/Resources/Scripts/General/Saves/SaveBotController.cs"
 "Assets/Resources/Scripts/Menu/Button/LevelButton.cs"
-"Assets/Resources/Scripts/Menu/Canvas/SwipeLevelsMenu.cs"
+"Assets/Resources/Scripts/Menu/Interface/InterfaceValue.cs"
+"Assets/Resources/Scripts/Menu/Interface/SwipeLevelsMenu.cs"
+"Assets/Resources/Scripts/Menu/Managers/InterfaceManager.cs"
 "Assets/Resources/Scripts/Menu/Managers/LevelManager.cs"
 "Assets/Resources/Scripts/Menu/OnScene/SpawnPlayerInMenu.cs"
 -langversion:9.0
