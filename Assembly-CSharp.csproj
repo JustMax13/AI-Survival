@@ -115,6 +115,7 @@
     <Compile Include="Assets\Resources\Scripts\Battle\Rotate\RotateButtonParent.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\AI\general\Сkeshing.cs" />
     <Compile Include="Assets\Resources\Scripts\General\Saves\SaveBotController.cs" />
+    <Compile Include="Assets\Resources\Scripts\Battle\Rotate\PlayerRotationControl.cs" />
     <Compile Include="Assets\Resources\Scripts\EditorInGame\Scene\Move\DragAndDropValue.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\General\IHaveHP.cs" />
     <Compile Include="Assets\Resources\Scripts\Battle\HP\Varieties\HPofPart.cs" />

@@ -49,8 +49,11 @@ namespace CombatMechanics
                     shot.gameObject.SetActive(true);
                     shot.onClick.AddListener(gameObject.GetComponent<ShotGun>().CheckReloadAndShot);
                     rotate.gameObject.SetActive(true);
-                    rotate.Up.onClick.AddListener(gameObject.GetComponent<GunRotation>().RotateUp);
-                    rotate.Down.onClick.AddListener(gameObject.GetComponent<GunRotation>().RotateDown);
+                    rotate.Up.onClick.AddListener(gameObject.GetComponent<GunRotation>().RotateUp);//rotate.Up.onPointDown-->gameObject.GetComponent<GunRotation>().RotateUp
+                    rotate.Down.onClick.AddListener(gameObject.GetComponent<GunRotation>().RotateDown);//rotate.Down.onPointDown-->gameObject.GetComponent<GunRotation>().RotateDown
+                    //rotate.Up.onPointUp-->gameObject.GetComponent<GunRotation>().RotateStop
+                    //rotate.Down.onPointUp-->gameObject.GetComponent<GunRotation>().RotateStop
+
 
                     _gunConnected = true;
                     connectShotButton.BusyShotAndRotatePair[index] = true;

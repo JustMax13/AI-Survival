@@ -217,6 +217,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6323267097603295239, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: _maxRotationAngel
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323267097603295239, guid: 98562798b8f93484d90227eed5a37efa,
+        type: 3}
+      propertyPath: _minRotationAngel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6744017033511527873, guid: 98562798b8f93484d90227eed5a37efa,
         type: 3}
       propertyPath: _speed

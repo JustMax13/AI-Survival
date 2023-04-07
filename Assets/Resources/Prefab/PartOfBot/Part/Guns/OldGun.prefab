@@ -157,7 +157,7 @@ SpriteRenderer:
   m_Size: {x: 14.36, y: 6.0699997}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!210 &1509515215066748609
@@ -415,7 +415,7 @@ SpriteRenderer:
   m_Size: {x: 22.37, y: 2.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6913466485021221258
@@ -488,7 +488,7 @@ MonoBehaviour:
   _reloadBetweenProjectilesInAClip: 1
   _reloadTime: 1
   _bulletSpawn: {fileID: 6097728281125544249}
-  _bulletPrefab: {fileID: 8854797796699257740, guid: 041134fc6e3d3cb4abc292b46dd333eb,
+  _bulletPrefab: {fileID: 1630338132620539897, guid: 0362b506bbce7524da5a9c2317923138,
     type: 3}
 --- !u!114 &1659960561644387596
 MonoBehaviour:
@@ -546,10 +546,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79141f4d2df20974d8c9015d14cedb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minRotationAngel: -10
-  _maxRotationAngel: 20
-  _speed: 0
+  _minRotationAngel: 0
+  _maxRotationAngel: 30
+  _speed: 30
   _rotationGunPoint: {fileID: 5316140036496009212}
+  _father: {fileID: 1368842147545360441}
   _ai: 0
   _shot: {fileID: 971318796364369041}
 --- !u!1001 &2828538651061489762
